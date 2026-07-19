@@ -4122,7 +4122,8 @@ body {
 }
 
   </style>
-</head>
+
+  <link rel="stylesheet" href="assets/css/footer.css"></head>
 <body>
   <header class="site-header" data-site-header>
     <div class="site-header__inner">
@@ -5362,149 +5363,10 @@ body {
 </div>
 </section>
 <!-- ==================== FOOTER ==================== -->
-<footer aria-labelledby="vf-footer-title" class="vf-footer">
-<div class="vf-container">
-<!-- TOP CTA -->
-<section class="vf-cta">
-<div class="vf-cta__content">
-<div class="vf-cta__eyebrow">
-            Your Jungle Stay Awaits
-          </div>
-<h2 class="vf-cta__title" id="vf-footer-title">
-            Come for the island.<br/>
-            Stay for the feeling.
-          </h2>
-<p class="vf-cta__text">
-            Find your own rhythm among rainforest mornings,
-            quiet evenings and the wild beauty of southern Koh Chang.
-          </p>
-</div>
-<a aria-label="Experience Vanara" class="vf-cta__button" href="https://www.vanarakc.com/thevanaraexperience" rel="noopener" target="_blank">
-          Experience Vanara
-
-          <svg aria-hidden="true" viewbox="0 0 24 24">
-<path d="M5 12h14"></path>
-<path d="m13 6 6 6-6 6"></path>
-</svg>
-</a>
-</section>
-<!-- MAIN FOOTER -->
-<div class="vf-main">
-<!-- BRAND -->
-<div class="vf-brand">
-<a aria-label="Vanara Resort homepage" class="vf-logo" href="https://www.vanarakc.com/" rel="noopener" target="_blank">
-<img alt="Vanara Resort Koh Chang" src="https://static.wixstatic.com/media/c090c7_006d6913b7394fa8b82efee35b699d01~mv2.png"/>
-</a>
-<p class="vf-brand__text">
-            A peaceful jungle retreat in Bailan Bay,
-            created for travellers who value nature,
-            authenticity and uncomplicated comfort.
-          </p>
-<div class="vf-brand__location">
-<svg aria-hidden="true" viewbox="0 0 24 24">
-<path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path>
-<circle cx="12" cy="10" r="2.5"></circle>
-</svg>
-<span>
-              Bailan Bay<br/>
-              Koh Chang, Thailand
-            </span>
-</div>
-</div>
-<!-- STAYS -->
-<nav aria-label="Vanara accommodation">
-<h3 class="vf-column__title">
-            Stay
-          </h3>
-<ul class="vf-links">
-<li>
-<a class="vf-link" href="https://www.vanarakc.com/junglebungalow" rel="noopener" target="_blank">
-                Jungle Bungalow
-              </a>
-</li>
-<li>
-<a class="vf-link" href="https://www.vanarakc.com/junglevilla" rel="noopener" target="_blank">
-                Jungle Villa
-              </a>
-</li>
-<li>
-<a class="vf-link" href="https://www.vanarakc.com/jungleyurt" rel="noopener" target="_blank">
-                Jungle Yurt
-              </a>
-</li>
-</ul>
-</nav>
-<!-- DISCOVER -->
-<nav aria-label="Discover Vanara and Koh Chang">
-<h3 class="vf-column__title">
-            Discover
-          </h3>
-<ul class="vf-links">
-<li>
-<a class="vf-link" href="https://www.vanarakc.com/" rel="noopener" target="_blank">
-                Home
-              </a>
-</li>
-<li>
-<a class="vf-link" href="https://www.vanarakc.com/explorekohchang" rel="noopener" target="_blank">
-                Explore Koh Chang
-              </a>
-</li>
-<li>
-<a class="vf-link" href="https://www.vanarakc.com/thevanaraexperience" rel="noopener" target="_blank">
-                Vanara Experience
-              </a>
-</li>
-</ul>
-</nav>
-<!-- CONTACT -->
-<div class="vf-main__experience">
-<h3 class="vf-column__title">
-            Contact
-          </h3>
-<div class="vf-contact">
-<div class="vf-contact__item">
-<span class="vf-contact__label">Address</span>
-<a aria-label="Open Vanara Resort address in Google Maps" class="vf-contact__value" href="https://www.google.com/maps/search/?api=1&amp;query=37%2F5%20Moo%201%20Bailan%20Bay%20Ko%20Chang%20District%20Trat%2023170" rel="noopener" target="_blank">
-                37/5 Moo 1, Bailan Bay<br/>
-                Ko Chang District, Trat 23170
-              </a>
-</div>
-<div class="vf-contact__item">
-<span class="vf-contact__label">Phone</span>
-<a class="vf-contact__value" href="tel:+66990686997">
-                +66 (0)99 068 6997
-              </a>
-</div>
-<div class="vf-contact__item">
-<span class="vf-contact__label">Email</span>
-<a class="vf-contact__value" href="mailto:administrator@vanarakc.com">
-                administrator@vanarakc.com
-              </a>
-</div>
-</div>
-</div>
-</div>
-<!-- BOTTOM -->
-<div class="vf-bottom">
-<p class="vf-copyright">
-          © <span id="vf-current-year"></span>
-          Vanara Resort Koh Chang. All rights reserved.
-        </p>
-<nav aria-label="Legal links" class="vf-bottom__links">
-<a class="vf-bottom__link" href="https://www.vanarakc.com/privacy-policy" rel="noopener" target="_blank">
-            Privacy Policy
-          </a>
-<a class="vf-bottom__link" href="https://www.vanarakc.com/data-deletion" rel="noopener" target="_blank">
-            Data Deletion
-          </a>
-<a class="vf-bottom__link" href="https://www.vanarakc.com/terms-of-service" rel="noopener" target="_blank">
-            Terms of Service
-          </a>
-</nav>
-</div>
-</div>
-</footer>
+<div id="footer-placeholder"></div>
+<script>
+fetch("components/footer.html").then(r=>r.text()).then(h=>{document.getElementById("footer-placeholder").outerHTML=h;});
+</script>
   </main>
   <script>
 // ==================== REVIEWS ====================
