@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/vanara_style.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/mobile-menu.css">
   <style>
 /* ==================== HERO ==================== */
 
@@ -4122,6 +4124,210 @@ body {
   </style>
 </head>
 <body>
+  <header class="site-header" data-site-header>
+    <div class="site-header__inner">
+
+      <nav class="site-header__nav site-header__nav--left" aria-label="Primary navigation">
+        <a class="site-header__link" href="index.html">Home</a>
+        <a class="site-header__link" href="index.html#accommodation">Rooms</a>
+        <a class="site-header__link" href="index.html#why-vanara">The Resort</a>
+      </nav>
+
+      <a
+        class="site-header__logo"
+        href="index.html"
+        aria-label="Vanara Eco Resort — Back to homepage"
+        data-scroll-top
+      >
+        <img
+          src="assets/img/logo.png"
+          alt="Vanara Eco Resort"
+          width="220"
+          height="110"
+        >
+      </a>
+
+      <nav class="site-header__nav site-header__nav--right" aria-label="Secondary navigation">
+        <a class="site-header__link" href="index.html#explore-koh-chang">Koh Chang</a>
+        <a class="site-header__link" href="index.html#reviews">Reviews</a>
+        <a class="site-header__link" href="index.html#location">Location</a>
+
+        <a
+          class="site-header__booking"
+          href="https://beds24.com/booking.php?propid=332906"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Book Now
+        </a>
+      </nav>
+
+      <button
+        class="site-header__menu-button"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-navigation"
+        data-menu-open
+      >
+        <span class="site-header__menu-line"></span>
+        <span class="site-header__menu-line"></span>
+        <span class="site-header__menu-line"></span>
+      </button>
+
+    </div>
+  </header>
+
+  <div
+    class="mobile-menu"
+    id="mobile-navigation"
+    aria-hidden="true"
+    data-mobile-menu
+  >
+    <div class="mobile-menu__backdrop" data-menu-close></div>
+
+    <div class="mobile-menu__panel">
+      <div class="mobile-menu__ambient" aria-hidden="true"></div>
+
+      <div class="mobile-menu__header">
+        <a
+          class="mobile-menu__logo"
+          href="index.html"
+          aria-label="Vanara Eco Resort — Homepage"
+        >
+          <img
+            src="assets/img/logo.png"
+            alt="Vanara Eco Resort"
+            width="220"
+            height="110"
+          >
+        </a>
+
+        <button
+          class="mobile-menu__close"
+          type="button"
+          aria-label="Close navigation menu"
+          data-menu-close
+        >
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="mobile-menu__content">
+        <nav class="mobile-menu__navigation" aria-label="Mobile navigation">
+          <a class="mobile-menu__link" href="index.html" data-menu-link>
+            <span class="mobile-menu__number">01</span>
+            <span class="mobile-menu__label">Home</span>
+          </a>
+
+          <a class="mobile-menu__link" href="index.html#accommodation" data-menu-link>
+            <span class="mobile-menu__number">02</span>
+            <span class="mobile-menu__label">Rooms</span>
+          </a>
+
+          <a class="mobile-menu__link" href="index.html#why-vanara" data-menu-link>
+            <span class="mobile-menu__number">03</span>
+            <span class="mobile-menu__label">The Resort</span>
+          </a>
+
+          <a class="mobile-menu__link" href="index.html#explore-koh-chang" data-menu-link>
+            <span class="mobile-menu__number">04</span>
+            <span class="mobile-menu__label">Koh Chang</span>
+          </a>
+
+          <a class="mobile-menu__link" href="index.html#reviews" data-menu-link>
+            <span class="mobile-menu__number">05</span>
+            <span class="mobile-menu__label">Reviews</span>
+          </a>
+
+          <a class="mobile-menu__link" href="index.html#location" data-menu-link>
+            <span class="mobile-menu__number">06</span>
+            <span class="mobile-menu__label">Location</span>
+          </a>
+        </nav>
+
+        <a
+          class="mobile-menu__booking"
+          href="https://beds24.com/booking.php?propid=332906"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>Book Your Stay</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="mobile-menu__footer">
+        <p class="mobile-menu__eyebrow">Stay connected</p>
+
+        <div class="mobile-menu__socials">
+          <a
+            class="mobile-menu__social"
+            href="https://www.instagram.com/vanarakc/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1"/>
+            </svg>
+            <span>Instagram</span>
+          </a>
+
+          <a
+            class="mobile-menu__social"
+            href="https://www.facebook.com/profile.php?id=61592035281599"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14 8h3V4h-3c-3.3 0-5 2-5 5v3H6v4h3v8h4v-8h3.5l.5-4h-4V9c0-.7.3-1 1-1z"/>
+            </svg>
+            <span>Facebook</span>
+          </a>
+
+          <a
+            class="mobile-menu__social"
+            href="https://wa.me/66990686997"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 11.7A8 8 0 0 1 8.2 18.8L4 20l1.2-4A8 8 0 1 1 20 11.7z"/>
+              <path d="M9 8.5c.4 2.4 2.2 4.2 4.6 4.8"/>
+            </svg>
+            <span>WhatsApp</span>
+          </a>
+
+          <a
+            class="mobile-menu__social"
+            href="https://line.me/ti/p/PPEPu7SumG"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LINE"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 11c0 4.4-4 8-9 8-.8 0-1.6-.1-2.3-.3L5 21l1.2-3.5A7.6 7.6 0 0 1 3 11c0-4.4 4-8 9-8s9 3.6 9 8z"/>
+              <path d="M7 9v4h2M10 9v4M13 9v4M13 9l3 4V9M17 9h3M17 11h2"/>
+            </svg>
+            <span>LINE</span>
+          </a>
+        </div>
+
+        <p class="mobile-menu__location">
+          Bailan Bay · Koh Chang · Thailand
+        </p>
+      </div>
+    </div>
+  </div>
+
   <main id="vanara-homepage">
 <!-- ==================== HERO ==================== -->
 <section aria-label="Vanara Eco Resort" class="hero">
@@ -4139,7 +4345,7 @@ body {
 <button aria-label="Scroll to discover Vanara" class="scroll-cue" data-scroll="rooms" type="button"><span class="scroll-cue-label">Discover</span><span class="scroll-cue-line"></span></button>
 </section>
 <!-- ==================== REVIEWS ==================== -->
-<section aria-labelledby="reviews-title" class="reviews-section">
+<section id="reviews" aria-labelledby="reviews-title" class="reviews-section">
 <div class="reviews-container">
 <header class="reviews-header reveal-item">
 <div class="reviews-eyebrow">Guest Experience</div>
@@ -5661,5 +5867,7 @@ body {
 })();
 
   </script>
+  <script src="assets/js/header.js" defer></script>
+  <script src="assets/js/mobile-menu.js" defer></script>
 </body>
 </html>
