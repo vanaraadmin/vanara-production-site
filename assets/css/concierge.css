@@ -845,3 +845,47 @@
         transition-duration: 0.01ms !important;
       }
     }
+
+/* Floating widget */
+#site-concierge{
+    position:fixed;
+    right:24px;
+    bottom:24px;
+    z-index:999999;
+    width:420px;
+    max-width:calc(100vw - 32px);
+    pointer-events:none;
+}
+
+#site-concierge > *{
+    pointer-events:auto;
+}
+
+#launcher{
+    position:fixed;
+    right:24px;
+    bottom:24px;
+}
+
+#chatWindow{
+    position:fixed;
+    right:24px;
+    bottom:24px;
+    width:420px;
+    height:720px;
+    max-width:calc(100vw - 32px);
+    max-height:calc(100vh - 32px);
+}
+
+@media (max-width:600px){
+    #site-concierge{
+        right:12px;
+        bottom:12px;
+        width:calc(100vw - 24px);
+    }
+
+    #chatWindow{
+        width:100%;
+        height:min(700px,calc(100vh - 24px));
+    }
+}
