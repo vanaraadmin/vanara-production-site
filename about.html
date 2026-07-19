@@ -922,6 +922,11 @@ body {
       </div>
     </div>
   </section>
+<!-- ==================== FOOTER ==================== -->
+<div id="footer-placeholder"></div>
+<script>
+fetch("components/footer.html").then(r=>r.text()).then(h=>{document.getElementById("footer-placeholder").outerHTML=h;});
+</script>
 </main>
 
 <style>
