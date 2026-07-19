@@ -1,1516 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Explore Koh Chang | Vanara</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
-<style>
-/* ==========================================================
-EXPLORE KOH CHANG
-PART 4
-GLOBAL LAYOUT
-========================================================== */
-
-.vr-explore-page{
-
-position:relative;
-overflow:hidden;
-background:#f7f3ec;
-color:#20382d;
-
-}
-
-.vr-explore-page *{
-
-box-sizing:border-box;
-
-}
-
-.vr-shell{
-
-width:min(1320px,calc(100% - 80px));
-margin:auto;
-position:relative;
-z-index:2;
-
-}
-
-.vr-section{
-
-padding:140px 0;
-position:relative;
-
-}
-
-.vr-section+.vr-section{
-
-padding-top:80px;
-
-}
-
-/* ==========================================================
-TYPOGRAPHY
-========================================================== */
-
-.vr-kicker{
-
-display:inline-flex;
-align-items:center;
-gap:16px;
-
-margin:0 0 18px;
-
-font-size:.74rem;
-
-font-weight:700;
-
-letter-spacing:.28em;
-
-text-transform:uppercase;
-
-color:#7b806f;
-
-}
-
-.vr-kicker:before{
-
-content:"";
-
-width:54px;
-height:1px;
-
-background:#b28d53;
-
-display:block;
-
-}
-
-.vr-explore-title{
-
-margin:0;
-
-font-family:"Marcellus",serif;
-
-font-size:clamp(42px,4vw,72px);
-
-line-height:1.06;
-
-font-weight:400;
-
-letter-spacing:-.02em;
-
-color:#16352a;
-
-max-width:820px;
-
-}
-
-.vr-explore-title em{
-
-font-style:normal;
-
-color:#9d7a46;
-
-}
-
-.vr-final-title{
-
-margin:0;
-
-font-family:"Marcellus",serif;
-
-font-size:clamp(48px,5vw,84px);
-
-font-weight:400;
-
-line-height:1.04;
-
-letter-spacing:-.03em;
-
-color:white;
-
-}
-
-.vr-editorial-text{
-
-max-width:760px;
-
-margin:60px auto 0;
-
-font-size:1.08rem;
-
-line-height:1.95;
-
-color:#5d645f;
-
-}
-
-.lead{
-
-font-size:1.2rem;
-
-line-height:1.9;
-
-color:#32453d;
-
-}
-
-.vr-number{
-
-display:block;
-
-margin-bottom:16px;
-
-font-size:4rem;
-
-font-family:"Marcellus",serif;
-
-color:#cdb68d;
-
-line-height:1;
-
-}
-
-/* ==========================================================
-HERO
-========================================================== */
-
-.vr-explore-hero{
-
-height:min(92vh,980px);
-
-min-height:760px;
-
-position:relative;
-
-overflow:hidden;
-
-background:#000;
-
-}
-
-.vr-explore-hero__media{
-
-position:absolute;
-
-inset:0;
-
-}
-
-.vr-explore-hero img{
-
-position:absolute;
-
-inset:0;
-
-width:100%;
-height:100%;
-
-object-fit:cover;
-
-transform:scale(1.02);
-
-}
-
-.vr-explore-hero__veil{
-
-position:absolute;
-
-inset:0;
-
-background:
-
-linear-gradient(
-90deg,
-rgba(8,18,14,.82),
-rgba(8,18,14,.46) 42%,
-rgba(8,18,14,.18) 72%,
-rgba(8,18,14,.08)
-),
-
-linear-gradient(
-180deg,
-rgba(8,18,14,.04),
-rgba(8,18,14,.55)
-);
-
-}
-
-.vr-explore-hero__grain{
-
-position:absolute;
-
-inset:0;
-
-opacity:.18;
-
-mix-blend-mode:soft-light;
-
-background-image:
-
-radial-gradient(circle at 20% 30%,rgba(255,255,255,.18) 0 1px,transparent 1px),
-
-radial-gradient(circle at 70% 60%,rgba(255,255,255,.12) 0 1px,transparent 1px),
-
-radial-gradient(circle at 80% 10%,rgba(255,255,255,.18) 0 1px,transparent 1px);
-
-background-size:180px 180px;
-
-}
-
-.vr-explore-hero .vr-shell{
-
-height:100%;
-
-display:flex;
-
-align-items:flex-end;
-
-}
-
-.vr-explore-hero__content{
-
-position:relative;
-
-padding-bottom:110px;
-
-max-width:760px;
-
-color:white;
-
-z-index:5;
-
-}
-
-.vr-line{
-
-display:block;
-
-width:48px;
-
-height:1px;
-
-background:white;
-
-opacity:.7;
-
-}
-
-.vr-explore-hero__eyebrow{
-
-display:flex;
-
-align-items:center;
-
-gap:16px;
-
-margin-bottom:28px;
-
-font-size:.76rem;
-
-letter-spacing:.30em;
-
-text-transform:uppercase;
-
-font-weight:700;
-
-color:#ece7d7;
-
-}
-
-.vr-explore-hero__title{
-
-margin:0;
-
-font-family:"Marcellus",serif;
-
-font-size:clamp(60px,7vw,110px);
-
-font-weight:400;
-
-line-height:.96;
-
-letter-spacing:-.03em;
-
-}
-
-.vr-explore-hero__title span{
-
-color:#d8bb83;
-
-}
-
-.vr-explore-hero__lead{
-
-margin:36px 0 0;
-
-max-width:640px;
-
-font-size:1.2rem;
-
-line-height:2;
-
-color:rgba(255,255,255,.86);
-
-}
-
-.vr-explore-hero__meta{
-
-display:flex;
-
-flex-wrap:wrap;
-
-gap:14px;
-
-margin-top:44px;
-
-font-size:.82rem;
-
-letter-spacing:.18em;
-
-text-transform:uppercase;
-
-color:#ece7d7;
-
-}
-
-.vr-explore-hero__meta .dot{
-
-width:5px;
-
-height:5px;
-
-background:#cda45e;
-
-border-radius:50%;
-
-align-self:center;
-
-}
-
-/* ==========================================================
-INTRO
-========================================================== */
-
-.vr-explore-intro{
-
-background:white;
-
-}
-
-.vr-explore-intro__grid{
-
-display:grid;
-
-grid-template-columns:
-
-120px
-
-minmax(300px,620px)
-
-1fr;
-
-gap:80px;
-
-align-items:start;
-
-}
-
-.vr-explore-copy{
-
-font-size:1.06rem;
-
-line-height:2;
-
-color:#59645d;
-
-}
-
-.vr-explore-index{
-
-display:flex;
-
-flex-direction:column;
-
-align-items:center;
-
-gap:22px;
-
-font-size:.78rem;
-
-letter-spacing:.20em;
-
-text-transform:uppercase;
-
-color:#888;
-
-}
-
-.vr-index-line{
-
-width:1px;
-
-height:180px;
-
-background:#d8c8a8;
-
-}
-
-/* ==========================================================
-EDITORIAL HEADER
-========================================================== */
-
-.vr-editorial-header{
-
-display:grid;
-
-grid-template-columns:100px 1fr;
-
-gap:50px;
-
-align-items:start;
-
-margin-bottom:80px;
-
-}
-
-.vr-editorial-index{
-
-display:flex;
-
-flex-direction:column;
-
-align-items:center;
-
-gap:20px;
-
-font-size:.8rem;
-
-letter-spacing:.24em;
-
-text-transform:uppercase;
-
-color:#888;
-
-}
-
-.vr-index-line-horizontal{
-
-width:1px;
-
-height:120px;
-
-background:#ccb184;
-
-}
-
-/* ==========================================================
-PART 5
-MAP
-DESTINATIONS
-FEATURE STORIES
-GALLERIES
-========================================================== */
-
-
-/* ==========================================================
-MAP
-========================================================== */
-
-.vr-explore-map{
-
-background:#fbf8f2;
-
-}
-
-.vr-map-layout{
-
-display:grid;
-
-grid-template-columns:
-
-1.45fr
-
-460px;
-
-gap:90px;
-
-align-items:center;
-
-margin-top:70px;
-
-}
-
-.vr-map-illustration{
-
-position:relative;
-
-border-radius:34px;
-
-background:white;
-
-padding:40px;
-
-box-shadow:
-
-0 40px 90px rgba(0,0,0,.08);
-
-min-height:720px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-overflow:hidden;
-
-}
-
-
-
-.vr-map-sidebar{
-
-display:flex;
-
-flex-direction:column;
-
-gap:44px;
-
-}
-
-.vr-map-sidebar article{
-
-padding-bottom:34px;
-
-border-bottom:1px solid rgba(0,0,0,.08);
-
-}
-
-.vr-map-sidebar article:last-child{
-
-border:none;
-
-padding-bottom:0;
-
-}
-
-.vr-map-sidebar span{
-
-display:block;
-
-margin-bottom:14px;
-
-font-size:.74rem;
-
-letter-spacing:.22em;
-
-font-weight:700;
-
-text-transform:uppercase;
-
-color:#b28d53;
-
-}
-
-.vr-map-sidebar h3{
-
-margin:0 0 16px;
-
-font-family:"Marcellus",serif;
-
-font-size:32px;
-
-font-weight:400;
-
-color:#17362c;
-
-}
-
-.vr-map-sidebar p{
-
-margin:0;
-
-font-size:1rem;
-
-line-height:1.9;
-
-color:#61706a;
-
-}
-
-
-/* ==========================================================
-DESTINATIONS
-========================================================== */
-
-.vr-destination{
-
-display:grid;
-
-grid-template-columns:
-
-1.25fr
-
-520px;
-
-gap:90px;
-
-align-items:center;
-
-margin-top:140px;
-
-}
-
-.vr-destination--reverse{
-
-grid-template-columns:
-
-520px
-
-1.25fr;
-
-}
-
-.vr-destination--reverse
-
-.vr-destination__image{
-
-order:2;
-
-}
-
-.vr-destination--reverse
-
-.vr-destination__content{
-
-order:1;
-
-}
-
-.vr-destination__image{
-
-position:relative;
-
-overflow:hidden;
-
-border-radius:34px;
-
-box-shadow:
-
-0 40px 90px rgba(0,0,0,.12);
-
-}
-
-.vr-destination__image img{
-
-display:block;
-
-width:100%;
-
-height:760px;
-
-object-fit:cover;
-
-transition:
-
-transform .8s cubic-bezier(.22,.61,.36,1);
-
-}
-
-.vr-wide img{
-
-height:840px;
-
-}
-
-.vr-destination:hover
-
-.vr-destination__image img{
-
-transform:scale(1.05);
-
-}
-
-.vr-destination__content{
-
-max-width:520px;
-
-}
-
-.vr-destination__content h3{
-
-margin:0 0 24px;
-
-font-family:"Marcellus",serif;
-
-font-size:54px;
-
-font-weight:400;
-
-line-height:1.06;
-
-letter-spacing:-.02em;
-
-color:#17362c;
-
-}
-
-.vr-destination__content p{
-
-font-size:1.05rem;
-
-line-height:2;
-
-color:#5f6b66;
-
-}
-
-
-/* ==========================================================
-FEATURE STORIES
-========================================================== */
-
-.vr-feature-story{
-
-display:grid;
-
-grid-template-columns:
-
-1.2fr
-
-520px;
-
-gap:90px;
-
-align-items:center;
-
-}
-
-.vr-feature-story--reverse{
-
-grid-template-columns:
-
-520px
-
-1.2fr;
-
-}
-
-.vr-feature-story--reverse
-
-.vr-feature-story__image{
-
-order:2;
-
-}
-
-.vr-feature-story--reverse
-
-.vr-feature-story__content{
-
-order:1;
-
-}
-
-.vr-feature-story__image{
-
-overflow:hidden;
-
-border-radius:34px;
-
-box-shadow:
-
-0 40px 90px rgba(0,0,0,.12);
-
-}
-
-.vr-feature-story__image img{
-
-display:block;
-
-width:100%;
-
-height:820px;
-
-object-fit:cover;
-
-transition:
-
-transform .8s ease;
-
-}
-
-.vr-feature-story:hover
-
-.vr-feature-story__image img{
-
-transform:scale(1.05);
-
-}
-
-.vr-feature-story__content h3{
-
-margin:0 0 28px;
-
-font-family:"Marcellus",serif;
-
-font-size:58px;
-
-font-weight:400;
-
-line-height:1.05;
-
-letter-spacing:-.03em;
-
-color:#18372d;
-
-}
-
-.vr-feature-story__content p{
-
-font-size:1.05rem;
-
-line-height:2;
-
-color:#5e6863;
-
-}
-
-
-/* ==========================================================
-GALLERIES
-========================================================== */
-
-.vr-gallery-two{
-
-display:grid;
-
-grid-template-columns:
-
-1fr
-
-1fr;
-
-gap:32px;
-
-margin-top:80px;
-
-}
-
-.vr-gallery-three{
-
-display:grid;
-
-grid-template-columns:
-
-repeat(3,1fr);
-
-gap:28px;
-
-margin-top:80px;
-
-}
-
-.vr-gallery-two figure,
-
-.vr-gallery-three figure{
-
-margin:0;
-
-overflow:hidden;
-
-border-radius:30px;
-
-box-shadow:
-
-0 30px 80px rgba(0,0,0,.12);
-
-}
-
-.vr-gallery-two img,
-
-.vr-gallery-three img{
-
-display:block;
-
-width:100%;
-
-height:620px;
-
-object-fit:cover;
-
-transition:
-
-transform .8s ease;
-
-}
-
-.vr-gallery-three img{
-
-height:540px;
-
-}
-
-.vr-gallery-two figure:hover img,
-
-.vr-gallery-three figure:hover img{
-
-transform:scale(1.05);
-
-}
-
-.vr-gallery-two--offset{
-
-margin-top:34px;
-
-max-width:520px;
-
-margin-left:auto;
-
-}
-
-
-/* ==========================================================
-EDITORIAL LAYOUT
-========================================================== */
-
-.vr-editorial-layout{
-
-display:grid;
-
-grid-template-columns:
-
-120px
-
-1fr;
-
-gap:80px;
-
-}
-
-.vr-editorial-copy{
-
-max-width:860px;
-
-}
-
-.vr-editorial-copy p{
-
-font-size:1.08rem;
-
-line-height:2;
-
-color:#5f6963;
-
-}
-
-
-/* ==========================================================
-WARAPORN
-========================================================== */
-
-.vr-explore-waraporn{
-
-background:#f9f5ef;
-
-}
-
-.vr-explore-waraporn
-
-.vr-feature-story{
-
-grid-template-columns:1fr;
-
-max-width:860px;
-
-margin:auto;
-
-text-align:center;
-
-}
-
-.vr-explore-waraporn
-
-.vr-feature-story__content{
-
-max-width:none;
-
-}
-
-.vr-explore-waraporn h2{
-
-margin-bottom:28px;
-
-}
-
-
-/* ==========================================================
-FINAL
-========================================================== */
-
-.vr-explore-final{
-
-padding-bottom:180px;
-
-background:
-
-linear-gradient(
-
-180deg,
-
-#17362c,
-
-#11271f
-
-);
-
-color:white;
-
-}
-
-.vr-final-editorial{
-
-max-width:900px;
-
-margin:auto;
-
-text-align:center;
-
-}
-
-.vr-final-editorial blockquote{
-
-margin:54px auto 0;
-
-padding:0;
-
-border:none;
-
-font-family:"Marcellus",serif;
-
-font-size:34px;
-
-line-height:1.6;
-
-font-weight:400;
-
-color:rgba(255,255,255,.82);
-
-}
-
-.vr-explore-final
-
-.vr-kicker{
-
-justify-content:center;
-
-color:#d4c2a2;
-
-}
-
-.vr-explore-final
-
-.vr-kicker:before{
-
-background:#d4c2a2;
-
-}
-
-/* ==========================================================
-PREMIUM ISLAND MAP
-========================================================== */
-.vr-island-map{position:relative;width:100%;min-height:760px;display:flex;align-items:center;justify-content:center}.vr-map-svg{width:auto;height:94%;max-height:710px;overflow:visible}.vr-map-island{transform-origin:center;transition:transform .9s cubic-bezier(.22,.61,.36,1)}.vr-map-illustration:hover .vr-map-island{transform:scale(1.012)}.vr-map-ridge{fill:none;stroke:rgba(255,255,255,.18);stroke-width:5;stroke-linecap:round;stroke-dasharray:10 18}.vr-map-ridge--secondary{stroke:rgba(255,255,255,.10);stroke-width:3}.vr-map-point{position:absolute;display:flex;align-items:center;gap:12px;color:#234131;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}.vr-map-point span{position:relative;width:13px;height:13px;flex:0 0 13px;border-radius:50%;background:#bb9556;box-shadow:0 0 0 8px rgba(187,149,86,.18)}.vr-map-point span:after{position:absolute;inset:-1px;border:1px solid rgba(187,149,86,.72);border-radius:inherit;content:"";animation:vrMapPulse 2.8s ease-out infinite}.vr-map-point--white-sand{top:16%;left:12%;flex-direction:row-reverse}.vr-map-point--kai-bae{top:36%;left:8%;flex-direction:row-reverse}.vr-map-point--lonely{top:53%;left:10%;flex-direction:row-reverse}.vr-map-point--bang-bao{left:8%;bottom:10%;flex-direction:row-reverse}.vr-map-point--long-beach{right:10%;bottom:6%}.vr-map-compass{position:absolute;top:34px;right:34px;display:grid;justify-items:center;gap:8px;color:#17362c;font-size:.7rem;font-weight:700;letter-spacing:.22em}.vr-map-compass i{position:relative;display:block;width:1px;height:44px;background:rgba(23,54,44,.35)}.vr-map-compass i:before{position:absolute;top:-1px;left:50%;width:7px;height:7px;border-top:1px solid #17362c;border-left:1px solid #17362c;content:"";transform:translateX(-50%) rotate(45deg)}.vr-map-card{position:absolute;left:30px;bottom:30px;display:flex;gap:30px;padding:25px 29px;border:1px solid rgba(23,54,44,.08);border-radius:22px;background:rgba(255,255,255,.9);box-shadow:0 20px 60px rgba(0,0,0,.12);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}.vr-map-card>div+div{padding-left:30px;border-left:1px solid rgba(23,54,44,.1)}.vr-map-card strong{display:block;color:#17362c;font-family:"Marcellus",serif;font-size:34px;font-weight:400;line-height:1}.vr-map-card small{display:block;margin-top:7px;color:#7d857f;font-size:.64rem;font-weight:700;letter-spacing:.14em;line-height:1.35;text-transform:uppercase}@keyframes vrMapPulse{0%{opacity:.8;transform:scale(.8)}75%,100%{opacity:0;transform:scale(2.7)}}
-/* ==========================================================
-RESPONSIVE
-========================================================== */
-@media(max-width:1200px){.vr-shell{width:min(100%,calc(100% - 50px))}.vr-map-layout{grid-template-columns:1fr;gap:60px}.vr-map-sidebar{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}.vr-destination,.vr-feature-story,.vr-destination--reverse,.vr-feature-story--reverse{grid-template-columns:1fr;gap:50px}.vr-destination--reverse .vr-destination__image,.vr-feature-story--reverse .vr-feature-story__image,.vr-destination--reverse .vr-destination__content,.vr-feature-story--reverse .vr-feature-story__content{order:initial}.vr-destination__content,.vr-feature-story__content{max-width:none}.vr-gallery-two,.vr-gallery-three{grid-template-columns:1fr}.vr-editorial-layout,.vr-explore-intro__grid,.vr-editorial-header{grid-template-columns:1fr}.vr-editorial-layout{gap:50px}.vr-explore-intro__grid{gap:40px}.vr-editorial-header{gap:24px}.vr-editorial-index{flex-direction:row;justify-content:flex-start}.vr-index-line-horizontal{width:80px;height:1px}}
-@media(max-width:768px){.vr-section{padding:90px 0}.vr-section+.vr-section{padding-top:60px}.vr-shell{width:calc(100% - 34px)}.vr-explore-hero{height:auto;min-height:760px}.vr-explore-hero__content{padding-bottom:70px}.vr-explore-hero__title{font-size:58px;line-height:1}.vr-explore-hero__lead{font-size:1rem;line-height:1.8}.vr-explore-title{font-size:42px}.vr-feature-story__content h3,.vr-destination__content h3{font-size:40px}.vr-number{font-size:52px}.vr-destination__image img,.vr-feature-story__image img,.vr-wide img{height:460px}.vr-gallery-two img,.vr-gallery-three img{height:340px}.vr-map-illustration{min-height:600px;padding:18px}.vr-island-map{min-height:560px}.vr-map-svg{height:80%;max-height:500px}.vr-map-point{gap:7px;font-size:.58rem;letter-spacing:.08em}.vr-map-point--white-sand{top:17%;right:5%}.vr-map-point--kai-bae{top:35%;right:0}.vr-map-point--lonely{top:50%;right:0}.vr-map-point--bang-bao{left:1%;bottom:22%}.vr-map-point--long-beach{left:6%;bottom:10%}.vr-map-card{right:12px;bottom:12px;left:12px;gap:12px;justify-content:space-between;padding:18px}.vr-map-card>div+div{padding-left:12px}.vr-map-card strong{font-size:24px}.vr-map-card small{font-size:.52rem}.vr-map-sidebar{grid-template-columns:1fr}.vr-map-sidebar h3{font-size:26px}.vr-final-title{font-size:48px}.vr-final-editorial blockquote{font-size:24px;line-height:1.7}}
-@media(max-width:480px){.vr-shell{width:calc(100% - 24px)}.vr-explore-hero__title{font-size:46px}.vr-explore-title{font-size:34px}.vr-feature-story__content h3,.vr-destination__content h3{font-size:32px}.vr-gallery-two img,.vr-gallery-three img,.vr-feature-story__image img,.vr-destination__image img{height:300px;border-radius:22px}.vr-map-compass{top:22px;left:22px}.vr-map-card strong{font-size:21px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
-
-
-
-/* ==========================================================
-FINAL STATIC MAP — MARKERS ANCHORED TO THE IMAGE
-========================================================== */
-
-.vr-island-map--static{
-  position:relative;
-  width:100%;
-  min-height:0;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:28px;
-}
-
-.vr-map-image-stage{
-  position:relative;
-  width:min(100%,760px);
-  aspect-ratio:1 / 1;
-  flex:0 0 auto;
-}
-
-.vr-map-static-image{
-  display:block;
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  border-radius:22px;
-}
-
-.vr-map-point{
-  position:absolute;
-  z-index:3;
-  display:flex;
-  align-items:center;
-  gap:10px;
-  color:#17362c;
-  font-size:.70rem;
-  font-weight:700;
-  letter-spacing:.13em;
-  line-height:1;
-  text-transform:uppercase;
-  white-space:nowrap;
-  transform:translate(-50%,-50%);
-}
-
-.vr-map-point span{
-  position:relative;
-  width:13px;
-  height:13px;
-  flex:0 0 13px;
-  border-radius:50%;
-  background:#bb9556;
-  box-shadow:0 0 0 8px rgba(187,149,86,.20);
-}
-
-.vr-map-point span::after{
-  position:absolute;
-  inset:-1px;
-  border:1px solid rgba(187,149,86,.72);
-  border-radius:inherit;
-  content:"";
-  animation:vrMapPulse 2.8s ease-out infinite;
-}
-
-/* Exact percentages measured on the supplied 980 × 980 clean map */
-.vr-map-point--ferry{top:17.3%;left:22.45%}
-.vr-map-point--white-sand{top:28.4%;left:calc(15.60% - 40px)}
-.vr-map-point--kai-bae{top:59.1%;left:calc(26.60% - 40px)}
-.vr-map-point--lonely{top:65.4%;left:calc(28.10% - 65px)}
-.vr-map-point--vanara{top:69.8%;left:calc(30.85% + 65px)}
-.vr-map-point--bang-bao{top:76.3%;left:calc(39.10% - 60px)}
-
-.vr-map-compass{
-  position:absolute;
-  top:8%;
-  right:7%;
-  left:auto;
-  z-index:3;
-  display:grid;
-  justify-items:center;
-  gap:8px;
-  color:#17362c;
-  font-size:.7rem;
-  font-weight:700;
-  letter-spacing:.22em;
-}
-
-.vr-map-compass i{
-  position:relative;
-  display:block;
-  width:1px;
-  height:44px;
-  background:rgba(23,54,44,.35);
-}
-
-.vr-map-compass i::before{
-  position:absolute;
-  top:-1px;
-  left:50%;
-  width:7px;
-  height:7px;
-  border-top:1px solid #17362c;
-  border-left:1px solid #17362c;
-  content:"";
-  transform:translateX(-50%) rotate(45deg);
-}
-
-.vr-map-card{
-  position:relative;
-  right:auto;
-  bottom:auto;
-  left:auto;
-  z-index:4;
-  display:flex;
-  width:min(calc(100% - 40px),730px);
-  justify-content:space-between;
-  gap:24px;
-  padding:25px 29px;
-  border:1px solid rgba(23,54,44,.08);
-  border-radius:22px;
-  background:rgba(255,255,255,.94);
-  box-shadow:0 20px 60px rgba(0,0,0,.12);
-  backdrop-filter:blur(16px);
-  -webkit-backdrop-filter:blur(16px);
-}
-
-.vr-map-card>div{
-  flex:1;
-}
-
-.vr-map-card>div+div{
-  padding-left:30px;
-  border-left:1px solid rgba(23,54,44,.1);
-}
-
-.vr-map-card strong{
-  display:block;
-  color:#17362c;
-  font-family:"Marcellus",serif;
-  font-size:34px;
-  font-weight:400;
-  line-height:1;
-}
-
-.vr-map-card small{
-  display:block;
-  margin-top:7px;
-  color:#7d857f;
-  font-size:.64rem;
-  font-weight:700;
-  letter-spacing:.14em;
-  line-height:1.35;
-  text-transform:uppercase;
-}
-
-.vr-feature-story--mangroves{
-  padding-bottom:0;
-}
-
-@media(max-width:768px){
-  .vr-map-illustration{
-    min-height:0;
-    padding:18px;
-  }
-
-  .vr-island-map--static{
-    gap:18px;
-  }
-
-  .vr-map-point{
-    gap:6px;
-    font-size:.52rem;
-    letter-spacing:.06em;
-  }
-
-  .vr-map-point span{
-    width:10px;
-    height:10px;
-    flex-basis:10px;
-    box-shadow:0 0 0 6px rgba(187,149,86,.20);
-  }
-
-  .vr-map-point label{
-    max-width:110px;
-    line-height:1.15;
-  }
-
-  .vr-map-card{
-    width:100%;
-    gap:12px;
-    padding:18px;
-  }
-
-  .vr-map-card>div+div{
-    padding-left:12px;
-  }
-
-  .vr-map-card strong{
-    font-size:24px;
-  }
-
-  .vr-map-card small{
-    font-size:.52rem;
-  }
-}
-
-@media(max-width:480px){
-  .vr-map-point{
-    gap:5px;
-    font-size:.43rem;
-    letter-spacing:.035em;
-  }
-
-  .vr-map-point label{
-    max-width:78px;
-  }
-
-  .vr-map-compass{
-    top:6%;
-    right:5%;
-  }
-
-  .vr-map-compass i{
-    height:32px;
-  }
-
-  .vr-map-card{
-    width:100%;
-    padding:14px 10px;
-    border-radius:16px;
-  }
-
-  .vr-map-card strong{
-    font-size:20px;
-  }
-
-  .vr-map-card small{
-    font-size:.44rem;
-    letter-spacing:.08em;
-  }
-}
-
-
-/* ==========================================================
-VANARA LOGO MARKER
-========================================================== */
-
-.vr-map-point--vanara .vr-map-marker-logo{
-  position:relative;
-  width:30px;
-  height:30px;
-  flex:0 0 30px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border:2px solid #bb9556;
-  border-radius:50%;
-  background:#ffffff;
-  box-shadow:
-    0 0 0 8px rgba(187,149,86,.20),
-    0 6px 16px rgba(0,0,0,.18);
-}
-
-.vr-map-point--vanara .vr-map-marker-logo::after{
-  position:absolute;
-  inset:-2px;
-  border:2px solid rgba(187,149,86,.75);
-  border-radius:50%;
-  content:"";
-  animation:vrMapPulse 2.8s ease-out infinite;
-}
-
-.vr-map-point--vanara .vr-map-marker-logo img{
-  position:relative;
-  z-index:2;
-  display:block;
-  width:21px;
-  height:21px;
-  object-fit:contain;
-  border-radius:50%;
-}
-
-@media(max-width:768px){
-  .vr-map-point--vanara .vr-map-marker-logo{
-    width:24px;
-    height:24px;
-    flex-basis:24px;
-    box-shadow:
-      0 0 0 6px rgba(187,149,86,.20),
-      0 5px 12px rgba(0,0,0,.16);
-  }
-
-  .vr-map-point--vanara .vr-map-marker-logo img{
-    width:17px;
-    height:17px;
-  }
-}
-
-
-/* ==========================================================
-FLUID MAP MARKERS — SAME POSITION AT EVERY SCREEN SIZE
-========================================================== */
-
-.vr-map-point--ferry{
-  top:17.3%;
-  left:22.45%;
-  right:auto;
-  bottom:auto;
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Explore Koh Chang | Vanara Eco Resort</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&amp;family=Lato:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="assets/css/vanara_style.css" rel="stylesheet"/>
+<link href="assets/css/header.css" rel="stylesheet"/>
+<link href="assets/css/mobile-menu.css" rel="stylesheet"/>
+<link href="assets/css/footer.css" rel="stylesheet"/>
+
+<style id="concierge-page-protection">
+html,
+body {
+  width: 100%;
+  height: auto !important;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden !important;
+  overflow-y: visible !important;
+  background: transparent;
+}
+
+body {
+  display: block !important;
+}
+
+#vr-explore-page {
+  width: 100%;
+  overflow: visible !important;
 }
-
-.vr-map-point--white-sand{
-  top:28.4%;
-  left:10.34%;
-  right:auto;
-  bottom:auto;
-}
-
-.vr-map-point--kai-bae{
-  top:59.1%;
-  left:21.34%;
-  right:auto;
-  bottom:auto;
-}
-
-.vr-map-point--lonely{
-  top:65.4%;
-  left:19.55%;
-  right:auto;
-  bottom:auto;
-}
-
-.vr-map-point--vanara{
-  top:69.8%;
-  left:39.40%;
-  right:auto;
-  bottom:auto;
-}
-
-.vr-map-point--bang-bao{
-  top:76.3%;
-  left:31.21%;
-  right:auto;
-  bottom:auto;
-}
-
-/* Explicitly preserve the same anchors on tablet and mobile */
-@media(max-width:1200px){
-  .vr-map-point--ferry{top:17.3%;left:22.45%;right:auto;bottom:auto}
-  .vr-map-point--white-sand{top:28.4%;left:10.34%;right:auto;bottom:auto}
-  .vr-map-point--kai-bae{top:59.1%;left:21.34%;right:auto;bottom:auto}
-  .vr-map-point--lonely{top:65.4%;left:19.55%;right:auto;bottom:auto}
-  .vr-map-point--vanara{top:69.8%;left:39.40%;right:auto;bottom:auto}
-  .vr-map-point--bang-bao{top:76.3%;left:31.21%;right:auto;bottom:auto}
-}
-
-@media(max-width:768px){
-  .vr-map-point--ferry{top:17.3%;left:22.45%;right:auto;bottom:auto}
-  .vr-map-point--white-sand{top:28.4%;left:10.34%;right:auto;bottom:auto}
-  .vr-map-point--kai-bae{top:59.1%;left:21.34%;right:auto;bottom:auto}
-  .vr-map-point--lonely{top:65.4%;left:19.55%;right:auto;bottom:auto}
-  .vr-map-point--vanara{top:69.8%;left:39.40%;right:auto;bottom:auto}
-  .vr-map-point--bang-bao{top:76.3%;left:31.21%;right:auto;bottom:auto}
-}
-
-@media(max-width:480px){
-  .vr-map-point--ferry{top:17.3%;left:22.45%;right:auto;bottom:auto}
-  .vr-map-point--white-sand{top:28.4%;left:10.34%;right:auto;bottom:auto}
-  .vr-map-point--kai-bae{top:59.1%;left:21.34%;right:auto;bottom:auto}
-  .vr-map-point--lonely{top:65.4%;left:19.55%;right:auto;bottom:auto}
-  .vr-map-point--vanara{top:69.8%;left:39.40%;right:auto;bottom:auto}
-  .vr-map-point--bang-bao{top:76.3%;left:31.21%;right:auto;bottom:auto}
-}
-
 </style>
+<link href="assets/css/concierge.css" rel="stylesheet"/>
 </head>
 <body>
+<header class="site-header" data-site-header="">
+<div class="site-header__inner">
+<nav aria-label="Primary navigation" class="site-header__nav site-header__nav--left">
+<a class="site-header__link" href="/">Home</a>
+<a class="site-header__link" href="index.html#accommodation">Rooms</a>
+<a class="site-header__link" href="index.html#why-vanara">The Resort</a>
+</nav>
+<a aria-label="Vanara Eco Resort — Back to homepage" class="site-header__logo" data-scroll-top="" href="/">
+<img alt="Vanara Eco Resort" height="110" src="assets/img/logo.png" width="220"/>
+</a>
+<nav aria-label="Secondary navigation" class="site-header__nav site-header__nav--right">
+<a class="site-header__link" href="index.html#explore-koh-chang">Koh Chang</a>
+<a class="site-header__link" href="index.html#reviews">Reviews</a>
+<a class="site-header__link" href="index.html#location">Location</a>
+<a class="site-header__booking" href="https://beds24.com/booking.php?propid=332906" rel="noopener noreferrer" target="_blank">
+          Book Now
+        </a>
+</nav>
+<button aria-controls="mobile-navigation" aria-expanded="false" aria-label="Open navigation menu" class="site-header__menu-button" data-menu-open="" type="button">
+<span class="site-header__menu-line"></span>
+<span class="site-header__menu-line"></span>
+<span class="site-header__menu-line"></span>
+</button>
+</div>
+</header>
+<div aria-hidden="true" class="mobile-menu" data-mobile-menu="" id="mobile-navigation">
+<div class="mobile-menu__backdrop" data-menu-close=""></div>
+<div class="mobile-menu__panel">
+<div aria-hidden="true" class="mobile-menu__ambient"></div>
+<div class="mobile-menu__header">
+<a aria-label="Vanara Eco Resort — Homepage" class="mobile-menu__logo" href="/">
+<img alt="Vanara Eco Resort" height="110" src="assets/img/logo.png" width="220"/>
+</a>
+<button aria-label="Close navigation menu" class="mobile-menu__close" data-menu-close="" type="button">
+<span></span>
+<span></span>
+</button>
+</div>
+<div class="mobile-menu__content">
+<nav aria-label="Mobile navigation" class="mobile-menu__navigation">
+<a class="mobile-menu__link" data-menu-link="" href="/">
+<span class="mobile-menu__number">01</span>
+<span class="mobile-menu__label">Home</span>
+</a>
+<a class="mobile-menu__link" data-menu-link="" href="index.html#accommodation">
+<span class="mobile-menu__number">02</span>
+<span class="mobile-menu__label">Rooms</span>
+</a>
+<a class="mobile-menu__link" data-menu-link="" href="index.html#why-vanara">
+<span class="mobile-menu__number">03</span>
+<span class="mobile-menu__label">The Resort</span>
+</a>
+<a class="mobile-menu__link" data-menu-link="" href="index.html#explore-koh-chang">
+<span class="mobile-menu__number">04</span>
+<span class="mobile-menu__label">Koh Chang</span>
+</a>
+<a class="mobile-menu__link" data-menu-link="" href="index.html#reviews">
+<span class="mobile-menu__number">05</span>
+<span class="mobile-menu__label">Reviews</span>
+</a>
+<a class="mobile-menu__link" data-menu-link="" href="index.html#location">
+<span class="mobile-menu__number">06</span>
+<span class="mobile-menu__label">Location</span>
+</a>
+</nav>
+<a class="mobile-menu__booking" href="https://beds24.com/booking.php?propid=332906" rel="noopener noreferrer" target="_blank">
+<span>Book Your Stay</span>
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 12h14M13 6l6 6-6 6"></path>
+</svg>
+</a>
+</div>
+<div class="mobile-menu__footer">
+<p class="mobile-menu__eyebrow">Stay connected</p>
+<div class="mobile-menu__socials">
+<a aria-label="Instagram" class="mobile-menu__social" href="https://www.instagram.com/vanarakc/" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<rect height="18" rx="5" width="18" x="3" y="3"></rect>
+<circle cx="12" cy="12" r="4"></circle>
+<circle cx="17.5" cy="6.5" r="1"></circle>
+</svg>
+<span>Instagram</span>
+</a>
+<a aria-label="Facebook" class="mobile-menu__social" href="https://www.facebook.com/profile.php?id=61592035281599" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M14 8h3V4h-3c-3.3 0-5 2-5 5v3H6v4h3v8h4v-8h3.5l.5-4h-4V9c0-.7.3-1 1-1z"></path>
+</svg>
+<span>Facebook</span>
+</a>
+<a aria-label="WhatsApp" class="mobile-menu__social" href="https://wa.me/66990686997" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M20 11.7A8 8 0 0 1 8.2 18.8L4 20l1.2-4A8 8 0 1 1 20 11.7z"></path>
+<path d="M9 8.5c.4 2.4 2.2 4.2 4.6 4.8"></path>
+</svg>
+<span>WhatsApp</span>
+</a>
+<a aria-label="LINE" class="mobile-menu__social" href="https://line.me/ti/p/PPEPu7SumG" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M21 11c0 4.4-4 8-9 8-.8 0-1.6-.1-2.3-.3L5 21l1.2-3.5A7.6 7.6 0 0 1 3 11c0-4.4 4-8 9-8s9 3.6 9 8z"></path>
+<path d="M7 9v4h2M10 9v4M13 9v4M13 9l3 4V9M17 9h3M17 11h2"></path>
+</svg>
+<span>LINE</span>
+</a>
+</div>
+<p class="mobile-menu__location">
+          Bailan Bay · Koh Chang · Thailand
+        </p>
+</div>
+</div>
+</div>
+
+<!-- =========================================================
+     VANARA ECO RESORT
+     THE VANARA EXPERIENCE — HTML
+     Page content only · CSS and JavaScript added separately
+     ========================================================= -->
+
 <!-- ==========================================================
 EXPLORE KOH CHANG
 PART 1 / HTML
@@ -2943,5 +1586,16 @@ HERO + INTRO + MAP
   }
 })();
 </script>
+<!-- ==================== FOOTER ==================== -->
+<div id="footer-placeholder"></div>
+<script>
+fetch("components/footer.html").then(r=>r.text()).then(h=>{document.getElementById("footer-placeholder").outerHTML=h;});
+</script>
+</main>
+
+<script src="assets/js/header.js"></script>
+<script src="assets/js/mobile-menu.js"></script>
+<div id="site-concierge"></div>
+<script src="assets/js/includes.js"></script>
 </body>
 </html>
