@@ -1,91 +1,5636 @@
-(() => {
-  "use strict";
+<!DOCTYPE html>
 
-  const COMPONENTS = [
-    {
-      target: "#site-header",
-      file: "components/header.html"
-    },
-    {
-      target: "#site-mobile-menu",
-      file: "components/menu-mobile.html"
-    },
-    {
-      target: "#site-footer",
-      file: "components/footer.html"
-    },
-    {
-      target: "#site-concierge",
-      file: "components/concierge.html"
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Vanara Eco Resort — Homepage</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&amp;family=Lato:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="assets/css/vanara_style.css" rel="stylesheet"/>
+<link href="assets/css/header.css" rel="stylesheet"/>
+<link href="assets/css/mobile-menu.css" rel="stylesheet"/>
+<style>
+/* ==================== HERO ==================== */
+
+    :root{--forest:#173b2d;--forest-dark:#0b2118;--gold:#b38b47;--cream:#f7f4ee;--white:#fff;--font-title:"Marcellus",serif;--font-body:"Lato",sans-serif;--ease:cubic-bezier(.22,1,.36,1)}
+    *{margin:0;padding:0;box-sizing:border-box}
+    html,body{width:100%;min-height:100%;height:auto;overflow-x:hidden;overflow-y:visible;background:var(--forest-dark);font-family:var(--font-body);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    button{border:0;background:none;color:inherit;font:inherit;cursor:pointer}
+    .hero{position:relative;width:100%;height:clamp(680px,78vw,920px);min-height:680px;display:flex;align-items:center;justify-content:center;isolation:isolate;overflow:hidden;color:var(--white)}
+    .hero-media{position:absolute;inset:-3%;z-index:-4;background-image:url("https://static.wixstatic.com/media/c090c7_40ac209a67c44939993603c82e4ef194~mv2.png");background-position:center;background-size:cover;transform:scale(1.04);animation:heroDrift 18s var(--ease) infinite alternate;will-change:transform}
+    .hero-overlay{position:absolute;inset:0;z-index:-3;background:linear-gradient(180deg,rgba(4,18,13,.48) 0%,rgba(4,18,13,.16) 28%,rgba(4,18,13,.24) 58%,rgba(4,18,13,.72) 100%),linear-gradient(90deg,rgba(4,18,13,.34) 0%,rgba(4,18,13,.04) 46%,rgba(4,18,13,.20) 100%)}
+    .hero-vignette{position:absolute;inset:0;z-index:-2;box-shadow:inset 0 0 180px rgba(0,0,0,.34);pointer-events:none}
+    .hero-content{width:min(1180px,calc(100% - 48px));margin:auto;padding:120px 0 118px;display:flex;flex-direction:column;align-items:center;text-align:center}
+    .eyebrow{margin-bottom:22px;font-size:11px;line-height:1.4;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.82);opacity:0;transform:translateY(18px);animation:reveal .9s .15s var(--ease) forwards}
+    .title{max-width:970px;font-family:var(--font-title);font-size:clamp(54px,7.2vw,112px);line-height:.94;font-weight:400;letter-spacing:-.035em;text-wrap:balance;text-shadow:0 8px 36px rgba(0,0,0,.24)}
+    .title-line{display:block;opacity:0;transform:translateY(34px);animation:reveal 1.05s var(--ease) forwards}
+    .title-line:first-child{animation-delay:.28s}.title-line:last-child{animation-delay:.42s}.title em{color:var(--cream);font-style:normal}
+    .subtitle{max-width:700px;margin-top:28px;font-size:clamp(16px,1.45vw,20px);line-height:1.75;font-weight:300;letter-spacing:.015em;color:rgba(255,255,255,.88);text-wrap:balance;opacity:0;transform:translateY(22px);animation:reveal .95s .62s var(--ease) forwards}
+    .actions{margin-top:38px;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;opacity:0;transform:translateY(22px);animation:reveal .95s .78s var(--ease) forwards}
+    .cta{min-width:184px;height:54px;padding:0 27px;display:inline-flex;align-items:center;justify-content:center;gap:12px;border:1px solid transparent;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;transition:transform .35s var(--ease),background .35s,color .35s,border-color .35s,box-shadow .35s}
+    .cta:hover{transform:translateY(-3px)}
+    .cta-primary{background:var(--gold);color:var(--forest-dark);box-shadow:0 12px 38px rgba(0,0,0,.18)}
+    .cta-primary:hover{background:#c39b58;box-shadow:0 16px 42px rgba(0,0,0,.26)}
+    .cta-secondary{border-color:rgba(255,255,255,.46);background:rgba(255,255,255,.08);color:var(--white);backdrop-filter:blur(8px)}
+    .cta-secondary:hover{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.8)}
+    .cta svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;transition:transform .35s var(--ease)}
+    .cta:hover svg{transform:translateX(3px)}
+    .scroll-cue{position:absolute;left:50%;bottom:25px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;color:rgba(255,255,255,.78);opacity:0;animation:fadeIn 1s 1.1s ease forwards}
+    .scroll-cue-label{font-size:9px;font-weight:700;letter-spacing:.25em;text-transform:uppercase}
+    .scroll-cue-line{position:relative;width:1px;height:42px;overflow:hidden;background:rgba(255,255,255,.26)}
+    .scroll-cue-line::after{content:"";position:absolute;top:-50%;left:0;width:100%;height:50%;background:var(--gold);animation:scrollLine 2.1s ease-in-out infinite}
+    @keyframes reveal{to{opacity:1;transform:translateY(0)}}@keyframes fadeIn{to{opacity:1}}@keyframes heroDrift{from{transform:scale(1.04) translate3d(0,0,0)}to{transform:scale(1.105) translate3d(-.8%,-.5%,0)}}@keyframes scrollLine{0%{transform:translateY(0)}65%,100%{transform:translateY(300%)}}
+    @media(max-width:900px){.hero{height:760px;min-height:760px}.hero-content{width:min(760px,calc(100% - 36px));padding:104px 0 108px}.title{font-size:clamp(50px,10.2vw,82px);line-height:.98}.subtitle{max-width:610px}}
+    @media(max-width:600px){.hero{height:700px;min-height:700px}.hero-media{inset:-2%;background-position:58% center;animation-duration:20s}.hero-overlay{background:linear-gradient(180deg,rgba(4,18,13,.50) 0%,rgba(4,18,13,.20) 30%,rgba(4,18,13,.32) 62%,rgba(4,18,13,.78) 100%)}.hero-content{width:calc(100% - 28px);padding:94px 0 112px}.eyebrow{margin-bottom:18px;font-size:9px;letter-spacing:.22em}.title{max-width:430px;font-size:clamp(43px,13vw,62px);line-height:1;letter-spacing:-.025em}.subtitle{max-width:390px;margin-top:22px;font-size:15px;line-height:1.65}.actions{width:100%;margin-top:30px;gap:11px}.cta{min-width:0;width:min(100%,330px);height:52px}.scroll-cue{bottom:17px}.scroll-cue-label{display:none}.scroll-cue-line{height:32px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}.hero-media{transform:scale(1.04)}}
+    :focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+  
+/* ==================== REVIEWS ==================== */
+
+    :root {
+      --reviews-bg: #f7f4ee;
+      --reviews-surface: rgba(255, 255, 255, 0.78);
+      --reviews-primary: #173b2d;
+      --reviews-secondary: #2c5e47;
+      --reviews-accent: #b28a46;
+      --reviews-text: #173b2d;
+      --reviews-soft: #5f6e65;
+      --reviews-border: rgba(23, 59, 45, 0.1);
+      --reviews-shadow: 0 12px 32px rgba(23, 59, 45, 0.07);
+      --reviews-shadow-hover: 0 20px 44px rgba(23, 59, 45, 0.12);
     }
-  ];
 
-  const COMPONENT_SCRIPTS = [
-    "assets/js/header.js",
-    "assets/js/mobile-menu.js",
-    "assets/js/concierge.js"
-  ];
-
-  async function loadComponent({ target, file }) {
-    const container = document.querySelector(target);
-
-    if (!container) {
-      return;
+    * {
+      box-sizing: border-box;
     }
 
-    try {
-      const response = await fetch(file, {
-        cache: "no-cache"
-      });
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background: transparent;
+    }
 
-      if (!response.ok) {
-        throw new Error(`${response.status} ${response.statusText}`);
+    body {
+      color: var(--reviews-text);
+      font-family: "Lato", Arial, sans-serif;
+    }
+
+    .reviews-section {
+      position: relative;
+      overflow: hidden;
+      padding: 92px 24px 88px;
+      background:
+        radial-gradient(
+          circle at 8% 15%,
+          rgba(53, 95, 59, 0.07),
+          transparent 24%
+        ),
+        radial-gradient(
+          circle at 92% 85%,
+          rgba(178, 138, 70, 0.08),
+          transparent 22%
+        ),
+        var(--reviews-bg);
+    }
+
+    .reviews-section::before,
+    .reviews-section::after {
+      position: absolute;
+      width: 310px;
+      height: 310px;
+      border: 1px solid rgba(23, 59, 45, 0.055);
+      border-radius: 50%;
+      content: "";
+      pointer-events: none;
+    }
+
+    .reviews-section::before {
+      top: -210px;
+      left: -110px;
+    }
+
+    .reviews-section::after {
+      right: -130px;
+      bottom: -230px;
+    }
+
+    .reviews-container {
+      position: relative;
+      z-index: 1;
+      width: min(1280px, 100%);
+      margin: 0 auto;
+    }
+
+    .reviews-header {
+      max-width: 820px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+
+    .reviews-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      color: var(--reviews-accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .reviews-eyebrow::before,
+    .reviews-eyebrow::after {
+      width: 42px;
+      height: 1px;
+      background: currentColor;
+      content: "";
+      opacity: 0.7;
+    }
+
+    .reviews-title {
+      margin: 0;
+      color: var(--reviews-primary);
+      font-family: "Marcellus", Georgia, serif;
+      font-size: clamp(38px, 4.4vw, 58px);
+      font-weight: 400;
+      line-height: 1.08;
+      text-wrap: balance;
+    }
+
+    .reviews-intro {
+      max-width: 650px;
+      margin: 20px auto 0;
+      color: var(--reviews-soft);
+      font-size: 18px;
+      line-height: 1.7;
+      text-wrap: balance;
+    }
+
+    .reviews-total {
+      display: grid;
+      grid-template-columns: auto auto 1fr;
+      width: min(650px, 100%);
+      align-items: center;
+      gap: 22px;
+      margin: 0 auto 42px;
+      padding: 22px 28px;
+      border: 1px solid var(--reviews-border);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.65);
+      box-shadow: 0 8px 26px rgba(23, 59, 45, 0.055);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .reviews-total__icon {
+      display: grid;
+      width: 52px;
+      height: 52px;
+      place-items: center;
+      border: 1px solid rgba(178, 138, 70, 0.7);
+      border-radius: 50%;
+      color: var(--reviews-accent);
+    }
+
+    .reviews-total__icon svg {
+      width: 25px;
+      height: 25px;
+    }
+
+    .reviews-total__number {
+      color: var(--reviews-primary);
+      font-family: "Marcellus", Georgia, serif;
+      font-size: 54px;
+      line-height: 1;
+    }
+
+    .reviews-total__copy strong {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--reviews-primary);
+      font-family: "Marcellus", Georgia, serif;
+      font-size: 21px;
+      font-weight: 400;
+    }
+
+    .reviews-total__copy span {
+      color: var(--reviews-soft);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .review-card {
+      position: relative;
+      display: flex;
+      min-height: 400px;
+      overflow: hidden;
+      padding: 30px 24px 24px;
+      border: 1px solid var(--reviews-border);
+      border-radius: 20px;
+      background: var(--reviews-surface);
+      box-shadow: var(--reviews-shadow);
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease,
+        background-color 0.35s ease;
+      backdrop-filter: blur(7px);
+      -webkit-backdrop-filter: blur(7px);
+    }
+
+    .review-card::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--reviews-accent),
+        transparent
+      );
+      content: "";
+      opacity: 0;
+      transform: scaleX(0.55);
+      transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+    }
+
+    .review-card:hover {
+      border-color: rgba(23, 59, 45, 0.18);
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: var(--reviews-shadow-hover);
+      transform: translateY(-7px);
+    }
+
+    .review-card:hover::before {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+
+    .review-card__logo-space {
+      width:100%;
+      height:72px;
+      flex:0 0 72px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:12px;
+    }
+
+    .review-card__logo-space img{
+      display:block;
+      width:auto;
+      height:auto;
+      max-width:165px;
+      max-height:42px;
+      object-fit:contain;
+    }
+
+    .review-card__score {
+      margin-top: 4px;
+      color: var(--reviews-primary);
+      font-family: "Marcellus", Georgia, serif;
+      font-size: 68px;
+      line-height: 1;
+      transition: transform 0.35s ease;
+    }
+
+    .review-card:hover .review-card__score {
+      transform: scale(1.045);
+    }
+
+    .review-card__scale {
+      margin-top: 5px;
+      color: var(--reviews-soft);
+      font-size: 12px;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .review-card__label {
+      margin-top: 13px;
+      color: var(--reviews-accent);
+      font-family: "Marcellus", Georgia, serif;
+      font-size: 20px;
+    }
+
+    .review-card__stars {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      margin-top: 16px;
+      color: var(--reviews-accent);
+      font-size: 18px;
+      letter-spacing: 0.04em;
+    }
+
+    .review-card__divider {
+      width: 100%;
+      height: 1px;
+      margin: 21px 0 17px;
+      background: rgba(23, 59, 45, 0.09);
+    }
+
+    .review-card__reviews {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--reviews-soft);
+      font-size: 15px;
+    }
+
+    .review-card__reviews svg {
+      width: 19px;
+      height: 19px;
+      color: var(--reviews-accent);
+    }
+
+    .review-card__platform {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: auto;
+      padding-top: 24px;
+      color: var(--reviews-primary);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .reviews-footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 38px;
+      color: var(--reviews-soft);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .reviews-footer svg {
+      width: 22px;
+      height: 22px;
+      color: var(--reviews-accent);
+    }
+
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(24px);
+      transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+    }
+
+    .reveal-item.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .review-card:nth-child(2) {
+      transition-delay: 0.08s;
+    }
+
+    .review-card:nth-child(3) {
+      transition-delay: 0.16s;
+    }
+
+    .review-card:nth-child(4) {
+      transition-delay: 0.24s;
+    }
+
+    @media (max-width: 1050px) {
+      .reviews-section {
+        padding-top: 82px;
+        padding-bottom: 82px;
       }
 
-      container.innerHTML = await response.text();
-    } catch (error) {
-      console.error(`Vanara: impossibile caricare ${file}`, error);
-    }
-  }
+      .reviews-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
 
-  function loadScript(src) {
-    return new Promise((resolve, reject) => {
-      if (document.querySelector(`script[data-component-script="${src}"]`)) {
-        resolve();
+      .review-card {
+        min-height: 390px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .reviews-section {
+        padding: 64px 16px;
+      }
+
+      .reviews-header {
+        margin-bottom: 30px;
+      }
+
+      .reviews-title {
+        font-size: 36px;
+      }
+
+      .reviews-intro {
+        font-size: 17px;
+      }
+
+      .reviews-total {
+        grid-template-columns: auto 1fr;
+        gap: 15px;
+        margin-bottom: 28px;
+        padding: 20px;
+        text-align: left;
+      }
+
+      .reviews-total__icon {
+        display: none;
+      }
+
+      .reviews-total__number {
+        font-size: 48px;
+      }
+
+      .reviews-total__copy strong {
+        font-size: 19px;
+      }
+
+      .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .review-card {
+        min-height: 370px;
+        padding: 28px 22px 23px;
+      }
+
+      .review-card__logo-space {
+        height: 70px;
+        flex-basis: 70px;
+      }
+
+      .review-card__score {
+        font-size: 62px;
+      }
+
+      .reviews-footer {
+        align-items: flex-start;
+        line-height: 1.6;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .reveal-item {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  
+/* ==================== ACCOMMODATION ==================== */
+
+    @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&family=Marcellus&display=swap");
+
+    :root {
+      --va-bg: #f7f4ee;
+      --va-surface: #ffffff;
+      --va-primary: #173b2d;
+      --va-secondary: #2c5e47;
+      --va-soft: #5f6e65;
+      --va-muted: #7c887f;
+      --va-accent: #b28a46;
+      --va-border: rgba(23, 59, 45, 0.12);
+      --va-shadow: 0 16px 48px rgba(23, 59, 45, 0.08);
+      --va-shadow-hover: 0 24px 66px rgba(23, 59, 45, 0.14);
+      --va-radius: 26px;
+      --va-heading: "Marcellus", Georgia, serif;
+      --va-body: "Lato", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background: transparent;
+    }
+
+    body {
+      color: var(--va-primary);
+      font-family: var(--va-body);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .va-accommodation {
+      position: relative;
+      overflow: hidden;
+      padding: 110px 24px 120px;
+      background:
+        radial-gradient(
+          circle at 8% 10%,
+          rgba(44, 94, 71, 0.08),
+          transparent 24%
+        ),
+        radial-gradient(
+          circle at 94% 88%,
+          rgba(178, 138, 70, 0.08),
+          transparent 22%
+        ),
+        var(--va-bg);
+    }
+
+    .va-accommodation::before,
+    .va-accommodation::after {
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border: 1px solid rgba(23, 59, 45, 0.05);
+      border-radius: 50%;
+      content: "";
+      pointer-events: none;
+    }
+
+    .va-accommodation::before {
+      top: -290px;
+      left: -180px;
+    }
+
+    .va-accommodation::after {
+      right: -220px;
+      bottom: -300px;
+    }
+
+    .va-container {
+      position: relative;
+      z-index: 1;
+      width: min(1280px, 100%);
+      margin: 0 auto;
+    }
+
+    .va-section-header {
+      max-width: 840px;
+      margin: 0 auto 76px;
+      text-align: center;
+    }
+
+    .va-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+      color: var(--va-accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .va-eyebrow::before,
+    .va-eyebrow::after {
+      width: 46px;
+      height: 1px;
+      background: currentColor;
+      content: "";
+      opacity: 0.72;
+    }
+
+    .va-title {
+      margin: 0;
+      color: var(--va-primary);
+      font-family: var(--va-heading);
+      font-size: clamp(44px, 5.4vw, 72px);
+      font-weight: 400;
+      line-height: 1.04;
+      text-wrap: balance;
+    }
+
+    .va-subtitle {
+      max-width: 700px;
+      margin: 24px auto 0;
+      color: var(--va-soft);
+      font-size: clamp(17px, 1.6vw, 20px);
+      font-weight: 400;
+      line-height: 1.75;
+      text-wrap: balance;
+    }
+
+    .va-list {
+      display: grid;
+      gap: 92px;
+    }
+
+    .va-stay {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--va-border);
+      border-radius: var(--va-radius);
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: var(--va-shadow);
+      transition:
+        border-color 0.4s ease,
+        box-shadow 0.4s ease,
+        transform 0.4s ease;
+    }
+
+    .va-stay:hover {
+      border-color: rgba(23, 59, 45, 0.2);
+      box-shadow: var(--va-shadow-hover);
+      transform: translateY(-8px);
+    }
+
+    .va-stay__media {
+      position: relative;
+      min-height: 590px;
+      overflow: hidden;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(23, 59, 45, 0.92),
+          rgba(44, 94, 71, 0.68)
+        );
+    }
+
+    .va-stay__media::before {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(8, 24, 17, 0.06) 0%,
+          rgba(8, 24, 17, 0.08) 55%,
+          rgba(8, 24, 17, 0.5) 100%
+        );
+      content: "";
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .va-stay__media::after {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(
+          circle at 22% 24%,
+          rgba(255, 255, 255, 0.16),
+          transparent 28%
+        );
+      content: "";
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .va-stay__image {
+      width: 100%;
+      height: 100%;
+      min-height: 590px;
+      object-fit: cover;
+      transition: transform 1.1s cubic-bezier(0.2, 0.7, 0, 1);
+    }
+
+    .va-stay:hover .va-stay__image {
+      transform: scale(1.055);
+    }
+
+    .va-image-placeholder {
+      display: grid;
+      width: 100%;
+      min-height: 590px;
+      place-items: center;
+      padding: 40px;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(23, 59, 45, 0.92),
+          rgba(44, 94, 71, 0.68)
+        );
+      color: rgba(255, 255, 255, 0.76);
+      text-align: center;
+    }
+
+    .va-image-placeholder__inner {
+      display: grid;
+      place-items: center;
+      gap: 16px;
+    }
+
+    .va-image-placeholder svg {
+      width: 54px;
+      height: 54px;
+    }
+
+    .va-image-placeholder span {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .va-stay__number {
+      position: absolute;
+      z-index: 3;
+      top: 30px;
+      left: 32px;
+      display: inline-flex;
+      min-width: 50px;
+      min-height: 50px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, 0.52);
+      border-radius: 999px;
+      background: rgba(12, 35, 24, 0.26);
+      color: #ffffff;
+      font-family: var(--va-heading);
+      font-size: 18px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .va-stay__image-label {
+      position: absolute;
+      z-index: 3;
+      right: 32px;
+      bottom: 30px;
+      left: 32px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .va-stay__body {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(330px, 0.8fr);
+      gap: 64px;
+      padding: 54px 58px 58px;
+    }
+
+    .va-stay__intro {
+      max-width: 680px;
+    }
+
+    .va-stay__name {
+      margin: 0;
+      color: var(--va-primary);
+      font-family: var(--va-heading);
+      font-size: clamp(34px, 3.4vw, 50px);
+      font-weight: 400;
+      line-height: 1.12;
+    }
+
+    .va-stay__tagline {
+      margin-top: 14px;
+      color: var(--va-accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .va-stay__description {
+      max-width: 620px;
+      margin: 24px 0 0;
+      color: var(--va-soft);
+      font-size: 18px;
+      line-height: 1.78;
+    }
+
+    .va-stay__meta {
+      display: grid;
+      align-content: start;
+      gap: 26px;
+    }
+
+    .va-features {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px 22px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .va-feature {
+      display: flex;
+      min-width: 0;
+      align-items: center;
+      gap: 11px;
+      color: var(--va-primary);
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.45;
+    }
+
+    .va-feature__icon {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      flex: 0 0 34px;
+      place-items: center;
+      border: 1px solid rgba(23, 59, 45, 0.13);
+      border-radius: 50%;
+      background: rgba(247, 244, 238, 0.86);
+      color: var(--va-secondary);
+    }
+
+    .va-feature__icon svg {
+      width: 17px;
+      height: 17px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .va-stay__divider {
+      width: 100%;
+      height: 1px;
+      background: var(--va-border);
+    }
+
+    .va-stay__cta {
+      display: inline-flex;
+      width: fit-content;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 14px 22px;
+      border: 1px solid var(--va-primary);
+      border-radius: 20px;
+      color: var(--va-primary);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition:
+        background-color 0.28s ease,
+        color 0.28s ease,
+        gap 0.28s ease,
+        transform 0.28s ease;
+    }
+
+    .va-stay__cta:hover {
+      gap: 17px;
+      background: var(--va-primary);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .va-stay__cta:focus-visible {
+      outline: 3px solid rgba(23, 59, 45, 0.22);
+      outline-offset: 4px;
+    }
+
+    .va-stay__cta svg {
+      width: 19px;
+      height: 19px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: transform 0.28s ease;
+    }
+
+    .va-stay__cta:hover svg {
+      transform: translateX(3px);
+    }
+
+    .va-stay--reverse .va-stay__body {
+      grid-template-columns: minmax(330px, 0.8fr) minmax(0, 1.4fr);
+    }
+
+    .va-stay--reverse .va-stay__intro {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    .va-stay--reverse .va-stay__meta {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .va-footnote {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 62px;
+      color: var(--va-muted);
+      font-size: 14px;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .va-footnote svg {
+      width: 22px;
+      height: 22px;
+      flex: 0 0 22px;
+      fill: none;
+      stroke: var(--va-accent);
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .va-reveal {
+      opacity: 0;
+      transform: translateY(34px);
+      transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+    }
+
+    .va-reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .va-stay:nth-child(2) {
+      transition-delay: 0.08s;
+    }
+
+    .va-stay:nth-child(3) {
+      transition-delay: 0.16s;
+    }
+
+    @media (max-width: 1024px) {
+      .va-accommodation {
+        padding: 88px 22px 96px;
+      }
+
+      .va-section-header {
+        margin-bottom: 58px;
+      }
+
+      .va-list {
+        gap: 68px;
+      }
+
+      .va-stay__media,
+      .va-stay__image,
+      .va-image-placeholder {
+        min-height: 470px;
+      }
+
+      .va-stay__body,
+      .va-stay--reverse .va-stay__body {
+        grid-template-columns: 1fr;
+        gap: 38px;
+        padding: 44px;
+      }
+
+      .va-stay--reverse .va-stay__intro,
+      .va-stay--reverse .va-stay__meta {
+        grid-column: auto;
+        grid-row: auto;
+      }
+
+      .va-stay--reverse .va-stay__intro {
+        order: 1;
+      }
+
+      .va-stay--reverse .va-stay__meta {
+        order: 2;
+      }
+
+      .va-features {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      .va-accommodation {
+        padding: 70px 16px 76px;
+      }
+
+      .va-section-header {
+        margin-bottom: 46px;
+      }
+
+      .va-eyebrow {
+        gap: 9px;
+        font-size: 10px;
+        letter-spacing: 0.17em;
+      }
+
+      .va-eyebrow::before,
+      .va-eyebrow::after {
+        width: 28px;
+      }
+
+      .va-title {
+        font-size: 42px;
+      }
+
+      .va-subtitle {
+        font-size: 17px;
+      }
+
+      .va-list {
+        gap: 42px;
+      }
+
+      .va-stay {
+        border-radius: 22px;
+      }
+
+      .va-stay__media,
+      .va-stay__image,
+      .va-image-placeholder {
+        min-height: 360px;
+      }
+
+      .va-stay__number {
+        top: 20px;
+        left: 20px;
+        min-width: 44px;
+        min-height: 44px;
+        font-size: 16px;
+      }
+
+      .va-stay__image-label {
+        right: 20px;
+        bottom: 20px;
+        left: 20px;
+        font-size: 10px;
+      }
+
+      .va-stay__body,
+      .va-stay--reverse .va-stay__body {
+        gap: 30px;
+        padding: 32px 24px 28px;
+      }
+
+      .va-stay__name {
+        font-size: 36px;
+      }
+
+      .va-stay__description {
+        font-size: 17px;
+        line-height: 1.72;
+      }
+
+      .va-features {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 13px 14px;
+      }
+
+      .va-stay__cta {
+        width: 100%;
+      }
+
+      .va-footnote {
+        margin-top: 46px;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .va-title {
+        font-size: 38px;
+      }
+
+      .va-stay__media,
+      .va-stay__image,
+      .va-image-placeholder {
+        min-height: 310px;
+      }
+
+      .va-features {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .va-reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  
+/* ==================== VANARA EXPERIENCE ==================== */
+
+    @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&family=Marcellus&display=swap");
+
+    :root {
+      --wv-background: #f7f4ee;
+      --wv-surface: #ffffff;
+      --wv-surface-soft: #f5f1e8;
+
+      --wv-primary: #173b2d;
+      --wv-secondary: #2c5e47;
+      --wv-text-soft: #5f6e65;
+      --wv-text-muted: #7c887f;
+
+      --wv-accent: #b28a46;
+      --wv-champagne: #e8dfc9;
+
+      --wv-border: rgba(23, 59, 45, 0.11);
+      --wv-shadow: 0 16px 46px rgba(23, 59, 45, 0.09);
+      --wv-shadow-hover: 0 24px 60px rgba(23, 59, 45, 0.14);
+
+      --wv-heading: "Marcellus", Georgia, serif;
+      --wv-body: "Lato", Arial, sans-serif;
+
+      --wv-radius-large: 28px;
+      --wv-radius-medium: 20px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background: transparent;
+    }
+
+    body {
+      color: var(--wv-primary);
+      font-family: var(--wv-body);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* =========================================================
+       SECTION
+       ========================================================= */
+
+    .wv-section {
+      position: relative;
+      overflow: hidden;
+      padding: 94px 24px 100px;
+      background:
+        radial-gradient(
+          circle at 3% 12%,
+          rgba(44, 94, 71, 0.075),
+          transparent 22%
+        ),
+        radial-gradient(
+          circle at 96% 92%,
+          rgba(178, 138, 70, 0.07),
+          transparent 20%
+        ),
+        var(--wv-background);
+    }
+
+    .wv-section::before,
+    .wv-section::after {
+      position: absolute;
+      border: 1px solid rgba(23, 59, 45, 0.045);
+      border-radius: 50%;
+      content: "";
+      pointer-events: none;
+    }
+
+    .wv-section::before {
+      top: -280px;
+      left: -190px;
+      width: 430px;
+      height: 430px;
+    }
+
+    .wv-section::after {
+      right: -170px;
+      bottom: -290px;
+      width: 410px;
+      height: 410px;
+    }
+
+    .wv-container {
+      position: relative;
+      z-index: 1;
+      width: min(1280px, 100%);
+      margin: 0 auto;
+    }
+
+    /* =========================================================
+       HEADER
+       ========================================================= */
+
+    .wv-header {
+      display: grid;
+      max-width: 820px;
+      justify-items: center;
+      margin: 0 auto 50px;
+      text-align: center;
+    }
+
+    .wv-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      margin-bottom: 18px;
+      color: var(--wv-accent);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    .wv-eyebrow::before,
+    .wv-eyebrow::after {
+      width: 42px;
+      height: 1px;
+      background: currentColor;
+      content: "";
+      opacity: 0.72;
+    }
+
+    .wv-title {
+      margin: 0;
+      color: var(--wv-primary);
+      font-family: var(--wv-heading);
+      font-size: clamp(44px, 5.4vw, 70px);
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      line-height: 1.04;
+      text-wrap: balance;
+    }
+
+    .wv-subtitle {
+      max-width: 650px;
+      margin: 22px auto 0;
+      color: var(--wv-text-soft);
+      font-size: clamp(17px, 1.6vw, 20px);
+      line-height: 1.72;
+      text-wrap: balance;
+    }
+
+    /* =========================================================
+       MAIN EDITORIAL GRID
+       ========================================================= */
+
+    .wv-editorial {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1.16fr)
+        minmax(330px, 0.84fr);
+      gap: 24px;
+    }
+
+    .wv-column {
+      display: grid;
+      gap: 24px;
+    }
+
+    /* =========================================================
+       IMAGE BASE
+       ========================================================= */
+
+    .wv-image {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--wv-radius-large);
+      background: var(--wv-secondary);
+      box-shadow: var(--wv-shadow);
+      isolation: isolate;
+    }
+
+    .wv-image::after {
+      position: absolute;
+      z-index: 2;
+      inset: 0;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(7, 22, 15, 0.03) 15%,
+          rgba(7, 22, 15, 0.18) 60%,
+          rgba(7, 22, 15, 0.68) 100%
+        );
+      content: "";
+      pointer-events: none;
+    }
+
+    .wv-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition:
+        transform 1s cubic-bezier(0.2, 0.7, 0, 1),
+        filter 0.55s ease;
+    }
+
+    .wv-image:hover img {
+      transform: scale(1.045);
+    }
+
+    .wv-image__caption {
+      position: absolute;
+      z-index: 3;
+      right: 28px;
+      bottom: 25px;
+      left: 28px;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    /* Main landscape image */
+
+    .wv-image--hero {
+      min-height: 430px;
+    }
+
+    .wv-image--hero img {
+      min-height: 430px;
+    }
+
+    .wv-image--hero .wv-image__caption {
+      max-width: 720px;
+    }
+
+    /* Evening image */
+
+    .wv-image--evening {
+      min-height: 272px;
+    }
+
+    .wv-image--evening img {
+      min-height: 272px;
+    }
+
+    /* Hospitality */
+
+    .wv-image--hospitality {
+      min-height: 246px;
+    }
+
+    .wv-image--hospitality img {
+      min-height: 246px;
+    }
+
+    /* =========================================================
+       HERO OVERLAY COPY
+       ========================================================= */
+
+    .wv-hero-copy {
+      position: absolute;
+      z-index: 3;
+      right: 34px;
+      bottom: 58px;
+      left: 34px;
+      max-width: 670px;
+    }
+
+    .wv-hero-copy__small {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--wv-champagne);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.19em;
+      text-transform: uppercase;
+    }
+
+    .wv-hero-copy__title {
+      max-width: 650px;
+      margin: 0;
+      color: #ffffff;
+      font-family: var(--wv-heading);
+      font-size: clamp(31px, 3.4vw, 48px);
+      font-weight: 400;
+      line-height: 1.13;
+      text-wrap: balance;
+    }
+
+    /* =========================================================
+       VALUE PANEL
+       ========================================================= */
+
+    .wv-values {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border: 1px solid var(--wv-border);
+      border-radius: var(--wv-radius-large);
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.76);
+      box-shadow: var(--wv-shadow);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .wv-value {
+      position: relative;
+      min-height: 236px;
+      padding: 30px 28px 27px;
+      transition:
+        background-color 0.32s ease,
+        transform 0.32s ease;
+    }
+
+    .wv-value:nth-child(odd) {
+      border-right: 1px solid var(--wv-border);
+    }
+
+    .wv-value:nth-child(-n + 2) {
+      border-bottom: 1px solid var(--wv-border);
+    }
+
+    .wv-value:hover {
+      background: rgba(255, 255, 255, 0.98);
+    }
+
+    .wv-value__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 21px;
+    }
+
+    .wv-value__icon {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      place-items: center;
+      border: 1px solid rgba(23, 59, 45, 0.13);
+      border-radius: 50%;
+      background: var(--wv-surface-soft);
+      color: var(--wv-secondary);
+      transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+    }
+
+    .wv-value:hover .wv-value__icon {
+      background: var(--wv-primary);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .wv-value__icon svg {
+      width: 22px;
+      height: 22px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.55;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .wv-value__number {
+      color: rgba(23, 59, 45, 0.2);
+      font-family: var(--wv-heading);
+      font-size: 19px;
+      line-height: 1;
+    }
+
+    .wv-value__title {
+      margin: 0;
+      color: var(--wv-primary);
+      font-family: var(--wv-heading);
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1.22;
+    }
+
+    .wv-value__text {
+      margin: 12px 0 0;
+      color: var(--wv-text-soft);
+      font-size: 15px;
+      line-height: 1.67;
+    }
+
+    /* =========================================================
+       VERTICAL PHOTO PAIR
+       ========================================================= */
+
+    .wv-photo-pair {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .wv-photo-card {
+      position: relative;
+      min-height: 300px;
+      overflow: hidden;
+      border-radius: var(--wv-radius-large);
+      box-shadow: var(--wv-shadow);
+      isolation: isolate;
+    }
+
+    .wv-photo-card::after {
+      position: absolute;
+      z-index: 2;
+      inset: 0;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(7, 22, 15, 0.02) 25%,
+          rgba(7, 22, 15, 0.18) 63%,
+          rgba(7, 22, 15, 0.7) 100%
+        );
+      content: "";
+      pointer-events: none;
+    }
+
+    .wv-photo-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 300px;
+      object-fit: cover;
+      transition: transform 0.85s cubic-bezier(0.2, 0.7, 0, 1);
+    }
+
+    .wv-photo-card:hover img {
+      transform: scale(1.055);
+    }
+
+    .wv-photo-card__content {
+      position: absolute;
+      z-index: 3;
+      right: 22px;
+      bottom: 22px;
+      left: 22px;
+    }
+
+    .wv-photo-card__label {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--wv-champagne);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .wv-photo-card__title {
+      margin: 0;
+      color: #ffffff;
+      font-family: var(--wv-heading);
+      font-size: 25px;
+      font-weight: 400;
+      line-height: 1.17;
+    }
+
+    /* =========================================================
+       HOSPITALITY PANEL
+       ========================================================= */
+
+    .wv-hospitality {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(280px, 1.05fr);
+      min-height: 246px;
+      overflow: hidden;
+      border: 1px solid var(--wv-border);
+      border-radius: var(--wv-radius-large);
+      background: var(--wv-surface);
+      box-shadow: var(--wv-shadow);
+    }
+
+    .wv-hospitality__image {
+      min-height: 246px;
+      overflow: hidden;
+    }
+
+    .wv-hospitality__image img {
+      width: 100%;
+      height: 100%;
+      min-height: 246px;
+      object-fit: cover;
+      transition: transform 0.8s ease;
+    }
+
+    .wv-hospitality:hover .wv-hospitality__image img {
+      transform: scale(1.035);
+    }
+
+    .wv-hospitality__content {
+      display: grid;
+      align-content: center;
+      padding: 30px 32px;
+    }
+
+    .wv-hospitality__icon {
+      display: grid;
+      width: 44px;
+      height: 44px;
+      place-items: center;
+      margin-bottom: 18px;
+      border: 1px solid rgba(23, 59, 45, 0.13);
+      border-radius: 50%;
+      background: var(--wv-surface-soft);
+      color: var(--wv-secondary);
+    }
+
+    .wv-hospitality__icon svg {
+      width: 21px;
+      height: 21px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.55;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .wv-hospitality__title {
+      margin: 0;
+      color: var(--wv-primary);
+      font-family: var(--wv-heading);
+      font-size: 27px;
+      font-weight: 400;
+      line-height: 1.17;
+    }
+
+    .wv-hospitality__text {
+      margin: 12px 0 0;
+      color: var(--wv-text-soft);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    /* =========================================================
+       EVENING CTA
+       ========================================================= */
+
+    .wv-evening-copy {
+      position: absolute;
+      z-index: 3;
+      right: 30px;
+      bottom: 28px;
+      left: 30px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .wv-evening-copy__text {
+      max-width: 520px;
+    }
+
+    .wv-evening-copy__eyebrow {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--wv-champagne);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .wv-evening-copy__title {
+      margin: 0;
+      color: #ffffff;
+      font-family: var(--wv-heading);
+      font-size: clamp(27px, 3vw, 38px);
+      font-weight: 400;
+      line-height: 1.15;
+    }
+
+    .wv-evening-copy__link {
+      display: inline-flex;
+      min-height: 46px;
+      flex: 0 0 auto;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 19px;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: 18px;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      transition:
+        background-color 0.28s ease,
+        color 0.28s ease,
+        gap 0.28s ease,
+        transform 0.28s ease;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .wv-evening-copy__link:hover {
+      gap: 13px;
+      background: #ffffff;
+      color: var(--wv-primary);
+      transform: translateY(-2px);
+    }
+
+    .wv-evening-copy__link:focus-visible {
+      outline: 3px solid rgba(255, 255, 255, 0.4);
+      outline-offset: 4px;
+    }
+
+    .wv-evening-copy__link svg {
+      width: 17px;
+      height: 17px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* =========================================================
+       REVEAL ANIMATIONS
+       ========================================================= */
+
+    .wv-reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition:
+        opacity 0.75s ease,
+        transform 0.75s ease;
+    }
+
+    .wv-reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .wv-delay-1 {
+      transition-delay: 0.07s;
+    }
+
+    .wv-delay-2 {
+      transition-delay: 0.14s;
+    }
+
+    .wv-delay-3 {
+      transition-delay: 0.21s;
+    }
+
+    /* =========================================================
+       TABLET
+       ========================================================= */
+
+    @media (max-width: 1024px) {
+      .wv-section {
+        padding: 82px 22px 88px;
+      }
+
+      .wv-header {
+        margin-bottom: 44px;
+      }
+
+      .wv-editorial {
+        grid-template-columns: 1fr;
+      }
+
+      .wv-column {
+        gap: 22px;
+      }
+
+      .wv-image--hero,
+      .wv-image--hero img {
+        min-height: 400px;
+      }
+
+      .wv-values {
+        order: 1;
+      }
+
+      .wv-photo-pair {
+        order: 2;
+      }
+
+      .wv-hospitality {
+        order: 3;
+      }
+
+      .wv-image--evening {
+        order: 4;
+      }
+    }
+
+    /* =========================================================
+       MOBILE
+       ========================================================= */
+
+    @media (max-width: 700px) {
+      .wv-section {
+        padding: 66px 16px 72px;
+      }
+
+      .wv-header {
+        margin-bottom: 36px;
+      }
+
+      .wv-eyebrow {
+        gap: 9px;
+        font-size: 9px;
+        letter-spacing: 0.17em;
+      }
+
+      .wv-eyebrow::before,
+      .wv-eyebrow::after {
+        width: 27px;
+      }
+
+      .wv-title {
+        font-size: 41px;
+      }
+
+      .wv-subtitle {
+        font-size: 17px;
+      }
+
+      .wv-editorial,
+      .wv-column {
+        gap: 16px;
+      }
+
+      .wv-image,
+      .wv-values,
+      .wv-photo-card,
+      .wv-hospitality {
+        border-radius: 21px;
+      }
+
+      .wv-image--hero,
+      .wv-image--hero img {
+        min-height: 370px;
+      }
+
+      .wv-hero-copy {
+        right: 22px;
+        bottom: 46px;
+        left: 22px;
+      }
+
+      .wv-hero-copy__title {
+        font-size: 32px;
+      }
+
+      .wv-image__caption {
+        right: 22px;
+        bottom: 19px;
+        left: 22px;
+        font-size: 8px;
+      }
+
+      .wv-values {
+        grid-template-columns: 1fr;
+      }
+
+      .wv-value {
+        min-height: auto;
+        padding: 26px 24px;
+      }
+
+      .wv-value:nth-child(odd) {
+        border-right: 0;
+      }
+
+      .wv-value:nth-child(-n + 3) {
+        border-bottom: 1px solid var(--wv-border);
+      }
+
+      .wv-value__top {
+        margin-bottom: 17px;
+      }
+
+      .wv-value__title {
+        font-size: 23px;
+      }
+
+      .wv-photo-pair {
+        gap: 16px;
+      }
+
+      .wv-photo-card,
+      .wv-photo-card img {
+        min-height: 270px;
+      }
+
+      .wv-photo-card__content {
+        right: 17px;
+        bottom: 18px;
+        left: 17px;
+      }
+
+      .wv-photo-card__title {
+        font-size: 21px;
+      }
+
+      .wv-hospitality {
+        grid-template-columns: 1fr;
+      }
+
+      .wv-hospitality__image,
+      .wv-hospitality__image img {
+        min-height: 220px;
+      }
+
+      .wv-hospitality__content {
+        padding: 27px 24px 29px;
+      }
+
+      .wv-image--evening,
+      .wv-image--evening img {
+        min-height: 330px;
+      }
+
+      .wv-evening-copy {
+        right: 22px;
+        bottom: 23px;
+        left: 22px;
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .wv-evening-copy__title {
+        font-size: 29px;
+      }
+
+      .wv-evening-copy__link {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 440px) {
+      .wv-photo-pair {
+        grid-template-columns: 1fr;
+      }
+
+      .wv-photo-card,
+      .wv-photo-card img {
+        min-height: 300px;
+      }
+    }
+
+    /* =========================================================
+       REDUCED MOTION
+       ========================================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .wv-reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  
+/* ==================== LOCATION ==================== */
+
+    @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&family=Marcellus&display=swap");
+
+    :root {
+      --vl-bg: #f7f4ee;
+      --vl-surface: #ffffff;
+      --vl-surface-soft: #f5f1e8;
+
+      --vl-primary: #173b2d;
+      --vl-secondary: #2c5e47;
+      --vl-text-soft: #5f6e65;
+      --vl-text-muted: #7c887f;
+
+      --vl-accent: #b28a46;
+      --vl-champagne: #e8dfc9;
+
+      --vl-border: rgba(23, 59, 45, 0.11);
+      --vl-line: rgba(23, 59, 45, 0.18);
+
+      --vl-shadow: 0 16px 46px rgba(23, 59, 45, 0.09);
+      --vl-shadow-hover: 0 24px 60px rgba(23, 59, 45, 0.14);
+
+      --vl-heading: "Marcellus", Georgia, serif;
+      --vl-body: "Lato", Arial, sans-serif;
+
+      --vl-radius-large: 28px;
+      --vl-radius-medium: 20px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background: transparent;
+    }
+
+    body {
+      color: var(--vl-primary);
+      font-family: var(--vl-body);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* =========================================================
+       SECTION
+       ========================================================= */
+
+    .vl-section {
+      position: relative;
+      overflow: hidden;
+      padding: 96px 24px 102px;
+      background:
+        radial-gradient(
+          circle at 4% 12%,
+          rgba(44, 94, 71, 0.075),
+          transparent 23%
+        ),
+        radial-gradient(
+          circle at 96% 90%,
+          rgba(178, 138, 70, 0.075),
+          transparent 21%
+        ),
+        var(--vl-bg);
+    }
+
+    .vl-section::before,
+    .vl-section::after {
+      position: absolute;
+      border: 1px solid rgba(23, 59, 45, 0.045);
+      border-radius: 50%;
+      content: "";
+      pointer-events: none;
+    }
+
+    .vl-section::before {
+      top: -280px;
+      left: -180px;
+      width: 430px;
+      height: 430px;
+    }
+
+    .vl-section::after {
+      right: -180px;
+      bottom: -300px;
+      width: 430px;
+      height: 430px;
+    }
+
+    .vl-container {
+      position: relative;
+      z-index: 1;
+      width: min(1280px, 100%);
+      margin: 0 auto;
+    }
+
+    /* =========================================================
+       HEADER
+       ========================================================= */
+
+    .vl-header {
+      display: grid;
+      max-width: 830px;
+      justify-items: center;
+      margin: 0 auto 52px;
+      text-align: center;
+    }
+
+    .vl-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      margin-bottom: 18px;
+      color: var(--vl-accent);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    .vl-eyebrow::before,
+    .vl-eyebrow::after {
+      width: 42px;
+      height: 1px;
+      background: currentColor;
+      content: "";
+      opacity: 0.72;
+    }
+
+    .vl-title {
+      margin: 0;
+      color: var(--vl-primary);
+      font-family: var(--vl-heading);
+      font-size: clamp(44px, 5vw, 68px);
+      font-weight: 400;
+      line-height: 1.05;
+      text-wrap: balance;
+    }
+
+    .vl-subtitle {
+      max-width: 670px;
+      margin: 22px auto 0;
+      color: var(--vl-text-soft);
+      font-size: clamp(17px, 1.6vw, 20px);
+      line-height: 1.72;
+      text-wrap: balance;
+    }
+
+    /* =========================================================
+       MAIN GRID
+       ========================================================= */
+
+    .vl-layout {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1.12fr)
+        minmax(360px, 0.88fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .vl-column {
+      display: grid;
+      gap: 24px;
+    }
+
+    /* =========================================================
+       IMAGE CARDS
+       ========================================================= */
+
+    .vl-image-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--vl-radius-large);
+      background: var(--vl-secondary);
+      box-shadow: var(--vl-shadow);
+      isolation: isolate;
+      transition:
+        box-shadow 0.4s ease,
+        transform 0.4s ease;
+    }
+
+    .vl-image-card:hover {
+      box-shadow: var(--vl-shadow-hover);
+      transform: translateY(-5px);
+    }
+
+    .vl-image-card::after {
+      position: absolute;
+      z-index: 2;
+      inset: 0;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(8, 24, 17, 0.03) 10%,
+          rgba(8, 24, 17, 0.12) 55%,
+          rgba(8, 24, 17, 0.72) 100%
+        );
+      content: "";
+      pointer-events: none;
+    }
+
+    .vl-image-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1s cubic-bezier(0.2, 0.7, 0, 1);
+    }
+
+    .vl-image-card:hover img {
+      transform: scale(1.045);
+    }
+
+    .vl-image-card--main {
+      min-height: 610px;
+    }
+
+    .vl-image-card--main img {
+      min-height: 610px;
+    }
+
+    .vl-image-card--secondary {
+      min-height: 280px;
+    }
+
+    .vl-image-card--secondary img {
+      min-height: 280px;
+    }
+
+    .vl-image-card__content {
+      position: absolute;
+      z-index: 3;
+      right: 34px;
+      bottom: 32px;
+      left: 34px;
+    }
+
+    .vl-image-card__eyebrow {
+      display: block;
+      margin-bottom: 9px;
+      color: var(--vl-champagne);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.19em;
+      text-transform: uppercase;
+    }
+
+    .vl-image-card__title {
+      max-width: 650px;
+      margin: 0;
+      color: #ffffff;
+      font-family: var(--vl-heading);
+      font-size: clamp(32px, 3.8vw, 50px);
+      font-weight: 400;
+      line-height: 1.12;
+      text-wrap: balance;
+    }
+
+    .vl-image-card__copy {
+      max-width: 560px;
+      margin: 13px 0 0;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .vl-image-card--secondary .vl-image-card__title {
+      font-size: clamp(27px, 2.7vw, 37px);
+    }
+
+    /* =========================================================
+       ROUTE PANEL
+       ========================================================= */
+
+    .vl-route-panel {
+      position: relative;
+      overflow: hidden;
+      padding: 38px 36px 36px;
+      border: 1px solid var(--vl-border);
+      border-radius: var(--vl-radius-large);
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: var(--vl-shadow);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .vl-route-panel::before {
+      position: absolute;
+      top: -85px;
+      right: -78px;
+      width: 190px;
+      height: 190px;
+      border: 1px solid rgba(23, 59, 45, 0.055);
+      border-radius: 50%;
+      content: "";
+      pointer-events: none;
+    }
+
+    .vl-route-panel__header {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 30px;
+    }
+
+    .vl-route-panel__label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--vl-accent);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.19em;
+      text-transform: uppercase;
+    }
+
+    .vl-route-panel__title {
+      margin: 0;
+      color: var(--vl-primary);
+      font-family: var(--vl-heading);
+      font-size: 31px;
+      font-weight: 400;
+      line-height: 1.17;
+    }
+
+    .vl-route-panel__intro {
+      margin: 12px 0 0;
+      color: var(--vl-text-soft);
+      font-size: 15px;
+      line-height: 1.66;
+    }
+
+    /* =========================================================
+       ROUTE
+       ========================================================= */
+
+    .vl-route {
+      position: relative;
+      display: grid;
+      gap: 0;
+      margin-top: 8px;
+    }
+
+    .vl-route::before {
+      position: absolute;
+      top: 28px;
+      bottom: 28px;
+      left: 25px;
+      width: 1px;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(23, 59, 45, 0.08),
+          rgba(23, 59, 45, 0.34),
+          rgba(23, 59, 45, 0.08)
+        );
+      content: "";
+    }
+
+    .vl-stop {
+      position: relative;
+      display: grid;
+      grid-template-columns: 52px minmax(0, 1fr) auto;
+      min-height: 83px;
+      align-items: center;
+      gap: 14px;
+      padding: 10px 0;
+    }
+
+    .vl-stop__marker {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      width: 52px;
+      height: 52px;
+      place-items: center;
+      border: 1px solid rgba(23, 59, 45, 0.13);
+      border-radius: 50%;
+      background: var(--vl-surface-soft);
+      color: var(--vl-secondary);
+      box-shadow: 0 4px 12px rgba(23, 59, 45, 0.06);
+      transition:
+        background-color 0.28s ease,
+        color 0.28s ease,
+        transform 0.28s ease;
+    }
+
+    .vl-stop:hover .vl-stop__marker {
+      background: var(--vl-primary);
+      color: #ffffff;
+      transform: scale(1.04);
+    }
+
+    .vl-stop__marker svg {
+      width: 22px;
+      height: 22px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.55;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .vl-stop__name {
+      display: block;
+      color: var(--vl-primary);
+      font-family: var(--vl-heading);
+      font-size: 21px;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .vl-stop__note {
+      display: block;
+      margin-top: 5px;
+      color: var(--vl-text-muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .vl-stop__distance {
+      min-width: 92px;
+      padding: 8px 11px;
+      border: 1px solid rgba(23, 59, 45, 0.1);
+      border-radius: 999px;
+      background: rgba(247, 244, 238, 0.9);
+      color: var(--vl-secondary);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      line-height: 1.35;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .vl-stop--vanara {
+      margin: 7px 0;
+      padding: 13px 14px;
+      border: 1px solid rgba(178, 138, 70, 0.34);
+      border-radius: 20px;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(232, 223, 201, 0.55),
+          rgba(255, 255, 255, 0.88)
+        );
+    }
+
+    .vl-stop--vanara .vl-stop__marker {
+      border-color: var(--vl-accent);
+      background: var(--vl-primary);
+      color: #ffffff;
+      box-shadow: 0 8px 20px rgba(23, 59, 45, 0.18);
+    }
+
+    .vl-stop--vanara .vl-stop__name {
+      font-size: 24px;
+    }
+
+    .vl-stop--vanara .vl-stop__note {
+      color: var(--vl-secondary);
+      font-weight: 600;
+    }
+
+    .vl-stop--vanara .vl-stop__distance {
+      border-color: rgba(178, 138, 70, 0.35);
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--vl-accent);
+    }
+
+    /* =========================================================
+       QUICK FACTS
+       ========================================================= */
+
+    .vl-facts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .vl-fact {
+      display: flex;
+      min-height: 84px;
+      align-items: center;
+      gap: 13px;
+      padding: 15px 16px;
+      border: 1px solid var(--vl-border);
+      border-radius: 18px;
+      background: rgba(247, 244, 238, 0.74);
+      transition:
+        background-color 0.28s ease,
+        border-color 0.28s ease,
+        transform 0.28s ease;
+    }
+
+    .vl-fact:hover {
+      border-color: rgba(23, 59, 45, 0.2);
+      background: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .vl-fact__icon {
+      display: grid;
+      width: 39px;
+      height: 39px;
+      flex: 0 0 39px;
+      place-items: center;
+      border-radius: 50%;
+      background: #ffffff;
+      color: var(--vl-secondary);
+      box-shadow: 0 4px 12px rgba(23, 59, 45, 0.05);
+    }
+
+    .vl-fact__icon svg {
+      width: 19px;
+      height: 19px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.55;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .vl-fact__title {
+      display: block;
+      color: var(--vl-primary);
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .vl-fact__text {
+      display: block;
+      margin-top: 3px;
+      color: var(--vl-text-muted);
+      font-size: 11px;
+      line-height: 1.4;
+    }
+
+    /* =========================================================
+       MAP CTA
+       ========================================================= */
+
+    .vl-map-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      margin-top: 24px;
+      padding: 22px 24px;
+      border-radius: 20px;
+      background: var(--vl-primary);
+      color: #ffffff;
+    }
+
+    .vl-map-cta__copy {
+      min-width: 0;
+    }
+
+    .vl-map-cta__eyebrow {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--vl-champagne);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .vl-map-cta__title {
+      display: block;
+      font-family: var(--vl-heading);
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .vl-map-cta__button {
+      display: inline-flex;
+      min-height: 48px;
+      flex: 0 0 auto;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.68);
+      border-radius: 18px;
+      background: transparent;
+      color: #ffffff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      transition:
+        background-color 0.28s ease,
+        color 0.28s ease,
+        gap 0.28s ease,
+        transform 0.28s ease;
+    }
+
+    .vl-map-cta__button:hover {
+      gap: 13px;
+      background: #ffffff;
+      color: var(--vl-primary);
+      transform: translateY(-2px);
+    }
+
+    .vl-map-cta__button:focus-visible {
+      outline: 3px solid rgba(255, 255, 255, 0.38);
+      outline-offset: 4px;
+    }
+
+    .vl-map-cta__button svg {
+      width: 17px;
+      height: 17px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* =========================================================
+       REVEAL
+       ========================================================= */
+
+    .vl-reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition:
+        opacity 0.75s ease,
+        transform 0.75s ease;
+    }
+
+    .vl-reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .vl-delay-1 {
+      transition-delay: 0.08s;
+    }
+
+    .vl-delay-2 {
+      transition-delay: 0.16s;
+    }
+
+    /* =========================================================
+       TABLET
+       ========================================================= */
+
+    @media (max-width: 1024px) {
+      .vl-section {
+        padding: 82px 22px 90px;
+      }
+
+      .vl-header {
+        margin-bottom: 44px;
+      }
+
+      .vl-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .vl-image-card--main,
+      .vl-image-card--main img {
+        min-height: 500px;
+      }
+
+      .vl-column--visual {
+        grid-template-columns: 1.3fr 0.7fr;
+      }
+
+      .vl-image-card--secondary,
+      .vl-image-card--secondary img {
+        min-height: 500px;
+      }
+    }
+
+    /* =========================================================
+       MOBILE
+       ========================================================= */
+
+    @media (max-width: 700px) {
+      .vl-section {
+        padding: 66px 16px 72px;
+      }
+
+      .vl-header {
+        margin-bottom: 36px;
+      }
+
+      .vl-eyebrow {
+        gap: 9px;
+        font-size: 9px;
+        letter-spacing: 0.17em;
+      }
+
+      .vl-eyebrow::before,
+      .vl-eyebrow::after {
+        width: 27px;
+      }
+
+      .vl-title {
+        font-size: 41px;
+      }
+
+      .vl-subtitle {
+        font-size: 17px;
+      }
+
+      .vl-layout,
+      .vl-column {
+        gap: 16px;
+      }
+
+      .vl-column--visual {
+        grid-template-columns: 1fr;
+      }
+
+      .vl-image-card,
+      .vl-route-panel {
+        border-radius: 21px;
+      }
+
+      .vl-image-card--main,
+      .vl-image-card--main img {
+        min-height: 400px;
+      }
+
+      .vl-image-card--secondary,
+      .vl-image-card--secondary img {
+        min-height: 300px;
+      }
+
+      .vl-image-card__content {
+        right: 22px;
+        bottom: 22px;
+        left: 22px;
+      }
+
+      .vl-image-card__title {
+        font-size: 32px;
+      }
+
+      .vl-image-card--secondary .vl-image-card__title {
+        font-size: 28px;
+      }
+
+      .vl-route-panel {
+        padding: 30px 22px 24px;
+      }
+
+      .vl-route-panel__title {
+        font-size: 28px;
+      }
+
+      .vl-stop {
+        grid-template-columns: 48px minmax(0, 1fr);
+        min-height: 87px;
+        gap: 13px;
+      }
+
+      .vl-route::before {
+        left: 23px;
+      }
+
+      .vl-stop__marker {
+        width: 48px;
+        height: 48px;
+      }
+
+      .vl-stop__distance {
+        grid-column: 2;
+        width: fit-content;
+        min-width: 0;
+        margin-top: -17px;
+        padding: 6px 10px;
+      }
+
+      .vl-stop--vanara {
+        margin: 6px 0;
+        padding: 14px 12px;
+      }
+
+      .vl-facts {
+        grid-template-columns: 1fr;
+      }
+
+      .vl-map-cta {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .vl-map-cta__button {
+        width: 100%;
+      }
+    }
+
+    /* =========================================================
+       REDUCED MOTION
+       ========================================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .vl-reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  
+/* ==================== EXPLORE KOH CHANG ==================== */
+
+    @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&family=Marcellus&display=swap");
+
+    :root {
+      --ek-bg: #f7f4ee;
+      --ek-surface: #ffffff;
+      --ek-primary: #173b2d;
+      --ek-secondary: #2c5e47;
+      --ek-soft: #5f6e65;
+      --ek-muted: #7c887f;
+      --ek-accent: #b28a46;
+      --ek-champagne: #e8dfc9;
+      --ek-border: rgba(23, 59, 45, 0.1);
+      --ek-shadow: 0 16px 46px rgba(23, 59, 45, 0.09);
+      --ek-shadow-hover: 0 24px 62px rgba(23, 59, 45, 0.14);
+      --ek-heading: "Marcellus", Georgia, serif;
+      --ek-body: "Lato", Arial, sans-serif;
+      --ek-radius: 28px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background: transparent;
+    }
+
+    body {
+      color: var(--ek-primary);
+      font-family: var(--ek-body);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .ek-section {
+      position: relative;
+      overflow: hidden;
+      padding: 96px 24px 104px;
+      background:
+        radial-gradient(
+          circle at 3% 8%,
+          rgba(44, 94, 71, 0.07),
+          transparent 22%
+        ),
+        radial-gradient(
+          circle at 96% 92%,
+          rgba(178, 138, 70, 0.06),
+          transparent 20%
+        ),
+        var(--ek-bg);
+    }
+
+    .ek-container {
+      width: min(1280px, 100%);
+      margin: 0 auto;
+    }
+
+    /* HERO */
+
+    .ek-hero {
+      position: relative;
+      min-height: 560px;
+      overflow: hidden;
+      border-radius: var(--ek-radius);
+      background: var(--ek-primary);
+      box-shadow: var(--ek-shadow);
+      isolation: isolate;
+    }
+
+    .ek-hero::after {
+      position: absolute;
+      z-index: 2;
+      inset: 0;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(5, 20, 13, 0.74) 0%,
+          rgba(5, 20, 13, 0.4) 42%,
+          rgba(5, 20, 13, 0.05) 75%
+        ),
+        linear-gradient(
+          180deg,
+          rgba(5, 20, 13, 0.02) 15%,
+          rgba(5, 20, 13, 0.34) 100%
+        );
+      content: "";
+      pointer-events: none;
+    }
+
+    .ek-hero img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1.15s cubic-bezier(0.2, 0.7, 0, 1);
+    }
+
+    .ek-hero:hover img {
+      transform: scale(1.035);
+    }
+
+    .ek-hero__content {
+      position: relative;
+      z-index: 3;
+      display: grid;
+      width: min(690px, 68%);
+      min-height: 560px;
+      align-content: end;
+      padding: 68px 68px 64px;
+    }
+
+    .ek-eyebrow {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 19px;
+      color: var(--ek-champagne);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .ek-eyebrow::before {
+      width: 40px;
+      height: 1px;
+      background: currentColor;
+      content: "";
+      opacity: 0.7;
+    }
+
+    .ek-hero__title {
+      margin: 0;
+      color: #ffffff;
+      font-family: var(--ek-heading);
+      font-size: clamp(48px, 5.6vw, 76px);
+      font-weight: 400;
+      line-height: 1.03;
+      text-wrap: balance;
+    }
+
+    .ek-hero__intro {
+      max-width: 600px;
+      margin: 22px 0 0;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: clamp(16px, 1.45vw, 19px);
+      line-height: 1.68;
+      text-wrap: balance;
+    }
+
+    /* EDITORIAL GRID */
+
+    .ek-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 26px;
+      margin-top: 74px;
+    }
+
+    .ek-card {
+      position: relative;
+      min-height: 430px;
+      overflow: hidden;
+      border-radius: var(--ek-radius);
+      background: var(--ek-primary);
+      box-shadow: var(--ek-shadow);
+      isolation: isolate;
+      transition:
+        transform 0.42s ease,
+        box-shadow 0.42s ease;
+    }
+
+    .ek-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--ek-shadow-hover);
+    }
+
+    .ek-card--beaches {
+      grid-column: span 7;
+    }
+
+    .ek-card--nature {
+      grid-column: span 5;
+      min-height: 560px;
+    }
+
+    .ek-card--local {
+      grid-column: span 5;
+      min-height: 560px;
+    }
+
+    .ek-card--sunsets {
+      grid-column: span 7;
+    }
+
+    .ek-card::after {
+      position: absolute;
+      z-index: 2;
+      inset: 0;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(5, 20, 13, 0.02) 25%,
+          rgba(5, 20, 13, 0.68) 100%
+        );
+      content: "";
+      pointer-events: none;
+    }
+
+    .ek-card img {
+      width: 100%;
+      height: 100%;
+      min-height: inherit;
+      object-fit: cover;
+      transition: transform 1s cubic-bezier(0.2, 0.7, 0, 1);
+    }
+
+    .ek-card:hover img {
+      transform: scale(1.045);
+    }
+
+    .ek-card__content {
+      position: absolute;
+      z-index: 3;
+      right: 30px;
+      bottom: 28px;
+      left: 30px;
+    }
+
+    .ek-card__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 15px;
+    }
+
+    .ek-card__label {
+      color: var(--ek-champagne);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .ek-card__icon {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 50%;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .ek-card__icon svg {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.55;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .ek-card__title {
+      margin: 0;
+      color: #ffffff;
+      font-family: var(--ek-heading);
+      font-size: clamp(30px, 3vw, 42px);
+      font-weight: 400;
+      line-height: 1.1;
+      text-wrap: balance;
+    }
+
+    .ek-card__text {
+      max-width: 500px;
+      margin: 12px 0 0;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .ek-card__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 20px;
+      color: #ffffff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: gap 0.28s ease;
+    }
+
+    .ek-card__link:hover {
+      gap: 14px;
+    }
+
+    .ek-card__link svg {
+      width: 16px;
+      height: 16px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* CTA */
+
+    .ek-final {
+      position: relative;
+      min-height: 440px;
+      margin-top: 82px;
+      overflow: hidden;
+      border-radius: var(--ek-radius);
+      background: var(--ek-primary);
+      box-shadow: var(--ek-shadow);
+      isolation: isolate;
+    }
+
+    .ek-final::after {
+      position: absolute;
+      z-index: 2;
+      inset: 0;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(5, 20, 13, 0.1),
+          rgba(5, 20, 13, 0.72)
+        );
+      content: "";
+      pointer-events: none;
+    }
+
+    .ek-final img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1.15s cubic-bezier(0.2, 0.7, 0, 1);
+    }
+
+    .ek-final:hover img {
+      transform: scale(1.035);
+    }
+
+    .ek-final__content {
+      position: relative;
+      z-index: 3;
+      display: grid;
+      min-height: 440px;
+      place-items: center;
+      align-content: center;
+      padding: 56px 28px;
+      text-align: center;
+    }
+
+    .ek-final__eyebrow {
+      margin-bottom: 16px;
+      color: var(--ek-champagne);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .ek-final__title {
+      max-width: 680px;
+      margin: 0;
+      color: #ffffff;
+      font-family: var(--ek-heading);
+      font-size: clamp(42px, 5vw, 66px);
+      font-weight: 400;
+      line-height: 1.04;
+      text-wrap: balance;
+    }
+
+    .ek-final__text {
+      margin: 20px auto 0;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 16px;
+      line-height: 1.65;
+      text-wrap: balance;
+    }
+
+    .ek-final__button {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 30px;
+      padding: 14px 23px;
+      border: 1px solid rgba(255, 255, 255, 0.68);
+      border-radius: 18px;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        gap 0.3s ease,
+        transform 0.3s ease;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .ek-final__button:hover {
+      gap: 15px;
+      background: #ffffff;
+      color: var(--ek-primary);
+      transform: translateY(-2px);
+    }
+
+    .ek-final__button svg {
+      width: 17px;
+      height: 17px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* REVEAL */
+
+    .ek-reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition:
+        opacity 0.75s ease,
+        transform 0.75s ease;
+    }
+
+    .ek-reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .ek-delay-1 {
+      transition-delay: 0.07s;
+    }
+
+    .ek-delay-2 {
+      transition-delay: 0.14s;
+    }
+
+    .ek-delay-3 {
+      transition-delay: 0.21s;
+    }
+
+    /* TABLET */
+
+    @media (max-width: 1024px) {
+      .ek-section {
+        padding: 82px 22px 90px;
+      }
+
+      .ek-hero,
+      .ek-hero__content {
+        min-height: 520px;
+      }
+
+      .ek-hero__content {
+        width: min(720px, 78%);
+        padding: 56px 50px 54px;
+      }
+
+      .ek-grid {
+        gap: 22px;
+        margin-top: 62px;
+      }
+
+      .ek-card--beaches,
+      .ek-card--sunsets {
+        grid-column: span 12;
+      }
+
+      .ek-card--nature,
+      .ek-card--local {
+        grid-column: span 6;
+      }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+      .ek-section {
+        padding: 66px 16px 72px;
+      }
+
+      .ek-hero {
+        min-height: 610px;
+        border-radius: 22px;
+      }
+
+      .ek-hero::after {
+        background:
+          linear-gradient(
+            180deg,
+            rgba(5, 20, 13, 0.06) 15%,
+            rgba(5, 20, 13, 0.74) 78%,
+            rgba(5, 20, 13, 0.84) 100%
+          );
+      }
+
+      .ek-hero__content {
+        width: 100%;
+        min-height: 610px;
+        padding: 34px 24px 38px;
+      }
+
+      .ek-eyebrow {
+        gap: 9px;
+        font-size: 9px;
+        letter-spacing: 0.17em;
+      }
+
+      .ek-eyebrow::before {
+        width: 28px;
+      }
+
+      .ek-hero__title {
+        font-size: 43px;
+      }
+
+      .ek-hero__intro {
+        font-size: 16px;
+        line-height: 1.62;
+      }
+
+      .ek-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 48px;
+      }
+
+      .ek-card--beaches,
+      .ek-card--nature,
+      .ek-card--local,
+      .ek-card--sunsets {
+        grid-column: auto;
+      }
+
+      .ek-card {
+        min-height: 430px;
+        border-radius: 21px;
+      }
+
+      .ek-card--nature,
+      .ek-card--local {
+        min-height: 500px;
+      }
+
+      .ek-card__content {
+        right: 22px;
+        bottom: 22px;
+        left: 22px;
+      }
+
+      .ek-card__title {
+        font-size: 30px;
+      }
+
+      .ek-card__text {
+        font-size: 15px;
+      }
+
+      .ek-final {
+        min-height: 500px;
+        margin-top: 58px;
+        border-radius: 21px;
+      }
+
+      .ek-final__content {
+        min-height: 500px;
+        padding: 44px 24px;
+      }
+
+      .ek-final__title {
+        font-size: 41px;
+      }
+
+      .ek-final__button {
+        width: 100%;
+        max-width: 290px;
+      }
+    }
+
+    .ek-card__link:focus-visible,
+    .ek-final__button:focus-visible {
+      outline: 3px solid rgba(178, 138, 70, 0.34);
+      outline-offset: 4px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+
+      .ek-reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  
+/* ==================== FOOTER ==================== */
+
+    @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&family=Marcellus&display=swap");
+
+    :root {
+      --vf-deep: #102b21;
+      --vf-primary: #173b2d;
+      --vf-secondary: #2c5e47;
+      --vf-accent: #b28a46;
+      --vf-champagne: #e8dfc9;
+      --vf-white: #ffffff;
+      --vf-text: rgba(255, 255, 255, 0.78);
+      --vf-muted: rgba(255, 255, 255, 0.52);
+      --vf-border: rgba(255, 255, 255, 0.12);
+
+      --vf-heading: "Marcellus", Georgia, serif;
+      --vf-body: "Lato", Arial, sans-serif;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background: transparent;
+    }
+
+    body {
+      font-family: var(--vf-body);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    .vf-footer {
+      position: relative;
+      overflow: hidden;
+      color: var(--vf-white);
+      background:
+        radial-gradient(
+          circle at 8% 8%,
+          rgba(178, 138, 70, 0.12),
+          transparent 24%
+        ),
+        radial-gradient(
+          circle at 94% 88%,
+          rgba(82, 129, 100, 0.14),
+          transparent 25%
+        ),
+        linear-gradient(
+          145deg,
+          var(--vf-deep) 0%,
+          var(--vf-primary) 52%,
+          #0d261c 100%
+        );
+      isolation: isolate;
+    }
+
+    .vf-footer::before {
+      position: absolute;
+      z-index: -1;
+      top: -220px;
+      right: -130px;
+      width: 470px;
+      height: 470px;
+      border: 1px solid rgba(255, 255, 255, 0.045);
+      border-radius: 50%;
+      content: "";
+      pointer-events: none;
+    }
+
+    .vf-footer::after {
+      position: absolute;
+      z-index: -1;
+      bottom: -300px;
+      left: -210px;
+      width: 540px;
+      height: 540px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: 50%;
+      content: "";
+      pointer-events: none;
+    }
+
+    .vf-container {
+      width: min(1280px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    /* =========================================================
+       TOP CTA
+       ========================================================= */
+
+    .vf-cta {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 48px;
+      padding: 72px 0 66px;
+      border-bottom: 1px solid var(--vf-border);
+    }
+
+    .vf-cta__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      margin-bottom: 17px;
+      color: var(--vf-champagne);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    .vf-cta__eyebrow::before {
+      width: 39px;
+      height: 1px;
+      background: currentColor;
+      content: "";
+      opacity: 0.7;
+    }
+
+    .vf-cta__title {
+      max-width: 760px;
+      margin: 0;
+      font-family: var(--vf-heading);
+      font-size: clamp(38px, 4.7vw, 65px);
+      font-weight: 400;
+      letter-spacing: 0.005em;
+      line-height: 1.06;
+      text-wrap: balance;
+    }
+
+    .vf-cta__text {
+      max-width: 620px;
+      margin: 18px 0 0;
+      color: var(--vf-text);
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    .vf-cta__button {
+      display: inline-flex;
+      min-height: 56px;
+      flex: 0 0 auto;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      padding: 15px 25px;
+      border: 1px solid rgba(255, 255, 255, 0.54);
+      border-radius: 18px;
+      color: var(--vf-white);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      transition:
+        gap 0.28s ease,
+        color 0.28s ease,
+        background-color 0.28s ease,
+        border-color 0.28s ease,
+        transform 0.28s ease;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .vf-cta__button:hover {
+      gap: 16px;
+      border-color: var(--vf-white);
+      background: var(--vf-white);
+      color: var(--vf-primary);
+      transform: translateY(-2px);
+    }
+
+    .vf-cta__button svg {
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* =========================================================
+       MAIN CONTENT
+       ========================================================= */
+
+    .vf-main {
+      display: grid;
+      grid-template-columns:
+        minmax(280px, 1.45fr)
+        minmax(150px, 0.75fr)
+        minmax(150px, 0.75fr)
+        minmax(210px, 0.9fr);
+      gap: 54px;
+      padding: 66px 0 62px;
+    }
+
+    /* BRAND */
+
+    .vf-brand {
+      max-width: 390px;
+    }
+
+    .vf-logo {
+      display: inline-block;
+      width: 148px;
+      margin-bottom: 25px;
+    }
+
+    .vf-logo img {
+      width: 100%;
+      height: auto;
+      mix-blend-mode: screen;
+    }
+
+    .vf-brand__text {
+      margin: 0;
+      color: var(--vf-text);
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    .vf-brand__location {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      margin-top: 24px;
+      color: var(--vf-champagne);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      line-height: 1.6;
+      text-transform: uppercase;
+    }
+
+    .vf-brand__location svg {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 auto;
+      margin-top: 1px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* COLUMNS */
+
+    .vf-column__title {
+      margin: 3px 0 22px;
+      color: var(--vf-white);
+      font-family: var(--vf-heading);
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .vf-links {
+      display: grid;
+      gap: 15px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .vf-link {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 0;
+      color: var(--vf-text);
+      font-size: 14px;
+      line-height: 1.5;
+      transition:
+        gap 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+    }
+
+    .vf-link::before {
+      width: 0;
+      height: 1px;
+      background: var(--vf-accent);
+      content: "";
+      opacity: 0;
+      transition:
+        width 0.25s ease,
+        opacity 0.25s ease;
+    }
+
+    .vf-link:hover {
+      gap: 9px;
+      color: var(--vf-white);
+      transform: translateX(2px);
+    }
+
+    .vf-link:hover::before {
+      width: 18px;
+      opacity: 1;
+    }
+
+    /* EXPERIENCE */
+
+    .vf-note {
+      margin: 0;
+      color: var(--vf-text);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    .vf-note strong {
+      color: var(--vf-white);
+      font-weight: 600;
+    }
+
+    .vf-small-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 23px;
+      color: var(--vf-champagne);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition:
+        gap 0.25s ease,
+        color 0.25s ease;
+    }
+
+    .vf-small-button:hover {
+      gap: 14px;
+      color: var(--vf-white);
+    }
+
+    .vf-small-button svg {
+      width: 16px;
+      height: 16px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+
+    /* CONTACT */
+
+    .vf-contact {
+      display: grid;
+      gap: 18px;
+    }
+
+    .vf-contact__item {
+      display: grid;
+      gap: 5px;
+    }
+
+    .vf-contact__label {
+      color: var(--vf-champagne);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    .vf-contact__value {
+      width: fit-content;
+      color: var(--vf-text);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.65;
+      transition: color 0.25s ease;
+    }
+
+    a.vf-contact__value:hover {
+      color: var(--vf-white);
+    }
+
+    /* =========================================================
+       BOTTOM BAR
+       ========================================================= */
+
+    .vf-bottom {
+      display: flex;
+      min-height: 82px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      border-top: 1px solid var(--vf-border);
+    }
+
+    .vf-copyright {
+      margin: 0;
+      color: var(--vf-muted);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .vf-bottom__links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px 24px;
+    }
+
+    .vf-bottom__link {
+      color: var(--vf-muted);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.25s ease;
+    }
+
+    .vf-bottom__link:hover {
+      color: var(--vf-white);
+    }
+
+    /* =========================================================
+       FOCUS
+       ========================================================= */
+
+    .vf-footer a:focus-visible {
+      outline: 3px solid rgba(178, 138, 70, 0.45);
+      outline-offset: 5px;
+    }
+
+    /* =========================================================
+       TABLET
+       ========================================================= */
+
+    @media (max-width: 1024px) {
+      .vf-cta {
+        grid-template-columns: 1fr;
+        gap: 31px;
+      }
+
+      .vf-cta__button {
+        width: fit-content;
+      }
+
+      .vf-main {
+        grid-template-columns: minmax(280px, 1.3fr) repeat(2, 1fr);
+        gap: 50px 38px;
+      }
+
+      .vf-main__experience {
+        grid-column: 2 / 4;
+      }
+    }
+
+    /* =========================================================
+       MOBILE
+       ========================================================= */
+
+    @media (max-width: 700px) {
+      .vf-container {
+        width: min(100% - 32px, 1280px);
+      }
+
+      .vf-cta {
+        gap: 28px;
+        padding: 56px 0 52px;
+      }
+
+      .vf-cta__eyebrow {
+        gap: 9px;
+        font-size: 9px;
+        letter-spacing: 0.17em;
+      }
+
+      .vf-cta__eyebrow::before {
+        width: 27px;
+      }
+
+      .vf-cta__title {
+        font-size: 39px;
+      }
+
+      .vf-cta__text {
+        font-size: 16px;
+      }
+
+      .vf-cta__button {
+        width: 100%;
+      }
+
+      .vf-main {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 46px 24px;
+        padding: 54px 0 52px;
+      }
+
+      .vf-brand {
+        grid-column: 1 / -1;
+        max-width: none;
+      }
+
+      .vf-main__experience {
+        grid-column: 1 / -1;
+      }
+
+      .vf-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        gap: 15px;
+        padding: 25px 0 28px;
+      }
+
+      .vf-bottom__links {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .vf-main {
+        grid-template-columns: 1fr;
+      }
+
+      .vf-brand,
+      .vf-main__experience {
+        grid-column: auto;
+      }
+    }
+
+    /* =========================================================
+       REDUCED MOTION
+       ========================================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  
+
+/* ==================== UNIFIED HOMEPAGE OVERRIDES ==================== */
+html,
+body {
+  width: 100%;
+  height: auto !important;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden !important;
+  overflow-y: visible !important;
+  background: transparent;
+}
+
+body {
+  display: block !important;
+}
+
+#vanara-homepage {
+  width: 100%;
+  overflow: visible;
+}
+
+#vanara-homepage > * {
+  width: 100%;
+}
+
+  </style>
+<link href="assets/css/footer.css" rel="stylesheet"/></head>
+<body>
+<header class="site-header" data-site-header="">
+<div class="site-header__inner">
+<nav aria-label="Primary navigation" class="site-header__nav site-header__nav--left">
+<a class="site-header__link" href="/">Home</a>
+<a class="site-header__link" href="index.html#accommodation">Rooms</a>
+<a class="site-header__link" href="index.html#why-vanara">The Resort</a>
+</nav>
+<a aria-label="Vanara Eco Resort — Back to homepage" class="site-header__logo" data-scroll-top="" href="/">
+<img alt="Vanara Eco Resort" height="110" src="assets/img/logo.png" width="220"/>
+</a>
+<nav aria-label="Secondary navigation" class="site-header__nav site-header__nav--right">
+<a class="site-header__link" href="index.html#explore-koh-chang">Koh Chang</a>
+<a class="site-header__link" href="index.html#reviews">Reviews</a>
+<a class="site-header__link" href="index.html#location">Location</a>
+<a class="site-header__booking" href="https://beds24.com/booking.php?propid=332906" rel="noopener noreferrer" target="_blank">
+          Book Now
+        </a>
+</nav>
+<button aria-controls="mobile-navigation" aria-expanded="false" aria-label="Open navigation menu" class="site-header__menu-button" data-menu-open="" type="button">
+<span class="site-header__menu-line"></span>
+<span class="site-header__menu-line"></span>
+<span class="site-header__menu-line"></span>
+</button>
+</div>
+</header>
+<div aria-hidden="true" class="mobile-menu" data-mobile-menu="" id="mobile-navigation">
+<div class="mobile-menu__backdrop" data-menu-close=""></div>
+<div class="mobile-menu__panel">
+<div aria-hidden="true" class="mobile-menu__ambient"></div>
+<div class="mobile-menu__header">
+<a aria-label="Vanara Eco Resort — Homepage" class="mobile-menu__logo" href="/">
+<img alt="Vanara Eco Resort" height="110" src="assets/img/logo.png" width="220"/>
+</a>
+<button aria-label="Close navigation menu" class="mobile-menu__close" data-menu-close="" type="button">
+<span></span>
+<span></span>
+</button>
+</div>
+<div class="mobile-menu__content">
+<nav aria-label="Mobile navigation" class="mobile-menu__navigation">
+<a class="mobile-menu__link" data-menu-link="" href="/">
+<span class="mobile-menu__number">01</span>
+<span class="mobile-menu__label">Home</span>
+</a>
+<a class="mobile-menu__link" data-menu-link="" href="index.html#accommodation">
+<span class="mobile-menu__number">02</span>
+<span class="mobile-menu__label">Rooms</span>
+</a>
+<a class="mobile-menu__link" data-menu-link="" href="index.html#why-vanara">
+<span class="mobile-menu__number">03</span>
+<span class="mobile-menu__label">The Resort</span>
+</a>
+<a class="mobile-menu__link" data-menu-link="" href="index.html#explore-koh-chang">
+<span class="mobile-menu__number">04</span>
+<span class="mobile-menu__label">Koh Chang</span>
+</a>
+<a class="mobile-menu__link" data-menu-link="" href="index.html#reviews">
+<span class="mobile-menu__number">05</span>
+<span class="mobile-menu__label">Reviews</span>
+</a>
+<a class="mobile-menu__link" data-menu-link="" href="index.html#location">
+<span class="mobile-menu__number">06</span>
+<span class="mobile-menu__label">Location</span>
+</a>
+</nav>
+<a class="mobile-menu__booking" href="https://beds24.com/booking.php?propid=332906" rel="noopener noreferrer" target="_blank">
+<span>Book Your Stay</span>
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 12h14M13 6l6 6-6 6"></path>
+</svg>
+</a>
+</div>
+<div class="mobile-menu__footer">
+<p class="mobile-menu__eyebrow">Stay connected</p>
+<div class="mobile-menu__socials">
+<a aria-label="Instagram" class="mobile-menu__social" href="https://www.instagram.com/vanarakc/" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<rect height="18" rx="5" width="18" x="3" y="3"></rect>
+<circle cx="12" cy="12" r="4"></circle>
+<circle cx="17.5" cy="6.5" r="1"></circle>
+</svg>
+<span>Instagram</span>
+</a>
+<a aria-label="Facebook" class="mobile-menu__social" href="https://www.facebook.com/profile.php?id=61592035281599" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M14 8h3V4h-3c-3.3 0-5 2-5 5v3H6v4h3v8h4v-8h3.5l.5-4h-4V9c0-.7.3-1 1-1z"></path>
+</svg>
+<span>Facebook</span>
+</a>
+<a aria-label="WhatsApp" class="mobile-menu__social" href="https://wa.me/66990686997" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M20 11.7A8 8 0 0 1 8.2 18.8L4 20l1.2-4A8 8 0 1 1 20 11.7z"></path>
+<path d="M9 8.5c.4 2.4 2.2 4.2 4.6 4.8"></path>
+</svg>
+<span>WhatsApp</span>
+</a>
+<a aria-label="LINE" class="mobile-menu__social" href="https://line.me/ti/p/PPEPu7SumG" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M21 11c0 4.4-4 8-9 8-.8 0-1.6-.1-2.3-.3L5 21l1.2-3.5A7.6 7.6 0 0 1 3 11c0-4.4 4-8 9-8s9 3.6 9 8z"></path>
+<path d="M7 9v4h2M10 9v4M13 9v4M13 9l3 4V9M17 9h3M17 11h2"></path>
+</svg>
+<span>LINE</span>
+</a>
+</div>
+<p class="mobile-menu__location">
+          Bailan Bay · Koh Chang · Thailand
+        </p>
+</div>
+</div>
+</div>
+<main id="vanara-homepage">
+<!-- ==================== HERO ==================== -->
+<section aria-label="Vanara Eco Resort" class="hero">
+<div aria-label="Vanara Eco Resort immersed in the tropical jungle of Koh Chang" class="hero-media" role="img"></div>
+<div class="hero-overlay"></div><div class="hero-vignette"></div>
+<div class="hero-content">
+<p class="eyebrow">Jungle Eco Resort · Koh Chang, Thailand</p>
+<h1 class="title"><span class="title-line">The Jungle Isn't Around You.</span><span class="title-line"><em>You're Inside It.</em></span></h1>
+<p class="subtitle">An authentic tropical retreat where peaceful comfort, genuine hospitality and the rhythms of the rainforest become part of every stay.</p>
+<div class="actions">
+<button class="cta cta-primary" data-book="" type="button">Book Direct<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></button>
+<button class="cta cta-secondary" data-scroll="resort" type="button">Discover the Resort<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></button>
+</div>
+</div>
+<button aria-label="Scroll to discover Vanara" class="scroll-cue" data-scroll="rooms" type="button"><span class="scroll-cue-label">Discover</span><span class="scroll-cue-line"></span></button>
+</section>
+<!-- ==================== REVIEWS ==================== -->
+<section aria-labelledby="reviews-title" class="reviews-section" id="reviews">
+<div class="reviews-container">
+<header class="reviews-header reveal-item">
+<div class="reviews-eyebrow">Guest Experience</div>
+<h2 class="reviews-title" id="reviews-title">
+          Trusted by Travellers Worldwide
+        </h2>
+<p class="reviews-intro">
+          Hundreds of guests have shared their experience after staying
+          immersed in the tropical nature of Koh Chang.
+        </p>
+</header>
+<div class="reviews-total reveal-item">
+<div aria-hidden="true" class="reviews-total__icon">
+<svg fill="none" viewbox="0 0 24 24">
+<path d="M12 21V10M12 15C9 15 6.5 12.8 6.5 9.5C9.5 9.5 12 11.7 12 15ZM12 12C12 8.2 14.7 5.2 18.5 4.5C18.7 8.3 16 11.5 12 12Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+</div>
+<div class="reviews-total__number">431</div>
+<div class="reviews-total__copy">
+<strong>Verified Guest Reviews</strong>
+<span>Across four leading travel platforms</span>
+</div>
+</div>
+<div class="reviews-grid">
+<!-- BOOKING.COM -->
+<article class="review-card reveal-item">
+<div class="review-card__logo-space">
+<img alt="Booking.com" src="https://static.wixstatic.com/media/c090c7_d28d6e7767194e03a10187c4aac07375~mv2.jpg"/>
+</div>
+<div class="review-card__score">8.7</div>
+<div class="review-card__scale">Out of 10</div>
+<div class="review-card__label">Fabulous</div>
+<div aria-label="Excellent rating" class="review-card__stars">
+            ★ ★ ★ ★ ☆
+          </div>
+<div class="review-card__divider"></div>
+<div class="review-card__reviews">
+<svg aria-hidden="true" fill="none" viewbox="0 0 24 24">
+<path d="M16 21V19C16 16.8 14.2 15 12 15H6C3.8 15 2 16.8 2 19V21M9 11C11.2 11 13 9.2 13 7C13 4.8 11.2 3 9 3C6.8 3 5 4.8 5 7C5 9.2 6.8 11 9 11ZM17 11C18.7 11 20 9.7 20 8C20 6.3 18.7 5 17 5M22 21V19C22 17.3 20.7 16 19 16" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
+</svg>
+            124 reviews
+          </div>
+<div aria-label="Booking.com" class="review-card__platform">
+            Booking.com
+          </div>
+</article>
+<!-- AIRBNB -->
+<article class="review-card reveal-item">
+<div class="review-card__logo-space">
+<img alt="Airbnb" src="https://static.wixstatic.com/media/c090c7_008b41e288a44d0892ddafd6472e1ebb~mv2.jpg"/>
+</div>
+<div class="review-card__score">4.7</div>
+<div class="review-card__scale">Out of 5</div>
+<div class="review-card__label">Guest Favourite</div>
+<div aria-label="Guest favourite rating" class="review-card__stars">
+            ★ ★ ★ ★ ☆
+          </div>
+<div class="review-card__divider"></div>
+<div class="review-card__reviews">
+<svg aria-hidden="true" fill="none" viewbox="0 0 24 24">
+<path d="M16 21V19C16 16.8 14.2 15 12 15H6C3.8 15 2 16.8 2 19V21M9 11C11.2 11 13 9.2 13 7C13 4.8 11.2 3 9 3C6.8 3 5 4.8 5 7C5 9.2 6.8 11 9 11ZM17 11C18.7 11 20 9.7 20 8C20 6.3 18.7 5 17 5M22 21V19C22 17.3 20.7 16 19 16" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
+</svg>
+            68 reviews
+          </div>
+<div aria-label="Airbnb" class="review-card__platform">
+            Airbnb
+          </div>
+</article>
+<!-- GOOGLE -->
+<article class="review-card reveal-item">
+<div class="review-card__logo-space">
+<img alt="Google" src="https://static.wixstatic.com/media/c090c7_2c11ff0c50574e0ea50e28e4dd9453c4~mv2.jpg"/>
+</div>
+<div class="review-card__score">4.6</div>
+<div class="review-card__scale">Out of 5</div>
+<div class="review-card__label">Highly Rated</div>
+<div aria-label="Highly rated" class="review-card__stars">
+            ★ ★ ★ ★ ☆
+          </div>
+<div class="review-card__divider"></div>
+<div class="review-card__reviews">
+<svg aria-hidden="true" fill="none" viewbox="0 0 24 24">
+<path d="M16 21V19C16 16.8 14.2 15 12 15H6C3.8 15 2 16.8 2 19V21M9 11C11.2 11 13 9.2 13 7C13 4.8 11.2 3 9 3C6.8 3 5 4.8 5 7C5 9.2 6.8 11 9 11ZM17 11C18.7 11 20 9.7 20 8C20 6.3 18.7 5 17 5M22 21V19C22 17.3 20.7 16 19 16" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
+</svg>
+            108 reviews
+          </div>
+<div aria-label="Google" class="review-card__platform">
+            Google
+          </div>
+</article>
+<!-- AGODA -->
+<article class="review-card reveal-item">
+<div class="review-card__logo-space">
+<img alt="Agoda" src="https://static.wixstatic.com/media/c090c7_0cce24a391164075856991e068da1f31~mv2.jpg"/>
+</div>
+<div class="review-card__score">8.6</div>
+<div class="review-card__scale">Out of 10</div>
+<div class="review-card__label">Excellent</div>
+<div aria-label="Excellent rating" class="review-card__stars">
+            ★ ★ ★ ★ ☆
+          </div>
+<div class="review-card__divider"></div>
+<div class="review-card__reviews">
+<svg aria-hidden="true" fill="none" viewbox="0 0 24 24">
+<path d="M16 21V19C16 16.8 14.2 15 12 15H6C3.8 15 2 16.8 2 19V21M9 11C11.2 11 13 9.2 13 7C13 4.8 11.2 3 9 3C6.8 3 5 4.8 5 7C5 9.2 6.8 11 9 11ZM17 11C18.7 11 20 9.7 20 8C20 6.3 18.7 5 17 5M22 21V19C22 17.3 20.7 16 19 16" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
+</svg>
+            131 reviews
+          </div>
+<div aria-label="Agoda" class="review-card__platform">
+            Agoda
+          </div>
+</article>
+</div>
+<div class="reviews-footer reveal-item">
+<svg aria-hidden="true" fill="none" viewbox="0 0 24 24">
+<path d="M20 4C14 4 8 7 6 13C5 16 7 19 10 20C14 21 18 17 20 4ZM5 21C7 15 11 11 16 8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+<span>Real guests. Real experiences. Naturally Vanara.</span>
+</div>
+</div>
+</section>
+<!-- ==================== ACCOMMODATION ==================== -->
+<section aria-labelledby="va-accommodation-title" class="va-accommodation" id="accommodation">
+<div class="va-container">
+<header class="va-section-header va-reveal">
+<div class="va-eyebrow">Accommodation</div>
+<h2 class="va-title" id="va-accommodation-title">
+          Stay Your Way
+        </h2>
+<p class="va-subtitle">
+          Three distinct ways to experience Vanara, each designed around
+          comfort, atmosphere and a deeper connection with tropical nature.
+        </p>
+</header>
+<div class="va-list">
+<!-- =====================================================
+             GARDEN BUNGALOW
+             Replace the placeholder with:
+             <img class="va-stay__image" src="YOUR-IMAGE.jpg" alt="Garden Bungalow surrounded by tropical vegetation">
+        ====================================================== -->
+<article aria-labelledby="va-bungalow-title" class="va-stay va-reveal">
+<div class="va-stay__media">
+<img alt="Garden Bungalow surrounded by tropical gardens" class="va-stay__image" src="https://static.wixstatic.com/media/c090c7_3084ed76a5c04697a6de17c55d6f2991~mv2.png"/>
+<div aria-hidden="true" class="va-stay__number">01</div>
+<div class="va-stay__image-label">Balanced Jungle Living</div>
+</div>
+<div class="va-stay__body">
+<div class="va-stay__intro">
+<h3 class="va-stay__name" id="va-bungalow-title">
+                Garden Bungalow
+              </h3>
+<div class="va-stay__tagline">
+                Private · Comfortable · Naturally Immersive
+              </div>
+<p class="va-stay__description">
+                A peaceful private bungalow surrounded by Vanara’s tropical
+                garden. Designed for couples and solo travellers who want a
+                comfortable base for exploring Koh Chang without losing the
+                feeling of living inside nature.
+              </p>
+</div>
+<div class="va-stay__meta">
+<ul aria-label="Garden Bungalow highlights" class="va-features">
+<li class="va-feature">
+<span aria-hidden="true" class="va-feature__icon">
+<svg viewbox="0 0 24 24">
+<rect height="16" rx="2" width="16" x="4" y="4"></rect>
+<path d="M8 8h8v8H8z"></path>
+</svg>
+</span>
+<span>16 sqm</span>
+</li>
+<li class="va-feature">
+<span aria-hidden="true" class="va-feature__icon">
+<svg viewbox="0 0 24 24">
+<path d="M4 18v-8h16v8"></path>
+<path d="M4 14h16"></path>
+<path d="M7 10V7h5v3"></path>
+</svg>
+</span>
+<span>King Bed</span>
+</li>
+<li class="va-feature">
+<span aria-hidden="true" class="va-feature__icon">
+<svg viewbox="0 0 24 24">
+<path d="M12 21V9"></path>
+<path d="M12 14c-3 0-5-2-5-5 3 0 5 2 5 5Z"></path>
+<path d="M12 11c0-3 2-5 5-5 0 3-2 5-5 5Z"></path>
+</svg>
+</span>
+<span>Garden View</span>
+</li>
+<li class="va-feature">
+<span aria-hidden="true" class="va-feature__icon">
+<svg viewbox="0 0 24 24">
+<path d="M7 4h10v16H7z"></path>
+<path d="M14 12h.01"></path>
+</svg>
+</span>
+<span>Private Bathroom</span>
+</li>
+</ul>
+<div class="va-stay__divider"></div>
+<a aria-label="Explore Garden Bungalow" class="va-stay__cta" href="https://www.vanarakc.com/junglebungalow" rel="noopener" target="_blank">
+                Explore Bungalow
+                <svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 12h14"></path>
+<path d="m13 6 6 6-6 6"></path>
+</svg>
+</a>
+</div>
+</div>
+</article>
+<!-- =====================================================
+             GARDEN VILLA
+        ====================================================== -->
+<article aria-labelledby="va-villa-title" class="va-stay va-stay--reverse va-reveal">
+<div class="va-stay__media">
+<img alt="Garden Villa surrounded by lush tropical gardens" class="va-stay__image" src="https://static.wixstatic.com/media/c090c7_67739197f86346598a1490e055c2f71d~mv2.png"/>
+<div aria-hidden="true" class="va-stay__number">02</div>
+<div class="va-stay__image-label">Space Within Nature</div>
+</div>
+<div class="va-stay__body">
+<div class="va-stay__intro">
+<h3 class="va-stay__name" id="va-villa-title">
+                Garden Villa
+              </h3>
+<div class="va-stay__tagline">
+                Spacious · Flexible · Relaxed
+              </div>
+<p class="va-stay__description">
+                A generous open-plan villa for families, friends or couples who
+                value significantly more interior space while preserving the
+                same peaceful garden atmosphere found throughout Vanara.
+              </p>
+</div>
+<div class="va-stay__meta">
+<ul aria-label="Garden Villa highlights" class="va-features">
+<li class="va-feature">
+<span aria-hidden="true" class="va-feature__icon">
+<svg viewbox="0 0 24 24">
+<rect height="16" rx="2" width="16" x="4" y="4"></rect>
+<path d="M8 8h8v8H8z"></path>
+</svg>
+</span>
+<span>57 sqm</span>
+</li>
+<li class="va-feature">
+<span aria-hidden="true" class="va-feature__icon">
+<svg viewbox="0 0 24 24">
+<path d="M4 18v-8h16v8"></path>
+<path d="M4 14h16"></path>
+<path d="M7 10V7h5v3"></path>
+</svg>
+</span>
+<span>King + 2 Singles</span>
+</li>
+<li class="va-feature">
+<span aria-hidden="true" class="va-feature__icon">
+<svg viewbox="0 0 24 24">
+<path d="M4 19h16"></path>
+<path d="M6 19V9h12v10"></path>
+<path d="M8 9V5h8v4"></path>
+</svg>
+</span>
+<span>Private Patio</span>
+</li>
+<li class="va-feature">
+<span aria-hidden="true" class="va-feature__icon">
+<svg viewbox="0 0 24 24">
+<circle cx="9" cy="8" r="2.5"></circle>
+<circle cx="16" cy="9" r="2"></circle>
+<path d="M4 19c.5-3 2.5-5 5-5s4.5 2 5 5"></path>
+<path d="M14 15c2 0 4 1.5 4.5 4"></path>
+</svg>
+</span>
+<span>Up to 4 Guests</span>
+</li>
+</ul>
+<div class="va-stay__divider"></div>
+<a aria-label="Explore Garden Villa" class="va-stay__cta" href="https://www.vanarakc.com/junglevilla" rel="noopener" target="_blank">
+                Explore Villa
+                <svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 12h14"></path>
+<path d="m13 6 6 6-6 6"></path>
+</svg>
+</a>
+</div>
+</div>
+</article>
+<!-- =====================================================
+             GLAMPING YURT
+        ====================================================== -->
+<article aria-labelledby="va-yurt-title" class="va-stay va-reveal">
+<div class="va-stay__media">
+<img alt="Glamping Yurt immersed in the tropical rainforest" class="va-stay__image" src="https://static.wixstatic.com/media/c090c7_e450cbeccfc04289b03bdcc98149e85e~mv2.png"/>
+<div aria-hidden="true" class="va-stay__number">03</div>
+<div class="va-stay__image-label">The Deepest Immersion</div>
+</div>
+<div class="va-stay__body">
+<div class="va-stay__intro">
+<h3 class="va-stay__name" id="va-yurt-title">
+                Glamping Yurt
+              </h3>
+<div class="va-stay__tagline">
+                Unusual · Atmospheric · Immersive
+              </div>
+<p class="va-stay__description">
+                Vanara’s most experiential stay. Sleep beneath the tropical
+                canopy, relax on your private deck and experience the sounds,
+                light and rhythm of the rainforest without giving up essential
+                comfort.
+              </p>
+</div>
+<div class="va-stay__meta">
+<ul aria-label="Glamping Yurt highlights" class="va-features">
+<li class="va-feature">
+<span aria-hidden="true" class="va-feature__icon">
+<svg viewbox="0 0 24 24">
+<path d="M4 18v-8h16v8"></path>
+<path d="M4 14h16"></path>
+<path d="M7 10V7h5v3"></path>
+</svg>
+</span>
+<span>King Bed</span>
+</li>
+<li class="va-feature">
+<span aria-hidden="true" class="va-feature__icon">
+<svg viewbox="0 0 24 24">
+<path d="M5 19h14"></path>
+<path d="M7 19V9h10v10"></path>
+<path d="M9 9V6h6v3"></path>
+</svg>
+</span>
+<span>Private Deck</span>
+</li>
+<li class="va-feature">
+<span aria-hidden="true" class="va-feature__icon">
+<svg viewbox="0 0 24 24">
+<path d="M12 21V9"></path>
+<path d="M12 14c-3 0-5-2-5-5 3 0 5 2 5 5Z"></path>
+<path d="M12 11c0-3 2-5 5-5 0 3-2 5-5 5Z"></path>
+</svg>
+</span>
+<span>Nature Immersion</span>
+</li>
+<li class="va-feature">
+<span aria-hidden="true" class="va-feature__icon">
+<svg viewbox="0 0 24 24">
+<path d="M8 5h8"></path>
+<path d="M12 5v4"></path>
+<path d="M7 9h10"></path>
+<path d="M9 9v3"></path>
+<path d="M15 9v3"></path>
+<path d="M8 16h8"></path>
+</svg>
+</span>
+<span>Private Bathroom</span>
+</li>
+</ul>
+<div class="va-stay__divider"></div>
+<a aria-label="Explore Glamping Yurt" class="va-stay__cta" href="https://www.vanarakc.com/jungleyurt" rel="noopener" target="_blank">
+                Explore Yurt
+                <svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 12h14"></path>
+<path d="m13 6 6 6-6 6"></path>
+</svg>
+</a>
+</div>
+</div>
+</article>
+<div class="va-footnote va-reveal">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M20 4C14 4 8 7 6 13c-1 3 1 6 4 7 4 1 8-3 10-16Z"></path>
+<path d="M5 21c2-6 6-10 11-13"></path>
+</svg>
+<span>
+          Different spaces. One shared experience: comfortable immersion in
+          the tropical nature of Koh Chang.
+        </span>
+</div>
+</div></div></section>
+<!-- ==================== VANARA EXPERIENCE ==================== -->
+<section aria-labelledby="why-vanara-title" class="wv-section" id="why-vanara">
+<div class="wv-container">
+<!-- =====================================================
+           SECTION HEADER
+           ===================================================== -->
+<header class="wv-header wv-reveal">
+<div class="wv-eyebrow">
+          More Than a Place to Stay
+        </div>
+<h2 class="wv-title" id="why-vanara-title">
+          Why Vanara
+        </h2>
+<p class="wv-subtitle">
+          A peaceful jungle retreat for travellers who value nature,
+          authenticity and genuine comfort over conventional resort luxury.
+        </p>
+</header>
+<!-- =====================================================
+           EDITORIAL CONTENT
+           ===================================================== -->
+<div class="wv-editorial">
+<!-- LEFT COLUMN -->
+<div class="wv-column">
+<!-- MAIN JUNGLE IMAGE -->
+<article aria-label="Vanara Resort immersed in tropical vegetation" class="wv-image wv-image--hero wv-reveal">
+<img alt="Vanara Resort surrounded by dense tropical vegetation in Koh Chang" src="https://static.wixstatic.com/media/c090c7_8b6dc3ace25b454da7d29cc419359d65~mv2.png"/>
+<div class="wv-hero-copy">
+<span class="wv-hero-copy__small">
+                Intentional Wildness
+              </span>
+<h3 class="wv-hero-copy__title">
+                Nature is not the decoration.
+                Nature is the experience.
+              </h3>
+</div>
+<div class="wv-image__caption">
+              Living gently inside the rainforest
+            </div>
+</article>
+<!-- FOUR VALUES -->
+<div class="wv-values wv-reveal wv-delay-1">
+<!-- VALUE 1 -->
+<article class="wv-value">
+<div class="wv-value__top">
+<span aria-hidden="true" class="wv-value__icon">
+<svg viewbox="0 0 24 24">
+<path d="M12 21V9"></path>
+<path d="M12 14c-3 0-5-2-5-5 3 0 5 2 5 5Z"></path>
+<path d="M12 11c0-3 2-5 5-5 0 3-2 5-5 5Z"></path>
+</svg>
+</span>
+<span class="wv-value__number">
+                  01
+                </span>
+</div>
+<h3 class="wv-value__title">
+                Nature Immersion
+              </h3>
+<p class="wv-value__text">
+                Wake to birds, tropical light and the living sounds of the
+                forest. Vanara gently places every stay inside nature rather
+                than separating guests from it.
+              </p>
+</article>
+<!-- VALUE 2 -->
+<article class="wv-value">
+<div class="wv-value__top">
+<span aria-hidden="true" class="wv-value__icon">
+<svg viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="8"></circle>
+<path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"></path>
+</svg>
+</span>
+<span class="wv-value__number">
+                  02
+                </span>
+</div>
+<h3 class="wv-value__title">
+                Peace Without Isolation
+              </h3>
+<p class="wv-value__text">
+                A calm base close to Lonely Beach, Bang Bao and southern Koh
+                Chang, allowing you to explore freely and return to a quiet
+                tropical refuge.
+              </p>
+</article>
+<!-- VALUE 3 -->
+<article class="wv-value">
+<div class="wv-value__top">
+<span aria-hidden="true" class="wv-value__icon">
+<svg viewbox="0 0 24 24">
+<path d="M4 18v-8h16v8"></path>
+<path d="M4 14h16"></path>
+<path d="M7 10V7h5v3"></path>
+<path d="M18 7c-2.2.2-3.7 1.5-4 4 2.5-.3 3.8-1.8 4-4Z"></path>
+</svg>
+</span>
+<span class="wv-value__number">
+                  03
+                </span>
+</div>
+<h3 class="wv-value__title">
+                Essential Comfort
+              </h3>
+<p class="wv-value__text">
+                Comfortable beds, air conditioning, cleanliness and fast
+                internet provide everything needed to enjoy the jungle
+                experience without unnecessary excess.
+              </p>
+</article>
+<!-- VALUE 4 -->
+<article class="wv-value">
+<div class="wv-value__top">
+<span aria-hidden="true" class="wv-value__icon">
+<svg viewbox="0 0 24 24">
+<path d="M12 20s-7-4.3-7-9.2A3.8 3.8 0 0 1 12 8.7a3.8 3.8 0 0 1 7 2.1C19 15.7 12 20 12 20Z"></path>
+<path d="M9 12.5c1.5.1 2.5.8 3 2 0-2.4 1-4 3-5"></path>
+</svg>
+</span>
+<span class="wv-value__number">
+                  04
+                </span>
+</div>
+<h3 class="wv-value__title">
+                Honest Hospitality
+              </h3>
+<p class="wv-value__text">
+                Friendly, practical support and genuine local knowledge,
+                offered whenever useful while always respecting each guest’s
+                independence and privacy.
+              </p>
+</article>
+</div>
+</div>
+<!-- RIGHT COLUMN -->
+<div class="wv-column">
+<!-- ANIMAL + FLOWER -->
+<div class="wv-photo-pair wv-reveal wv-delay-1">
+<article aria-label="Tropical wildlife around Vanara" class="wv-photo-card">
+<img alt="Tropical wildlife photographed around Vanara Resort" src="https://static.wixstatic.com/media/c090c7_7dd087f251cf47d7a42d1d9347553cc7~mv2.jpg"/>
+<div class="wv-photo-card__content">
+<span class="wv-photo-card__label">
+                  Shared Habitat
+                </span>
+<h3 class="wv-photo-card__title">
+                  Wild neighbours
+                </h3>
+</div>
+</article>
+<article aria-label="Tropical flowers growing at Vanara" class="wv-photo-card">
+<img alt="Tropical flower growing within the gardens of Vanara Resort" src="https://static.wixstatic.com/media/c090c7_da8876b6c7dc459c9093e4850b6121f0~mv2.png"/>
+<div class="wv-photo-card__content">
+<span class="wv-photo-card__label">
+                  Naturally Tropical
+                </span>
+<h3 class="wv-photo-card__title">
+                  Living colour
+                </h3>
+</div>
+</article>
+</div>
+<!-- HOSPITALITY -->
+<article class="wv-hospitality wv-reveal wv-delay-2">
+<div class="wv-hospitality__image">
+<img alt="Welcoming hospitality at Vanara Resort Koh Chang" src="https://static.wixstatic.com/media/c090c7_de7b72222f7344608c957839892556b9~mv2.png"/>
+</div>
+<div class="wv-hospitality__content">
+<span aria-hidden="true" class="wv-hospitality__icon">
+<svg viewbox="0 0 24 24">
+<path d="M7 12.5 10 15l7-7"></path>
+<path d="M5 20v-2.5c0-2 1.7-3.5 3.7-3.5h6.6c2 0 3.7 1.5 3.7 3.5V20"></path>
+<circle cx="12" cy="7" r="3"></circle>
+</svg>
+</span>
+<h3 class="wv-hospitality__title">
+                Present when needed
+              </h3>
+<p class="wv-hospitality__text">
+                Hospitality at Vanara is personal but never intrusive: a warm
+                welcome, practical help and space to experience the island at
+                your own rhythm.
+              </p>
+</div>
+</article>
+<!-- EVENING IMAGE + CTA -->
+<article aria-label="Vanara Resort in the evening" class="wv-image wv-image--evening wv-reveal wv-delay-3">
+<img alt="Warm evening atmosphere and tropical lighting at Vanara Resort" src="https://static.wixstatic.com/media/c090c7_ebcfd485516e4e1b8bd6f82a74e0834a~mv2.png"/>
+<div class="wv-evening-copy">
+<div class="wv-evening-copy__text">
+<span class="wv-evening-copy__eyebrow">
+                  The Rhythm of the Jungle
+                </span>
+<h3 class="wv-evening-copy__title">
+                  Slow down. The island can wait.
+                </h3>
+</div>
+<a aria-label="Explore Vanara accommodation" class="wv-evening-copy__link" href="https://www.vanarakc.com/thevanaraexperience" rel="noopener" target="_blank">
+                The Vanara Experience
+
+                <svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 12h14"></path>
+<path d="m13 6 6 6-6 6"></path>
+</svg>
+</a>
+</div>
+</article>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== LOCATION ==================== -->
+<section aria-labelledby="vl-location-title" class="vl-section" id="location">
+<div class="vl-container">
+<!-- HEADER -->
+<header class="vl-header vl-reveal">
+<div class="vl-eyebrow">
+          South Koh Chang
+        </div>
+<h2 class="vl-title" id="vl-location-title">
+          Perfectly Placed to Explore
+        </h2>
+<p class="vl-subtitle">
+          Quiet when you need it. Close when it matters. Vanara is a peaceful
+          base for discovering the beaches, villages and boat departures of
+          southern Koh Chang.
+        </p>
+</header>
+<!-- MAIN LAYOUT -->
+<div class="vl-layout">
+<!-- VISUAL COLUMN -->
+<div class="vl-column vl-column--visual">
+<!-- MAIN PANORAMIC IMAGE -->
+<article aria-label="Panoramic view of southern Koh Chang" class="vl-image-card vl-image-card--main vl-reveal">
+<img alt="Panoramic tropical coastline of southern Koh Chang" src="https://static.wixstatic.com/media/c090c7_6a62ac693480415eb6ea484619a988e0~mv2.jpeg"/>
+<div class="vl-image-card__content">
+<span class="vl-image-card__eyebrow">
+                Between Jungle and Sea
+              </span>
+<h3 class="vl-image-card__title">
+                Close to the island’s southern adventures.
+              </h3>
+<p class="vl-image-card__copy">
+                Beaches, fishing villages, snorkelling departures and quiet
+                tropical roads are all within easy reach from Vanara.
+              </p>
+</div>
+</article>
+<!-- BANG BAO IMAGE -->
+<article aria-label="Bang Bao Pier" class="vl-image-card vl-image-card--secondary vl-reveal vl-delay-1">
+<img alt="Bang Bao Pier and fishing village in southern Koh Chang" src="https://static.wixstatic.com/media/c090c7_f8fd72dea7ad4165ac9094d975f6e51e~mv2.jpg"/>
+<div class="vl-image-card__content">
+<span class="vl-image-card__eyebrow">
+                The Gateway South
+              </span>
+<h3 class="vl-image-card__title">
+                Bang Bao Pier
+              </h3>
+<p class="vl-image-card__copy">
+                Boat trips, diving and island excursions begin nearby.
+              </p>
+</div>
+</article>
+</div>
+<!-- ROUTE COLUMN -->
+<aside class="vl-route-panel vl-reveal vl-delay-1">
+<div class="vl-route-panel__header">
+<span class="vl-route-panel__label">
+              Your Island Base
+            </span>
+<h3 class="vl-route-panel__title">
+              Everything within easy reach
+            </h3>
+<p class="vl-route-panel__intro">
+              Vanara sits in Bailan Bay, between the energy of Lonely Beach and
+              the quieter southern coast.
+            </p>
+</div>
+<!-- ROUTE -->
+<div aria-label="Places near Vanara Resort" class="vl-route">
+<!-- LONELY BEACH -->
+<div class="vl-stop">
+<span aria-hidden="true" class="vl-stop__marker">
+<svg viewbox="0 0 24 24">
+<path d="M3 18c2-1.7 4-1.7 6 0s4 1.7 6 0 4-1.7 6 0"></path>
+<path d="M5 14c2-1.7 4-1.7 6 0s4 1.7 6 0"></path>
+<circle cx="17" cy="7" r="3"></circle>
+</svg>
+</span>
+<span>
+<strong class="vl-stop__name">
+                  Lonely Beach
+                </strong>
+<small class="vl-stop__note">
+                  Beach, cafés, restaurants and nightlife
+                </small>
+</span>
+<span class="vl-stop__distance">
+                Just north
+              </span>
+</div>
+<!-- VANARA -->
+<div class="vl-stop vl-stop--vanara">
+<span aria-hidden="true" class="vl-stop__marker">
+<svg viewbox="0 0 24 24">
+<path d="M12 21s6-5.2 6-11a6 6 0 1 0-12 0c0 5.8 6 11 6 11Z"></path>
+<circle cx="12" cy="10" r="2"></circle>
+</svg>
+</span>
+<span>
+<strong class="vl-stop__name">
+                  Vanara
+                </strong>
+<small class="vl-stop__note">
+                  Your peaceful jungle retreat in Bailan Bay
+                </small>
+</span>
+<span class="vl-stop__distance">
+                You are here
+              </span>
+</div>
+<!-- BANG BAO -->
+<div class="vl-stop">
+<span aria-hidden="true" class="vl-stop__marker">
+<svg viewbox="0 0 24 24">
+<path d="M5 19h14"></path>
+<path d="M7 19V9h10v10"></path>
+<path d="M9 9V6h6v3"></path>
+<path d="M4 5h16"></path>
+</svg>
+</span>
+<span>
+<strong class="vl-stop__name">
+                  Bang Bao
+                </strong>
+<small class="vl-stop__note">
+                  Pier, seafood, diving and boat departures
+                </small>
+</span>
+<span class="vl-stop__distance">
+                Southbound
+              </span>
+</div>
+<!-- KLONG KLOI -->
+<div class="vl-stop">
+<span aria-hidden="true" class="vl-stop__marker">
+<svg viewbox="0 0 24 24">
+<path d="M4 19h16"></path>
+<path d="M7 16c1.2-4 3.2-7 5-9 1.8 2 3.8 5 5 9"></path>
+<path d="M5 12c1.5.3 2.6 1 3.4 2"></path>
+</svg>
+</span>
+<span>
+<strong class="vl-stop__name">
+                  Klong Kloi
+                </strong>
+<small class="vl-stop__note">
+                  Relaxed southern beach atmosphere
+                </small>
+</span>
+<span class="vl-stop__distance">
+                Further south
+              </span>
+</div>
+</div>
+<!-- QUICK FACTS -->
+<div class="vl-facts">
+<div class="vl-fact">
+<span aria-hidden="true" class="vl-fact__icon">
+<svg viewbox="0 0 24 24">
+<path d="M5 17h14"></path>
+<circle cx="8" cy="17" r="2"></circle>
+<circle cx="17" cy="17" r="2"></circle>
+<path d="M8 15l3-5h4l2 5"></path>
+<path d="M11 10 9 7"></path>
+</svg>
+</span>
+<span>
+<strong class="vl-fact__title">
+                  Best by scooter
+                </strong>
+<small class="vl-fact__text">
+                  The easiest way to explore independently
+                </small>
+</span>
+</div>
+<div class="vl-fact">
+<span aria-hidden="true" class="vl-fact__icon">
+<svg viewbox="0 0 24 24">
+<path d="M4 17c3-2 5-2 8 0s5 2 8 0"></path>
+<path d="m7 14 3-7h4l3 7"></path>
+</svg>
+</span>
+<span>
+<strong class="vl-fact__title">
+                  Boat trips nearby
+                </strong>
+<small class="vl-fact__text">
+                  Easy access to southern departure points
+                </small>
+</span>
+</div>
+<div class="vl-fact">
+<span aria-hidden="true" class="vl-fact__icon">
+<svg viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="8"></circle>
+<path d="M12 7v5l3 2"></path>
+</svg>
+</span>
+<span>
+<strong class="vl-fact__title">
+                  Less daily travel
+                </strong>
+<small class="vl-fact__text">
+                  A practical base for the island’s south
+                </small>
+</span>
+</div>
+<div class="vl-fact">
+<span aria-hidden="true" class="vl-fact__icon">
+<svg viewbox="0 0 24 24">
+<path d="M12 21V9"></path>
+<path d="M12 14c-3 0-5-2-5-5 3 0 5 2 5 5Z"></path>
+<path d="M12 11c0-3 2-5 5-5 0 3-2 5-5 5Z"></path>
+</svg>
+</span>
+<span>
+<strong class="vl-fact__title">
+                  Quiet return
+                </strong>
+<small class="vl-fact__text">
+                  Explore all day, retreat into nature
+                </small>
+</span>
+</div>
+</div>
+<!-- GOOGLE MAPS CTA -->
+<div class="vl-map-cta">
+<div class="vl-map-cta__copy">
+<span class="vl-map-cta__eyebrow">
+                Need Directions?
+              </span>
+<strong class="vl-map-cta__title">
+                Find Vanara on Google Maps
+              </strong>
+</div>
+<a aria-label="Open directions to Vanara Bungalows in Google Maps" class="vl-map-cta__button" href="https://www.google.com/maps/dir//Vanara+Bungalows,+37%2F5+Moo+1+Bailan+Bay+Bailan+Bay,+Ko+Chang+District,+Trat+23170/@11.9934083,102.2891426,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31041118f31e4d0b:0xcdde541330c2d437!2m2!1d102.2991597!2d11.9912399?entry=ttu&amp;g_ep=EgoyMDI2MDcxMy4wIKXMDSoASAFQAw%3D%3D" rel="noopener noreferrer" target="_blank">
+              Open Maps
+
+              <svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 12h14"></path>
+<path d="m13 6 6 6-6 6"></path>
+</svg>
+</a>
+</div>
+</aside>
+</div>
+</div>
+</section>
+<!-- ==================== EXPLORE KOH CHANG ==================== -->
+<section aria-labelledby="explore-koh-chang-title" class="ek-section" id="explore-koh-chang">
+<div class="ek-container">
+<header class="ek-hero ek-reveal">
+<img alt="Panoramic tropical coastline and rainforest on Koh Chang" src="https://static.wixstatic.com/media/c090c7_3cdd4c4ea46a45c898522920e4fff7d9~mv2.jpg"/>
+<div class="ek-hero__content">
+<div class="ek-eyebrow">
+            Explore Koh Chang
+          </div>
+<h2 class="ek-hero__title" id="explore-koh-chang-title">
+            An Island Felt Slowly
+          </h2>
+<p class="ek-hero__intro">
+            From rainforest mornings to village evenings, Koh Chang reveals
+            itself in small, unhurried moments — best experienced with
+            curiosity, respect and time.
+          </p>
+</div>
+</header>
+<div class="ek-grid">
+<article aria-labelledby="ek-beaches-title" class="ek-card ek-card--beaches ek-reveal">
+<img alt="Quiet beach and clear tropical water on Koh Chang" loading="lazy" src="https://static.wixstatic.com/media/c090c7_24dfbb6a68b84d38bbcd0ef6808d9922~mv2.jpg"/>
+<div class="ek-card__content">
+<div class="ek-card__top">
+<span class="ek-card__label">
+                Beaches
+              </span>
+<span aria-hidden="true" class="ek-card__icon">
+<svg viewbox="0 0 24 24">
+<path d="M3 10.5c2-1.8 4-1.8 6 0s4 1.8 6 0 4-1.8 6 0"></path>
+<path d="M3 15.5c2-1.8 4-1.8 6 0s4 1.8 6 0 4-1.8 6 0"></path>
+</svg>
+</span>
+</div>
+<h3 class="ek-card__title" id="ek-beaches-title">
+              Edges of Quiet Water
+            </h3>
+<p class="ek-card__text">
+              Soft mornings, changing tides and warm sand.
+            </p>
+<a aria-label="Discover Koh Chang" class="ek-final__button" href="https://www.vanarakc.com/explorekohchang" rel="noopener" target="_blank">
+              Follow the shoreline
+
+              <svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 12h14"></path>
+<path d="m13 6 6 6-6 6"></path>
+</svg>
+</a>
+</div>
+</article>
+<article aria-labelledby="ek-nature-title" class="ek-card ek-card--nature ek-reveal ek-delay-1">
+<img alt="Tropical rainforest nature on Koh Chang" loading="lazy" src="https://static.wixstatic.com/media/c090c7_17b171cf55794d9db872363e3782b2f1~mv2.jpg"/>
+<div class="ek-card__content">
+<div class="ek-card__top">
+<span class="ek-card__label">
+                Nature
+              </span>
+<span aria-hidden="true" class="ek-card__icon">
+<svg viewbox="0 0 24 24">
+<path d="M20 4c-6 0-12 3.5-14 9-1.8 5 2.2 8 6.1 5.8C17.2 16 20 10.1 20 4Z"></path>
+<path d="M7 18c2.8-4.2 6.3-7.5 10.7-10.1"></path>
+</svg>
+</span>
+</div>
+<h3 class="ek-card__title" id="ek-nature-title">
+              Rainforest Within Reach
+            </h3>
+<p class="ek-card__text">
+              Waterfalls, canopy shade and birdsong.
+            </p>
+<a aria-label="Discover Koh Chang" class="ek-final__button" href="https://www.vanarakc.com/explorekohchang" rel="noopener" target="_blank">
+              Step into the green
+
+              <svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 12h14"></path>
+<path d="m13 6 6 6-6 6"></path>
+</svg>
+</a>
+</div>
+</article>
+<article aria-labelledby="ek-local-title" class="ek-card ek-card--local ek-reveal ek-delay-2">
+<img alt="Authentic local village life on Koh Chang" loading="lazy" src="https://static.wixstatic.com/media/c090c7_6bb10cff4db94535ac577a1a0e034995~mv2.jpg"/>
+<div class="ek-card__content">
+<div class="ek-card__top">
+<span class="ek-card__label">
+                Local Life
+              </span>
+<span aria-hidden="true" class="ek-card__icon">
+<svg viewbox="0 0 24 24">
+<path d="M4 10 12 4l8 6"></path>
+<path d="M6 10v10h12V10"></path>
+<path d="M9 20v-6h6v6"></path>
+</svg>
+</span>
+</div>
+<h3 class="ek-card__title" id="ek-local-title">
+              Villages at Island Pace
+            </h3>
+<p class="ek-card__text">
+              Fishing boats, roadside kitchens and evening lights.
+            </p>
+<a aria-label="Discover Koh Chang" class="ek-final__button" href="https://www.vanarakc.com/explorekohchang" rel="noopener" target="_blank">
+              Meet the island gently
+
+              <svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 12h14"></path>
+<path d="m13 6 6 6-6 6"></path>
+</svg>
+</a>
+</div>
+</article>
+<article aria-labelledby="ek-sunsets-title" class="ek-card ek-card--sunsets ek-reveal ek-delay-3">
+<img alt="Sunset over the western sea of Koh Chang" loading="lazy" src="https://static.wixstatic.com/media/c090c7_274296f941e4451c9777d42f548cbb36~mv2.jpg"/>
+<div class="ek-card__content">
+<div class="ek-card__top">
+<span class="ek-card__label">
+                Sunsets
+              </span>
+<span aria-hidden="true" class="ek-card__icon">
+<svg viewbox="0 0 24 24">
+<path d="M4 18h16"></path>
+<path d="M7.5 18a4.5 4.5 0 0 1 9 0"></path>
+<path d="M12 4v3"></path>
+<path d="m5.6 8.2 2.1 2.1"></path>
+<path d="m18.4 8.2-2.1 2.1"></path>
+</svg>
+</span>
+</div>
+<h3 class="ek-card__title" id="ek-sunsets-title">
+              Light Over the Western Sea
+            </h3>
+<p class="ek-card__text">
+              Sea air, evening light and nowhere else to be.
+            </p>
+<a aria-label="Discover Koh Chang" class="ek-final__button" href="https://www.vanarakc.com/explorekohchang" rel="noopener" target="_blank">
+              Stay for the light
+
+              <svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 12h14"></path>
+<path d="m13 6 6 6-6 6"></path>
+</svg>
+</a>
+</div>
+</article>
+</div>
+<aside aria-labelledby="ek-final-title" class="ek-final ek-reveal ek-delay-2">
+<img alt="Scenic road through Koh Chang" loading="lazy" src="https://static.wixstatic.com/media/c090c7_a2efdcd11bd04af3941fc9822d93861f~mv2.jpg"/>
+<div class="ek-final__content">
+<div class="ek-final__eyebrow">
+            Follow the Island
+          </div>
+<h3 class="ek-final__title" id="ek-final-title">
+            Let Koh Chang Unfold
+          </h3>
+<p class="ek-final__text">
+            Begin at Vanara, then follow the island at your own pace.
+          </p>
+<a aria-label="Discover Koh Chang" class="ek-final__button" href="https://www.vanarakc.com/explorekohchang" rel="noopener" target="_blank">
+            Discover Koh Chang
+
+            <svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M5 12h14"></path>
+<path d="m13 6 6 6-6 6"></path>
+</svg>
+</a>
+</div>
+</aside>
+</div>
+</section>
+<!-- ==================== FOOTER ==================== -->
+<div id="footer-placeholder"></div>
+<script>
+fetch("components/footer.html").then(r=>r.text()).then(h=>{document.getElementById("footer-placeholder").outerHTML=h;});
+</script>
+</main>
+<script>
+// ==================== REVIEWS ====================
+
+    (() => {
+      const elements = document.querySelectorAll(".reveal-item");
+
+      if (!("IntersectionObserver" in window)) {
+        elements.forEach((element) => {
+          element.classList.add("is-visible");
+        });
+
         return;
       }
 
-      const script = document.createElement("script");
-      script.src = src;
-      script.defer = true;
-      script.dataset.componentScript = src;
-      script.onload = resolve;
-      script.onerror = () => reject(new Error(`Impossibile caricare ${src}`));
+      const observer = new IntersectionObserver(
+        (entries, currentObserver) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+              return;
+            }
 
-      document.body.appendChild(script);
+            entry.target.classList.add("is-visible");
+            currentObserver.unobserve(entry.target);
+          });
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+      elements.forEach((element) => {
+        observer.observe(element);
+      });
+    })();
+  
+// ==================== ACCOMMODATION ====================
+
+    (() => {
+      const elements = document.querySelectorAll(".va-reveal");
+
+      if (!("IntersectionObserver" in window)) {
+        elements.forEach((element) => {
+          element.classList.add("is-visible");
+        });
+
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        (entries, currentObserver) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+              return;
+            }
+
+            entry.target.classList.add("is-visible");
+            currentObserver.unobserve(entry.target);
+          });
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+      elements.forEach((element) => {
+        observer.observe(element);
+      });
+    })();
+  
+// ==================== VANARA EXPERIENCE ====================
+
+    (() => {
+      const revealElements = document.querySelectorAll(".wv-reveal");
+
+      if (!("IntersectionObserver" in window)) {
+        revealElements.forEach((element) => {
+          element.classList.add("is-visible");
+        });
+
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        (entries, currentObserver) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+              return;
+            }
+
+            entry.target.classList.add("is-visible");
+            currentObserver.unobserve(entry.target);
+          });
+        },
+        {
+          threshold: 0.1,
+          rootMargin: "0px 0px -35px 0px"
+        }
+      );
+
+      revealElements.forEach((element) => {
+        observer.observe(element);
+      });
+    })();
+  
+// ==================== LOCATION ====================
+
+    (() => {
+      const revealElements = document.querySelectorAll(".vl-reveal");
+
+      if (!("IntersectionObserver" in window)) {
+        revealElements.forEach((element) => {
+          element.classList.add("is-visible");
+        });
+
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        (entries, currentObserver) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+              return;
+            }
+
+            entry.target.classList.add("is-visible");
+            currentObserver.unobserve(entry.target);
+          });
+        },
+        {
+          threshold: 0.1,
+          rootMargin: "0px 0px -35px 0px"
+        }
+      );
+
+      revealElements.forEach((element) => {
+        observer.observe(element);
+      });
+    })();
+  
+// ==================== EXPLORE KOH CHANG ====================
+
+    (() => {
+      const section = document.querySelector(".ek-section");
+
+      if (!section) {
+        return;
+      }
+
+      const revealElements =
+        section.querySelectorAll(".ek-reveal");
+
+      if (
+        window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches ||
+        !("IntersectionObserver" in window)
+      ) {
+        revealElements.forEach((element) => {
+          element.classList.add("is-visible");
+        });
+
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        (entries, currentObserver) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+              return;
+            }
+
+            entry.target.classList.add("is-visible");
+            currentObserver.unobserve(entry.target);
+          });
+        },
+        {
+          threshold: 0.1,
+          rootMargin: "0px 0px -35px 0px"
+        }
+      );
+
+      revealElements.forEach((element) => {
+        observer.observe(element);
+      });
+    })();
+  
+// ==================== FOOTER ====================
+
+    (() => {
+      const yearElement = document.getElementById("vf-current-year");
+
+      if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+      }
+    })();
+  
+
+// ==================== UNIFIED WIX BRIDGE ====================
+(() => {
+  "use strict";
+
+  const BOOKING_URL = "https://beds24.com/booking2.php?propid=332906";
+  const SECTION_TARGETS = {
+    hero: ".hero",
+    reviews: "#reviews-title",
+    rooms: "#accommodation",
+    accommodation: "#accommodation",
+    accommodations: "#accommodation",
+    resort: "#why-vanara",
+    experience: "#why-vanara",
+    location: "#location",
+    kohchang: "#explore-koh-chang",
+    explore: "#explore-koh-chang",
+    footer: ".vf-footer"
+  };
+
+  const postToWix = (message) => {
+    window.parent.postMessage(message, "*");
+  };
+
+  function scrollToTarget(target) {
+    const normalized = String(target || "").trim().toLowerCase();
+    const selector = SECTION_TARGETS[normalized];
+    const element = selector ? document.querySelector(selector) : null;
+
+    if (!element) return;
+
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
     });
   }
 
-  async function initializeSharedComponents() {
-    await Promise.all(COMPONENTS.map(loadComponent));
+  document.addEventListener("click", (event) => {
+    const scrollButton = event.target.closest("[data-scroll]");
 
-    for (const src of COMPONENT_SCRIPTS) {
-      try {
-        await loadScript(src);
-      } catch (error) {
-        console.error("Vanara: errore inizializzazione componente", error);
-      }
+    if (scrollButton) {
+      event.preventDefault();
+      scrollToTarget(scrollButton.dataset.scroll);
+      return;
     }
 
-    document.dispatchEvent(new CustomEvent("vanara:components-ready"));
-    document.documentElement.classList.add("components-ready");
+    const bookButton = event.target.closest("[data-book]");
+
+    if (bookButton) {
+      event.preventDefault();
+      postToWix({
+        type: "vanara-book",
+        target: BOOKING_URL
+      });
+      return;
+    }
+
+    const link = event.target.closest("a[href]");
+    if (!link) return;
+
+    const href = link.getAttribute("href");
+    if (!href || href.startsWith("#")) return;
+
+    let url;
+    try {
+      url = new URL(href, window.location.href);
+    } catch (_) {
+      return;
+    }
+
+    const isVanaraPage =
+      url.hostname === "vanarakc.com" ||
+      url.hostname === "www.vanarakc.com";
+
+    if (isVanaraPage) {
+      event.preventDefault();
+      postToWix({
+        type: "vanara-page",
+        target: `${url.pathname}${url.search}${url.hash}`
+      });
+    }
+  });
+
+  window.addEventListener("message", (event) => {
+    const data = event.data;
+
+    if (!data || typeof data !== "object") return;
+
+    if (
+      data.type === "VANARA_HOME_SCROLL" ||
+      data.type === "vanara-scroll"
+    ) {
+      scrollToTarget(data.target);
+    }
+  });
+
+  let lastHeight = 0;
+  let frame = null;
+
+  function documentHeight() {
+    const body = document.body;
+    const root = document.documentElement;
+
+    return Math.ceil(Math.max(
+      body ? body.scrollHeight : 0,
+      body ? body.offsetHeight : 0,
+      root ? root.scrollHeight : 0,
+      root ? root.offsetHeight : 0
+    ));
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initializeSharedComponents, {
-      once: true
+  function sendHeight() {
+    frame = null;
+    const height = documentHeight();
+
+    if (!Number.isFinite(height) || height <= 0) return;
+    if (Math.abs(height - lastHeight) < 2) return;
+
+    lastHeight = height;
+    postToWix({
+      type: "VANARA_HOME_RESIZE",
+      height
     });
-  } else {
-    initializeSharedComponents();
   }
+
+  function scheduleHeight() {
+    if (frame !== null) cancelAnimationFrame(frame);
+    frame = requestAnimationFrame(sendHeight);
+  }
+
+  window.addEventListener("load", scheduleHeight);
+  window.addEventListener("resize", scheduleHeight);
+  window.addEventListener("orientationchange", scheduleHeight);
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(scheduleHeight);
+  }
+
+  document.querySelectorAll("img").forEach((image) => {
+    if (!image.complete) {
+      image.addEventListener("load", scheduleHeight, { once: true });
+      image.addEventListener("error", scheduleHeight, { once: true });
+    }
+  });
+
+  if ("ResizeObserver" in window) {
+    new ResizeObserver(scheduleHeight).observe(document.documentElement);
+  }
+
+  if ("MutationObserver" in window && document.body) {
+    new MutationObserver(scheduleHeight).observe(document.body, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      characterData: true
+    });
+  }
+
+  scheduleHeight();
+  [100, 300, 700, 1200, 2000].forEach((delay) => {
+    window.setTimeout(scheduleHeight, delay);
+  });
 })();
+
+  </script>
+
+
+<script src="assets/js/includes.js"></script></body>
+</html>
