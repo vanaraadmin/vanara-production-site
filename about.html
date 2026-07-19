@@ -11,6 +11,8 @@
 <link href="assets/css/vanara_style.css" rel="stylesheet"/>
 <link href="assets/css/header.css" rel="stylesheet"/>
 <link href="assets/css/mobile-menu.css" rel="stylesheet"/>
+<link href="assets/css/footer.css" rel="stylesheet"/>
+<link href="assets/css/concierge.css" rel="stylesheet"/>
 <style>
 /* =========================================================
    VANARA ECO RESORT
@@ -593,8 +595,20 @@
   }
 }
 </style>
+
+<style id="vanara-inner-page-shell">
+body.vanara-inner-page{
+  background:#f7f4ee;
+}
+body.vanara-inner-page .site-header{
+  position:relative;
+  inset:auto;
+  background:#0b2118;
+}
+</style>
+
 </head>
-<body>
+<body class="vanara-inner-page">
 <header class="site-header" data-site-header="">
 <div class="site-header__inner">
 <nav aria-label="Primary navigation" class="site-header__nav site-header__nav--left">
@@ -706,57 +720,7 @@
 </div>
 </div>
 <main class="vr-experience-page" data-page="vanara-experience" id="vanara-experience">
-
-  <!-- ======================================================
-       01 — HERO
-       ====================================================== -->
-  <section class="vr-experience-hero" aria-labelledby="vr-experience-title">
-    <div class="vr-experience-hero__media" aria-hidden="true">
-      <img
-        class="vr-experience-hero__image"
-        src="https://static.wixstatic.com/media/c090c7_4117863c51d94b949c95e3bfafbb857e~mv2.png"
-        alt=""
-        width="1920"
-        height="1080"
-        loading="eager"
-        fetchpriority="high"
-        decoding="async"
-      />
-      <div class="vr-experience-hero__veil"></div>
-      <div class="vr-experience-hero__grain"></div>
-    </div>
-
-    <div class="vr-experience-hero__content vr-shell">
-      <div class="vr-experience-hero__eyebrow">
-        <span class="vr-experience-hero__eyebrow-line" aria-hidden="true"></span>
-        <span>Welcome to Vanara</span>
-      </div>
-
-      <h1 class="vr-experience-hero__title" id="vr-experience-title">
-        The Vanara <span>Experience</span>
-      </h1>
-
-      <p class="vr-experience-hero__lead">
-        A peaceful tropical retreat where gardens, wildlife and everyday island life remain part of the stay.
-      </p>
-
-      <div class="vr-experience-hero__meta" aria-label="Vanara experience highlights">
-        <span class="vr-experience-hero__meta-item">Tropical gardens</span>
-        <span class="vr-experience-hero__meta-divider" aria-hidden="true"></span>
-        <span class="vr-experience-hero__meta-item">Quiet shared spaces</span>
-        <span class="vr-experience-hero__meta-divider" aria-hidden="true"></span>
-        <span class="vr-experience-hero__meta-item">Bailan Bay · Koh Chang</span>
-      </div>
-    </div>
-
-    <div class="vr-experience-hero__scroll" aria-hidden="true">
-      <span class="vr-experience-hero__scroll-label">Discover</span>
-      <span class="vr-experience-hero__scroll-line"></span>
-    </div>
-  </section>
-
-
-  <!-- ======================================================
+<!-- ======================================================
        02 — INTRO / PHILOSOPHY
        ====================================================== -->
   <section class="vr-experience-intro vr-section" aria-labelledby="vr-experience-intro-title">
