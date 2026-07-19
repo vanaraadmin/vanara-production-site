@@ -1,14 +1,141 @@
 (() => {
-      
-        window.parent.postMessage(
-          {
-            type: "VANARA_CHAT_RESIZE",
-            mode,
-            width,
-            height
-          },
-          "*"
+      /* =======================================================
+         CONFIGURATION
+         ======================================================= */
+
+      const MAKE_WEBHOOK_URL =
+        "https://hook.eu1.make.com/gwgrpf1nq6sicfn22oxbf39b10uui0lm";
+
+      const CHAT_OPEN_HOUR = 8;
+      const CHAT_CLOSE_HOUR = 20;
+      const BANGKOK_TIME_ZONE = "Asia/Bangkok";
+
+      const INTRO_DURATION_MS = 7000;
+
+      const ONLINE_PLACEHOLDER = "Write your message…";
+
+      const launcher = document.getElementById("launcher");
+      const introLauncher = document.getElementById("introLauncher");
+      const compactLauncher = document.getElementById("compactLauncher");
+
+      const chatWindow = document.getElementById("chatWindow");
+      const closeButton = document.getElementById("closeButton");
+
+      const messages = document.getElementById("messages");
+      const messageInput = document.getElementById("messageInput");
+      const sendButton = document.getElementById("sendButton");
+      const typingIndicator = document.getElementById("typingIndicator");
+
+      const sessionId =
+        localStorage.getItem("vanaraChatSessionId") ||
+        `web-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+
+      localStorage.setItem("vanaraChatSessionId", sessionId);
+
+      let chatHistory = [];
+      let isLoading = false;
+      let isReceptionOpen = false;
+      let chatIsOpen = false;
+      let introTimer = null;
+
+      try {
+        const storedHistory = JSON.parse(
+          localStorage.getItem("vanaraChatHistory") || "[]"
         );
+
+        chatHistory = Array.isArray(storedHistory)
+          ? storedHistory
+          : [];
+      } catch (error) {
+        chatHistory = [];
+      }
+
+      /* =======================================================
+         HISTORY
+         ======================================================= */
+
+      function saveChatHistory() {
+        chatHistory = chatHistory.slice(-4);
+
+        localStorage.setItem(
+          "vanaraChatHistory",
+          JSON.stringify(chatHistory)
+        );
+      }
+
+      function buildConversationContext() {
+        return chatHistory
+          .map((item) => {
+            const speaker =
+              item.role === "assistant"
+                ? "Waraporn"
+                : "Guest";
+
+            return `${speaker}: ${item.text}`;
+          })
+          .join("\n\n");
+      }
+
+      /* =======================================================
+         BANGKOK AVAILABILITY
+         ======================================================= */
+
+      function getBangkokHour() {
+        const formatter = new Intl.DateTimeFormat("en-GB", {
+          timeZone: BANGKOK_TIME_ZONE,
+          hour: "2-digit",
+          hourCycle: "h23"
+        });
+
+        const parts = formatter.formatToParts(new Date());
+
+        const hourPart = parts.find(
+          (part) => part.type === "hour"
+        );
+
+        return hourPart
+          ? Number(hourPart.value)
+          : 0;
+      }
+
+      function checkReceptionOpen() {
+        const hour = getBangkokHour();
+
+        return (
+          hour >= CHAT_OPEN_HOUR &&
+          hour < CHAT_CLOSE_HOUR
+        );
+      }
+
+      function updateAvailability() {
+        const wasOpen = isReceptionOpen;
+
+        isReceptionOpen = checkReceptionOpen();
+
+        messageInput.disabled =
+          !isReceptionOpen || isLoading;
+
+        sendButton.disabled =
+          !isReceptionOpen || isLoading;
+
+        messageInput.placeholder = ONLINE_PLACEHOLDER;
+
+        if (chatIsOpen && !isReceptionOpen) {
+          closeChat();
+        }
+
+        if (!chatIsOpen) {
+          showCorrectLauncher();
+        }
+
+        if (
+          isReceptionOpen &&
+          !isLoading &&
+          chatIsOpen &&
+          !wasOpen
+        ) {
+          messageInput.focus();
+        }
       }
 
       /* =======================================================
@@ -31,8 +158,6 @@
           "is-hidden"
         );
 
-        
-
         introTimer = setTimeout(() => {
           showCompactLauncher();
         }, INTRO_DURATION_MS);
@@ -47,11 +172,7 @@
         );
 
         launcher.classList.add("is-compact");
-
-        setTimeout(() => {
-          
-        }, 380);
-      }
+}
 
       function showOfflineLauncher() {
         clearIntroTimer();
@@ -63,7 +184,6 @@
 
         launcher.classList.add("is-offline");
 
-        
       }
 
       function showCorrectLauncher() {
@@ -103,8 +223,6 @@
         chatIsOpen = true;
 
         launcher.classList.add("is-hidden");
-
-        
 
         setTimeout(() => {
           launcher.style.display = "none";
