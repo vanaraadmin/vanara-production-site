@@ -1,0 +1,2947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explore Koh Chang | Vanara</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================
+EXPLORE KOH CHANG
+PART 4
+GLOBAL LAYOUT
+========================================================== */
+
+.vr-explore-page{
+
+position:relative;
+overflow:hidden;
+background:#f7f3ec;
+color:#20382d;
+
+}
+
+.vr-explore-page *{
+
+box-sizing:border-box;
+
+}
+
+.vr-shell{
+
+width:min(1320px,calc(100% - 80px));
+margin:auto;
+position:relative;
+z-index:2;
+
+}
+
+.vr-section{
+
+padding:140px 0;
+position:relative;
+
+}
+
+.vr-section+.vr-section{
+
+padding-top:80px;
+
+}
+
+/* ==========================================================
+TYPOGRAPHY
+========================================================== */
+
+.vr-kicker{
+
+display:inline-flex;
+align-items:center;
+gap:16px;
+
+margin:0 0 18px;
+
+font-size:.74rem;
+
+font-weight:700;
+
+letter-spacing:.28em;
+
+text-transform:uppercase;
+
+color:#7b806f;
+
+}
+
+.vr-kicker:before{
+
+content:"";
+
+width:54px;
+height:1px;
+
+background:#b28d53;
+
+display:block;
+
+}
+
+.vr-explore-title{
+
+margin:0;
+
+font-family:"Marcellus",serif;
+
+font-size:clamp(42px,4vw,72px);
+
+line-height:1.06;
+
+font-weight:400;
+
+letter-spacing:-.02em;
+
+color:#16352a;
+
+max-width:820px;
+
+}
+
+.vr-explore-title em{
+
+font-style:normal;
+
+color:#9d7a46;
+
+}
+
+.vr-final-title{
+
+margin:0;
+
+font-family:"Marcellus",serif;
+
+font-size:clamp(48px,5vw,84px);
+
+font-weight:400;
+
+line-height:1.04;
+
+letter-spacing:-.03em;
+
+color:white;
+
+}
+
+.vr-editorial-text{
+
+max-width:760px;
+
+margin:60px auto 0;
+
+font-size:1.08rem;
+
+line-height:1.95;
+
+color:#5d645f;
+
+}
+
+.lead{
+
+font-size:1.2rem;
+
+line-height:1.9;
+
+color:#32453d;
+
+}
+
+.vr-number{
+
+display:block;
+
+margin-bottom:16px;
+
+font-size:4rem;
+
+font-family:"Marcellus",serif;
+
+color:#cdb68d;
+
+line-height:1;
+
+}
+
+/* ==========================================================
+HERO
+========================================================== */
+
+.vr-explore-hero{
+
+height:min(92vh,980px);
+
+min-height:760px;
+
+position:relative;
+
+overflow:hidden;
+
+background:#000;
+
+}
+
+.vr-explore-hero__media{
+
+position:absolute;
+
+inset:0;
+
+}
+
+.vr-explore-hero img{
+
+position:absolute;
+
+inset:0;
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+transform:scale(1.02);
+
+}
+
+.vr-explore-hero__veil{
+
+position:absolute;
+
+inset:0;
+
+background:
+
+linear-gradient(
+90deg,
+rgba(8,18,14,.82),
+rgba(8,18,14,.46) 42%,
+rgba(8,18,14,.18) 72%,
+rgba(8,18,14,.08)
+),
+
+linear-gradient(
+180deg,
+rgba(8,18,14,.04),
+rgba(8,18,14,.55)
+);
+
+}
+
+.vr-explore-hero__grain{
+
+position:absolute;
+
+inset:0;
+
+opacity:.18;
+
+mix-blend-mode:soft-light;
+
+background-image:
+
+radial-gradient(circle at 20% 30%,rgba(255,255,255,.18) 0 1px,transparent 1px),
+
+radial-gradient(circle at 70% 60%,rgba(255,255,255,.12) 0 1px,transparent 1px),
+
+radial-gradient(circle at 80% 10%,rgba(255,255,255,.18) 0 1px,transparent 1px);
+
+background-size:180px 180px;
+
+}
+
+.vr-explore-hero .vr-shell{
+
+height:100%;
+
+display:flex;
+
+align-items:flex-end;
+
+}
+
+.vr-explore-hero__content{
+
+position:relative;
+
+padding-bottom:110px;
+
+max-width:760px;
+
+color:white;
+
+z-index:5;
+
+}
+
+.vr-line{
+
+display:block;
+
+width:48px;
+
+height:1px;
+
+background:white;
+
+opacity:.7;
+
+}
+
+.vr-explore-hero__eyebrow{
+
+display:flex;
+
+align-items:center;
+
+gap:16px;
+
+margin-bottom:28px;
+
+font-size:.76rem;
+
+letter-spacing:.30em;
+
+text-transform:uppercase;
+
+font-weight:700;
+
+color:#ece7d7;
+
+}
+
+.vr-explore-hero__title{
+
+margin:0;
+
+font-family:"Marcellus",serif;
+
+font-size:clamp(60px,7vw,110px);
+
+font-weight:400;
+
+line-height:.96;
+
+letter-spacing:-.03em;
+
+}
+
+.vr-explore-hero__title span{
+
+color:#d8bb83;
+
+}
+
+.vr-explore-hero__lead{
+
+margin:36px 0 0;
+
+max-width:640px;
+
+font-size:1.2rem;
+
+line-height:2;
+
+color:rgba(255,255,255,.86);
+
+}
+
+.vr-explore-hero__meta{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:14px;
+
+margin-top:44px;
+
+font-size:.82rem;
+
+letter-spacing:.18em;
+
+text-transform:uppercase;
+
+color:#ece7d7;
+
+}
+
+.vr-explore-hero__meta .dot{
+
+width:5px;
+
+height:5px;
+
+background:#cda45e;
+
+border-radius:50%;
+
+align-self:center;
+
+}
+
+/* ==========================================================
+INTRO
+========================================================== */
+
+.vr-explore-intro{
+
+background:white;
+
+}
+
+.vr-explore-intro__grid{
+
+display:grid;
+
+grid-template-columns:
+
+120px
+
+minmax(300px,620px)
+
+1fr;
+
+gap:80px;
+
+align-items:start;
+
+}
+
+.vr-explore-copy{
+
+font-size:1.06rem;
+
+line-height:2;
+
+color:#59645d;
+
+}
+
+.vr-explore-index{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+gap:22px;
+
+font-size:.78rem;
+
+letter-spacing:.20em;
+
+text-transform:uppercase;
+
+color:#888;
+
+}
+
+.vr-index-line{
+
+width:1px;
+
+height:180px;
+
+background:#d8c8a8;
+
+}
+
+/* ==========================================================
+EDITORIAL HEADER
+========================================================== */
+
+.vr-editorial-header{
+
+display:grid;
+
+grid-template-columns:100px 1fr;
+
+gap:50px;
+
+align-items:start;
+
+margin-bottom:80px;
+
+}
+
+.vr-editorial-index{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+gap:20px;
+
+font-size:.8rem;
+
+letter-spacing:.24em;
+
+text-transform:uppercase;
+
+color:#888;
+
+}
+
+.vr-index-line-horizontal{
+
+width:1px;
+
+height:120px;
+
+background:#ccb184;
+
+}
+
+/* ==========================================================
+PART 5
+MAP
+DESTINATIONS
+FEATURE STORIES
+GALLERIES
+========================================================== */
+
+
+/* ==========================================================
+MAP
+========================================================== */
+
+.vr-explore-map{
+
+background:#fbf8f2;
+
+}
+
+.vr-map-layout{
+
+display:grid;
+
+grid-template-columns:
+
+1.45fr
+
+460px;
+
+gap:90px;
+
+align-items:center;
+
+margin-top:70px;
+
+}
+
+.vr-map-illustration{
+
+position:relative;
+
+border-radius:34px;
+
+background:white;
+
+padding:40px;
+
+box-shadow:
+
+0 40px 90px rgba(0,0,0,.08);
+
+min-height:720px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+overflow:hidden;
+
+}
+
+
+
+.vr-map-sidebar{
+
+display:flex;
+
+flex-direction:column;
+
+gap:44px;
+
+}
+
+.vr-map-sidebar article{
+
+padding-bottom:34px;
+
+border-bottom:1px solid rgba(0,0,0,.08);
+
+}
+
+.vr-map-sidebar article:last-child{
+
+border:none;
+
+padding-bottom:0;
+
+}
+
+.vr-map-sidebar span{
+
+display:block;
+
+margin-bottom:14px;
+
+font-size:.74rem;
+
+letter-spacing:.22em;
+
+font-weight:700;
+
+text-transform:uppercase;
+
+color:#b28d53;
+
+}
+
+.vr-map-sidebar h3{
+
+margin:0 0 16px;
+
+font-family:"Marcellus",serif;
+
+font-size:32px;
+
+font-weight:400;
+
+color:#17362c;
+
+}
+
+.vr-map-sidebar p{
+
+margin:0;
+
+font-size:1rem;
+
+line-height:1.9;
+
+color:#61706a;
+
+}
+
+
+/* ==========================================================
+DESTINATIONS
+========================================================== */
+
+.vr-destination{
+
+display:grid;
+
+grid-template-columns:
+
+1.25fr
+
+520px;
+
+gap:90px;
+
+align-items:center;
+
+margin-top:140px;
+
+}
+
+.vr-destination--reverse{
+
+grid-template-columns:
+
+520px
+
+1.25fr;
+
+}
+
+.vr-destination--reverse
+
+.vr-destination__image{
+
+order:2;
+
+}
+
+.vr-destination--reverse
+
+.vr-destination__content{
+
+order:1;
+
+}
+
+.vr-destination__image{
+
+position:relative;
+
+overflow:hidden;
+
+border-radius:34px;
+
+box-shadow:
+
+0 40px 90px rgba(0,0,0,.12);
+
+}
+
+.vr-destination__image img{
+
+display:block;
+
+width:100%;
+
+height:760px;
+
+object-fit:cover;
+
+transition:
+
+transform .8s cubic-bezier(.22,.61,.36,1);
+
+}
+
+.vr-wide img{
+
+height:840px;
+
+}
+
+.vr-destination:hover
+
+.vr-destination__image img{
+
+transform:scale(1.05);
+
+}
+
+.vr-destination__content{
+
+max-width:520px;
+
+}
+
+.vr-destination__content h3{
+
+margin:0 0 24px;
+
+font-family:"Marcellus",serif;
+
+font-size:54px;
+
+font-weight:400;
+
+line-height:1.06;
+
+letter-spacing:-.02em;
+
+color:#17362c;
+
+}
+
+.vr-destination__content p{
+
+font-size:1.05rem;
+
+line-height:2;
+
+color:#5f6b66;
+
+}
+
+
+/* ==========================================================
+FEATURE STORIES
+========================================================== */
+
+.vr-feature-story{
+
+display:grid;
+
+grid-template-columns:
+
+1.2fr
+
+520px;
+
+gap:90px;
+
+align-items:center;
+
+}
+
+.vr-feature-story--reverse{
+
+grid-template-columns:
+
+520px
+
+1.2fr;
+
+}
+
+.vr-feature-story--reverse
+
+.vr-feature-story__image{
+
+order:2;
+
+}
+
+.vr-feature-story--reverse
+
+.vr-feature-story__content{
+
+order:1;
+
+}
+
+.vr-feature-story__image{
+
+overflow:hidden;
+
+border-radius:34px;
+
+box-shadow:
+
+0 40px 90px rgba(0,0,0,.12);
+
+}
+
+.vr-feature-story__image img{
+
+display:block;
+
+width:100%;
+
+height:820px;
+
+object-fit:cover;
+
+transition:
+
+transform .8s ease;
+
+}
+
+.vr-feature-story:hover
+
+.vr-feature-story__image img{
+
+transform:scale(1.05);
+
+}
+
+.vr-feature-story__content h3{
+
+margin:0 0 28px;
+
+font-family:"Marcellus",serif;
+
+font-size:58px;
+
+font-weight:400;
+
+line-height:1.05;
+
+letter-spacing:-.03em;
+
+color:#18372d;
+
+}
+
+.vr-feature-story__content p{
+
+font-size:1.05rem;
+
+line-height:2;
+
+color:#5e6863;
+
+}
+
+
+/* ==========================================================
+GALLERIES
+========================================================== */
+
+.vr-gallery-two{
+
+display:grid;
+
+grid-template-columns:
+
+1fr
+
+1fr;
+
+gap:32px;
+
+margin-top:80px;
+
+}
+
+.vr-gallery-three{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(3,1fr);
+
+gap:28px;
+
+margin-top:80px;
+
+}
+
+.vr-gallery-two figure,
+
+.vr-gallery-three figure{
+
+margin:0;
+
+overflow:hidden;
+
+border-radius:30px;
+
+box-shadow:
+
+0 30px 80px rgba(0,0,0,.12);
+
+}
+
+.vr-gallery-two img,
+
+.vr-gallery-three img{
+
+display:block;
+
+width:100%;
+
+height:620px;
+
+object-fit:cover;
+
+transition:
+
+transform .8s ease;
+
+}
+
+.vr-gallery-three img{
+
+height:540px;
+
+}
+
+.vr-gallery-two figure:hover img,
+
+.vr-gallery-three figure:hover img{
+
+transform:scale(1.05);
+
+}
+
+.vr-gallery-two--offset{
+
+margin-top:34px;
+
+max-width:520px;
+
+margin-left:auto;
+
+}
+
+
+/* ==========================================================
+EDITORIAL LAYOUT
+========================================================== */
+
+.vr-editorial-layout{
+
+display:grid;
+
+grid-template-columns:
+
+120px
+
+1fr;
+
+gap:80px;
+
+}
+
+.vr-editorial-copy{
+
+max-width:860px;
+
+}
+
+.vr-editorial-copy p{
+
+font-size:1.08rem;
+
+line-height:2;
+
+color:#5f6963;
+
+}
+
+
+/* ==========================================================
+WARAPORN
+========================================================== */
+
+.vr-explore-waraporn{
+
+background:#f9f5ef;
+
+}
+
+.vr-explore-waraporn
+
+.vr-feature-story{
+
+grid-template-columns:1fr;
+
+max-width:860px;
+
+margin:auto;
+
+text-align:center;
+
+}
+
+.vr-explore-waraporn
+
+.vr-feature-story__content{
+
+max-width:none;
+
+}
+
+.vr-explore-waraporn h2{
+
+margin-bottom:28px;
+
+}
+
+
+/* ==========================================================
+FINAL
+========================================================== */
+
+.vr-explore-final{
+
+padding-bottom:180px;
+
+background:
+
+linear-gradient(
+
+180deg,
+
+#17362c,
+
+#11271f
+
+);
+
+color:white;
+
+}
+
+.vr-final-editorial{
+
+max-width:900px;
+
+margin:auto;
+
+text-align:center;
+
+}
+
+.vr-final-editorial blockquote{
+
+margin:54px auto 0;
+
+padding:0;
+
+border:none;
+
+font-family:"Marcellus",serif;
+
+font-size:34px;
+
+line-height:1.6;
+
+font-weight:400;
+
+color:rgba(255,255,255,.82);
+
+}
+
+.vr-explore-final
+
+.vr-kicker{
+
+justify-content:center;
+
+color:#d4c2a2;
+
+}
+
+.vr-explore-final
+
+.vr-kicker:before{
+
+background:#d4c2a2;
+
+}
+
+/* ==========================================================
+PREMIUM ISLAND MAP
+========================================================== */
+.vr-island-map{position:relative;width:100%;min-height:760px;display:flex;align-items:center;justify-content:center}.vr-map-svg{width:auto;height:94%;max-height:710px;overflow:visible}.vr-map-island{transform-origin:center;transition:transform .9s cubic-bezier(.22,.61,.36,1)}.vr-map-illustration:hover .vr-map-island{transform:scale(1.012)}.vr-map-ridge{fill:none;stroke:rgba(255,255,255,.18);stroke-width:5;stroke-linecap:round;stroke-dasharray:10 18}.vr-map-ridge--secondary{stroke:rgba(255,255,255,.10);stroke-width:3}.vr-map-point{position:absolute;display:flex;align-items:center;gap:12px;color:#234131;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}.vr-map-point span{position:relative;width:13px;height:13px;flex:0 0 13px;border-radius:50%;background:#bb9556;box-shadow:0 0 0 8px rgba(187,149,86,.18)}.vr-map-point span:after{position:absolute;inset:-1px;border:1px solid rgba(187,149,86,.72);border-radius:inherit;content:"";animation:vrMapPulse 2.8s ease-out infinite}.vr-map-point--white-sand{top:16%;left:12%;flex-direction:row-reverse}.vr-map-point--kai-bae{top:36%;left:8%;flex-direction:row-reverse}.vr-map-point--lonely{top:53%;left:10%;flex-direction:row-reverse}.vr-map-point--bang-bao{left:8%;bottom:10%;flex-direction:row-reverse}.vr-map-point--long-beach{right:10%;bottom:6%}.vr-map-compass{position:absolute;top:34px;right:34px;display:grid;justify-items:center;gap:8px;color:#17362c;font-size:.7rem;font-weight:700;letter-spacing:.22em}.vr-map-compass i{position:relative;display:block;width:1px;height:44px;background:rgba(23,54,44,.35)}.vr-map-compass i:before{position:absolute;top:-1px;left:50%;width:7px;height:7px;border-top:1px solid #17362c;border-left:1px solid #17362c;content:"";transform:translateX(-50%) rotate(45deg)}.vr-map-card{position:absolute;left:30px;bottom:30px;display:flex;gap:30px;padding:25px 29px;border:1px solid rgba(23,54,44,.08);border-radius:22px;background:rgba(255,255,255,.9);box-shadow:0 20px 60px rgba(0,0,0,.12);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}.vr-map-card>div+div{padding-left:30px;border-left:1px solid rgba(23,54,44,.1)}.vr-map-card strong{display:block;color:#17362c;font-family:"Marcellus",serif;font-size:34px;font-weight:400;line-height:1}.vr-map-card small{display:block;margin-top:7px;color:#7d857f;font-size:.64rem;font-weight:700;letter-spacing:.14em;line-height:1.35;text-transform:uppercase}@keyframes vrMapPulse{0%{opacity:.8;transform:scale(.8)}75%,100%{opacity:0;transform:scale(2.7)}}
+/* ==========================================================
+RESPONSIVE
+========================================================== */
+@media(max-width:1200px){.vr-shell{width:min(100%,calc(100% - 50px))}.vr-map-layout{grid-template-columns:1fr;gap:60px}.vr-map-sidebar{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}.vr-destination,.vr-feature-story,.vr-destination--reverse,.vr-feature-story--reverse{grid-template-columns:1fr;gap:50px}.vr-destination--reverse .vr-destination__image,.vr-feature-story--reverse .vr-feature-story__image,.vr-destination--reverse .vr-destination__content,.vr-feature-story--reverse .vr-feature-story__content{order:initial}.vr-destination__content,.vr-feature-story__content{max-width:none}.vr-gallery-two,.vr-gallery-three{grid-template-columns:1fr}.vr-editorial-layout,.vr-explore-intro__grid,.vr-editorial-header{grid-template-columns:1fr}.vr-editorial-layout{gap:50px}.vr-explore-intro__grid{gap:40px}.vr-editorial-header{gap:24px}.vr-editorial-index{flex-direction:row;justify-content:flex-start}.vr-index-line-horizontal{width:80px;height:1px}}
+@media(max-width:768px){.vr-section{padding:90px 0}.vr-section+.vr-section{padding-top:60px}.vr-shell{width:calc(100% - 34px)}.vr-explore-hero{height:auto;min-height:760px}.vr-explore-hero__content{padding-bottom:70px}.vr-explore-hero__title{font-size:58px;line-height:1}.vr-explore-hero__lead{font-size:1rem;line-height:1.8}.vr-explore-title{font-size:42px}.vr-feature-story__content h3,.vr-destination__content h3{font-size:40px}.vr-number{font-size:52px}.vr-destination__image img,.vr-feature-story__image img,.vr-wide img{height:460px}.vr-gallery-two img,.vr-gallery-three img{height:340px}.vr-map-illustration{min-height:600px;padding:18px}.vr-island-map{min-height:560px}.vr-map-svg{height:80%;max-height:500px}.vr-map-point{gap:7px;font-size:.58rem;letter-spacing:.08em}.vr-map-point--white-sand{top:17%;right:5%}.vr-map-point--kai-bae{top:35%;right:0}.vr-map-point--lonely{top:50%;right:0}.vr-map-point--bang-bao{left:1%;bottom:22%}.vr-map-point--long-beach{left:6%;bottom:10%}.vr-map-card{right:12px;bottom:12px;left:12px;gap:12px;justify-content:space-between;padding:18px}.vr-map-card>div+div{padding-left:12px}.vr-map-card strong{font-size:24px}.vr-map-card small{font-size:.52rem}.vr-map-sidebar{grid-template-columns:1fr}.vr-map-sidebar h3{font-size:26px}.vr-final-title{font-size:48px}.vr-final-editorial blockquote{font-size:24px;line-height:1.7}}
+@media(max-width:480px){.vr-shell{width:calc(100% - 24px)}.vr-explore-hero__title{font-size:46px}.vr-explore-title{font-size:34px}.vr-feature-story__content h3,.vr-destination__content h3{font-size:32px}.vr-gallery-two img,.vr-gallery-three img,.vr-feature-story__image img,.vr-destination__image img{height:300px;border-radius:22px}.vr-map-compass{top:22px;left:22px}.vr-map-card strong{font-size:21px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+
+
+
+/* ==========================================================
+FINAL STATIC MAP — MARKERS ANCHORED TO THE IMAGE
+========================================================== */
+
+.vr-island-map--static{
+  position:relative;
+  width:100%;
+  min-height:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:28px;
+}
+
+.vr-map-image-stage{
+  position:relative;
+  width:min(100%,760px);
+  aspect-ratio:1 / 1;
+  flex:0 0 auto;
+}
+
+.vr-map-static-image{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  border-radius:22px;
+}
+
+.vr-map-point{
+  position:absolute;
+  z-index:3;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#17362c;
+  font-size:.70rem;
+  font-weight:700;
+  letter-spacing:.13em;
+  line-height:1;
+  text-transform:uppercase;
+  white-space:nowrap;
+  transform:translate(-50%,-50%);
+}
+
+.vr-map-point span{
+  position:relative;
+  width:13px;
+  height:13px;
+  flex:0 0 13px;
+  border-radius:50%;
+  background:#bb9556;
+  box-shadow:0 0 0 8px rgba(187,149,86,.20);
+}
+
+.vr-map-point span::after{
+  position:absolute;
+  inset:-1px;
+  border:1px solid rgba(187,149,86,.72);
+  border-radius:inherit;
+  content:"";
+  animation:vrMapPulse 2.8s ease-out infinite;
+}
+
+/* Exact percentages measured on the supplied 980 × 980 clean map */
+.vr-map-point--ferry{top:17.3%;left:22.45%}
+.vr-map-point--white-sand{top:28.4%;left:calc(15.60% - 40px)}
+.vr-map-point--kai-bae{top:59.1%;left:calc(26.60% - 40px)}
+.vr-map-point--lonely{top:65.4%;left:calc(28.10% - 65px)}
+.vr-map-point--vanara{top:69.8%;left:calc(30.85% + 65px)}
+.vr-map-point--bang-bao{top:76.3%;left:calc(39.10% - 60px)}
+
+.vr-map-compass{
+  position:absolute;
+  top:8%;
+  right:7%;
+  left:auto;
+  z-index:3;
+  display:grid;
+  justify-items:center;
+  gap:8px;
+  color:#17362c;
+  font-size:.7rem;
+  font-weight:700;
+  letter-spacing:.22em;
+}
+
+.vr-map-compass i{
+  position:relative;
+  display:block;
+  width:1px;
+  height:44px;
+  background:rgba(23,54,44,.35);
+}
+
+.vr-map-compass i::before{
+  position:absolute;
+  top:-1px;
+  left:50%;
+  width:7px;
+  height:7px;
+  border-top:1px solid #17362c;
+  border-left:1px solid #17362c;
+  content:"";
+  transform:translateX(-50%) rotate(45deg);
+}
+
+.vr-map-card{
+  position:relative;
+  right:auto;
+  bottom:auto;
+  left:auto;
+  z-index:4;
+  display:flex;
+  width:min(calc(100% - 40px),730px);
+  justify-content:space-between;
+  gap:24px;
+  padding:25px 29px;
+  border:1px solid rgba(23,54,44,.08);
+  border-radius:22px;
+  background:rgba(255,255,255,.94);
+  box-shadow:0 20px 60px rgba(0,0,0,.12);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+}
+
+.vr-map-card>div{
+  flex:1;
+}
+
+.vr-map-card>div+div{
+  padding-left:30px;
+  border-left:1px solid rgba(23,54,44,.1);
+}
+
+.vr-map-card strong{
+  display:block;
+  color:#17362c;
+  font-family:"Marcellus",serif;
+  font-size:34px;
+  font-weight:400;
+  line-height:1;
+}
+
+.vr-map-card small{
+  display:block;
+  margin-top:7px;
+  color:#7d857f;
+  font-size:.64rem;
+  font-weight:700;
+  letter-spacing:.14em;
+  line-height:1.35;
+  text-transform:uppercase;
+}
+
+.vr-feature-story--mangroves{
+  padding-bottom:0;
+}
+
+@media(max-width:768px){
+  .vr-map-illustration{
+    min-height:0;
+    padding:18px;
+  }
+
+  .vr-island-map--static{
+    gap:18px;
+  }
+
+  .vr-map-point{
+    gap:6px;
+    font-size:.52rem;
+    letter-spacing:.06em;
+  }
+
+  .vr-map-point span{
+    width:10px;
+    height:10px;
+    flex-basis:10px;
+    box-shadow:0 0 0 6px rgba(187,149,86,.20);
+  }
+
+  .vr-map-point label{
+    max-width:110px;
+    line-height:1.15;
+  }
+
+  .vr-map-card{
+    width:100%;
+    gap:12px;
+    padding:18px;
+  }
+
+  .vr-map-card>div+div{
+    padding-left:12px;
+  }
+
+  .vr-map-card strong{
+    font-size:24px;
+  }
+
+  .vr-map-card small{
+    font-size:.52rem;
+  }
+}
+
+@media(max-width:480px){
+  .vr-map-point{
+    gap:5px;
+    font-size:.43rem;
+    letter-spacing:.035em;
+  }
+
+  .vr-map-point label{
+    max-width:78px;
+  }
+
+  .vr-map-compass{
+    top:6%;
+    right:5%;
+  }
+
+  .vr-map-compass i{
+    height:32px;
+  }
+
+  .vr-map-card{
+    width:100%;
+    padding:14px 10px;
+    border-radius:16px;
+  }
+
+  .vr-map-card strong{
+    font-size:20px;
+  }
+
+  .vr-map-card small{
+    font-size:.44rem;
+    letter-spacing:.08em;
+  }
+}
+
+
+/* ==========================================================
+VANARA LOGO MARKER
+========================================================== */
+
+.vr-map-point--vanara .vr-map-marker-logo{
+  position:relative;
+  width:30px;
+  height:30px;
+  flex:0 0 30px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:2px solid #bb9556;
+  border-radius:50%;
+  background:#ffffff;
+  box-shadow:
+    0 0 0 8px rgba(187,149,86,.20),
+    0 6px 16px rgba(0,0,0,.18);
+}
+
+.vr-map-point--vanara .vr-map-marker-logo::after{
+  position:absolute;
+  inset:-2px;
+  border:2px solid rgba(187,149,86,.75);
+  border-radius:50%;
+  content:"";
+  animation:vrMapPulse 2.8s ease-out infinite;
+}
+
+.vr-map-point--vanara .vr-map-marker-logo img{
+  position:relative;
+  z-index:2;
+  display:block;
+  width:21px;
+  height:21px;
+  object-fit:contain;
+  border-radius:50%;
+}
+
+@media(max-width:768px){
+  .vr-map-point--vanara .vr-map-marker-logo{
+    width:24px;
+    height:24px;
+    flex-basis:24px;
+    box-shadow:
+      0 0 0 6px rgba(187,149,86,.20),
+      0 5px 12px rgba(0,0,0,.16);
+  }
+
+  .vr-map-point--vanara .vr-map-marker-logo img{
+    width:17px;
+    height:17px;
+  }
+}
+
+
+/* ==========================================================
+FLUID MAP MARKERS — SAME POSITION AT EVERY SCREEN SIZE
+========================================================== */
+
+.vr-map-point--ferry{
+  top:17.3%;
+  left:22.45%;
+  right:auto;
+  bottom:auto;
+}
+
+.vr-map-point--white-sand{
+  top:28.4%;
+  left:10.34%;
+  right:auto;
+  bottom:auto;
+}
+
+.vr-map-point--kai-bae{
+  top:59.1%;
+  left:21.34%;
+  right:auto;
+  bottom:auto;
+}
+
+.vr-map-point--lonely{
+  top:65.4%;
+  left:19.55%;
+  right:auto;
+  bottom:auto;
+}
+
+.vr-map-point--vanara{
+  top:69.8%;
+  left:39.40%;
+  right:auto;
+  bottom:auto;
+}
+
+.vr-map-point--bang-bao{
+  top:76.3%;
+  left:31.21%;
+  right:auto;
+  bottom:auto;
+}
+
+/* Explicitly preserve the same anchors on tablet and mobile */
+@media(max-width:1200px){
+  .vr-map-point--ferry{top:17.3%;left:22.45%;right:auto;bottom:auto}
+  .vr-map-point--white-sand{top:28.4%;left:10.34%;right:auto;bottom:auto}
+  .vr-map-point--kai-bae{top:59.1%;left:21.34%;right:auto;bottom:auto}
+  .vr-map-point--lonely{top:65.4%;left:19.55%;right:auto;bottom:auto}
+  .vr-map-point--vanara{top:69.8%;left:39.40%;right:auto;bottom:auto}
+  .vr-map-point--bang-bao{top:76.3%;left:31.21%;right:auto;bottom:auto}
+}
+
+@media(max-width:768px){
+  .vr-map-point--ferry{top:17.3%;left:22.45%;right:auto;bottom:auto}
+  .vr-map-point--white-sand{top:28.4%;left:10.34%;right:auto;bottom:auto}
+  .vr-map-point--kai-bae{top:59.1%;left:21.34%;right:auto;bottom:auto}
+  .vr-map-point--lonely{top:65.4%;left:19.55%;right:auto;bottom:auto}
+  .vr-map-point--vanara{top:69.8%;left:39.40%;right:auto;bottom:auto}
+  .vr-map-point--bang-bao{top:76.3%;left:31.21%;right:auto;bottom:auto}
+}
+
+@media(max-width:480px){
+  .vr-map-point--ferry{top:17.3%;left:22.45%;right:auto;bottom:auto}
+  .vr-map-point--white-sand{top:28.4%;left:10.34%;right:auto;bottom:auto}
+  .vr-map-point--kai-bae{top:59.1%;left:21.34%;right:auto;bottom:auto}
+  .vr-map-point--lonely{top:65.4%;left:19.55%;right:auto;bottom:auto}
+  .vr-map-point--vanara{top:69.8%;left:39.40%;right:auto;bottom:auto}
+  .vr-map-point--bang-bao{top:76.3%;left:31.21%;right:auto;bottom:auto}
+}
+
+</style>
+</head>
+<body>
+<!-- ==========================================================
+EXPLORE KOH CHANG
+PART 1 / HTML
+HERO + INTRO + MAP
+========================================================== -->
+
+<main class="vr-explore-page" id="vr-explore-kohchang">
+
+  <!-- ======================================================
+       HERO
+  ======================================================= -->
+
+  <section class="vr-explore-hero">
+
+    <div class="vr-explore-hero__media">
+
+      <img
+        src="https://static.wixstatic.com/media/c090c7_2dd37a6f42f04f38afdbf2d8f499e322~mv2.jpg"
+        alt="Panoramic aerial view of Koh Chang"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async">
+
+      <div class="vr-explore-hero__veil"></div>
+
+      <div class="vr-explore-hero__grain"></div>
+
+    </div>
+
+    <div class="vr-shell">
+
+      <div class="vr-explore-hero__content">
+
+        <div class="vr-explore-hero__eyebrow">
+
+          <span class="vr-line"></span>
+
+          <span>Explore Koh Chang</span>
+
+        </div>
+
+        <h1 class="vr-explore-hero__title">
+
+          Beyond the Resort.<br>
+
+          <span>Discover the Island.</span>
+
+        </h1>
+
+        <p class="vr-explore-hero__lead">
+
+          Koh Chang is more than beautiful beaches.
+
+          Ancient fishing villages, rainforest waterfalls,
+          hidden temples and quiet coastal roads make every
+          day on the island different from the last.
+
+        </p>
+
+        <div class="vr-explore-hero__meta">
+
+          <span>Waterfalls</span>
+
+          <span class="dot"></span>
+
+          <span>Beaches</span>
+
+          <span class="dot"></span>
+
+          <span>Rainforest</span>
+
+          <span class="dot"></span>
+
+          <span>Island Life</span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ======================================================
+       INTRO
+  ======================================================= -->
+
+  <section class="vr-explore-intro vr-section">
+
+    <div class="vr-shell">
+
+      <div class="vr-explore-intro__grid">
+
+        <aside class="vr-explore-index">
+
+          <span>01</span>
+
+          <span class="vr-index-line"></span>
+
+          <span>Your Island Guide</span>
+
+        </aside>
+
+        <div>
+
+          <p class="vr-kicker">
+
+            Vanara recommends
+
+          </p>
+
+          <h2 class="vr-explore-title">
+
+            There is no right way
+            to experience Koh Chang.
+
+            <em>
+              Only your own rhythm.
+            </em>
+
+          </h2>
+
+        </div>
+
+        <div class="vr-explore-copy">
+
+          <p class="lead">
+
+            Whether you prefer quiet beaches,
+            scenic drives, rainforest hikes or
+            authentic fishing villages, the island
+            rewards those who slow down.
+
+          </p>
+
+          <p>
+
+            Everything on this page has been selected
+            by our team to help you discover places we
+            genuinely love and regularly recommend to
+            our guests.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ======================================================
+       ISLAND MAP
+  ======================================================= -->
+
+  <section class="vr-explore-map vr-section">
+
+    <div class="vr-shell">
+
+      <header class="vr-editorial-header">
+
+        <div class="vr-editorial-index">
+
+          <span>02</span>
+
+          <span class="vr-index-line-horizontal"></span>
+
+        </div>
+
+        <div>
+
+          <p class="vr-kicker">
+
+            Orientation
+
+          </p>
+
+          <h2 class="vr-explore-title">
+
+            Understanding the island
+            <em>before you start exploring.</em>
+
+          </h2>
+
+        </div>
+
+      </header>
+
+      <div class="vr-map-layout">
+
+        <div class="vr-map-illustration">
+
+  <div class="vr-island-map vr-island-map--static">
+
+    <div class="vr-map-image-stage">
+      <img
+        class="vr-map-static-image"
+        src="data:image/jpeg;base64,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"
+        alt="Map of Koh Chang showing Vanara and selected west-coast locations"
+        loading="eager"
+        decoding="async">
+
+      <div class="vr-map-point vr-map-point--ferry"><span aria-hidden="true"></span><label>Ferry</label></div>
+      <div class="vr-map-point vr-map-point--white-sand"><span aria-hidden="true"></span><label>White Sand</label></div>
+      <div class="vr-map-point vr-map-point--kai-bae"><span aria-hidden="true"></span><label>Kai Bae</label></div>
+      <div class="vr-map-point vr-map-point--lonely"><span aria-hidden="true"></span><label>Lonely Beach</label></div>
+      <div class="vr-map-point vr-map-point--vanara">
+        <span class="vr-map-marker-logo" aria-hidden="true">
+          <img src="https://static.wixstatic.com/media/c090c7_006d6913b7394fa8b82efee35b699d01~mv2.png" alt="">
+        </span>
+        <label>Vanara – Bailan</label>
+      </div>
+      <div class="vr-map-point vr-map-point--bang-bao"><span aria-hidden="true"></span><label>Bang Bao</label></div>
+
+      <div class="vr-map-compass" aria-hidden="true">
+        <span>N</span><i></i>
+      </div>
+    </div>
+
+    <div class="vr-map-card">
+      <div><strong>52 km</strong><small>Island ring road</small></div>
+      <div><strong>70%</strong><small>National Park</small></div>
+      <div><strong>30+</strong><small>Beaches &amp; bays</small></div>
+    </div>
+
+  </div>
+
+</div>
+
+<aside class="vr-map-sidebar">
+
+          <article>
+
+            <span>WEST</span>
+
+            <h3>Beaches & Sunsets</h3>
+
+            <p>
+
+              White Sand, Kai Bae,
+              Lonely Beach and Bang Bao
+              form the island's most visited
+              coastline.
+
+            </p>
+
+          </article>
+
+          <article>
+
+            <span>EAST</span>
+
+            <h3>Authentic Island Life</h3>
+
+            <p>
+
+              Quiet roads, mangroves,
+              fishing villages and a much
+              slower pace.
+
+            </p>
+
+          </article>
+
+          <article>
+
+            <span>CENTRE</span>
+
+            <h3>Rainforest</h3>
+
+            <p>
+
+              National Park jungle,
+              waterfalls and panoramic
+              mountain roads.
+
+            </p>
+
+          </article>
+
+        </aside>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ======================================================
+       WEST COAST
+  ======================================================= -->
+
+  <section class="vr-explore-west vr-section">
+
+    <div class="vr-shell">
+
+      <header class="vr-editorial-header">
+
+        <div class="vr-editorial-index">
+
+          <span>03</span>
+
+          <span class="vr-index-line-horizontal"></span>
+
+        </div>
+
+        <div>
+
+          <p class="vr-kicker">
+
+            West Coast
+
+          </p>
+
+          <h2 class="vr-explore-title">
+
+            Beaches that made
+            Koh Chang famous.
+
+          </h2>
+
+        </div>
+
+      </header>
+
+
+
+      <!-- Lonely Beach -->
+
+      <article class="vr-destination">
+
+        <figure class="vr-destination__image vr-wide">
+
+          <img
+          src="https://static.wixstatic.com/media/c090c7_fe26e887eecb4bf58c48c57808a85379~mv2.jpg"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="low"
+          alt="Lonely Beach">
+
+        </figure>
+
+        <div class="vr-destination__content">
+
+          <span class="vr-number">
+
+            01
+
+          </span>
+
+          <p class="vr-kicker">
+
+            Lonely Beach
+
+          </p>
+
+          <h3>
+
+            Relaxed atmosphere,
+            cafés and sunsets.
+
+          </h3>
+
+          <p>
+
+            Once known as Koh Chang's backpacker
+            paradise, Lonely Beach has evolved
+            into one of the island's most enjoyable
+            places for cafés, restaurants, beach bars
+            and relaxed afternoons.
+
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- Kai Bae -->
+
+      <article class="vr-destination vr-destination--reverse">
+
+        <figure class="vr-destination__image">
+
+          <img
+          src="https://static.wixstatic.com/media/c090c7_4451c528572849b8aaad28ef20a93026~mv2.jpg"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="low"
+          alt="Kai Bae Viewpoint">
+
+        </figure>
+
+        <div class="vr-destination__content">
+
+          <span class="vr-number">
+
+            02
+
+          </span>
+
+          <p class="vr-kicker">
+
+            Kai Bae
+
+          </p>
+
+          <h3>
+
+            One of the island's
+            iconic viewpoints.
+
+          </h3>
+
+          <p>
+
+            Although the beach itself is beautiful,
+            the famous viewpoint overlooking the
+            offshore islands is one of the most
+            photographed locations on Koh Chang.
+
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- Bang Bao -->
+
+      <article class="vr-destination">
+
+        <figure class="vr-destination__image vr-wide">
+
+          <img
+          src="https://static.wixstatic.com/media/c090c7_8e1e90e1591a4fa6bdeec16057b4010c~mv2.jpg"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="low"
+          alt="Bang Bao Pier">
+
+        </figure>
+
+        <div class="vr-destination__content">
+
+          <span class="vr-number">
+
+            03
+
+          </span>
+
+          <p class="vr-kicker">
+
+            Bang Bao
+
+          </p>
+
+          <h3>
+
+            Fishing village,
+            lighthouse and boats.
+
+          </h3>
+
+          <p>
+
+            Wooden walkways stretch above the sea,
+            connecting seafood restaurants,
+            dive shops and longtail boats heading
+            towards Koh Rang Marine Park.
+
+          </p>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+<!-- CONTINUES PART 2 -->
+
+  <!-- ======================================================
+       EAST COAST & AUTHENTIC ISLAND
+  ======================================================= -->
+
+  <section class="vr-explore-east vr-section">
+
+    <div class="vr-shell">
+
+      <header class="vr-editorial-header">
+
+        <div class="vr-editorial-index">
+
+          <span>04</span>
+
+          <span class="vr-index-line-horizontal"></span>
+
+        </div>
+
+        <div>
+
+          <p class="vr-kicker">
+
+            East Coast
+
+          </p>
+
+          <h2 class="vr-explore-title">
+
+            A quieter side of Koh Chang.
+            <em>Authentic, peaceful and beautifully untouched.</em>
+
+          </h2>
+
+        </div>
+
+      </header>
+
+
+
+      <!-- Long Beach -->
+
+      <article class="vr-destination">
+
+        <figure class="vr-destination__image vr-wide">
+
+          <img
+          src="https://static.wixstatic.com/media/c090c7_d79db3647a5d4d5097e1c3ec67850e9a~mv2.jpg"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="low"
+          alt="Long Beach Koh Chang">
+
+        </figure>
+
+        <div class="vr-destination__content">
+
+          <span class="vr-number">04</span>
+
+          <p class="vr-kicker">
+            Long Beach
+          </p>
+
+          <h3>
+
+            One of the island's
+            most remote beaches.
+
+          </h3>
+
+          <p>
+
+            Reaching Long Beach takes time,
+            but the reward is one of Koh Chang's
+            quietest stretches of sand. Outside
+            high season you may find yourself
+            almost completely alone.
+
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- Wai Chek -->
+
+      <article class="vr-destination vr-destination--reverse">
+
+        <figure class="vr-destination__image">
+
+          <img
+          src="https://static.wixstatic.com/media/c090c7_cc35bb9ebeb543f089b5ba6fbd6abc45~mv2.jpg"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="low"
+          alt="Wai Chek Beach">
+
+        </figure>
+
+        <div class="vr-destination__content">
+
+          <span class="vr-number">
+
+            05
+
+          </span>
+
+          <p class="vr-kicker">
+
+            Wai Chek Beach
+
+          </p>
+
+          <h3>
+
+            Wild nature,
+            almost no development.
+
+          </h3>
+
+          <p>
+
+            Surrounded by dense jungle,
+            Wai Chek is one of Koh Chang's
+            hidden gems and remains largely
+            untouched by tourism.
+
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- East Coast -->
+
+      <article class="vr-destination">
+
+        <figure class="vr-destination__image vr-wide">
+
+          <img
+          src="https://static.wixstatic.com/media/c090c7_1db7bc6d84b74ed3bd27971302e5a538~mv2.jpg"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="low"
+          alt="East Coast Koh Chang">
+
+        </figure>
+
+        <div class="vr-destination__content">
+
+          <span class="vr-number">
+
+            06
+
+          </span>
+
+          <p class="vr-kicker">
+
+            East Coast Road
+
+          </p>
+
+          <h3>
+
+            The island's
+            most authentic drive.
+
+          </h3>
+
+          <p>
+
+            Small villages,
+            coconut plantations,
+            local cafés and sea views
+            accompany one of the most enjoyable
+            scooter rides on Koh Chang.
+
+          </p>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ======================================================
+       RAINFOREST
+  ======================================================= -->
+
+  <section class="vr-explore-rainforest vr-section">
+
+    <div class="vr-shell">
+
+      <header class="vr-editorial-header">
+
+        <div class="vr-editorial-index">
+
+          <span>05</span>
+
+          <span class="vr-index-line-horizontal"></span>
+
+        </div>
+
+        <div>
+
+          <p class="vr-kicker">
+
+            National Park
+
+          </p>
+
+          <h2 class="vr-explore-title">
+
+            Inside the rainforest.
+            <em>The green heart of Koh Chang.</em>
+
+          </h2>
+
+        </div>
+
+      </header>
+
+
+
+      <article class="vr-feature-story vr-feature-story--mangroves">
+
+        <figure class="vr-feature-story__image">
+
+          <img
+          src="https://static.wixstatic.com/media/c090c7_874ef31d831041489eeb33f0d7e4f161~mv2.png"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="low"
+          alt="Rainforest Koh Chang">
+
+        </figure>
+
+        <div class="vr-feature-story__content">
+
+          <p class="vr-kicker">
+
+            Tropical Rainforest
+
+          </p>
+
+          <h3>
+
+            Ancient jungle,
+            giant trees and wildlife.
+
+          </h3>
+
+          <p>
+
+            More than seventy percent of
+            Koh Chang is protected National Park.
+            Walking trails reveal enormous trees,
+            tropical birds, butterflies,
+            hornbills and occasionally monkeys.
+
+          </p>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ======================================================
+       WATERFALLS
+  ======================================================= -->
+
+  <section class="vr-explore-waterfalls vr-section">
+
+    <div class="vr-shell">
+
+      <article class="vr-feature-story vr-feature-story--reverse">
+
+        <figure class="vr-feature-story__image">
+
+          <img
+          src="https://static.wixstatic.com/media/c090c7_07c7d0151930413b8e950cfdedb1482f~mv2.jpg"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="low"
+          alt="Waterfall Koh Chang">
+
+        </figure>
+
+        <div class="vr-feature-story__content">
+
+          <p class="vr-kicker">
+
+            Waterfalls
+
+          </p>
+
+          <h3>
+
+            Cool freshwater
+            hidden beneath the canopy.
+
+          </h3>
+
+          <p>
+
+            Several waterfalls are accessible
+            across the island, each offering
+            refreshing pools during the rainy
+            season and peaceful forest walks
+            throughout the year.
+
+          </p>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ======================================================
+       SCENIC ROADS
+  ======================================================= -->
+
+  <section class="vr-explore-roads vr-section">
+
+    <div class="vr-shell">
+
+      <header class="vr-editorial-header">
+
+        <div class="vr-editorial-index">
+
+          <span>06</span>
+
+          <span class="vr-index-line-horizontal"></span>
+
+        </div>
+
+        <div>
+
+          <p class="vr-kicker">
+
+            Scenic Roads
+
+          </p>
+
+          <h2 class="vr-explore-title">
+
+            Sometimes
+            the journey
+            <em>is the destination.</em>
+
+          </h2>
+
+        </div>
+
+      </header>
+
+      <div class="vr-gallery-two">
+
+        <figure>
+
+          <img
+          src="https://static.wixstatic.com/media/c090c7_6cf2ad72ef604ae1b299ed0b7fe5f230~mv2.jpg"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="low"
+          alt="Scenic Road">
+
+        </figure>
+
+        <figure>
+
+          <img
+          src="https://static.wixstatic.com/media/c090c7_2852573d3212449e8edd123eba743b7d~mv2.jpg"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="low"
+          alt="Scenic Road Vertical">
+
+        </figure>
+
+      </div>
+
+      <div class="vr-editorial-text">
+
+        <p>
+
+          Koh Chang's mountain roads connect
+          every side of the island with dramatic
+          viewpoints, tropical jungle and constant
+          changes of scenery. Riding slowly is
+          the best way to appreciate them.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+<!-- CONTINUES PART 3 -->
+
+
+  <!-- ======================================================
+       MANGROVES & SALAK KHOK
+  ======================================================= -->
+
+  <section class="vr-explore-mangroves vr-section">
+
+    <div class="vr-shell">
+
+      <header class="vr-editorial-header">
+
+        <div class="vr-editorial-index">
+
+          <span>07</span>
+
+          <span class="vr-index-line-horizontal"></span>
+
+        </div>
+
+        <div>
+
+          <p class="vr-kicker">
+
+            Salakphet
+
+          </p>
+
+          <h2 class="vr-explore-title">
+
+            Paddle through the mangroves.
+            <em>One of Koh Chang's most peaceful experiences.</em>
+
+          </h2>
+
+        </div>
+
+      </header>
+
+      <article class="vr-feature-story">
+
+        <figure class="vr-feature-story__image">
+
+          <img
+          src="https://static.wixstatic.com/media/c090c7_d74e96acf9e6474090dc077b528cb9a4~mv2.jpg"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="low"
+          alt="Salak Khok Mangroves">
+
+        </figure>
+
+        <div class="vr-feature-story__content">
+
+          <p class="vr-kicker">
+
+            Mangrove Forest
+
+          </p>
+
+          <h3>
+
+            Silence,
+            birds
+            and mirror-like water.
+
+          </h3>
+
+          <p>
+
+            Salakphet is home to Koh Chang's
+            extensive mangrove forest. Kayaking
+            through its narrow waterways offers
+            a completely different perspective
+            on the island, far removed from the
+            beaches and busy roads.
+
+          </p>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ======================================================
+       BOAT TRIPS
+  ======================================================= -->
+
+  <section class="vr-explore-boats vr-section">
+
+    <div class="vr-shell">
+
+      <header class="vr-editorial-header">
+
+        <div class="vr-editorial-index">
+
+          <span>08</span>
+
+          <span class="vr-index-line-horizontal"></span>
+
+        </div>
+
+        <div>
+
+          <p class="vr-kicker">
+
+            Boat Trips
+
+          </p>
+
+          <h2 class="vr-explore-title">
+
+            The sea beyond Koh Chang.
+            <em>Snorkelling, islands and turquoise water.</em>
+
+          </h2>
+
+        </div>
+
+      </header>
+
+      <div class="vr-gallery-three">
+
+        <figure>
+
+          <img
+          src="https://static.wixstatic.com/media/c090c7_51f00d55b0834aad822601151c89e71e~mv2.jpg"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="low"
+          alt="Boat Trip">
+
+        </figure>
+
+        <figure>
+
+          <img
+          src="https://static.wixstatic.com/media/c090c7_4db4ae7d1fcf4f7ca6a41ae85889d15d~mv2.jpg"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="low"
+          alt="Longtail Boat">
+
+        </figure>
+
+        <figure>
+
+          <img
+          src="https://static.wixstatic.com/media/c090c7_23ba13a4d1b34df08fb06687de4abfc2~mv2.jpg"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="low"
+          alt="Snorkelling">
+
+        </figure>
+
+      </div>
+
+      <div class="vr-editorial-text">
+
+        <p>
+
+          Daily excursions depart from Bang Bao,
+          taking visitors to Koh Rang Marine Park
+          and nearby islands where crystal-clear
+          water and coral reefs offer some of the
+          region's best snorkelling.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ======================================================
+       TEMPLES
+  ======================================================= -->
+
+  <section class="vr-explore-temples vr-section">
+
+    <div class="vr-shell">
+
+      <article class="vr-feature-story vr-feature-story--reverse">
+
+        <figure class="vr-feature-story__image">
+
+          <img
+          src="https://static.wixstatic.com/media/c090c7_3f1dcc2cd81745389da337170e6ebbcb~mv2.jpg"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="low"
+          alt="Temple Koh Chang">
+
+        </figure>
+
+        <div class="vr-feature-story__content">
+
+          <p class="vr-kicker">
+
+            Temples
+
+          </p>
+
+          <h3>
+
+            Quiet places
+            of reflection.
+
+          </h3>
+
+          <p>
+
+            Buddhist temples remain part of
+            everyday island life. Visitors are
+            welcome to explore respectfully,
+            appreciating both the architecture
+            and the peaceful atmosphere.
+
+          </p>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ======================================================
+       SUNSETS
+  ======================================================= -->
+
+  <section class="vr-explore-sunsets vr-section">
+
+    <div class="vr-shell">
+
+      <header class="vr-editorial-header">
+
+        <div class="vr-editorial-index">
+
+          <span>09</span>
+
+          <span class="vr-index-line-horizontal"></span>
+
+        </div>
+
+        <div>
+
+          <p class="vr-kicker">
+
+            Every Evening
+
+          </p>
+
+          <h2 class="vr-explore-title">
+
+            End every day
+            facing west.
+
+          </h2>
+
+        </div>
+
+      </header>
+
+      <div class="vr-gallery-two">
+
+        <figure>
+
+          <img
+          src="https://static.wixstatic.com/media/c090c7_aae2bb7241584aeda96bb133ba0abeee~mv2.jpg"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="low"
+          alt="Koh Chang Sunset">
+
+        </figure>
+
+        <figure>
+
+          <img
+          src="https://static.wixstatic.com/media/c090c7_4a42398ee5854c86bef4361d7b05c0d6~mv2.jpg"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="low"
+          alt="Sunset Beach">
+
+        </figure>
+
+      </div>
+
+      <div class="vr-editorial-text">
+
+        <p>
+
+          From Lonely Beach to Kai Bae,
+          Koh Chang's western coastline offers
+          unforgettable sunsets almost every
+          evening during the dry season.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ======================================================
+       LOCAL LIFE
+  ======================================================= -->
+
+  <section class="vr-explore-local vr-section">
+
+    <div class="vr-shell">
+
+      <div class="vr-editorial-layout">
+
+        <aside class="vr-editorial-index">
+
+          <span>10</span>
+
+          <span class="vr-index-line"></span>
+
+          <span>Island Culture</span>
+
+        </aside>
+
+        <div class="vr-editorial-copy">
+
+          <p class="vr-kicker">
+
+            Local Life
+
+          </p>
+
+          <h2 class="vr-explore-title">
+
+            Koh Chang isn't only about
+            where you go.
+
+            <em>
+              It's about the people you meet.
+            </em>
+
+          </h2>
+
+          <p class="lead">
+
+            Small roadside cafés,
+            family restaurants,
+            fruit stalls,
+            fishermen repairing their boats,
+            children returning from school,
+            monks collecting alms at sunrise.
+
+          </p>
+
+          <p>
+
+            These everyday moments are what
+            give Koh Chang its genuine character.
+            Slow down, smile often and let the
+            island reveal itself naturally.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ======================================================
+       MEET WARAPORN
+  ======================================================= -->
+
+  <section class="vr-explore-waraporn vr-section">
+
+    <div class="vr-shell">
+
+      <article class="vr-feature-story">
+
+        <div class="vr-feature-story__content">
+
+          <p class="vr-kicker">
+
+            Your Local Guide
+
+          </p>
+
+          <h2 class="vr-explore-title">
+
+            Not sure
+            where to go next?
+
+          </h2>
+
+          <p class="lead">
+
+            Ask Waraporn.
+
+          </p>
+
+          <p>
+
+            Whether you're looking for a quiet
+            beach, the best local restaurant,
+            a waterfall after the rain or today's
+            weather conditions, she's always happy
+            to help you discover the island.
+
+          </p>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ======================================================
+       FINAL STATEMENT
+  ======================================================= -->
+
+  <section class="vr-explore-final vr-section">
+
+    <div class="vr-shell">
+
+      <div class="vr-final-editorial">
+
+        <p class="vr-kicker">
+
+          Explore Slowly
+
+        </p>
+
+        <h2 class="vr-final-title">
+
+          The best memories
+          of Koh Chang
+          are rarely planned.
+
+        </h2>
+
+        <blockquote>
+
+          Every beach, village,
+          rainforest trail and sunset tells
+          a different story. Leave room in
+          your itinerary for the unexpected —
+          that's where the island truly shines.
+
+        </blockquote>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+<!-- END HTML -->
+<script>
+(() => {
+  const page = document.querySelector("#vr-explore-kohchang");
+  if (!page) return;
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const revealElements = page.querySelectorAll(".vr-editorial-header, .vr-destination, .vr-feature-story, .vr-gallery-two, .vr-gallery-three, .vr-editorial-layout, .vr-final-editorial");
+  revealElements.forEach(el => el.classList.add("vr-reveal"));
+  if (reducedMotion || !("IntersectionObserver" in window)) {
+    revealElements.forEach(el => el.classList.add("is-visible"));
+  } else {
+    const observer = new IntersectionObserver((entries, currentObserver) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        currentObserver.unobserve(entry.target);
+      });
+    }, { threshold: .1, rootMargin: "0px 0px -60px 0px" });
+    revealElements.forEach(el => observer.observe(el));
+  }
+  const hero = page.querySelector(".vr-explore-hero");
+  const heroImage = page.querySelector(".vr-explore-hero__media img");
+  if (hero && heroImage && !reducedMotion) {
+    let ticking = false;
+    const update = () => {
+      const rect = hero.getBoundingClientRect();
+      if (rect.bottom > 0 && rect.top < window.innerHeight) {
+        const offset = Math.max(0, -rect.top);
+        heroImage.style.transform = `translate3d(0, ${offset * .12}px, 0) scale(1.06)`;
+      }
+      ticking = false;
+    };
+    const request = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+    update();
+    window.addEventListener("scroll", request, { passive: true });
+    window.addEventListener("resize", request);
+  }
+})();
+</script>
+</body>
+</html>

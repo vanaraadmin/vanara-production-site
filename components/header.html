@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Vanara Header</title>
+
+<link rel="stylesheet"
+href="https://res.cloudinary.com/ugf23t8n/raw/upload/v1784169946/vanara-final_qxkhx6.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Lato:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<style>
+
+:root{
+
+--green:#173b2d;
+--green-dark:#0d261d;
+--gold:#b38b47;
+--cream:#f7f4ee;
+
+--header-height:90px;
+
+--font-title:'Marcellus',serif;
+--font-body:'Lato',sans-serif;
+
+--transition:.35s cubic-bezier(.22,1,.36,1);
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html,
+body{
+
+width:100%;
+height:100%;
+
+overflow:hidden;
+
+background:transparent;
+
+font-family:var(--font-body);
+
+-webkit-font-smoothing:antialiased;
+
+}
+
+button{
+
+font:inherit;
+
+border:none;
+
+background:none;
+
+cursor:pointer;
+
+color:inherit;
+
+}
+
+img{
+
+display:block;
+
+max-width:100%;
+
+}
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+header{
+
+position:relative;
+
+width:100%;
+
+height:var(--header-height);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:
+
+linear-gradient(
+180deg,
+rgba(8,29,21,.38) 0%,
+rgba(8,29,21,.10) 72%,
+transparent 100%
+);
+
+backdrop-filter:blur(0px);
+
+transition:
+
+background .35s,
+
+backdrop-filter .35s;
+
+overflow:hidden;
+
+}
+
+header::after{
+
+content:"";
+
+position:absolute;
+
+left:40px;
+
+right:40px;
+
+bottom:0;
+
+height:1px;
+
+background:
+
+rgba(255,255,255,.10);
+
+}
+
+.header-inner{
+
+width:min(1500px,100%);
+
+padding:
+
+0 50px;
+
+display:grid;
+
+grid-template-columns:
+
+1fr auto 1fr;
+
+align-items:center;
+
+column-gap:48px;
+
+height:100%;
+
+}
+
+.left-nav{
+
+display:flex;
+
+align-items:center;
+
+gap:42px;
+
+}
+
+.right-nav{
+
+display:flex;
+
+justify-content:flex-end;
+
+align-items:center;
+
+gap:42px;
+
+}
+
+.logo{
+
+width:auto;
+height:72px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+transition:var(--transition);
+
+}
+
+.logo img{
+
+width:auto;
+height:100%;
+max-width:190px;
+max-height:72px;
+
+object-fit:contain;
+object-position:center;
+
+}
+
+.logo:hover{
+
+transform:translateY(-2px);
+
+opacity:.9;
+
+}
+
+.menu-item{
+
+position:relative;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+height:42px;
+
+font-size:12px;
+
+font-weight:700;
+
+letter-spacing:.13em;
+
+text-transform:uppercase;
+
+white-space:nowrap;
+
+color:white;
+
+transition:var(--transition);
+
+}
+
+.menu-item::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+right:0;
+
+bottom:4px;
+
+height:1px;
+
+background:var(--gold);
+
+transform:scaleX(0);
+
+transform-origin:right;
+
+transition:var(--transition);
+
+}
+
+.menu-item:hover::after{
+
+transform:scaleX(1);
+
+transform-origin:left;
+
+}
+
+.menu-item:hover{
+
+color:#f8f6ef;
+
+opacity:.95;
+
+}
+
+.book-btn{
+
+height:48px;
+
+padding:
+
+0 28px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:10px;
+
+border-radius:30px;
+
+border:
+
+1px solid rgba(179,139,71,.55);
+
+background:
+
+rgba(179,139,71,.10);
+
+font-size:12px;
+
+font-weight:700;
+
+letter-spacing:.13em;
+
+text-transform:uppercase;
+
+color:white;
+
+transition:var(--transition);
+
+}
+
+.book-btn:hover{
+
+background:var(--gold);
+
+color:var(--green-dark);
+
+box-shadow:0 8px 28px rgba(179,139,71,.28);
+
+transform:translateY(-2px);
+
+}
+
+.book-btn svg{
+
+width:16px;
+
+height:16px;
+
+fill:none;
+
+stroke:currentColor;
+
+stroke-width:1.8;
+
+stroke-linecap:round;
+
+stroke-linejoin:round;
+
+}
+
+.mobile-left,
+.mobile-right{
+
+display:none;
+
+}
+
+.hamburger{
+
+width:46px;
+
+height:46px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:15px;
+
+border:
+
+1px solid rgba(255,255,255,.18);
+
+background:
+
+rgba(255,255,255,.05);
+
+}
+
+.hamburger span{
+
+display:block;
+
+position:relative;
+
+width:20px;
+
+height:14px;
+
+}
+
+.hamburger span::before,
+.hamburger span::after,
+.hamburger span i{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+width:20px;
+
+height:1px;
+
+background:white;
+
+transition:var(--transition);
+
+}
+
+.hamburger span::before{
+
+top:0;
+
+}
+
+.hamburger span i{
+
+top:6px;
+
+}
+
+.hamburger span::after{
+
+bottom:0;
+
+}
+
+
+@media(max-width:1100px){
+
+:root{
+
+--header-height:78px;
+
+}
+
+.left-nav,
+.right-nav{
+
+display:none;
+
+}
+
+.header-inner{
+
+padding:
+
+0 18px;
+
+grid-template-columns:
+
+1fr auto 1fr;
+
+}
+
+.mobile-left,
+.mobile-right{
+
+display:flex;
+
+align-items:center;
+
+}
+
+.mobile-right{
+
+justify-content:flex-end;
+
+}
+
+.logo{
+
+width:auto;
+height:62px;
+
+}
+
+.logo img{
+
+max-width:165px;
+max-height:62px;
+
+}
+
+.mobile-book{
+
+width:46px;
+
+height:46px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:15px;
+
+border:
+
+1px solid rgba(255,255,255,.18);
+
+background:
+
+rgba(255,255,255,.05);
+
+color:white;
+
+}
+
+.mobile-book svg{
+
+width:18px;
+
+height:18px;
+
+fill:none;
+
+stroke:currentColor;
+
+stroke-width:1.8;
+
+stroke-linecap:round;
+
+stroke-linejoin:round;
+
+}
+
+
+}
+
+@media(max-width:600px){
+
+.logo{
+
+width:auto;
+height:58px;
+
+}
+
+.logo img{
+
+max-width:150px;
+max-height:58px;
+
+}
+
+.header-inner{
+
+padding:
+
+0 14px;
+
+}
+
+}
+
+
+:focus-visible{
+
+outline:2px solid var(--gold);
+
+outline-offset:4px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header id="header">
+
+<div class="header-inner">
+
+<div class="mobile-left">
+
+<button
+class="hamburger"
+id="hamburger"
+type="button"
+aria-label="Open navigation menu"
+aria-expanded="false">
+
+<span>
+
+<i></i>
+
+</span>
+
+</button>
+
+</div>
+
+<nav class="left-nav">
+
+<button
+class="menu-item"
+data-scroll="hero">
+
+HOME
+
+</button>
+
+<button
+class="menu-item"
+data-scroll="rooms">
+
+ROOMS
+
+</button>
+
+<button
+class="menu-item"
+data-scroll="resort">
+
+RESORT
+
+</button>
+
+</nav>
+
+<button
+class="logo"
+data-scroll="hero">
+
+<img
+src="https://static.wixstatic.com/media/c090c7_006d6913b7394fa8b82efee35b699d01~mv2.png"
+alt="Vanara">
+
+</button>
+
+<nav class="right-nav">
+
+<button
+class="menu-item"
+data-scroll="kohchang">
+
+KOH CHANG
+
+</button>
+
+<button
+class="menu-item"
+data-scroll="reviews">
+
+REVIEWS
+
+</button>
+
+<button
+class="menu-item"
+data-scroll="location">
+
+LOCATION
+
+</button>
+
+<button
+class="book-btn"
+data-book
+type="button"
+aria-label="Book now">
+
+BOOK NOW
+
+<svg viewBox="0 0 24 24">
+
+<path d="M7 3v3"/>
+<path d="M17 3v3"/>
+<path d="M4 9h16"/>
+<rect x="4" y="5" width="16" height="16" rx="2"/>
+
+</svg>
+
+</button>
+
+</nav>
+
+<div
+class="mobile-right">
+
+<button
+class="mobile-book"
+data-book
+type="button"
+aria-label="Book now">
+
+<svg viewBox="0 0 24 24">
+
+<path d="M7 3v3"/>
+<path d="M17 3v3"/>
+<path d="M4 9h16"/>
+<rect
+x="4"
+y="5"
+width="16"
+height="16"
+rx="2"/>
+
+</svg>
+
+</button>
+
+</div>
+
+</div>
+
+</header>
+
+<script>
+(() => {
+    "use strict";
+
+    const BOOKING_URL =
+        "https://beds24.com/booking2.php?propid=332906";
+
+    function postToWix(message) {
+        window.parent.postMessage(message, "*");
+    }
+
+    document
+        .querySelectorAll("[data-scroll]")
+        .forEach((button) => {
+            button.addEventListener("click", () => {
+                const target = String(
+                    button.dataset.scroll || ""
+                ).trim();
+
+                if (!target) {
+                    return;
+                }
+
+                postToWix({
+                    type: "vanara-scroll",
+                    target
+                });
+            });
+        });
+
+    document
+        .querySelectorAll("[data-book]")
+        .forEach((button) => {
+            button.addEventListener("click", () => {
+                postToWix({
+                    type: "vanara-book",
+                    target: BOOKING_URL
+                });
+            });
+        });
+
+    const hamburger =
+        document.getElementById("hamburger");
+
+    hamburger.addEventListener("click", () => {
+        postToWix({
+            type: "vanara-mobile-menu"
+        });
+    });
+})();
+</script>
+
+</body>
+
+</html>
