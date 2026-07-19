@@ -73,8 +73,8 @@
     #launcher {
       position: relative;
       width: 282px;
-      height: 122px;
-      overflow: visible;
+      height: 127px;
+      overflow: hidden;
       border: 1px solid rgba(255, 255, 255, 0.72);
       border-radius: 25px;
       background:
