@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -10,8 +11,6 @@
 <link href="assets/css/vanara_style.css" rel="stylesheet"/>
 <link href="assets/css/header.css" rel="stylesheet"/>
 <link href="assets/css/mobile-menu.css" rel="stylesheet"/>
-<link href="assets/css/footer.css" rel="stylesheet"/>
-<link href="assets/css/concierge.css" rel="stylesheet"/>
 <style>
 /* =========================================================
    VANARA ECO RESORT
@@ -432,6 +431,168 @@
   #vanara-experience img{transform:none!important}
 }
 </style>
+<style>
+/* =========================================================
+   THE VANARA EXPERIENCE — MICRO ANIMATIONS
+   ========================================================= */
+
+#vanara-experience .vr-reveal-section,
+#vanara-experience .vr-reveal-item {
+  opacity: 0;
+  transform: translate3d(0, 48px, 0);
+  transition:
+    opacity .9s cubic-bezier(.2,.8,.2,1),
+    transform .9s cubic-bezier(.2,.8,.2,1);
+  transition-delay: calc(var(--vr-reveal-order, 0) * 55ms);
+  will-change: opacity, transform;
+}
+
+#vanara-experience .vr-reveal-section.is-visible,
+#vanara-experience .vr-reveal-item.is-visible {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+
+#vanara-experience .vr-experience-hero {
+  opacity: var(--vr-hero-opacity, 1);
+  transition: opacity .2s linear;
+}
+
+#vanara-experience .vr-experience-hero__content {
+  transform: translate3d(0, var(--vr-hero-content-y, 0), 0);
+  transition: transform .2s linear;
+}
+
+#vanara-experience .vr-experience-hero__image,
+#vanara-experience .vr-experience-story__image,
+#vanara-experience .vr-experience-garden__image,
+#vanara-experience .vr-experience-garden-card img,
+#vanara-experience .vr-experience-water__image,
+#vanara-experience .vr-experience-lounge__image,
+#vanara-experience .vr-experience-life-card__media img,
+#vanara-experience .vr-experience-evening__image,
+#vanara-experience .vr-experience-for__image,
+#vanara-experience .vr-experience-final__visual img {
+  --vr-image-scale: 1.045;
+  transform: translate3d(0, var(--vr-parallax-y, 0), 0) scale(var(--vr-image-scale));
+  transition: transform .8s cubic-bezier(.2,.7,.2,1);
+  will-change: transform;
+}
+
+#vanara-experience .vr-experience-story__image-frame,
+#vanara-experience .vr-experience-garden__image-frame,
+#vanara-experience .vr-experience-garden-card__frame,
+#vanara-experience .vr-experience-water__image-frame,
+#vanara-experience .vr-experience-lounge__image-frame,
+#vanara-experience .vr-experience-life-card__media,
+#vanara-experience .vr-experience-evening__image-frame,
+#vanara-experience .vr-experience-for__image-frame {
+  transform:
+    perspective(1100px)
+    rotateX(var(--vr-tilt-x, 0deg))
+    rotateY(var(--vr-tilt-y, 0deg));
+  transform-style: preserve-3d;
+  transition:
+    transform .42s cubic-bezier(.2,.8,.2,1),
+    box-shadow .42s cubic-bezier(.2,.8,.2,1);
+}
+
+#vanara-experience .is-tilting {
+  transition-duration: .08s;
+}
+
+#vanara-experience .vr-experience-story__image-frame:hover,
+#vanara-experience .vr-experience-garden__image-frame:hover,
+#vanara-experience .vr-experience-garden-card__frame:hover,
+#vanara-experience .vr-experience-water__image-frame:hover,
+#vanara-experience .vr-experience-lounge__image-frame:hover,
+#vanara-experience .vr-experience-life-card__media:hover,
+#vanara-experience .vr-experience-evening__image-frame:hover,
+#vanara-experience .vr-experience-for__image-frame:hover {
+  box-shadow: 0 42px 110px rgba(0,0,0,.17);
+}
+
+#vanara-experience .vr-experience-detail,
+#vanara-experience .vr-experience-life-card,
+#vanara-experience .vr-experience-essential,
+#vanara-experience .vr-experience-final__link {
+  transition:
+    transform .35s cubic-bezier(.2,.8,.2,1),
+    background-color .35s ease,
+    border-color .35s ease,
+    color .35s ease,
+    box-shadow .35s ease;
+}
+
+@media (hover:hover) and (pointer:fine) {
+  #vanara-experience .vr-experience-detail:hover {
+    transform: translateX(7px);
+  }
+
+  #vanara-experience .vr-experience-life-card:hover,
+  #vanara-experience .vr-experience-essential:hover {
+    transform: translateY(-5px);
+  }
+
+  #vanara-experience .vr-experience-final__link:hover {
+    transform: translateY(-3px);
+  }
+}
+
+#vanara-experience .vr-section.is-active {
+  z-index: 2;
+}
+
+#vanara-experience a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 5px;
+}
+
+@media (max-width: 840px) {
+  #vanara-experience figure:hover img {
+    --vr-image-scale: 1.05;
+  }
+
+  #vanara-experience .vr-experience-hero__image,
+  #vanara-experience .vr-experience-story__image,
+  #vanara-experience .vr-experience-garden__image,
+  #vanara-experience .vr-experience-garden-card img,
+  #vanara-experience .vr-experience-water__image,
+  #vanara-experience .vr-experience-lounge__image,
+  #vanara-experience .vr-experience-life-card__media img,
+  #vanara-experience .vr-experience-evening__image,
+  #vanara-experience .vr-experience-for__image,
+  #vanara-experience .vr-experience-final__visual img {
+    --vr-image-scale: 1.035;
+    transform: translate3d(0, var(--vr-parallax-y, 0), 0) scale(var(--vr-image-scale));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #vanara-experience *,
+  #vanara-experience *::before,
+  #vanara-experience *::after {
+    animation: none !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    transition-delay: 0ms !important;
+  }
+
+  #vanara-experience .vr-reveal-section,
+  #vanara-experience .vr-reveal-item {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  #vanara-experience img,
+  #vanara-experience [class*="__image-frame"],
+  #vanara-experience .vr-experience-life-card__media,
+  #vanara-experience .vr-experience-garden-card__frame {
+    transform: none !important;
+  }
+}
+</style>
 </head>
 <body>
 <header class="site-header" data-site-header="">
@@ -544,7 +705,6 @@
 </div>
 </div>
 </div>
-
 <main class="vr-experience-page" data-page="vanara-experience" id="vanara-experience">
 
   <!-- ======================================================
@@ -1361,6 +1521,230 @@
 fetch("components/footer.html").then(r=>r.text()).then(h=>{document.getElementById("footer-placeholder").outerHTML=h;});
 </script>
 </main>
+<script>
+(() => {
+  "use strict";
+
+  const page = document.getElementById("vanara-experience");
+  if (!page || page.dataset.vrInitialized === "true") return;
+  page.dataset.vrInitialized = "true";
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+
+  /* =========================================================
+     01 — WIX IFRAME NAVIGATION
+     Keeps page links from opening inside the HTML Embed.
+     ========================================================= */
+
+  page.querySelectorAll("a[href]").forEach((link) => {
+    const href = link.getAttribute("href");
+    if (!href || href.startsWith("#")) return;
+
+    link.setAttribute("target", "_top");
+
+    if (/^https?:\/\//i.test(href)) {
+      const rel = new Set((link.getAttribute("rel") || "").split(/\s+/).filter(Boolean));
+      rel.add("noopener");
+      link.setAttribute("rel", [...rel].join(" "));
+    }
+  });
+
+  /* =========================================================
+     02 — REVEAL ON SCROLL
+     ========================================================= */
+
+  const revealGroups = [
+    [".vr-section", "vr-reveal-section"],
+    [".vr-experience-fact", "vr-reveal-item"],
+    [".vr-experience-detail", "vr-reveal-item"],
+    [".vr-experience-garden-card", "vr-reveal-item"],
+    [".vr-experience-life-card", "vr-reveal-item"],
+    [".vr-experience-essential", "vr-reveal-item"]
+  ];
+
+  const revealTargets = [];
+
+  revealGroups.forEach(([selector, className]) => {
+    page.querySelectorAll(selector).forEach((element, index) => {
+      element.classList.add(className);
+      element.style.setProperty("--vr-reveal-order", String(index % 4));
+      revealTargets.push(element);
+    });
+  });
+
+  if (reducedMotion.matches || !("IntersectionObserver" in window)) {
+    revealTargets.forEach((element) => element.classList.add("is-visible"));
+  } else {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: "0px 0px -8% 0px"
+    });
+
+    revealTargets.forEach((element) => revealObserver.observe(element));
+  }
+
+  /* =========================================================
+     03 — IMAGE PARALLAX
+     Uses CSS variables so it does not fight with hover effects.
+     ========================================================= */
+
+  const parallaxImages = [...page.querySelectorAll(`
+    .vr-experience-hero__image,
+    .vr-experience-story__image,
+    .vr-experience-garden__image,
+    .vr-experience-garden-card img,
+    .vr-experience-water__image,
+    .vr-experience-lounge__image,
+    .vr-experience-life-card__media img,
+    .vr-experience-evening__image,
+    .vr-experience-for__image,
+    .vr-experience-final__visual img
+  `)];
+
+  let parallaxFrame = 0;
+
+  const updateParallax = () => {
+    parallaxFrame = 0;
+
+    if (reducedMotion.matches) {
+      parallaxImages.forEach((image) => image.style.removeProperty("--vr-parallax-y"));
+      return;
+    }
+
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+    parallaxImages.forEach((image) => {
+      const rect = image.getBoundingClientRect();
+      if (rect.bottom < -80 || rect.top > viewportHeight + 80) return;
+
+      const imageCenter = rect.top + rect.height / 2;
+      const viewportCenter = viewportHeight / 2;
+      const normalized = (imageCenter - viewportCenter) / viewportHeight;
+      const movement = Math.max(-18, Math.min(18, normalized * -18));
+
+      image.style.setProperty("--vr-parallax-y", `${movement.toFixed(2)}px`);
+    });
+  };
+
+  const requestParallax = () => {
+    if (parallaxFrame) return;
+    parallaxFrame = window.requestAnimationFrame(updateParallax);
+  };
+
+  window.addEventListener("scroll", requestParallax, { passive: true });
+  window.addEventListener("resize", requestParallax, { passive: true });
+  updateParallax();
+
+  /* =========================================================
+     04 — HERO FADE AND DEPTH
+     ========================================================= */
+
+  const hero = page.querySelector(".vr-experience-hero");
+  let heroFrame = 0;
+
+  const updateHero = () => {
+    heroFrame = 0;
+    if (!hero) return;
+
+    if (reducedMotion.matches) {
+      hero.style.removeProperty("--vr-hero-opacity");
+      hero.style.removeProperty("--vr-hero-content-y");
+      return;
+    }
+
+    const rect = hero.getBoundingClientRect();
+    const height = Math.max(hero.offsetHeight, 1);
+    const progress = Math.max(0, Math.min(1, -rect.top / height));
+
+    hero.style.setProperty("--vr-hero-opacity", String(1 - progress * 0.3));
+    hero.style.setProperty("--vr-hero-content-y", `${(progress * 22).toFixed(2)}px`);
+  };
+
+  const requestHero = () => {
+    if (heroFrame) return;
+    heroFrame = window.requestAnimationFrame(updateHero);
+  };
+
+  window.addEventListener("scroll", requestHero, { passive: true });
+  window.addEventListener("resize", requestHero, { passive: true });
+  updateHero();
+
+  /* =========================================================
+     05 — SUBTLE DESKTOP IMAGE TILT
+     ========================================================= */
+
+  const tiltFrames = page.querySelectorAll(`
+    .vr-experience-story__image-frame,
+    .vr-experience-garden__image-frame,
+    .vr-experience-garden-card__frame,
+    .vr-experience-water__image-frame,
+    .vr-experience-lounge__image-frame,
+    .vr-experience-life-card__media,
+    .vr-experience-evening__image-frame,
+    .vr-experience-for__image-frame
+  `);
+
+  tiltFrames.forEach((frame) => {
+    frame.addEventListener("pointermove", (event) => {
+      if (!finePointer.matches || reducedMotion.matches || window.innerWidth < 992) return;
+
+      const rect = frame.getBoundingClientRect();
+      const x = ((event.clientX - rect.left) / rect.width - 0.5) * 5;
+      const y = ((event.clientY - rect.top) / rect.height - 0.5) * 5;
+
+      frame.style.setProperty("--vr-tilt-x", `${(-y).toFixed(2)}deg`);
+      frame.style.setProperty("--vr-tilt-y", `${x.toFixed(2)}deg`);
+      frame.classList.add("is-tilting");
+    });
+
+    frame.addEventListener("pointerleave", () => {
+      frame.style.removeProperty("--vr-tilt-x");
+      frame.style.removeProperty("--vr-tilt-y");
+      frame.classList.remove("is-tilting");
+    });
+  });
+
+  /* =========================================================
+     06 — ACTIVE SECTION STATE
+     ========================================================= */
+
+  const sections = [...page.querySelectorAll(".vr-section")];
+
+  if ("IntersectionObserver" in window) {
+    const sectionObserver = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+      if (!visible) return;
+      sections.forEach((section) => section.classList.toggle("is-active", section === visible.target));
+    }, {
+      threshold: [0.18, 0.35, 0.55],
+      rootMargin: "-15% 0px -35% 0px"
+    });
+
+    sections.forEach((section) => sectionObserver.observe(section));
+  }
+
+  const handleMotionPreferenceChange = () => {
+    updateParallax();
+    updateHero();
+  };
+
+  if (typeof reducedMotion.addEventListener === "function") {
+    reducedMotion.addEventListener("change", handleMotionPreferenceChange);
+  } else if (typeof reducedMotion.addListener === "function") {
+    reducedMotion.addListener(handleMotionPreferenceChange);
+  }
+})();
+</script>
 
 <div id="site-concierge"></div>
 
