@@ -4,19 +4,19 @@
   const COMPONENTS = [
     {
       target: "#site-header",
-      file: "/components/header"
+      file: "/components/header.html"
     },
     {
       target: "#site-mobile-menu",
-      file: "/components/menu-mobile"
+      file: "/components/menu-mobile.html"
     },
     {
       target: "#site-footer",
-      file: "/components/footer"
+      file: "/components/footer.html"
     },
     {
       target: "#site-concierge",
-      file: "/components/concierge"
+      file: "/components/concierge.html"
     }
   ];
 
