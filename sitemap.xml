@@ -1,27 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://vanararetreat.com/</loc>
+    <lastmod>2026-07-27</lastmod>
+    <image:image>
+      <image:loc>https://vanararetreat.com/assets/img/og-vanara-eco-resort.jpg</image:loc>
+      <image:title>Vanara Eco Resort in Koh Chang</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://vanararetreat.com/about</loc>
+    <lastmod>2026-07-27</lastmod>
+    <image:image>
+      <image:loc>https://vanararetreat.com/assets/img/1-about.png</image:loc>
+      <image:title>The Vanara Eco Resort experience</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://vanararetreat.com/bungalow</loc>
+    <lastmod>2026-07-27</lastmod>
+    <image:image>
+      <image:loc>https://vanararetreat.com/assets/img/bungalow_hero.png</image:loc>
+      <image:title>Jungle Bungalow at Vanara Eco Resort</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://vanararetreat.com/villa</loc>
+    <lastmod>2026-07-27</lastmod>
+    <image:image>
+      <image:loc>https://vanararetreat.com/assets/img/villa_hero.png</image:loc>
+      <image:title>Jungle Villa at Vanara Eco Resort</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://vanararetreat.com/yurt</loc>
+    <lastmod>2026-07-27</lastmod>
+    <image:image>
+      <image:loc>https://vanararetreat.com/assets/img/yurt_hero.png</image:loc>
+      <image:title>Glamping Yurt at Vanara Eco Resort</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://vanararetreat.com/explore</loc>
+    <lastmod>2026-07-27</lastmod>
+    <image:image>
+      <image:loc>https://vanararetreat.com/assets/img/hero_explore.jpg</image:loc>
+      <image:title>Explore Koh Chang from Vanara Eco Resort</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://vanararetreat.com/privacy</loc>
+    <lastmod>2026-07-27</lastmod>
   </url>
   <url>
     <loc>https://vanararetreat.com/terms</loc>
+    <lastmod>2026-07-27</lastmod>
   </url>
 </urlset>
