@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+  <title>Page Not Found | Vanara Eco Resort</title>
+  <meta content="noindex,follow" name="robots">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&amp;family=Lato:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --forest: #10291f;
+      --forest-deep: #081a13;
+      --cream: #f7f3ea;
+      --gold: #c4a16a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      min-height: 100%;
+      margin: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 32px;
+      color: var(--cream);
+      background:
+        radial-gradient(circle at 50% 15%, rgba(196, 161, 106, 0.16), transparent 34%),
+        linear-gradient(145deg, var(--forest), var(--forest-deep));
+      font-family: "Lato", sans-serif;
+      text-align: center;
+    }
+
+    main {
+      width: min(640px, 100%);
+    }
+
+    .mark {
+      display: inline-block;
+      margin-bottom: 28px;
+      color: var(--gold);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: "Marcellus", serif;
+      font-size: clamp(3rem, 10vw, 6.5rem);
+      font-weight: 400;
+      line-height: 0.98;
+    }
+
+    p {
+      max-width: 520px;
+      margin: 28px auto 0;
+      color: rgba(247, 243, 234, 0.76);
+      font-size: 1.05rem;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      margin-top: 36px;
+      padding: 0 28px;
+      border: 1px solid rgba(196, 161, 106, 0.72);
+      border-radius: 999px;
+      color: var(--cream);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background-color 180ms ease, color 180ms ease;
+    }
+
+    a:hover,
+    a:focus-visible {
+      color: var(--forest-deep);
+      background: var(--gold);
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <span class="mark">Vanara Eco Resort · Koh Chang</span>
+    <h1>Page not found.</h1>
+    <p>
+      The path may have changed, but your retreat in the jungle is still here.
+      Return to Vanara and continue exploring Koh Chang.
+    </p>
+    <a href="/">Return to homepage</a>
+  </main>
+</body>
+</html>

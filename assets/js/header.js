@@ -70,12 +70,12 @@
 
   document.querySelectorAll("[data-scroll-top]").forEach((link) => {
     link.addEventListener("click", (event) => {
-      const currentPage =
-        window.location.pathname.split("/").pop() || "index.html";
+      const isHomepage =
+        window.location.pathname === "/" ||
+        window.location.pathname === "/index.html";
+      const target = new URL(link.href, window.location.href);
 
-      const href = link.getAttribute("href");
-
-      if (currentPage === "index.html" && href === "index.html") {
+      if (isHomepage && target.pathname === "/" && !target.hash) {
         event.preventDefault();
 
         window.scrollTo({
