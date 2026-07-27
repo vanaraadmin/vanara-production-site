@@ -8,6 +8,7 @@
 <meta content="Stay in a peaceful jungle eco resort in Bailan Bay, Koh Chang. Choose a bungalow, villa or glamping yurt and book direct with Vanara Eco Resort." name="description"/>
 <link href="https://vanararetreat.com/" rel="canonical"/>
 <meta content="index,follow,max-image-preview:large" name="robots"/>
+<link href="/assets/img/hero.webp" rel="preload" as="image"/>
 <link href="/assets/img/favicon.png" rel="icon" type="image/png"/>
 <link href="/assets/img/favicon.png" rel="apple-touch-icon"/>
 <meta content="Vanara Eco Resort" property="og:site_name"/>
@@ -65,9 +66,9 @@
       },
       "image": [
         "https://vanararetreat.com/assets/img/og-vanara-eco-resort.jpg",
-        "https://vanararetreat.com/assets/img/bungalow_hero.png",
-        "https://vanararetreat.com/assets/img/villa_hero.png",
-        "https://vanararetreat.com/assets/img/yurt_hero.png"
+        "https://vanararetreat.com/assets/img/bungalow_hero.webp",
+        "https://vanararetreat.com/assets/img/villa_hero.webp",
+        "https://vanararetreat.com/assets/img/yurt_hero.webp"
       ],
       "address": {
         "@type": "PostalAddress",
@@ -140,7 +141,7 @@
     html,body{width:100%;min-height:100%;height:auto;overflow-x:hidden;overflow-y:visible;background:var(--forest-dark);font-family:var(--font-body);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
     button{border:0;background:none;color:inherit;font:inherit;cursor:pointer}
     .hero{position:relative;width:100%;height:clamp(680px,78vw,920px);min-height:680px;display:flex;align-items:center;justify-content:center;isolation:isolate;overflow:hidden;color:var(--white)}
-    .hero-media{position:absolute;inset:-3%;z-index:-4;background-image:url("/assets/img/hero.png");background-position:center;background-size:cover;transform:scale(1.04);animation:heroDrift 18s var(--ease) infinite alternate;will-change:transform}
+    .hero-media{position:absolute;inset:-3%;z-index:-4;background-image:url("/assets/img/hero.webp");background-position:center;background-size:cover;transform:scale(1.04);animation:heroDrift 18s var(--ease) infinite alternate;will-change:transform}
     .hero-overlay{position:absolute;inset:0;z-index:-3;background:linear-gradient(180deg,rgba(4,18,13,.48) 0%,rgba(4,18,13,.16) 28%,rgba(4,18,13,.24) 58%,rgba(4,18,13,.72) 100%),linear-gradient(90deg,rgba(4,18,13,.34) 0%,rgba(4,18,13,.04) 46%,rgba(4,18,13,.20) 100%)}
     .hero-vignette{position:absolute;inset:0;z-index:-2;box-shadow:inset 0 0 180px rgba(0,0,0,.34);pointer-events:none}
     .hero-content{width:min(1180px,calc(100% - 48px));margin:auto;padding:120px 0 118px;display:flex;flex-direction:column;align-items:center;text-align:center}
@@ -4255,7 +4256,7 @@ body {
 <a class="site-header__link" href="/#why-vanara">The Resort</a>
 </nav>
 <a aria-label="Vanara Eco Resort — Back to homepage" class="site-header__logo" data-scroll-top="" href="/">
-<img alt="Vanara Eco Resort" height="110" src="assets/img/logo.png" width="220"/>
+<img alt="Vanara Eco Resort" height="500" src="assets/img/logo.png" width="500" decoding="async"/>
 </a>
 <nav aria-label="Secondary navigation" class="site-header__nav site-header__nav--right">
 <a class="site-header__link" href="/#explore-koh-chang">Koh Chang</a>
@@ -4278,7 +4279,7 @@ body {
 <div aria-hidden="true" class="mobile-menu__ambient"></div>
 <div class="mobile-menu__header">
 <a aria-label="Vanara Eco Resort — Homepage" class="mobile-menu__logo" href="/">
-<img alt="Vanara Eco Resort" height="110" src="assets/img/logo.png" width="220"/>
+<img alt="Vanara Eco Resort" height="500" src="assets/img/logo.png" width="500" decoding="async"/>
 </a>
 <button aria-label="Close navigation menu" class="mobile-menu__close" data-menu-close="" type="button">
 <span></span>
@@ -4434,7 +4435,7 @@ body {
 <!-- BOOKING.COM -->
 <article class="review-card reveal-item">
 <div class="review-card__logo-space">
-<img alt="Booking.com" src="https://static.wixstatic.com/media/c090c7_d28d6e7767194e03a10187c4aac07375~mv2.jpg"/>
+<img alt="Booking.com" src="https://static.wixstatic.com/media/c090c7_d28d6e7767194e03a10187c4aac07375~mv2.jpg" loading="lazy" decoding="async"/>
 </div>
 <div class="review-card__score">8.7</div>
 <div class="review-card__scale">Out of 10</div>
@@ -4456,7 +4457,7 @@ body {
 <!-- AIRBNB -->
 <article class="review-card reveal-item">
 <div class="review-card__logo-space">
-<img alt="Airbnb" src="https://static.wixstatic.com/media/c090c7_008b41e288a44d0892ddafd6472e1ebb~mv2.jpg"/>
+<img alt="Airbnb" src="https://static.wixstatic.com/media/c090c7_008b41e288a44d0892ddafd6472e1ebb~mv2.jpg" loading="lazy" decoding="async"/>
 </div>
 <div class="review-card__score">4.7</div>
 <div class="review-card__scale">Out of 5</div>
@@ -4478,7 +4479,7 @@ body {
 <!-- GOOGLE -->
 <article class="review-card reveal-item">
 <div class="review-card__logo-space">
-<img alt="Google" src="https://static.wixstatic.com/media/c090c7_2c11ff0c50574e0ea50e28e4dd9453c4~mv2.jpg"/>
+<img alt="Google" src="https://static.wixstatic.com/media/c090c7_2c11ff0c50574e0ea50e28e4dd9453c4~mv2.jpg" loading="lazy" decoding="async"/>
 </div>
 <div class="review-card__score">4.6</div>
 <div class="review-card__scale">Out of 5</div>
@@ -4500,7 +4501,7 @@ body {
 <!-- AGODA -->
 <article class="review-card reveal-item">
 <div class="review-card__logo-space">
-<img alt="Agoda" src="https://static.wixstatic.com/media/c090c7_0cce24a391164075856991e068da1f31~mv2.jpg"/>
+<img alt="Agoda" src="https://static.wixstatic.com/media/c090c7_0cce24a391164075856991e068da1f31~mv2.jpg" loading="lazy" decoding="async"/>
 </div>
 <div class="review-card__score">8.6</div>
 <div class="review-card__scale">Out of 10</div>
@@ -4548,7 +4549,7 @@ body {
         ====================================================== -->
 <article aria-labelledby="va-bungalow-title" class="va-stay va-reveal">
 <div class="va-stay__media">
-<img alt="Jungle Bungalow surrounded by tropical gardens" class="va-stay__image" src="/assets/img/bungalow_hero.png"/>
+<img alt="Jungle Bungalow surrounded by tropical gardens" class="va-stay__image" src="/assets/img/bungalow_hero.webp" loading="lazy" decoding="async" width="1448" height="1086"/>
 <div aria-hidden="true" class="va-stay__number">01</div>
 <div class="va-stay__image-label">Balanced Jungle Living</div>
 </div>
@@ -4624,7 +4625,7 @@ body {
         ====================================================== -->
 <article aria-labelledby="va-villa-title" class="va-stay va-stay--reverse va-reveal">
 <div class="va-stay__media">
-<img alt="Jungle Villa surrounded by lush tropical gardens" class="va-stay__image" src="/assets/img/villa_hero.png"/>
+<img alt="Jungle Villa surrounded by lush tropical gardens" class="va-stay__image" src="/assets/img/villa_hero.webp" loading="lazy" decoding="async" width="1448" height="1086"/>
 <div aria-hidden="true" class="va-stay__number">02</div>
 <div class="va-stay__image-label">Space Within Nature</div>
 </div>
@@ -4701,7 +4702,7 @@ body {
         ====================================================== -->
 <article aria-labelledby="va-yurt-title" class="va-stay va-reveal">
 <div class="va-stay__media">
-<img alt="Glamping Yurt immersed in the tropical rainforest" class="va-stay__image" src="/assets/img/yurt_hero.png"/>
+<img alt="Glamping Yurt immersed in the tropical rainforest" class="va-stay__image" src="/assets/img/yurt_hero.webp" loading="lazy" decoding="async" width="1448" height="1086"/>
 <div aria-hidden="true" class="va-stay__number">03</div>
 <div class="va-stay__image-label">The Deepest Immersion</div>
 </div>
@@ -4814,7 +4815,7 @@ body {
 <div class="wv-column">
 <!-- MAIN JUNGLE IMAGE -->
 <article aria-label="Vanara Resort immersed in tropical vegetation" class="wv-image wv-image--hero wv-reveal">
-<img alt="Vanara Resort surrounded by dense tropical vegetation in Koh Chang" src="/assets/img/1-property.png"/>
+<img alt="Vanara Resort surrounded by dense tropical vegetation in Koh Chang" src="/assets/img/1-property.webp" loading="lazy" decoding="async" width="1448" height="1086"/>
 <div class="wv-hero-copy">
 <span class="wv-hero-copy__small">
                 Intentional Wildness
@@ -4928,7 +4929,7 @@ body {
 <!-- ANIMAL + FLOWER -->
 <div class="wv-photo-pair wv-reveal wv-delay-1">
 <article aria-label="Tropical wildlife around Vanara" class="wv-photo-card">
-<img alt="Tropical wildlife photographed around Vanara Resort" src="/assets/img/2-property.png"/>
+<img alt="Tropical wildlife photographed around Vanara Resort" src="/assets/img/2-property.webp" loading="lazy" decoding="async" width="1122" height="1402"/>
 <div class="wv-photo-card__content">
 <span class="wv-photo-card__label">
                   Shared Habitat
@@ -4939,7 +4940,7 @@ body {
 </div>
 </article>
 <article aria-label="Tropical flowers growing at Vanara" class="wv-photo-card">
-<img alt="Tropical flower growing within the gardens of Vanara Resort" src="/assets/img/4-property.png"/>
+<img alt="Tropical flower growing within the gardens of Vanara Resort" src="/assets/img/4-property.webp" loading="lazy" decoding="async" width="1086" height="1448"/>
 <div class="wv-photo-card__content">
 <span class="wv-photo-card__label">
                   Naturally Tropical
@@ -4953,7 +4954,7 @@ body {
 <!-- HOSPITALITY -->
 <article class="wv-hospitality wv-reveal wv-delay-2">
 <div class="wv-hospitality__image">
-<img alt="Welcoming hospitality at Vanara Resort Koh Chang" src="/assets/img/3-property.png"/>
+<img alt="Welcoming hospitality at Vanara Resort Koh Chang" src="/assets/img/3-property.webp" loading="lazy" decoding="async" width="1448" height="1086"/>
 </div>
 <div class="wv-hospitality__content">
 <span aria-hidden="true" class="wv-hospitality__icon">
@@ -4975,7 +4976,7 @@ body {
 </article>
 <!-- EVENING IMAGE + CTA -->
 <article aria-label="Vanara Resort in the evening" class="wv-image wv-image--evening wv-reveal wv-delay-3">
-<img alt="Warm evening atmosphere and tropical lighting at Vanara Resort" src="/assets/img/5-property.png"/>
+<img alt="Warm evening atmosphere and tropical lighting at Vanara Resort" src="/assets/img/5-property.webp" loading="lazy" decoding="async" width="1448" height="1086"/>
 <div class="wv-evening-copy">
 <div class="wv-evening-copy__text">
 <span class="wv-evening-copy__eyebrow">
@@ -5022,7 +5023,7 @@ body {
 <div class="vl-column vl-column--visual">
 <!-- MAIN PANORAMIC IMAGE -->
 <article aria-label="Panoramic view of southern Koh Chang" class="vl-image-card vl-image-card--main vl-reveal">
-<img alt="Panoramic tropical coastline of southern Koh Chang" src="/assets/img/6-property.jpg"/>
+<img alt="Panoramic tropical coastline of southern Koh Chang" src="/assets/img/6-property.webp" loading="lazy" decoding="async" width="2000" height="1333"/>
 <div class="vl-image-card__content">
 <span class="vl-image-card__eyebrow">
                 Between Jungle and Sea
@@ -5038,7 +5039,7 @@ body {
 </article>
 <!-- BANG BAO IMAGE -->
 <article aria-label="Bang Bao Pier" class="vl-image-card vl-image-card--secondary vl-reveal vl-delay-1">
-<img alt="Bang Bao Pier and fishing village in southern Koh Chang" src="/assets/img/7-property.jpg"/>
+<img alt="Bang Bao Pier and fishing village in southern Koh Chang" src="/assets/img/7-property.webp" loading="lazy" decoding="async" width="2000" height="1333"/>
 <div class="vl-image-card__content">
 <span class="vl-image-card__eyebrow">
                 The Gateway South
@@ -5251,7 +5252,7 @@ body {
 <section aria-labelledby="explore-koh-chang-title" class="ek-section" id="explore-koh-chang">
 <div class="ek-container">
 <header class="ek-hero ek-reveal">
-<img alt="Panoramic tropical coastline and rainforest on Koh Chang" src="/assets/img/8-property.jpg"/>
+<img alt="Panoramic tropical coastline and rainforest on Koh Chang" src="/assets/img/8-property.webp" loading="lazy" decoding="async" width="2000" height="1499"/>
 <div class="ek-hero__content">
 <div class="ek-eyebrow">
             Explore Koh Chang
@@ -5268,7 +5269,7 @@ body {
 </header>
 <div class="ek-grid">
 <article aria-labelledby="ek-beaches-title" class="ek-card ek-card--beaches ek-reveal">
-<img alt="Quiet beach and clear tropical water on Koh Chang" loading="lazy" src="/assets/img/9-property.jpg"/>
+<img alt="Quiet beach and clear tropical water on Koh Chang" loading="lazy" src="/assets/img/9-property.webp" decoding="async" width="2000" height="1499"/>
 <div class="ek-card__content">
 <div class="ek-card__top">
 <span class="ek-card__label">
@@ -5298,7 +5299,7 @@ body {
 </div>
 </article>
 <article aria-labelledby="ek-nature-title" class="ek-card ek-card--nature ek-reveal ek-delay-1">
-<img alt="Tropical rainforest nature on Koh Chang" loading="lazy" src="/assets/img/10-property.jpg"/>
+<img alt="Tropical rainforest nature on Koh Chang" loading="lazy" src="/assets/img/10-property.webp" decoding="async" width="2000" height="1335"/>
 <div class="ek-card__content">
 <div class="ek-card__top">
 <span class="ek-card__label">
@@ -5328,7 +5329,7 @@ body {
 </div>
 </article>
 <article aria-labelledby="ek-local-title" class="ek-card ek-card--local ek-reveal ek-delay-2">
-<img alt="Authentic local village life on Koh Chang" loading="lazy" src="/assets/img/11-property.png"/>
+<img alt="Authentic local village life on Koh Chang" loading="lazy" src="/assets/img/11-property.webp" decoding="async" width="1537" height="1023"/>
 <div class="ek-card__content">
 <div class="ek-card__top">
 <span class="ek-card__label">
@@ -5359,7 +5360,7 @@ body {
 </div>
 </article>
 <article aria-labelledby="ek-sunsets-title" class="ek-card ek-card--sunsets ek-reveal ek-delay-3">
-<img alt="Sunset over the western sea of Koh Chang" loading="lazy" src="/assets/img/12-property.jpg"/>
+<img alt="Sunset over the western sea of Koh Chang" loading="lazy" src="/assets/img/12-property.webp" decoding="async" width="2000" height="1334"/>
 <div class="ek-card__content">
 <div class="ek-card__top">
 <span class="ek-card__label">
@@ -5393,7 +5394,7 @@ body {
 </article>
 </div>
 <aside aria-labelledby="ek-final-title" class="ek-final ek-reveal ek-delay-2">
-<img alt="Scenic road through Koh Chang" loading="lazy" src="/assets/img/13-property.png"/>
+<img alt="Scenic road through Koh Chang" loading="lazy" src="/assets/img/13-property.webp" decoding="async" width="1537" height="1023"/>
 <div class="ek-final__content">
 <div class="ek-final__eyebrow">
             Follow the Island
