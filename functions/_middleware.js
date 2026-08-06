@@ -1,4 +1,5 @@
 const PRIMARY_HOST = "vanararetreat.com";
+const EXTRANET_REDIRECT_URL = "https://vanara-central.administrator-5b7.workers.dev";
 
 const HOSTS_TO_REDIRECT = new Set([
   "www.vanararetreat.com",
@@ -21,6 +22,17 @@ const CLEAN_PATHS = new Map([
 
 export async function onRequest(context) {
   const url = new URL(context.request.url);
+
+  if (url.pathname === "/extranet" || url.pathname === "/extranet/") {
+    return new Response(null, {
+      status: 302,
+      headers: {
+        Location: EXTRANET_REDIRECT_URL,
+        "X-Robots-Tag": "noindex, nofollow"
+      }
+    });
+  }
+
   const cleanPath = CLEAN_PATHS.get(url.pathname);
   const redirectHost = HOSTS_TO_REDIRECT.has(url.hostname.toLowerCase());
 
