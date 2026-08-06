@@ -1,5 +1,5 @@
 const PRIMARY_HOST = "vanararetreat.com";
-const EXTRANET_REDIRECT_URL = "https://vanara-central.administrator-5b7.workers.dev";
+const EXTRANET_REDIRECT_URL = "https://central.vanararetreat.com";
 
 const HOSTS_TO_REDIRECT = new Set([
   "www.vanararetreat.com",
