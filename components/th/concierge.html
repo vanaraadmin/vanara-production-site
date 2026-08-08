@@ -1,0 +1,99 @@
+﻿<div id="launcher">
+  <button id="introLauncher" type="button" aria-label="แชทกับวราภรณ์">
+    <span class="intro-avatar">
+      <img src="/assets/img/waraporn.webp" alt="" loading="lazy" decoding="async" width="1254" height="1254"/>
+      <span class="intro-status" aria-hidden="true"></span>
+    </span>
+
+    <span>
+      <span class="intro-eyebrow">ผู้ช่วยท้องถิ่นของคุณ</span>
+      <strong class="intro-name">วราภรณ์</strong>
+      <span class="intro-copy">สอบถามเรื่องเกาะช้างหรือการเข้าพักของคุณได้เลย</span>
+      <span class="intro-action">
+        แชทกับฉัน
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 12h14"></path>
+          <path d="m13 6 6 6-6 6"></path>
+        </svg>
+      </span>
+    </span>
+  </button>
+
+  <button id="compactLauncher" type="button" aria-label="เปิดแชทกับวราภรณ์">
+    <span class="compact-avatar">
+      <img src="/assets/img/waraporn.webp" alt="" loading="lazy" decoding="async" width="1254" height="1254"/>
+    </span>
+
+    <span class="compact-copy">
+      <strong class="compact-name">วราภรณ์</strong>
+      <span class="compact-status">
+        <span class="status-dot" aria-hidden="true"></span>
+        ออนไลน์อยู่ตอนนี้
+      </span>
+    </span>
+
+    <svg class="compact-arrow" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M5 12h14"></path>
+      <path d="m13 6 6 6-6 6"></path>
+    </svg>
+  </button>
+
+  <div id="offlineLauncher" role="status" aria-label="วราภรณ์ไม่พร้อมให้บริการในขณะนี้">
+    <span class="offline-avatar">
+      <img src="/assets/img/waraporn.webp" alt="" loading="lazy" decoding="async" width="1254" height="1254"/>
+      <span class="offline-dot" aria-hidden="true"></span>
+    </span>
+
+    <span>
+      <strong class="offline-name">วราภรณ์</strong>
+      <span class="offline-text">ให้บริการทุกวัน 08:00-20:00<br />เวลาประเทศไทย</span>
+    </span>
+  </div>
+</div>
+
+<section id="chatWindow" aria-label="แชทกับวราภรณ์">
+  <header id="chatHeader">
+    <div id="avatar">
+      <img src="/assets/img/waraporn.webp" alt="วราภรณ์" loading="lazy" decoding="async" width="1254" height="1254"/>
+      <span id="avatarStatus" aria-hidden="true"></span>
+    </div>
+
+    <div id="headerText">
+      <span id="headerEyebrow">คอนเซียร์จ Vanara</span>
+      <h2 id="headerTitle">วราภรณ์</h2>
+      <div id="headerStatus">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>ออนไลน์อยู่ตอนนี้</span>
+      </div>
+    </div>
+
+    <button id="closeButton" type="button" aria-label="ปิดแชท">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 7l10 10"></path>
+        <path d="M17 7 7 17"></path>
+      </svg>
+    </button>
+  </header>
+
+  <main id="messages" aria-live="polite" aria-label="ข้อความแชท"></main>
+
+  <div id="typingIndicator">
+    <span>วราภรณ์กำลังพิมพ์</span>
+    <span id="typingDots" aria-hidden="true">
+      <span class="typingDot"></span>
+      <span class="typingDot"></span>
+      <span class="typingDot"></span>
+    </span>
+  </div>
+
+  <footer id="composer">
+    <textarea id="messageInput" rows="1" placeholder="เขียนข้อความของคุณ..." aria-label="ข้อความแชท"></textarea>
+    <button id="sendButton" type="button" aria-label="ส่งข้อความ">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="m4 4 16 8-16 8 3-8-3-8Z"></path>
+        <path d="M7 12h13"></path>
+      </svg>
+    </button>
+  </footer>
+</section>
+

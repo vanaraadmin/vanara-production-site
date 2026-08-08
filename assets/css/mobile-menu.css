@@ -274,6 +274,55 @@
     letter-spacing:.015em;
 }
 
+.mobile-menu__language{
+    margin-top:22px;
+    padding:14px 18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+
+    border:1px solid rgba(217,193,141,.22);
+    border-radius:999px;
+
+    background:rgba(255,255,255,.035);
+
+    opacity:0;
+    transform:translateY(18px);
+
+    transition:
+        border-color .35s ease,
+        background .35s ease,
+        opacity .45s ease,
+        transform .45s ease;
+}
+
+.mobile-menu__language-link,
+.mobile-menu__language-separator{
+    color:rgba(255,255,255,.74);
+    font-family:"Lato",sans-serif;
+    font-size:11px;
+    font-weight:700;
+    line-height:1;
+    letter-spacing:.16em;
+    text-decoration:none;
+    text-transform:uppercase;
+}
+
+.mobile-menu__language-link[lang="th"]{
+    letter-spacing:.03em;
+    text-transform:none;
+}
+
+.mobile-menu__language-link.is-current{
+    color:#d9c18d;
+}
+
+.mobile-menu__language-separator{
+    opacity:.48;
+}
+
 .mobile-menu__booking{
     min-height:58px;
 
@@ -475,13 +524,19 @@ body.has-mobile-menu-open{
 .mobile-menu.is-open .mobile-menu__booking{
     opacity:1;
     transform:none;
-    transition-delay:.34s;
+    transition-delay:.38s;
 }
 
 .mobile-menu.is-open .mobile-menu__footer{
     opacity:1;
     transform:none;
-    transition-delay:.38s;
+    transition-delay:.42s;
+}
+
+.mobile-menu.is-open .mobile-menu__language{
+    opacity:1;
+    transform:none;
+    transition-delay:.34s;
 }
 
 /* ==========================================================
@@ -552,6 +607,11 @@ body.has-mobile-menu-open{
     .mobile-menu__booking{
         min-height:54px;
         margin-top:22px;
+    }
+
+    .mobile-menu__language{
+        margin-top:18px;
+        padding:13px 16px;
     }
 
     .mobile-menu__socials{

@@ -29,7 +29,7 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&amp;family=Lato:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="assets/css/vanara_style.css" rel="stylesheet"/>
-<link href="assets/css/header.css" rel="stylesheet"/>
+<link href="assets/css/header.css?v=20260808-lang-switch" rel="stylesheet"/>
 <link href="assets/css/mobile-menu.css" rel="stylesheet"/>
 <link href="assets/css/footer.css" rel="stylesheet"/>
 
@@ -64,6 +64,11 @@ body {
 <a class="site-header__link" href="/">Home</a>
 <a class="site-header__link" href="/#accommodation">Rooms</a>
 <a class="site-header__link" href="/#why-vanara">The Resort</a>
+      <nav class="site-header__language" aria-label="Language switch" data-language-switch>
+        <a class="site-header__language-link is-current" href="/" lang="en" hreflang="en" aria-current="page" data-lang="en">EN</a>
+        <span class="site-header__language-separator" aria-hidden="true">-</span>
+        <a class="site-header__language-link" href="/th/" lang="th" hreflang="th" data-lang="th">ไทย</a>
+      </nav>
 </nav>
 <a aria-label="Vanara Retreat - Back to homepage" class="site-header__logo" data-scroll-top="" href="/">
 <img alt="Vanara Retreat" height="500" src="assets/img/logo.png" width="500" decoding="async"/>
@@ -76,6 +81,11 @@ body {
           Book Now
         </a>
 </nav>
+    <nav class="site-header__mobile-language" aria-label="Language switch" data-language-switch>
+      <a class="site-header__language-link is-current" href="/" lang="en" hreflang="en" aria-current="page" data-lang="en">EN</a>
+      <span class="site-header__language-separator" aria-hidden="true">-</span>
+      <a class="site-header__language-link" href="/th/" lang="th" hreflang="th" data-lang="th">ไทย</a>
+    </nav>
 <button aria-controls="mobile-navigation" aria-expanded="false" aria-label="Open navigation menu" class="site-header__menu-button" data-menu-open="" type="button">
 <span class="site-header__menu-line"></span>
 <span class="site-header__menu-line"></span>
@@ -394,3 +404,4 @@ fetch("/components/footer").then(r=>r.text()).then(h=>{document.getElementById("
 <script src="assets/js/includes.js"></script>
 </body>
 </html>
+

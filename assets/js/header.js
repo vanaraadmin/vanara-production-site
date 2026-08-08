@@ -23,6 +23,60 @@
     ticking = false;
   };
 
+  const normalizePath = (pathname) => {
+    let path = pathname || "/";
+
+    if (path.endsWith("/index.html")) {
+      path = path.slice(0, -"index.html".length);
+    }
+
+    if (path.endsWith(".html")) {
+      path = path.slice(0, -5);
+    }
+
+    if (path !== "/" && path.endsWith("/")) {
+      path = path.slice(0, -1);
+    }
+
+    return path || "/";
+  };
+
+  const updateLanguageSwitch = () => {
+    const switchers = document.querySelectorAll("[data-language-switch]");
+
+    if (!switchers.length) return;
+
+    const rawPath = window.location.pathname || "/";
+    const usesHtml = rawPath.endsWith(".html");
+    const currentPath = normalizePath(rawPath);
+    const isThai = currentPath === "/th" || currentPath.startsWith("/th/");
+    const basePath = isThai
+      ? normalizePath(currentPath.replace(/^\/th(?=\/|$)/, "") || "/")
+      : currentPath;
+    const withFormat = (path) => {
+      if (!usesHtml || path === "/" || path === "/th/") return path;
+      return `${path}.html`;
+    };
+    const englishPath = withFormat(basePath === "/" ? "/" : basePath);
+    const thaiPath = withFormat(basePath === "/" ? "/th/" : `/th${basePath}`);
+
+    switchers.forEach((switcher) => {
+      switcher.querySelectorAll("[data-lang]").forEach((link) => {
+        const lang = link.dataset.lang;
+        const href = lang === "th" ? thaiPath : englishPath;
+        const isCurrent = (lang === "th") === isThai;
+
+        link.setAttribute("href", href);
+        link.classList.toggle("is-current", isCurrent);
+
+        if (isCurrent) {
+          link.setAttribute("aria-current", "page");
+        } else {
+          link.removeAttribute("aria-current");
+        }
+      });
+    });
+  };
   const sectionLinks = [
     ...document.querySelectorAll('.site-header__link[href*="#"]')
   ];
@@ -86,6 +140,7 @@
     });
   });
 
+  updateLanguageSwitch();
   updateHeader();
   updateActiveLink();
 })();
