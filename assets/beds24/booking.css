@@ -1,0 +1,1204 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700;900&family=Marcellus&display=swap");
+
+:root {
+  --vanara-bg: #f7f4ee;
+  --vanara-surface: #ffffff;
+  --vanara-soft: #f5f1e8;
+  --vanara-green: #173b2d;
+  --vanara-green-hover: #214937;
+  --vanara-forest: #2c5e47;
+  --vanara-text: #173b2d;
+  --vanara-text-soft: #5f6e65;
+  --vanara-muted: #7c887f;
+  --vanara-border: #d9e0da;
+  --vanara-input-border: #c8d2c9;
+  --vanara-focus: rgba(23, 59, 45, .16);
+  --vanara-heading: "Marcellus", Georgia, serif;
+  --vanara-body: "Lato", Arial, sans-serif;
+  --vanara-shadow: 0 14px 38px rgba(23, 59, 45, .08);
+}
+
+/* =========================================================
+   VANARA × BEDS24
+   Stable live-page correction
+   Keeps Beds24 native booking logic and layout behaviour.
+   ========================================================= */
+
+html {
+  overflow-x: hidden;
+  background: var(--vanara-bg);
+}
+
+body.colorbody,
+body.colorbody-en {
+  min-width: 0 !important;
+  margin: 0 !important;
+  overflow-x: hidden !important;
+  background: var(--vanara-bg) !important;
+  color: var(--vanara-text) !important;
+  font-family: var(--vanara-body) !important;
+  font-size: 15px !important;
+  line-height: 1.55 !important;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Main width: preserve Beds24's own internal Bootstrap structure. */
+body.colorbody .b24fullcontainer {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 0 42px !important;
+  background: transparent !important;
+}
+
+body.colorbody .b24fullcontainer > .container,
+body.colorbody .b24fullcontainer > .container2,
+body.colorbody .b24fullcontainer .container.atcolor,
+body.colorbody .b24fullcontainer .container2.atcolor {
+  width: min(1120px, calc(100% - 40px)) !important;
+  max-width: 1120px !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+  background: transparent !important;
+}
+
+/* Language / currency row */
+body.colorbody .b24fullcontainer-ownerrow1 {
+  padding: 10px 0 12px !important;
+  background: transparent !important;
+}
+
+body.colorbody .b24fullcontainer-ownerrow1 a,
+body.colorbody .b24fullcontainer-ownerrow1 button,
+body.colorbody .b24fullcontainer-ownerrow1 .btn {
+  min-height: 34px !important;
+  padding: 8px 14px !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  background: var(--vanara-green) !important;
+  color: #fff !important;
+  font-family: var(--vanara-body) !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: .06em !important;
+  text-transform: uppercase !important;
+  box-shadow: none !important;
+}
+
+/* Search block */
+body.colorbody .b24fullcontainer-selector {
+  padding: 18px 0 26px !important;
+  background: transparent !important;
+}
+
+body.colorbody #b24scroller-container {
+  width: min(1120px, calc(100% - 40px)) !important;
+  max-width: 1120px !important;
+  margin: 0 auto !important;
+  padding: 18px 20px !important;
+  border: 1px solid rgba(23, 59, 45, .07) !important;
+  border-radius: 20px !important;
+  background: rgba(255, 255, 255, .97) !important;
+  box-shadow: var(--vanara-shadow) !important;
+}
+
+body.colorbody #b24scroller-container label,
+body.colorbody .b24fullcontainer-selector label {
+  margin-bottom: 6px !important;
+  color: var(--vanara-green) !important;
+  font-family: var(--vanara-body) !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: .06em !important;
+  text-transform: uppercase !important;
+}
+
+body.colorbody #b24scroller-container input:not([type="submit"]):not([type="button"]),
+body.colorbody #b24scroller-container select {
+  min-height: 44px !important;
+  padding: 0 13px !important;
+  border: 1px solid var(--vanara-input-border) !important;
+  border-radius: 12px !important;
+  outline: none !important;
+  background: var(--vanara-soft) !important;
+  color: var(--vanara-text) !important;
+  font-family: var(--vanara-body) !important;
+  font-size: 13px !important;
+  box-shadow: none !important;
+}
+
+body.colorbody #b24scroller-container input:focus,
+body.colorbody #b24scroller-container select:focus {
+  border-color: var(--vanara-green) !important;
+  background: #fff !important;
+  box-shadow: 0 0 0 3px var(--vanara-focus) !important;
+}
+
+/* Buttons */
+body.colorbody button,
+body.colorbody input[type="submit"],
+body.colorbody input[type="button"],
+body.colorbody .btn,
+body.colorbody a.btn {
+  min-height: 42px !important;
+  padding: 11px 20px !important;
+  border: 1px solid transparent !important;
+  border-radius: 999px !important;
+  background: var(--vanara-green) !important;
+  color: #fff !important;
+  font-family: var(--vanara-body) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: .055em !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+  box-shadow: none !important;
+  transition: background-color .2s ease, transform .2s ease, box-shadow .2s ease !important;
+}
+
+body.colorbody button:hover,
+body.colorbody input[type="submit"]:hover,
+body.colorbody input[type="button"]:hover,
+body.colorbody .btn:hover,
+body.colorbody a.btn:hover {
+  background: var(--vanara-green-hover) !important;
+  box-shadow: 0 8px 20px rgba(23, 59, 45, .14) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Property heading */
+body.colorbody #propnamemoduletext332906,
+body.colorbody [id^="propnamemoduletext"] {
+  margin: 10px 0 16px !important;
+  color: var(--vanara-green) !important;
+  font-family: var(--vanara-heading) !important;
+  font-size: 30px !important;
+  font-weight: 400 !important;
+  line-height: 1.2 !important;
+}
+
+/* Rooms */
+body.colorbody .b24fullcontainer-rooms {
+  padding: 0 0 24px !important;
+}
+
+body.colorbody .b24room {
+  margin-bottom: 28px !important;
+}
+
+body.colorbody .panel.b24panel-room {
+  overflow: hidden !important;
+  margin-bottom: 0 !important;
+  border: 1px solid rgba(23, 59, 45, .07) !important;
+  border-radius: 20px !important;
+  background: var(--vanara-surface) !important;
+  box-shadow: var(--vanara-shadow) !important;
+}
+
+body.colorbody .panel-heading.b24-roompanel-heading {
+  padding: 20px 22px 12px !important;
+  border: 0 !important;
+  background: #fff !important;
+  color: var(--vanara-green) !important;
+  font-family: var(--vanara-heading) !important;
+  font-size: 23px !important;
+  font-weight: 400 !important;
+  line-height: 1.25 !important;
+}
+
+body.colorbody .panel-heading.b24-roompanel-heading *,
+body.colorbody .at_offername,
+body.colorbody [id^="offernametext"] {
+  color: var(--vanara-green) !important;
+  font-family: var(--vanara-heading) !important;
+  font-size: inherit !important;
+  font-weight: 400 !important;
+}
+
+body.colorbody .panel-body.b24panel-body {
+  padding: 4px 22px 22px !important;
+  background: #fff !important;
+}
+
+/*
+  CRITICAL CORRECTION:
+  Do not convert Beds24 .row or .b24-offer-select into custom flex/grid.
+  Beds24 uses its native columns and visibility logic to show only the
+  occupancy controls required by the selected room quantity.
+*/
+body.colorbody .offer .row,
+body.colorbody .offer > div > .row,
+body.colorbody .b24-offer-select,
+body.colorbody .b24-room-module .row {
+  /* intentionally no display override */
+}
+
+body.colorbody .b24-offer-module {
+  min-width: 0 !important;
+}
+
+body.colorbody .b24-offer-pic img,
+body.colorbody .b24-offer-slider img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-height: 330px !important;
+  border-radius: 14px !important;
+  object-fit: cover !important;
+}
+
+body.colorbody .b24-offer-slider .carousel,
+body.colorbody .b24-offer-slider [id^="carousel-generic"] {
+  overflow: hidden !important;
+  border-radius: 14px !important;
+  background: var(--vanara-soft) !important;
+}
+
+body.colorbody .carousel-control {
+  background: none !important;
+  color: #fff !important;
+  opacity: .82 !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, .45) !important;
+}
+
+body.colorbody .carousel-indicators {
+  bottom: 8px !important;
+}
+
+body.colorbody .carousel-indicators li,
+body.colorbody .carousel-indicators .active {
+  width: 7px !important;
+  height: 7px !important;
+  margin: 2px !important;
+  border-radius: 50% !important;
+}
+
+body.colorbody .b24-offer-summary {
+  color: var(--vanara-text-soft) !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+}
+
+body.colorbody .b24-offer-summary p {
+  margin-bottom: 12px !important;
+  color: var(--vanara-text-soft) !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+}
+
+/* Occupancy / price controls: appearance only, no layout/visibility changes. */
+body.colorbody .b24-offer-select {
+  color: var(--vanara-green) !important;
+}
+
+body.colorbody .b24-offer-select select,
+body.colorbody-en .b24-offer-select select {
+  min-height: 34px !important;
+  padding: 0 10px !important;
+  border: 1px solid var(--vanara-input-border) !important;
+  border-radius: 9px !important;
+  outline: none !important;
+  background: var(--vanara-soft) !important;
+  color: var(--vanara-green) !important;
+  font-family: var(--vanara-body) !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.2 !important;
+  text-transform: none !important;
+  box-shadow: none !important;
+}
+
+body.colorbody .b24-offer-select select option,
+body.colorbody-en .b24-offer-select select option {
+  font-family: var(--vanara-body) !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+body.colorbody .bookingpagecurrency,
+body.colorbody-en .bookingpagecurrency {
+  display: inline-block !important;
+  margin-right: 4px !important;
+}
+body.colorbody .b24-offer-select strong,
+body.colorbody .b24-offer-select b,
+body.colorbody .b24-offer-select [class*="price"],
+body.colorbody .b24-offer-select [id*="price"] {
+  color: var(--vanara-green) !important;
+  font-family: var(--vanara-heading) !important;
+  font-weight: 400 !important;
+}
+
+/* Calendar and details */
+body.colorbody .b24-room-module {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-top: 20px !important;
+}
+
+body.colorbody .b24-room-module table,
+body.colorbody .b24-offer-module table {
+  width: 100% !important;
+  border-collapse: separate !important;
+  border-spacing: 2px !important;
+  background: transparent !important;
+}
+
+body.colorbody .b24-room-module table th,
+body.colorbody .b24-room-module table td,
+body.colorbody .b24-offer-module table th,
+body.colorbody .b24-offer-module table td {
+  padding: 7px 5px !important;
+  border: 0 !important;
+  background: var(--vanara-soft) !important;
+  color: var(--vanara-text-soft) !important;
+  font-family: var(--vanara-body) !important;
+  font-size: 11px !important;
+  line-height: 1.2 !important;
+  text-align: center !important;
+}
+
+body.colorbody .b24-room-module table th,
+body.colorbody .b24-offer-module table th {
+  background: transparent !important;
+  color: var(--vanara-green) !important;
+  font-weight: 700 !important;
+}
+
+body.colorbody .b24-room-module a,
+body.colorbody .b24-offer-module a {
+  color: var(--vanara-forest) !important;
+  font-weight: 600 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px !important;
+}
+
+/* Booking strip */
+body.colorbody #b24bookshoppingcart,
+body.colorbody .b24-bookingstrip {
+  margin: 0 auto 28px !important;
+  border: 1px solid rgba(23, 59, 45, .07) !important;
+  border-radius: 16px !important;
+  background: #fff !important;
+  box-shadow: 0 10px 28px rgba(23, 59, 45, .06) !important;
+}
+
+body.colorbody #b24bookshoppingcart .row,
+body.colorbody .b24-bookingstrip .row {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+/* Forms outside search */
+body.colorbody input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]),
+body.colorbody select,
+body.colorbody textarea {
+  border-color: var(--vanara-input-border) !important;
+  background-color: var(--vanara-soft) !important;
+  color: var(--vanara-text) !important;
+  font-family: var(--vanara-body) !important;
+  box-shadow: none !important;
+}
+
+body.colorbody input:focus,
+body.colorbody select:focus,
+body.colorbody textarea:focus {
+  border-color: var(--vanara-green) !important;
+  background-color: #fff !important;
+  box-shadow: 0 0 0 3px var(--vanara-focus) !important;
+}
+
+/* Alerts */
+body.colorbody .alert {
+  padding: 13px 16px !important;
+  border: 0 !important;
+  border-radius: 12px !important;
+  font-size: 13px !important;
+}
+
+/* Map */
+body.colorbody .b24fullcontainer-proprow11,
+body.colorbody-en .b24fullcontainer-proprow11{
+    display:none!important;
+}
+
+body.colorbody .b24fullcontainer-proprow11 iframe,
+body.colorbody .b24fullcontainer-proprow11 .b24-prop-map {
+  width: 100% !important;
+  min-height: 300px !important;
+  border: 0 !important;
+  border-radius: 18px !important;
+  box-shadow: 0 12px 30px rgba(23, 59, 45, .07) !important;
+}
+
+/* Footer */
+body.colorbody .b24fullcontainer-footer {
+  padding: 0 0 24px !important;
+  color: var(--vanara-muted) !important;
+  font-size: 11px !important;
+  text-align: center !important;
+}
+
+body.colorbody .b24fullcontainer-footer a {
+  color: var(--vanara-forest) !important;
+}
+
+/* Custom Vanara header generated by vanara_header_top.js */
+body.colorbody #vanara-booking-header,
+body.colorbody-en #vanara-booking-header {
+  position: relative !important;
+  isolation: isolate !important;
+  display: block !important;
+  width: 100% !important;
+  min-height: 620px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  background: var(--vanara-green) !important;
+  color: #fff !important;
+  text-align: center !important;
+}
+
+body.colorbody #vanara-booking-header *,
+body.colorbody-en #vanara-booking-header * {
+  box-sizing: border-box !important;
+}
+
+body.colorbody #vanara-booking-header .vb-header__background,
+body.colorbody-en #vanara-booking-header .vb-header__background {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: -2 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+body.colorbody #vanara-booking-header .vb-header__background img,
+body.colorbody-en #vanara-booking-header .vb-header__background img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  object-fit: cover !important;
+  object-position: center 46% !important;
+}
+
+body.colorbody #vanara-booking-header .vb-header__overlay,
+body.colorbody-en #vanara-booking-header .vb-header__overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: -1 !important;
+  background:
+    linear-gradient(180deg, rgba(9, 31, 23, .48) 0%, rgba(9, 31, 23, .62) 54%, rgba(9, 31, 23, .88) 100%) !important;
+}
+
+body.colorbody #vanara-booking-header .vb-header__inner,
+body.colorbody-en #vanara-booking-header .vb-header__inner {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: min(1180px, calc(100% - 48px)) !important;
+  min-height: 620px !important;
+  margin: 0 auto !important;
+  padding: 40px 0 34px !important;
+}
+
+body.colorbody #vanara-booking-header .vb-header__logo,
+body.colorbody-en #vanara-booking-header .vb-header__logo {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 86px !important;
+  height: 86px !important;
+  margin: 0 0 20px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(255,255,255,.30) !important;
+  border-radius: 50% !important;
+  background: rgba(255,255,255,.94) !important;
+  box-shadow: 0 12px 30px rgba(0,0,0,.20) !important;
+}
+
+body.colorbody #vanara-booking-header .vb-header__logo img,
+body.colorbody-en #vanara-booking-header .vb-header__logo img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  object-fit: cover !important;
+}
+
+body.colorbody #vanara-booking-header .vb-header__content,
+body.colorbody-en #vanara-booking-header .vb-header__content {
+  width: min(760px, 100%) !important;
+  margin: 0 auto !important;
+}
+
+body.colorbody #vanara-booking-header .vb-header__eyebrow,
+body.colorbody-en #vanara-booking-header .vb-header__eyebrow {
+  display: inline-block !important;
+  margin: 0 0 12px !important;
+  color: #eee3c9 !important;
+  font-family: var(--vanara-body) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: .22em !important;
+  line-height: 1.2 !important;
+  text-transform: uppercase !important;
+}
+
+body.colorbody #vanara-booking-header .vb-brand-signature,
+body.colorbody-en #vanara-booking-header .vb-brand-signature {
+  margin: 0 auto 22px !important;
+  color: #fff !important;
+}
+
+body.colorbody #vanara-booking-header .vb-brand-signature__name,
+body.colorbody-en #vanara-booking-header .vb-brand-signature__name {
+  margin: 0 !important;
+  color: #fff !important;
+  font-family: var(--vanara-heading) !important;
+  font-size: 42px !important;
+  font-weight: 400 !important;
+  letter-spacing: .14em !important;
+  line-height: 1 !important;
+}
+
+body.colorbody #vanara-booking-header .vb-brand-signature__middle,
+body.colorbody-en #vanara-booking-header .vb-brand-signature__middle {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 11px !important;
+  margin-top: 10px !important;
+}
+
+body.colorbody #vanara-booking-header .vb-brand-signature__middle span,
+body.colorbody-en #vanara-booking-header .vb-brand-signature__middle span {
+  display: block !important;
+  width: 44px !important;
+  height: 1px !important;
+  background: rgba(238,227,201,.72) !important;
+}
+
+body.colorbody #vanara-booking-header .vb-brand-signature__middle strong,
+body.colorbody-en #vanara-booking-header .vb-brand-signature__middle strong {
+  color: #eee3c9 !important;
+  font-family: var(--vanara-body) !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: .24em !important;
+  line-height: 1.2 !important;
+}
+
+body.colorbody #vanara-booking-header .vb-brand-signature__location,
+body.colorbody-en #vanara-booking-header .vb-brand-signature__location {
+  margin-top: 8px !important;
+  color: rgba(255,255,255,.86) !important;
+  font-family: var(--vanara-body) !important;
+  font-size: 9px !important;
+  font-weight: 700 !important;
+  letter-spacing: .20em !important;
+  line-height: 1.2 !important;
+}
+
+body.colorbody #vanara-booking-header .vb-header__title,
+body.colorbody-en #vanara-booking-header .vb-header__title {
+  margin: 0 !important;
+  color: #fff !important;
+  font-family: var(--vanara-heading) !important;
+  font-size: clamp(42px, 5vw, 72px) !important;
+  font-weight: 400 !important;
+  letter-spacing: -.02em !important;
+  line-height: 1.04 !important;
+  text-wrap: balance !important;
+  text-shadow: 0 4px 24px rgba(0,0,0,.22) !important;
+}
+
+body.colorbody #vanara-booking-header .vb-header__copy,
+body.colorbody-en #vanara-booking-header .vb-header__copy {
+  width: min(650px, 100%) !important;
+  margin: 20px auto 0 !important;
+  color: rgba(255,255,255,.90) !important;
+  font-family: var(--vanara-body) !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 1.65 !important;
+}
+
+body.colorbody #vanara-booking-header .vb-header__action,
+body.colorbody-en #vanara-booking-header .vb-header__action {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  min-height: 50px !important;
+  margin-top: 28px !important;
+  padding: 15px 24px !important;
+  border: 1px solid rgba(255,255,255,.52) !important;
+  border-radius: 999px !important;
+  background: rgba(255,255,255,.10) !important;
+  color: #fff !important;
+  font-family: var(--vanara-body) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: .13em !important;
+  line-height: 1 !important;
+  text-decoration: none !important;
+  text-transform: uppercase !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  transition: background-color .2s ease, transform .2s ease, border-color .2s ease !important;
+}
+
+body.colorbody #vanara-booking-header .vb-header__action:hover,
+body.colorbody-en #vanara-booking-header .vb-header__action:hover {
+  border-color: #fff !important;
+  background: rgba(255,255,255,.18) !important;
+  color: #fff !important;
+  transform: translateY(-2px) !important;
+}
+
+body.colorbody #vanara-booking-header .vb-header__trust,
+body.colorbody-en #vanara-booking-header .vb-header__trust {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 14px 28px !important;
+  width: 100% !important;
+  margin-top: 40px !important;
+  padding-top: 22px !important;
+  border-top: 1px solid rgba(255,255,255,.20) !important;
+}
+
+body.colorbody #vanara-booking-header .vb-header__trust > span,
+body.colorbody-en #vanara-booking-header .vb-header__trust > span {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  color: rgba(255,255,255,.88) !important;
+  font-family: var(--vanara-body) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: .04em !important;
+  line-height: 1.2 !important;
+  white-space: nowrap !important;
+}
+
+body.colorbody #vanara-booking-header .vb-header__trust svg,
+body.colorbody-en #vanara-booking-header .vb-header__trust svg {
+  display: block !important;
+  width: 19px !important;
+  height: 19px !important;
+  min-width: 19px !important;
+  max-width: 19px !important;
+  max-height: 19px !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  fill: none !important;
+  stroke: #eee3c9 !important;
+  stroke-width: 1.65 !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+}
+
+@media (max-width: 768px) {
+  body.colorbody #vanara-booking-header,
+  body.colorbody-en #vanara-booking-header,
+  body.colorbody #vanara-booking-header .vb-header__inner,
+  body.colorbody-en #vanara-booking-header .vb-header__inner {
+    min-height: 570px !important;
+  }
+
+  body.colorbody #vanara-booking-header .vb-header__inner,
+  body.colorbody-en #vanara-booking-header .vb-header__inner {
+    width: min(100% - 28px, 760px) !important;
+    padding: 30px 0 26px !important;
+  }
+
+  body.colorbody #vanara-booking-header .vb-header__logo,
+  body.colorbody-en #vanara-booking-header .vb-header__logo {
+    width: 72px !important;
+    height: 72px !important;
+    margin-bottom: 16px !important;
+  }
+
+  body.colorbody #vanara-booking-header .vb-brand-signature__name,
+  body.colorbody-en #vanara-booking-header .vb-brand-signature__name {
+    font-size: 34px !important;
+  }
+
+  body.colorbody #vanara-booking-header .vb-header__title,
+  body.colorbody-en #vanara-booking-header .vb-header__title {
+    font-size: clamp(38px, 10vw, 58px) !important;
+  }
+
+  body.colorbody #vanara-booking-header .vb-header__copy,
+  body.colorbody-en #vanara-booking-header .vb-header__copy {
+    font-size: 15px !important;
+  }
+
+  body.colorbody #vanara-booking-header .vb-header__trust,
+  body.colorbody-en #vanara-booking-header .vb-header__trust {
+    gap: 12px 18px !important;
+    margin-top: 30px !important;
+    padding-top: 18px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  body.colorbody #vanara-booking-header,
+  body.colorbody-en #vanara-booking-header,
+  body.colorbody #vanara-booking-header .vb-header__inner,
+  body.colorbody-en #vanara-booking-header .vb-header__inner {
+    min-height: 540px !important;
+  }
+
+  body.colorbody #vanara-booking-header .vb-header__inner,
+  body.colorbody-en #vanara-booking-header .vb-header__inner {
+    width: calc(100% - 24px) !important;
+  }
+
+  body.colorbody #vanara-booking-header .vb-header__eyebrow,
+  body.colorbody-en #vanara-booking-header .vb-header__eyebrow {
+    font-size: 9px !important;
+  }
+
+  body.colorbody #vanara-booking-header .vb-brand-signature,
+  body.colorbody-en #vanara-booking-header .vb-brand-signature {
+    margin-bottom: 18px !important;
+  }
+
+  body.colorbody #vanara-booking-header .vb-brand-signature__name,
+  body.colorbody-en #vanara-booking-header .vb-brand-signature__name {
+    font-size: 30px !important;
+  }
+
+  body.colorbody #vanara-booking-header .vb-brand-signature__middle span,
+  body.colorbody-en #vanara-booking-header .vb-brand-signature__middle span {
+    width: 30px !important;
+  }
+
+  body.colorbody #vanara-booking-header .vb-header__title,
+  body.colorbody-en #vanara-booking-header .vb-header__title {
+    font-size: 40px !important;
+  }
+
+  body.colorbody #vanara-booking-header .vb-header__copy,
+  body.colorbody-en #vanara-booking-header .vb-header__copy {
+    margin-top: 16px !important;
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+  }
+
+  body.colorbody #vanara-booking-header .vb-header__action,
+  body.colorbody-en #vanara-booking-header .vb-header__action {
+    min-height: 46px !important;
+    margin-top: 22px !important;
+    padding: 13px 20px !important;
+  }
+
+  body.colorbody #vanara-booking-header .vb-header__trust,
+  body.colorbody-en #vanara-booking-header .vb-header__trust {
+    flex-direction: column !important;
+    gap: 10px !important;
+    margin-top: 24px !important;
+    padding-top: 16px !important;
+  }
+}
+
+
+/* =========================================================
+   VANARA BOOKING INTRO
+   Generated by vanara_booking_intro.js
+   ========================================================= */
+
+body.colorbody #vanara-booking-intro,
+body.colorbody-en #vanara-booking-intro {
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 0 20px 54px !important;
+  background: var(--vanara-bg) !important;
+  color: var(--vanara-text) !important;
+}
+
+body.colorbody #vanara-booking-intro *,
+body.colorbody-en #vanara-booking-intro * {
+  box-sizing: border-box !important;
+}
+
+body.colorbody #vanara-booking-intro .vb-booking-intro__inner,
+body.colorbody-en #vanara-booking-intro .vb-booking-intro__inner {
+  width: min(1120px, 100%) !important;
+  margin: 0 auto !important;
+}
+
+body.colorbody #vanara-booking-intro .vb-booking-intro__heading,
+body.colorbody-en #vanara-booking-intro .vb-booking-intro__heading {
+  width: min(760px, 100%) !important;
+  margin: 0 auto 38px !important;
+  text-align: center !important;
+}
+
+body.colorbody #vanara-booking-intro .vb-booking-intro__eyebrow,
+body.colorbody-en #vanara-booking-intro .vb-booking-intro__eyebrow {
+  display: inline-block !important;
+  margin: 0 0 12px !important;
+  color: var(--vanara-forest) !important;
+  font-family: var(--vanara-body) !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: .20em !important;
+  line-height: 1.2 !important;
+  text-transform: uppercase !important;
+}
+
+body.colorbody #vanara-booking-intro h2,
+body.colorbody-en #vanara-booking-intro h2 {
+  margin: 0 !important;
+  color: var(--vanara-green) !important;
+  font-family: var(--vanara-heading) !important;
+  font-size: clamp(34px, 4vw, 50px) !important;
+  font-weight: 400 !important;
+  letter-spacing: -.015em !important;
+  line-height: 1.12 !important;
+  text-wrap: balance !important;
+}
+
+body.colorbody #vanara-booking-intro .vb-booking-intro__heading > p,
+body.colorbody-en #vanara-booking-intro .vb-booking-intro__heading > p {
+  width: min(650px, 100%) !important;
+  margin: 18px auto 0 !important;
+  color: var(--vanara-text-soft) !important;
+  font-family: var(--vanara-body) !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  line-height: 1.7 !important;
+}
+
+body.colorbody #vanara-booking-intro .vb-booking-intro__benefits,
+body.colorbody-en #vanara-booking-intro .vb-booking-intro__benefits {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+  width: 100% !important;
+}
+
+body.colorbody #vanara-booking-intro .vb-booking-benefit,
+body.colorbody-en #vanara-booking-intro .vb-booking-benefit {
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 26px 22px 24px !important;
+  border: 1px solid rgba(23, 59, 45, .08) !important;
+  border-radius: 18px !important;
+  background: rgba(255, 255, 255, .82) !important;
+  box-shadow: 0 12px 30px rgba(23, 59, 45, .055) !important;
+  text-align: left !important;
+}
+
+body.colorbody #vanara-booking-intro .vb-booking-benefit__icon,
+body.colorbody-en #vanara-booking-intro .vb-booking-benefit__icon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 44px !important;
+  height: 44px !important;
+  margin: 0 0 18px !important;
+  border: 1px solid rgba(23, 59, 45, .10) !important;
+  border-radius: 50% !important;
+  background: var(--vanara-soft) !important;
+}
+
+body.colorbody #vanara-booking-intro .vb-booking-benefit__icon svg,
+body.colorbody-en #vanara-booking-intro .vb-booking-benefit__icon svg {
+  display: block !important;
+  width: 21px !important;
+  height: 21px !important;
+  min-width: 21px !important;
+  max-width: 21px !important;
+  max-height: 21px !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  fill: none !important;
+  stroke: var(--vanara-green) !important;
+  stroke-width: 1.65 !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+}
+
+body.colorbody #vanara-booking-intro .vb-booking-benefit h3,
+body.colorbody-en #vanara-booking-intro .vb-booking-benefit h3 {
+  margin: 0 0 9px !important;
+  color: var(--vanara-green) !important;
+  font-family: var(--vanara-heading) !important;
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  line-height: 1.25 !important;
+}
+
+body.colorbody #vanara-booking-intro .vb-booking-benefit p,
+body.colorbody-en #vanara-booking-intro .vb-booking-benefit p {
+  margin: 0 !important;
+  color: var(--vanara-text-soft) !important;
+  font-family: var(--vanara-body) !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+}
+
+body.colorbody #vanara-booking-intro .vb-booking-policy,
+body.colorbody-en #vanara-booking-intro .vb-booking-policy {
+  display: grid !important;
+  grid-template-columns: minmax(220px, .72fr) minmax(0, 1.65fr) !important;
+  gap: 30px !important;
+  width: 100% !important;
+  margin: 34px 0 0 !important;
+  padding: 30px 0 0 !important;
+  border-top: 1px solid rgba(23, 59, 45, .16) !important;
+}
+
+body.colorbody #vanara-booking-intro .vb-booking-policy__heading,
+body.colorbody-en #vanara-booking-intro .vb-booking-policy__heading {
+  min-width: 0 !important;
+  margin: 0 !important;
+}
+
+body.colorbody #vanara-booking-intro .vb-booking-policy__eyebrow,
+body.colorbody-en #vanara-booking-intro .vb-booking-policy__eyebrow {
+  display: block !important;
+  margin: 0 0 10px !important;
+  color: var(--vanara-forest) !important;
+  font-family: var(--vanara-body) !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: .18em !important;
+  line-height: 1.3 !important;
+  text-transform: uppercase !important;
+}
+
+body.colorbody #vanara-booking-intro .vb-booking-policy h3,
+body.colorbody-en #vanara-booking-intro .vb-booking-policy h3 {
+  margin: 0 !important;
+  color: var(--vanara-green) !important;
+  font-family: var(--vanara-heading) !important;
+  font-size: 27px !important;
+  font-weight: 400 !important;
+  line-height: 1.2 !important;
+}
+
+body.colorbody #vanara-booking-intro .vb-booking-policy__rules,
+body.colorbody-en #vanara-booking-intro .vb-booking-policy__rules {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 26px !important;
+  min-width: 0 !important;
+}
+
+body.colorbody #vanara-booking-intro .vb-booking-policy__rule,
+body.colorbody-en #vanara-booking-intro .vb-booking-policy__rule {
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 0 0 18px !important;
+  border-left: 2px solid rgba(23, 59, 45, .22) !important;
+}
+
+body.colorbody #vanara-booking-intro .vb-booking-policy__rule strong,
+body.colorbody-en #vanara-booking-intro .vb-booking-policy__rule strong {
+  display: block !important;
+  margin: 0 0 9px !important;
+  color: var(--vanara-green) !important;
+  font-family: var(--vanara-body) !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  line-height: 1.45 !important;
+}
+
+body.colorbody #vanara-booking-intro .vb-booking-policy__rule p,
+body.colorbody-en #vanara-booking-intro .vb-booking-policy__rule p {
+  margin: 0 !important;
+  color: var(--vanara-text-soft) !important;
+  font-family: var(--vanara-body) !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+}
+
+body.colorbody #vanara-booking-intro .vb-booking-policy__rule .vb-booking-policy__note,
+body.colorbody-en #vanara-booking-intro .vb-booking-policy__rule .vb-booking-policy__note {
+  margin-top: 10px !important;
+  color: var(--vanara-green) !important;
+  font-weight: 600 !important;
+}
+
+/* Give the native language/currency controls breathing room below the hero. */
+body.colorbody .b24fullcontainer-ownerrow1,
+body.colorbody-en .b24fullcontainer-ownerrow1 {
+  margin-top: 18px !important;
+  padding-top: 0 !important;
+  padding-bottom: 10px !important;
+  background: transparent !important;
+}
+
+@media (max-width: 900px) {
+  body.colorbody #vanara-booking-intro .vb-booking-intro__benefits,
+  body.colorbody-en #vanara-booking-intro .vb-booking-intro__benefits {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  body.colorbody #vanara-booking-intro .vb-booking-policy,
+  body.colorbody-en #vanara-booking-intro .vb-booking-policy {
+    grid-template-columns: 1fr !important;
+    gap: 22px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  body.colorbody #vanara-booking-intro,
+  body.colorbody-en #vanara-booking-intro {
+    padding: 54px 16px 42px !important;
+  }
+
+  body.colorbody #vanara-booking-intro .vb-booking-intro__heading,
+  body.colorbody-en #vanara-booking-intro .vb-booking-intro__heading {
+    margin-bottom: 30px !important;
+  }
+
+  body.colorbody #vanara-booking-intro h2,
+  body.colorbody-en #vanara-booking-intro h2 {
+    font-size: clamp(31px, 7vw, 42px) !important;
+  }
+
+  body.colorbody #vanara-booking-intro .vb-booking-policy,
+  body.colorbody-en #vanara-booking-intro .vb-booking-policy {
+    margin-top: 28px !important;
+    padding-top: 26px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  body.colorbody #vanara-booking-intro,
+  body.colorbody-en #vanara-booking-intro {
+    padding: 46px 12px 34px !important;
+  }
+
+  body.colorbody #vanara-booking-intro .vb-booking-intro__benefits,
+  body.colorbody-en #vanara-booking-intro .vb-booking-intro__benefits {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  body.colorbody #vanara-booking-intro .vb-booking-benefit,
+  body.colorbody-en #vanara-booking-intro .vb-booking-benefit {
+    padding: 22px 20px !important;
+  }
+
+  body.colorbody #vanara-booking-intro .vb-booking-intro__heading > p,
+  body.colorbody-en #vanara-booking-intro .vb-booking-intro__heading > p {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+  }
+
+  body.colorbody #vanara-booking-intro .vb-booking-policy__rules,
+  body.colorbody-en #vanara-booking-intro .vb-booking-policy__rules {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  body.colorbody #vanara-booking-intro .vb-booking-policy h3,
+  body.colorbody-en #vanara-booking-intro .vb-booking-policy h3 {
+    font-size: 24px !important;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  body.colorbody .b24fullcontainer > .container,
+  body.colorbody .b24fullcontainer > .container2,
+  body.colorbody .b24fullcontainer .container.atcolor,
+  body.colorbody .b24fullcontainer .container2.atcolor,
+  body.colorbody #b24scroller-container {
+    width: calc(100% - 24px) !important;
+  }
+
+  body.colorbody #b24scroller-container {
+    padding: 15px !important;
+    border-radius: 16px !important;
+  }
+
+  body.colorbody #propnamemoduletext332906,
+  body.colorbody [id^="propnamemoduletext"] {
+    font-size: 26px !important;
+  }
+
+  body.colorbody .panel.b24panel-room {
+    border-radius: 17px !important;
+  }
+
+  body.colorbody .panel-heading.b24-roompanel-heading {
+    padding: 18px 16px 10px !important;
+    font-size: 21px !important;
+  }
+
+  body.colorbody .panel-body.b24panel-body {
+    padding: 2px 16px 18px !important;
+  }
+
+  body.colorbody .b24-offer-pic img,
+  body.colorbody .b24-offer-slider img {
+    max-height: 260px !important;
+  }
+
+  body.colorbody .b24fullcontainer-proprow11 iframe,
+  body.colorbody .b24fullcontainer-proprow11 .b24-prop-map {
+    min-height: 250px !important;
+    border-radius: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  body.colorbody .b24fullcontainer > .container,
+  body.colorbody .b24fullcontainer > .container2,
+  body.colorbody .b24fullcontainer .container.atcolor,
+  body.colorbody .b24fullcontainer .container2.atcolor,
+  body.colorbody #b24scroller-container {
+    width: calc(100% - 16px) !important;
+  }
+
+  body.colorbody #b24scroller-container {
+    padding: 12px !important;
+  }
+
+  body.colorbody button,
+  body.colorbody input[type="submit"],
+  body.colorbody input[type="button"],
+  body.colorbody .btn,
+  body.colorbody a.btn {
+    max-width: 100% !important;
+  }
+}
+
+/* =========================================================
+   END VANARA × BEDS24
+   ========================================================= */
