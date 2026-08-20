@@ -1048,13 +1048,24 @@ body.colorbody-en #vanara-booking-intro .vb-booking-policy__rule .vb-booking-pol
   font-weight: 600 !important;
 }
 
-/* Give the native language/currency controls breathing room below the hero. */
-body.colorbody .b24fullcontainer-ownerrow1,
-body.colorbody-en .b24fullcontainer-ownerrow1 {
-  margin-top: 18px !important;
-  padding-top: 0 !important;
-  padding-bottom: 10px !important;
+/* Keep native controls comfortably below the hero without empty Beds24 rows. */
+body.colorbody:has(#vanara-booking-intro) #topofthebookingpage,
+body.colorbody-en:has(#vanara-booking-intro) #topofthebookingpage {
+  padding: 18px 0 12px !important;
+}
+
+body.colorbody:has(#vanara-booking-intro) .b24fullcontainer-ownerrow1,
+body.colorbody-en:has(#vanara-booking-intro) .b24fullcontainer-ownerrow1 {
+  margin-top: 0 !important;
+  padding: 0 !important;
   background: transparent !important;
+}
+
+body.colorbody:has(#vanara-booking-intro) #ajaxroomofferprop332906 > .b24fullcontainer-proprow1,
+body.colorbody:has(#vanara-booking-intro) #ajaxroomofferprop332906 > .b24fullcontainer-proprow2,
+body.colorbody-en:has(#vanara-booking-intro) #ajaxroomofferprop332906 > .b24fullcontainer-proprow1,
+body.colorbody-en:has(#vanara-booking-intro) #ajaxroomofferprop332906 > .b24fullcontainer-proprow2 {
+  padding: 0 !important;
 }
 
 @media (max-width: 900px) {
