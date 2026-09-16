@@ -58,17 +58,27 @@
       ]
     },
     {
-      id: "wine",
-      title: "Italian Wine",
-      note: "Selected Italian bottles and wines by the glass.",
+      id: "wine-glass",
+      title: "Italian Wine — By the Glass",
+      note: "A concise selection of Italian wines served by the glass.",
       items: [
-        ["Merlot “Le Contesse” — Veneto", "Red fruits and delicate spice. By the glass.", "220"],
-        ["Cabernet Sauvignon “Le Contesse” — Veneto", "Blackcurrant, dark cherry and a hint of spice. By the glass.", "220"],
-        ["Pinot Grigio “Le Contesse” — Veneto", "Fresh and fruity, with green apple and pineapple notes. By the glass.", "220"],
-        ["Chardonnay “Le Contesse” — Veneto", "A soft, harmonious white for delicate dishes. By the glass.", "220"],
-        ["Falanghina “Campania Antica” — Campania", "Lively citrus and white flowers, with fresh minerality. Bottle.", "1850"],
-        ["Vermentino “Probabbu” Tre Biddas — Sardinia", "Aromatic and fruity, with light herbaceous touches. Bottle.", "2600"],
-        ["Gewürztraminer “Bosco Albano” — Friuli Venezia Giulia", "Aromatic florals, lychee and tropical fruit, finishing soft and lingering. Bottle.", "1450"]
+        ["Merlot “Le Contesse” — Veneto", "Red fruits and delicate spice.", "220"],
+        ["Cabernet Sauvignon “Le Contesse” — Veneto", "Blackcurrant, dark cherry and a hint of spice.", "220"],
+        ["Pinot Grigio “Le Contesse” — Veneto", "Fresh and fruity, with green apple and pineapple notes.", "220"],
+        ["Chardonnay “Le Contesse” — Veneto", "A soft, harmonious white for delicate dishes.", "220"]
+      ]
+    },
+    {
+      id: "wine-bottle",
+      title: "Italian Wine — By the Bottle",
+      note: "A selection of Italian bottles chosen to sit naturally alongside the food.",
+      items: [
+        ["Falanghina “Campania Antica” — Campania", "Lively citrus and white flowers, with fresh minerality.", "1850"],
+        ["Vermentino “Probabbu” Tre Biddas — Sardinia", "Aromatic and fruity, with light herbaceous touches.", "2600"],
+        ["Gewürztraminer “Bosco Albano” — Friuli Venezia Giulia", "Aromatic florals, lychee and tropical fruit, finishing soft and lingering.", "1450"],
+        ["Montepulciano d’Abruzzo “Magnolia” (red)", "Producer: Cantina Magnolia — Abruzzo, Italy. Ripe red and black fruits, framed by gentle oak spice.", "1850"],
+        ["Chianti DOCG “Poggio dei Salici” (red)", "Producer: Cantina Poggio dei Salici — Tuscany, Italy. Cherry and red-fruit aromas with balanced tannins and a savoury Tuscan finish.", "1850"],
+        ["Conte Rosso Piceno “Villa Prandone” (red)", "Producer: Il Conte Villa Prandone — Marche, Italy. From the Piceno hills above the Adriatic: fresh red fruits, soft texture and an elegant palate.", "2100"]
       ]
     },
     {
@@ -95,12 +105,13 @@
   ];
 
   const thaiMenu = {
-    titles: { antipasti: "แอนติพาสตี้", pasta: "พาสต้า", desserts: "ของหวาน", wine: "ไวน์อิตาเลียน", drinks: "เครื่องดื่มและกาแฟ" },
+    titles: { antipasti: "แอนติพาสตี้", pasta: "พาสต้า", desserts: "ของหวาน", "wine-glass": "ไวน์อิตาเลียน — แบบแก้ว", "wine-bottle": "ไวน์อิตาเลียน — แบบขวด", drinks: "เครื่องดื่มและกาแฟ" },
     notes: {
       antipasti: "โคลด์คัท ชีส และบรูสเก็ตตาสไตล์อิตาเลียน สำหรับเริ่มต้นมื้ออาหาร",
       pasta: "พาสต้า Gragnano IGP เมนูคลาสสิกจากโรม สูตรประจำภูมิภาค และพาสต้าสอดไส้สด",
       desserts: "ของหวานอิตาเลียนคลาสสิก พร้อมเมนูไทยเล็ก ๆ ปิดท้าย",
-      wine: "ไวน์อิตาเลียนที่คัดสรร ทั้งแบบแก้วและแบบขวด",
+      "wine-glass": "ไวน์อิตาเลียนที่คัดสรร เสิร์ฟแบบแก้ว",
+      "wine-bottle": "ไวน์อิตาเลียนแบบขวดที่คัดสรรให้เข้ากับอาหาร",
       drinks: "น้ำดื่ม น้ำอัดลม เบียร์ สมูทตี้ กาแฟ และชา"
     },
     descriptions: {
@@ -145,6 +156,9 @@
       "Falanghina “Campania Antica” — Campania": "ซิตรัสและดอกไม้ขาว มีความแร่ธาตุสดชื่น เสิร์ฟเป็นขวด",
       "Vermentino “Probabbu” Tre Biddas — Sardinia": "หอมสดใส มีผลไม้และกลิ่นสมุนไพรอ่อน ๆ เสิร์ฟเป็นขวด",
       "Gewürztraminer “Bosco Albano” — Friuli Venezia Giulia": "กลิ่นดอกไม้ ลิ้นจี่ และผลไม้เมืองร้อน ปลายรสนุ่มยาว เสิร์ฟเป็นขวด",
+      "Montepulciano d’Abruzzo “Magnolia” (red)": "ไวน์แดงจากอาบรุซโซ กลิ่นผลไม้แดงและดำสุกเด่น เสริมด้วยกลิ่นเครื่องเทศจากไม้โอ๊ก",
+      "Chianti DOCG “Poggio dei Salici” (red)": "ไวน์แดงจากทัสกานี กลิ่นเชอร์รีและผลไม้สีแดง พร้อมแทนนินสมดุลและรสสัมผัสแบบทัสกานี",
+      "Conte Rosso Piceno “Villa Prandone” (red)": "ไวน์แดงจากแคว้นมาร์เค จากเนินเขาปีเชโนใกล้ทะเลเอเดรียติก มีผลไม้สีแดงสด เนื้อนุ่ม และสง่างาม",
       "Singha Water 600ml": "น้ำดื่ม",
       "Singha Water 1500ml": "น้ำดื่ม",
       "Singha Soda Water": "น้ำโซดา",
