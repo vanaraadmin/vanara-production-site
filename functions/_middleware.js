@@ -17,7 +17,9 @@ const CLEAN_PATHS = new Map([
   ["/bailan-bay.html", "/bailan-bay"],
   ["/privacy.html", "/privacy"],
   ["/terms.html", "/terms"],
-  ["/data-deletion.html", "/data-deletion"]
+  ["/data-deletion.html", "/data-deletion"],
+  ["/restaurant.html", "/restaurant"],
+  ["/th/restaurant.html", "/th/restaurant"]
 ]);
 
 export async function onRequest(context) {

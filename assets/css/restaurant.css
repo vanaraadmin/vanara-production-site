@@ -1,0 +1,242 @@
+:root {
+  --trattoria-ink: #003f3d;
+  --trattoria-deep: #002e2d;
+  --trattoria-green: #13846e;
+  --trattoria-cream: #fbf2df;
+  --trattoria-paper: #fffaf0;
+  --trattoria-tomato: #c94d32;
+  --trattoria-italian-red: #ad3435;
+  --trattoria-italian-green: #16734d;
+  --trattoria-gold: #d8a74e;
+  --trattoria-line: rgba(251, 242, 223, .18);
+  --trattoria-title: "Marcellus", Georgia, serif;
+  --trattoria-body: "Lato", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body.restaurant-page {
+  margin: 0;
+  background: var(--trattoria-ink);
+  color: var(--trattoria-cream);
+  font-family: var(--trattoria-body);
+  -webkit-font-smoothing: antialiased;
+}
+body.restaurant-page a { color: inherit; text-decoration: none; }
+body.restaurant-page img { display: block; max-width: 100%; }
+.restaurant-shell { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
+.restaurant-skip { position: absolute; left: -999px; top: 8px; z-index: 2000; padding: 12px 16px; background: var(--trattoria-cream); color: var(--trattoria-deep); }
+.restaurant-skip:focus { left: 8px; }
+
+.trattoria-nav { position: absolute; z-index: 10; top: 0; right: 0; left: 0; border-bottom: 1px solid rgba(255,255,255,.14); color: #fffaf0; }
+.trattoria-nav__inner { display: grid; grid-template-columns: minmax(180px, 1fr) auto minmax(180px, 1fr); gap: 28px; align-items: center; min-height: 86px; }
+.trattoria-nav__brand { display: inline-flex; align-items: center; gap: 11px; font-family: var(--trattoria-title); font-size: 24px; letter-spacing: -.03em; }
+.trattoria-nav__logo { width: 58px; height: 58px; flex: 0 0 auto; object-fit: contain; }
+.trattoria-nav__name { white-space: nowrap; }
+.trattoria-nav__name em { color: #e7c77d; font-style: italic; }
+.trattoria-nav__links { display: flex; align-items: center; justify-content: center; gap: clamp(16px, 2vw, 29px); }
+.trattoria-nav__links a, .trattoria-nav__language { color: rgba(255,250,240,.78); font-size: 10px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; transition: color .2s ease; }
+.trattoria-nav__links a:hover, .trattoria-nav__language:hover { color: #e7c77d; }
+.trattoria-nav__reserve { justify-self: end; padding: 10px 15px; border: 1px solid rgba(231,199,125,.72); color: #efd293; font-size: 10px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; transition: background .2s ease, color .2s ease; }
+.trattoria-nav__reserve:hover { background: #e7c77d; color: #073331; }
+
+.trattoria-footer { position: relative; isolation: isolate; padding: 68px 0 25px; background: #001f1e; color: #fffaf0; }
+.trattoria-footer::before { position: absolute; inset: 0; z-index: 0; background: url("/assets/img/trattoria/pasta-pattern-editorial.png") center / 760px auto repeat; mix-blend-mode: screen; opacity: .10; content: ""; pointer-events: none; }
+.trattoria-footer__top, .trattoria-footer__bottom { position: relative; z-index: 1; }
+.trattoria-footer__top { display: grid; grid-template-columns: 1.25fr repeat(2, .6fr); gap: 45px; padding-bottom: 52px; }
+.trattoria-footer__identity { display: flex; align-items: flex-start; gap: 21px; }
+.trattoria-footer__logo { width: 116px; height: 116px; flex: 0 0 auto; object-fit: contain; }
+.trattoria-footer__brand { margin: 0; font-family: var(--trattoria-title); font-size: clamp(36px, 4vw, 54px); font-weight: 400; letter-spacing: -.05em; line-height: .9; }
+.trattoria-footer__brand span { display: block; color: #e7c77d; font-size: .64em; font-style: italic; }
+.trattoria-footer p { margin: 18px 0 0; color: rgba(255,250,240,.65); font-size: 14px; line-height: 1.7; }
+.trattoria-footer__heading { margin: 5px 0 15px; color: #efd293; font-size: 10px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.trattoria-footer__detail { display: block; margin: 8px 0; color: rgba(255,250,240,.8); font-size: 14px; line-height: 1.55; }
+.trattoria-footer__bottom { padding-top: 22px; border-top: 1px solid rgba(255,255,255,.13); color: rgba(255,250,240,.46); font-size: 11px; }
+
+.restaurant-hero { position: relative; min-height: min(880px, 100svh); overflow: hidden; background: var(--trattoria-deep); isolation: isolate; }
+.restaurant-hero::before { position: absolute; inset: 0; z-index: -2; background: radial-gradient(circle at 88% 84%, rgba(201, 77, 50, .3), transparent 28%), linear-gradient(100deg, #002b2a 0%, #003d3a 52%, rgba(0, 46, 45, .16) 100%); content: ""; }
+.restaurant-hero::after { position: absolute; inset: 0; z-index: -1; background: url("/assets/img/trattoria/pasta-pattern-editorial.png") center / 760px auto repeat; mix-blend-mode: screen; opacity: .10; content: ""; pointer-events: none; }
+.restaurant-hero__grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(380px, .84fr); min-height: min(880px, 100svh); gap: clamp(30px, 6vw, 96px); align-items: start; padding: 148px 0 78px; }
+.restaurant-hero__copy { position: relative; z-index: 1; max-width: 610px; margin-top: clamp(68px, 7.4vw, 126px); }
+.restaurant-kicker { display: flex; align-items: center; gap: 12px; margin: 0 0 24px; color: #efd293; font-size: 11px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; }
+.restaurant-kicker::before { width: 36px; height: 3px; background: linear-gradient(90deg, var(--trattoria-italian-green) 0 33%, #fffaf0 33% 66%, var(--trattoria-italian-red) 66% 100%); content: ""; }
+.restaurant-hero h1 { max-width: 600px; margin: 0; font-family: var(--trattoria-title); font-size: clamp(58px, 7.2vw, 104px); font-weight: 400; line-height: .9; letter-spacing: -.055em; text-wrap: balance; }
+.restaurant-hero h1 span { display: block; color: #e4c67f; font-size: .54em; font-style: italic; letter-spacing: -.035em; line-height: 1.02; }
+.restaurant-hero__lead { max-width: 515px; margin: 30px 0 0; color: rgba(255, 250, 240, .82); font-size: clamp(17px, 1.6vw, 21px); font-weight: 300; line-height: 1.7; }
+.restaurant-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 36px; }
+.restaurant-button { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; padding: 0 24px; border: 1px solid #e7c77d; border-radius: 999px; background: #e7c77d; color: #073331; font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; transition: transform .25s ease, background .25s ease, color .25s ease; }
+.restaurant-button:hover { transform: translateY(-3px); background: #fff1c8; }
+.restaurant-button--quiet { border-color: rgba(255,255,255,.42); background: transparent; color: #fffaf0; }
+.restaurant-button--quiet:hover { background: rgba(255,255,255,.1); color: #fff; }
+.restaurant-hero__photo { position: relative; justify-self: end; width: min(100%, 506px); margin: 0; }
+.restaurant-hero__photo::before { position: absolute; z-index: -1; right: -30px; bottom: -32px; width: 77%; height: 57%; border: 1px solid rgba(231,199,125,.52); border-radius: 45% 48% 20% 44%; content: ""; }
+.restaurant-hero__photo img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 48%; border: 1px solid rgba(255,255,255,.17); box-shadow: 0 35px 85px rgba(0,0,0,.35); }
+.restaurant-hero__caption { position: absolute; right: -19px; bottom: 32px; max-width: 210px; padding: 16px 18px; border: 1px solid rgba(255,255,255,.18); background: rgba(0, 46, 45, .87); color: rgba(255,250,240,.86); font-size: 12px; font-weight: 700; line-height: 1.5; letter-spacing: .08em; text-transform: uppercase; backdrop-filter: blur(10px); }
+.restaurant-hero__scroll { position: absolute; right: 38px; bottom: 30px; color: rgba(255,250,240,.58); font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; writing-mode: vertical-rl; }
+
+.restaurant-strip { border-top: 1px solid var(--trattoria-line); border-bottom: 1px solid var(--trattoria-line); background: #063b39; }
+.restaurant-strip__inner { display: grid; grid-template-columns: repeat(3, 1fr); }
+.restaurant-strip__item { min-height: 135px; padding: 29px clamp(17px, 3vw, 42px); border-right: 1px solid var(--trattoria-line); }
+.restaurant-strip__item:last-child { border-right: 0; }
+.restaurant-strip__item strong { display: block; margin-bottom: 9px; color: #efd293; font-family: var(--trattoria-title); font-size: 25px; font-weight: 400; }
+.restaurant-strip__item span { color: rgba(255,250,240,.76); font-size: 13px; line-height: 1.55; }
+
+.restaurant-proof { overflow: hidden; padding: 72px 0; background: #f3e5ca; color: var(--trattoria-deep); }
+.restaurant-proof__grid { display: grid; grid-template-columns: minmax(0, .88fr) minmax(380px, 1.12fr); gap: clamp(44px, 8vw, 126px); align-items: center; }
+.restaurant-proof__lead { max-width: 520px; }
+.restaurant-proof__lead h2 { margin: 0; font-family: var(--trattoria-title); font-size: clamp(43px, 5.3vw, 75px); font-weight: 400; letter-spacing: -.05em; line-height: .95; }
+.restaurant-proof__lead h2 em { color: var(--trattoria-italian-red); font-style: italic; }
+.restaurant-proof__lead p { max-width: 460px; margin: 20px 0 0; color: rgba(0,46,45,.74); font-size: 16px; line-height: 1.75; }
+.restaurant-proof__panel { position: relative; display: grid; grid-template-columns: minmax(170px, .74fr) 1fr; gap: 27px; align-items: center; padding: 28px 0 28px 34px; border-left: 1px solid rgba(0,46,45,.23); }
+.restaurant-proof__panel::before { position: absolute; top: 0; left: -1px; width: 3px; height: 52px; background: linear-gradient(to bottom, var(--trattoria-italian-green) 0 33%, #f3e5ca 33% 66%, var(--trattoria-italian-red) 66% 100%); content: ""; }
+.restaurant-proof__score { color: var(--trattoria-deep); font-family: var(--trattoria-title); font-size: clamp(92px, 10vw, 142px); font-weight: 400; letter-spacing: -.09em; line-height: .74; }
+.restaurant-proof__stars { margin-top: 17px; color: #bf8731; font-size: 19px; letter-spacing: .16em; white-space: nowrap; }
+.restaurant-proof__source { margin-top: 11px; color: rgba(0,46,45,.7); font-size: 10px; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+.restaurant-proof__themes { display: grid; gap: 0; border-top: 1px solid rgba(0,46,45,.18); }
+.restaurant-proof__theme { padding: 13px 0; border-bottom: 1px solid rgba(0,46,45,.18); color: rgba(0,46,45,.84); font-family: var(--trattoria-title); font-size: 21px; line-height: 1.2; }
+
+.restaurant-section { padding: 118px 0; }
+.restaurant-section--paper { background: var(--trattoria-paper); color: var(--trattoria-deep); }
+.restaurant-section--deep { position: relative; overflow: hidden; background: var(--trattoria-deep); }
+.restaurant-section--deep::before, .restaurant-menu::before, .restaurant-visit::before { position: absolute; inset: 0; z-index: 0; background: url("/assets/img/trattoria/pasta-pattern-editorial.png") center / 760px auto repeat; mix-blend-mode: screen; opacity: .10; content: ""; pointer-events: none; }
+.restaurant-section--deep::after { position: absolute; z-index: 0; right: -150px; bottom: -220px; width: 590px; height: 590px; border: 1px solid rgba(255,255,255,.08); border-radius: 50%; content: ""; }
+.restaurant-section__eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 17px; color: var(--trattoria-gold); font-size: 11px; font-weight: 800; letter-spacing: .19em; text-transform: uppercase; }
+.restaurant-section__eyebrow::before { width: 18px; height: 2px; background: linear-gradient(90deg, var(--trattoria-italian-green) 0 33%, #f5ead5 33% 66%, var(--trattoria-italian-red) 66% 100%); content: ""; }
+.restaurant-section--paper .restaurant-section__eyebrow::before, .restaurant-gallery .restaurant-section__eyebrow::before { background: linear-gradient(90deg, var(--trattoria-italian-green) 0 33%, #f5ead5 33% 66%, var(--trattoria-italian-red) 66% 100%); box-shadow: 0 0 0 1px rgba(0,46,45,.08); }
+.restaurant-section__title { max-width: 770px; margin: 0; font-family: var(--trattoria-title); font-size: clamp(40px, 5vw, 69px); font-weight: 400; letter-spacing: -.035em; line-height: 1; text-wrap: balance; }
+.restaurant-section__title em { color: var(--trattoria-tomato); font-style: italic; }
+.restaurant-section__copy { max-width: 650px; margin: 23px 0 0; color: rgba(0,46,45,.72); font-size: 17px; line-height: 1.8; }
+.restaurant-section--deep .restaurant-section__title { color: #fffaf0; }
+.restaurant-section--deep .restaurant-section__copy { color: rgba(255,250,240,.72); }
+
+.restaurant-story { display: grid; grid-template-columns: minmax(0, .92fr) minmax(330px, .72fr); gap: clamp(44px, 9vw, 135px); align-items: end; }
+.restaurant-story__statement { margin: 0; color: #073331; font-family: var(--trattoria-title); font-size: clamp(31px, 3.9vw, 54px); line-height: 1.1; letter-spacing: -.032em; }
+.restaurant-story__statement em { color: var(--trattoria-tomato); font-style: italic; }
+.restaurant-facts { display: grid; gap: 0; border-top: 1px solid rgba(0,46,45,.18); }
+.restaurant-fact { padding: 20px 0; border-bottom: 1px solid rgba(0,46,45,.18); }
+.restaurant-fact strong { display: block; margin-bottom: 6px; color: var(--trattoria-green); font-size: 11px; letter-spacing: .15em; text-transform: uppercase; }
+.restaurant-fact span { color: rgba(0,46,45,.74); font-size: 15px; line-height: 1.55; }
+
+.restaurant-gallery { background: #f5ead5; color: var(--trattoria-deep); }
+.restaurant-gallery__head { display: grid; grid-template-columns: minmax(0, .85fr) minmax(250px, .48fr); gap: 36px; align-items: end; margin-bottom: 46px; }
+.restaurant-gallery__head .restaurant-section__copy { margin: 0; }
+.restaurant-gallery__grid { display: grid; grid-template-columns: 1.06fr .94fr .8fr; grid-template-rows: 360px 260px 320px; gap: 16px; }
+.restaurant-gallery__item { position: relative; min-height: 0; overflow: hidden; margin: 0; background: var(--trattoria-deep); }
+.restaurant-gallery__item:nth-child(1) { grid-row: span 2; }
+.restaurant-gallery__item:nth-child(2) { grid-column: 2; }
+.restaurant-gallery__item:nth-child(3) { grid-column: 3; grid-row: span 2; }
+.restaurant-gallery__item:nth-child(4) { grid-column: 2; grid-row: span 2; }
+.restaurant-gallery__item:nth-child(5) { grid-column: 1; }
+.restaurant-gallery__item:nth-child(6) { grid-column: 3; }
+.restaurant-gallery__item:nth-child(7) { grid-column: 1; }
+.restaurant-gallery__item:nth-child(8) { grid-column: 3; }
+.restaurant-gallery__item img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s ease; }
+.restaurant-gallery__item::after { position: absolute; right: 0; bottom: 0; left: 0; height: 42%; background: linear-gradient(transparent, rgba(0, 27, 26, .68)); content: ""; pointer-events: none; }
+.restaurant-gallery__item figcaption { position: absolute; z-index: 1; right: 18px; bottom: 15px; left: 18px; color: #fffaf0; font-family: var(--trattoria-title); font-size: 20px; line-height: 1.15; text-shadow: 0 1px 10px rgba(0,0,0,.38); }
+.restaurant-gallery__item:hover img { transform: scale(1.045); }
+
+.restaurant-classics { position: relative; z-index: 1; display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(45px, 8vw, 120px); align-items: start; }
+.restaurant-classics__note { margin-top: 28px; padding: 25px; border-left: 2px solid #e7c77d; color: rgba(255,250,240,.73); font-size: 16px; line-height: 1.75; }
+.restaurant-classics__list { display: grid; gap: 0; border-top: 1px solid var(--trattoria-line); }
+.restaurant-classic { display: grid; grid-template-columns: 72px 1fr auto; gap: 18px; align-items: center; padding: 24px 0; border-bottom: 1px solid var(--trattoria-line); }
+.restaurant-classic__number { color: #e7c77d; font-family: var(--trattoria-title); font-size: 26px; font-style: italic; }
+.restaurant-classic h3 { margin: 0 0 5px; color: #fffaf0; font-family: var(--trattoria-title); font-size: 28px; font-weight: 400; }
+.restaurant-classic p { margin: 0; color: rgba(255,250,240,.63); font-size: 14px; line-height: 1.55; }
+.restaurant-classic__price { color: #efd293; font-size: 18px; font-weight: 800; white-space: nowrap; }
+
+.restaurant-menu { position: relative; isolation: isolate; background: #063f3d; }
+.restaurant-menu > .restaurant-shell { position: relative; z-index: 1; }
+.restaurant-menu__intro { display: grid; grid-template-columns: minmax(0, .8fr) minmax(330px, .65fr); gap: 70px; align-items: end; margin-bottom: 56px; }
+.restaurant-menu__intro .restaurant-section__copy { color: rgba(255,250,240,.72); }
+.restaurant-menu__special { max-width: 610px; margin: 17px 0 0; padding: 15px 17px; border-left: 2px solid #e7c77d; background: rgba(255,255,255,.055); color: rgba(255,250,240,.76); font-size: 14px; line-height: 1.65; }
+.restaurant-menu__special strong { color: #efd293; font-weight: 800; }
+.restaurant-menu__focus { max-width: 610px; margin: 19px 0 0; color: #f2ddab; font-size: 15px; line-height: 1.65; }
+.restaurant-menu__focus strong { color: #fff8e9; }
+.restaurant-menu__nav { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
+.restaurant-menu__nav a { padding: 10px 14px; border: 1px solid rgba(255,255,255,.19); border-radius: 999px; color: rgba(255,250,240,.84); font-size: 10px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; transition: background .2s ease, color .2s ease; }
+.restaurant-menu__nav a:hover { background: #e7c77d; color: #073331; }
+.restaurant-menu-group { padding: 66px 0 0; scroll-margin-top: 100px; }
+.restaurant-menu-group + .restaurant-menu-group { margin-top: 54px; border-top: 1px solid var(--trattoria-line); }
+.restaurant-menu-group__header { display: flex; align-items: baseline; justify-content: space-between; gap: 25px; margin-bottom: 28px; }
+.restaurant-menu-group h2 { margin: 0; color: #fffaf0; font-family: var(--trattoria-title); font-size: clamp(38px, 4.4vw, 58px); font-weight: 400; letter-spacing: -.03em; }
+.restaurant-menu-group__header p { max-width: 400px; margin: 0; color: rgba(255,250,240,.64); font-size: 14px; line-height: 1.6; text-align: right; }
+.restaurant-menu-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(28px, 6vw, 80px); border-top: 1px solid var(--trattoria-line); }
+.restaurant-menu-item { display: grid; grid-template-columns: 1fr auto; gap: 12px; padding: 25px 0; border-bottom: 1px solid var(--trattoria-line); }
+.restaurant-menu-item h3 { margin: 0 0 7px; color: #fffaf0; font-family: var(--trattoria-title); font-size: 22px; font-weight: 400; line-height: 1.16; }
+.restaurant-menu-item p { margin: 0; color: rgba(255,250,240,.68); font-size: 13px; line-height: 1.55; }
+.restaurant-menu-item__price { align-self: start; color: #efd293; font-size: 17px; font-weight: 800; white-space: nowrap; }
+.restaurant-menu-item__tag { display: inline-block; margin-top: 9px; color: #9ce2bd; font-size: 9px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.restaurant-menu__disclaimer { margin: 47px 0 0; color: rgba(255,250,240,.55); font-size: 12px; line-height: 1.6; }
+
+.restaurant-reviews { display: grid; grid-template-columns: minmax(0, .68fr) minmax(390px, 1fr); gap: clamp(45px, 8vw, 115px); align-items: start; }
+.restaurant-score { display: flex; align-items: baseline; gap: 14px; margin: 23px 0 19px; }
+.restaurant-score strong { color: var(--trattoria-tomato); font-family: var(--trattoria-title); font-size: clamp(74px, 8vw, 112px); font-weight: 400; letter-spacing: -.07em; }
+.restaurant-score span { color: rgba(0,46,45,.65); font-size: 13px; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+.restaurant-review-list { display: grid; border-top: 1px solid rgba(0,46,45,.18); }
+.restaurant-review { padding: 24px 0; border-bottom: 1px solid rgba(0,46,45,.18); }
+.restaurant-review blockquote { margin: 0; color: #073331; font-family: var(--trattoria-title); font-size: clamp(20px, 2vw, 27px); line-height: 1.35; }
+.restaurant-review p { margin: 11px 0 0; color: rgba(0,46,45,.68); font-size: 13px; line-height: 1.6; }
+.restaurant-text-link { display: inline-flex; margin-top: 28px; padding-bottom: 7px; border-bottom: 1px solid var(--trattoria-tomato); color: var(--trattoria-deep); font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+
+.restaurant-visit { position: relative; overflow: hidden; isolation: isolate; padding: 106px 0; background: linear-gradient(130deg, #083c39, #002e2d); }
+.restaurant-visit::after { position: absolute; z-index: 0; top: -130px; right: 5%; width: 420px; height: 420px; border: 1px solid rgba(231,199,125,.19); border-radius: 50%; content: ""; }
+.restaurant-visit__grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(340px, .65fr); gap: 72px; align-items: center; }
+.restaurant-visit .restaurant-section__title { color: #fffaf0; }
+.restaurant-visit .restaurant-section__copy { color: rgba(255,250,240,.73); }
+.restaurant-visit__details { display: grid; gap: 0; border-top: 1px solid var(--trattoria-line); }
+.restaurant-visit__detail { padding: 19px 0; border-bottom: 1px solid var(--trattoria-line); }
+.restaurant-visit__detail strong { display: block; margin-bottom: 7px; color: #efd293; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; }
+.restaurant-visit__detail span, .restaurant-visit__detail a { color: rgba(255,250,240,.86); font-size: 15px; line-height: 1.55; }
+.restaurant-visit__detail a { text-decoration: underline; text-decoration-color: rgba(231,199,125,.65); text-underline-offset: 4px; }
+
+.restaurant-page .site-footer { margin-top: 0; }
+
+@media (max-width: 900px) {
+  .restaurant-shell { width: min(100% - 36px, 680px); }
+  .restaurant-hero { min-height: auto; }
+  .restaurant-hero__grid { grid-template-columns: 1fr; gap: 46px; padding: 146px 0 68px; }
+  .restaurant-hero__copy { max-width: 630px; margin-top: 0; }
+  .restaurant-hero__photo { justify-self: center; width: min(84vw, 510px); }
+  .restaurant-hero__scroll { display: none; }
+  .restaurant-strip__inner { grid-template-columns: 1fr; }
+  .restaurant-strip__item { min-height: 0; border-right: 0; border-bottom: 1px solid var(--trattoria-line); }
+  .restaurant-strip__item:last-child { border-bottom: 0; }
+  .restaurant-story, .restaurant-classics, .restaurant-menu__intro, .restaurant-reviews, .restaurant-visit__grid, .restaurant-proof__grid, .trattoria-footer__top { grid-template-columns: 1fr; gap: 44px; }
+  .restaurant-gallery__head { grid-template-columns: 1fr; gap: 16px; }
+  .restaurant-gallery__grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: 360px 270px 270px 270px; }
+  .restaurant-gallery__item:nth-child(n) { grid-column: auto; grid-row: auto; }
+  .restaurant-gallery__item:nth-child(1), .restaurant-gallery__item:nth-child(3) { grid-row: span 2; }
+  .restaurant-menu__nav { justify-content: flex-start; }
+  .restaurant-menu-group__header { display: block; }
+  .restaurant-menu-group__header p { margin-top: 12px; text-align: left; }
+  .restaurant-section { padding: 82px 0; }
+  .restaurant-menu-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .restaurant-shell { width: calc(100% - 32px); }
+  .restaurant-hero__grid { padding-top: 128px; }
+  .trattoria-nav__inner { grid-template-columns: 1fr auto; gap: 10px; min-height: 72px; }
+  .trattoria-nav__brand { gap: 8px; font-size: 21px; }
+  .trattoria-nav__logo { width: 49px; height: 49px; }
+  .trattoria-nav__links { display: none; }
+  .trattoria-nav__reserve { padding: 8px 10px; font-size: 9px; }
+  .restaurant-hero h1 { font-size: clamp(53px, 17vw, 76px); }
+  .restaurant-proof { padding: 59px 0; }
+  .restaurant-proof__panel { grid-template-columns: 1fr; gap: 30px; padding: 27px 0 0; border-top: 1px solid rgba(0,46,45,.23); border-left: 0; }
+  .restaurant-proof__panel::before { top: -1px; left: 0; width: 52px; height: 3px; background: linear-gradient(to right, var(--trattoria-italian-green) 0 33%, #f3e5ca 33% 66%, var(--trattoria-italian-red) 66% 100%); }
+  .restaurant-hero__caption { right: -8px; bottom: 18px; max-width: 176px; padding: 13px 14px; font-size: 10px; }
+  .restaurant-actions { display: grid; grid-template-columns: 1fr; }
+  .restaurant-button { width: 100%; }
+  .restaurant-classic { grid-template-columns: 45px 1fr; gap: 11px; }
+  .restaurant-classic__price { grid-column: 2; }
+  .restaurant-classic h3 { font-size: 25px; }
+  .restaurant-menu-group { padding-top: 40px; }
+  .restaurant-menu-item { padding: 21px 0; }
+  .restaurant-menu-item h3 { font-size: 21px; }
+  .restaurant-score { gap: 8px; }
+  .restaurant-gallery__grid { grid-template-columns: 1fr; grid-template-rows: repeat(8, 315px); gap: 12px; }
+  .restaurant-gallery__item:nth-child(n) { grid-column: auto; grid-row: auto; }
+  .trattoria-footer__identity { gap: 15px; }
+  .trattoria-footer__logo { width: 96px; height: 96px; }
+}

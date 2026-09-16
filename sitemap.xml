@@ -65,4 +65,12 @@
     <loc>https://vanararetreat.com/terms</loc>
     <lastmod>2026-07-27</lastmod>
   </url>
+  <url>
+    <loc>https://vanararetreat.com/restaurant</loc>
+    <lastmod>2026-09-16</lastmod>
+    <image:image>
+      <image:loc>https://vanararetreat.com/assets/img/trattoria-carbonara.jpg</image:loc>
+      <image:title>Carbonara at Trattoria Vanara</image:title>
+    </image:image>
+  </url>
 </urlset>
