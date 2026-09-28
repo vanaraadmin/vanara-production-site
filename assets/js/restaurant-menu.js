@@ -7,44 +7,79 @@
       title: "Antipasti",
       note: "Italian cold cuts, cheeses and bruschette to begin at the table.",
       items: [
-        ["Bruschetta al Pomodoro", "Crispy bread with chopped tomatoes, garlic, Italian basil and extra virgin olive oil.", "100", "vegetarian"],
-        ["Bruschetta Mortadella & Ricotta", "Crispy bread with Italian ricotta, mortadella with pistachio, black pepper and Italian extra virgin olive oil.", "160"],
-        ["Bruschetta Crudo di Parma & Tartufo", "Crispy bread with Parma ham and black truffle cream.", "200"],
-        ["Bruschetta ’Nduja & Ricotta", "Crispy bread with creamy Italian ricotta and spicy Calabrian ’nduja.", "160"],
-        ["Crudo di Parma & Burrata", "Thinly sliced Parma ham, fresh burrata and crispy Piedmontese grissini.", "380"],
-        ["Crudo di Parma & Mozzarella Fiordilatte", "Parma ham, fresh fiordilatte mozzarella and crispy Piedmontese grissini.", "300"],
-        ["Tagliere di Salumi Italiani", "Imported Parma ham, mortadella, cooked ham and salami, served with Piedmontese grissini.", "350"],
-        ["Tagliere di Salumi e Formaggi DOP", "Imported Italian cold cuts, a selection of cheeses and Piedmontese grissini.", "400"],
-        ["Caprese Salad", "Fiordilatte mozzarella, tomatoes, extra virgin olive oil, oregano and basil sauce.", "180", "vegetarian"]
+        ["Bruschetta al Pomodoro", "Toasted bread with ripe tomatoes, extra virgin olive oil and fresh basil.", "120", "vegetarian"],
+        ["Bruschetta Mortadella e Ricotta", "Creamy ricotta, mortadella sliced to order, extra virgin olive oil, fresh rosemary leaves and black pepper.", "160"],
+        ["Bruschetta Crudo di Parma e Tartufo", "Toasted bread with Prosciutto di Parma sliced to order, black truffle cream, extra virgin olive oil and black pepper.", "220"],
+        ["Bruschetta ’Nduja e Ricotta", "Creamy ricotta with ’nduja, a soft spicy Calabrian pork sausage, on toasted bread.", "160"],
+        ["Italian Cold Cuts Board", "Prosciutto cotto, Prosciutto di Parma, Spianata Romana and mortadella, all sliced to order. Perfect for two or more guests.", "400"],
+        ["Italian Cold Cuts & Cheese Board", "Italian cured meats sliced to order, a selection of cheeses and Piedmontese grissini. Perfect for two or more guests.", "500"],
+        ["Prosciutto di Parma", "Prosciutto di Parma sliced to order, served with Piedmontese grissini. Add burrata +฿180 or fior di latte mozzarella +฿120.", "380"],
+        ["Caprese Salad", "Tomatoes and fior di latte mozzarella, extra virgin olive oil, fresh basil, oregano and drops of house-made Genovese pesto.", "230", "vegetarian"]
       ]
     },
     {
-      id: "pasta",
-      title: "Pasta",
-      note: "Gragnano IGP pasta, Roman classics, regional recipes and fresh stuffed pasta.",
+      id: "roman-classics",
+      title: "Roman Classics",
+      note: "Pasta Liguori di Gragnano IGP, bronze-drawn and slowly dried. The Roman recipes are kept exactly where they belong.",
       items: [
-        ["Spaghettoni Aglio, Olio e Peperoncino", "Gragnano IGP pasta with garlic, chilli, anchovies and bread crumble.", "180"],
-        ["Spaghettoni Pomodoro e Basilico", "Gragnano IGP pasta with Italian tomato, basil, extra virgin olive oil and Parmigiano Reggiano.", "200", "vegetarian"],
-        ["Rigatoni al Ragù Napoletano", "Slow-cooked pork rib and pork shoulder ragù, finished with extra virgin olive oil and Parmigiano Reggiano.", "280"],
-        ["Rigatoni al Ragù Bolognese", "Beef and pork ragù, slowly cooked for six hours and finished with Parmigiano Reggiano.", "290"],
-        ["Linguine al Pesto Genovese", "Homemade pesto prepared with Italian basil we grow ourselves, Pecorino Romano DOP and extra virgin olive oil, following the official Genovese recipe.", "320", "vegetarian"],
-        ["Paccheri alla Carbonara", "Gragnano IGP pasta with guanciale, Pecorino Romano DOP and eggs. Traditional Roman method, with no cream.", "280"],
-        ["Bucatini all’Amatriciana", "Gragnano IGP pasta with Italian guanciale, white wine, slow-cooked tomato sauce and Pecorino Romano DOP.", "280"],
-        ["Spaghettoni al Tartufo Nero", "Gragnano IGP pasta in a silky black truffle cream and butter sauce, finished with black pepper.", "370", "vegetarian"],
-        ["Penne alla Crema di Carciofi, Timo e Pecorino", "Penne in a smooth artichoke cream with Pecorino and fresh thyme.", "290", "vegetarian"],
-        ["Fusilloni ai Porcini", "Fusilloni with butter, Parmigiano and a creamy porcini mushroom sauce with sautéed porcini.", "380", "vegetarian"],
-        ["Fusilloni al Pesto di Rucola e Pomodorini Semisecchi", "Gragnano IGP fusilloni with rocket pesto, semi-dried cherry tomatoes and Parmigiano Reggiano.", "340", "vegetarian"],
-        ["Spaghettoni Cacio e Pepe", "Traditional Roman pasta with Pecorino Romano DOP and freshly cracked black pepper. No cream.", "300", "vegetarian"],
-        ["Penne all’Arrabbiata", "Classic Roman-style tomato sauce, garlic, chilli and extra virgin olive oil.", "220", "vegetarian"],
-        ["Linguine alla Puttanesca", "Tomato sauce with anchovies, olives, capers, garlic and extra virgin olive oil.", "280"],
-        ["Rigatoni ai Peperoni Arrostiti e Pomodori Secchi", "Rigatoni with roasted bell peppers, sun-dried tomatoes, olive oil and Pecorino Romano DOP.", "320", "vegetarian"],
-        ["Paccheri ai Moscardini", "Paccheri in a rich Neapolitan-style sauce with baby octopus, ripe tomatoes, garlic, olive oil and white wine.", "350"],
-        ["Spaghettoni alle Vongole", "Spaghetti with tender clams, garlic, chilli, extra virgin olive oil, white wine and parsley. Add bottarga +60.", "390"],
-        ["Spaghettoni alle Cozze e Datterini Gialli", "Spaghettoni with mussels, sweet yellow cherry tomatoes, white wine, garlic and fresh parsley.", "370"],
-        ["Linguine al Nero di Seppia e Bottarga Fresca", "Linguine sautéed in a rich cuttlefish ink sauce, finished with freshly grated bottarga.", "430"],
-        ["Tortelli Ricotta e Spinaci", "Fresh stuffed pasta with ricotta and spinach, tossed with melted butter, sage and Parmigiano Reggiano.", "280", "vegetarian"],
-        ["Lunette al Tartufo Nero", "Fresh stuffed ravioli with ricotta and black truffle, tossed with melted butter, sage and Parmigiano Reggiano.", "320", "vegetarian"],
-        ["Tortellacci ’Nduja e Pecorino", "Fresh stuffed pasta with spicy Calabrian ’nduja and Pecorino, tossed with melted butter, sage and Pecorino Romano DOP.", "300"]
+        ["Carbonara", "Crisp guanciale, egg yolks, Pecorino Romano DOP, pasta water and black pepper, worked off the heat into a silky sauce. No cream.", "320"],
+        ["Bucatini all’Amatriciana", "Guanciale, white wine, tomato and Pecorino Romano DOP.", "320"],
+        ["Rigatoni Cacio e Pepe", "Pecorino Romano DOP and pasta water emulsified into a glossy cream, finished with freshly cracked black pepper.", "320", "vegetarian"]
+      ]
+    },
+    {
+      id: "seafood-pasta",
+      title: "Seafood Pasta",
+      note: "Pasta Liguori di Gragnano IGP with seafood, white wine, extra virgin olive oil and the flavours of the Italian coast.",
+      items: [
+        ["Paccheri con Moscardini", "Baby octopus in a Neapolitan-style tomato sauce with capers, garlic, white wine and extra virgin olive oil.", "380"],
+        ["Spaghettoni Cozze e Pomodorini Gialli", "Mussels with sweet yellow tomatoes, garlic, white wine and fresh parsley.", "390"],
+        ["Spaghettoni alle Vongole", "Clams, garlic, white wine, extra virgin olive oil and parsley. Add bottarga +฿60.", "390"],
+        ["Linguine al Nero di Seppia e Bottarga", "Linguine in a rich cuttlefish ink sauce, finished with freshly grated bottarga: cured and salted fish roe, prized for its savoury taste of the sea.", "460"]
+      ]
+    },
+    {
+      id: "pesto",
+      title: "Pesto",
+      note: "Pasta Liguori di Gragnano IGP with pesto made in our kitchen.",
+      items: [
+        ["Linguine al Pesto Genovese", "House-made to the traditional Genovese recipe with Italian basil grown by us. The cheese is already in the pesto; extra Parmigiano on request.", "330", "vegetarian"],
+        ["Fusilloni al Pesto di Rucola", "House-made rocket pesto with semi-dried tomatoes, made with rocket and Italian basil. Extra Parmigiano on request.", "350", "vegetarian"]
+      ]
+    },
+    {
+      id: "ragu",
+      title: "Ragù",
+      note: "Slow-cooked Italian ragù, paired with the pasta shape that carries it best.",
+      items: [
+        ["Rigatoni al Ragù Bolognese", "Beef and pork ragù, slowly cooked until full-bodied and finished with Parmigiano Reggiano.", "300"],
+        ["Tagliatelle all’Uovo al Ragù Bolognese", "Egg tagliatelle with beef and pork ragù, slowly cooked until full-bodied and finished with Parmigiano Reggiano.", "320"],
+        ["Rigatoni al Ragù Napoletano", "Pork rib and pork shoulder slowly simmered in tomato for a deep Neapolitan ragù, finished with Parmigiano Reggiano.", "300"]
+      ]
+    },
+    {
+      id: "italian-table",
+      title: "The Italian Table",
+      note: "Everyday Italian pasta, made properly with Pasta Liguori di Gragnano IGP.",
+      items: [
+        ["Spaghettoni Aglio, Olio e Peperoncino", "Garlic and chilli in extra virgin olive oil, with anchovies melted into the sauce and toasted breadcrumbs.", "200"],
+        ["Spaghettoni Pomodoro e Basilico", "Bright tomato sauce, extra virgin olive oil and basil, finished with Parmigiano Reggiano.", "230", "vegetarian"],
+        ["Penne all’Arrabbiata", "Garlic and chilli in extra virgin olive oil, with tomato for a clean, fiery sauce.", "260", "vegetarian"],
+        ["Linguine alla Puttanesca", "Tomato, anchovies, olives, capers and garlic in a southern Italian classic.", "300"],
+        ["Penne alla Caponata Siciliana", "Eggplant, tomato, celery and capers in the sweet-and-sour style of Sicily.", "300", "vegetarian"],
+        ["Fusilloni ai Porcini", "Sautéed porcini finished with butter, Parmigiano Reggiano and pasta water for a deep woodland sauce.", "360", "vegetarian"],
+        ["Penne ai Carciofi, Timo e Pecorino", "Artichokes cooked into a smooth cream, then finished with Pecorino Romano and fresh thyme.", "310", "vegetarian"],
+        ["Spaghettoni al Tartufo Nero", "Black truffle folded with butter, Parmigiano Reggiano and pasta water, finished with black pepper.", "380", "vegetarian"]
+      ]
+    },
+    {
+      id: "stuffed-pasta",
+      title: "Stuffed Pasta",
+      note: "Filled pasta finished simply with butter, sage and the right cheese.",
+      items: [
+        ["Ravioli Ricotta e Spinaci", "Ravioli filled with ricotta and spinach, tossed with butter, sage and Parmigiano Reggiano.", "300", "vegetarian"],
+        ["Lunette al Tartufo Nero", "Ricotta and black truffle stuffed pasta, finished with butter, sage and Parmigiano Reggiano.", "350", "vegetarian"],
+        ["Tortelli ’Nduja e Pecorino", "Pasta filled with spicy Calabrian ’nduja and pecorino, finished with butter, sage and Pecorino Romano DOP.", "320"]
       ]
     },
     {
@@ -52,127 +87,116 @@
       title: "Desserts",
       note: "Italian classics and a small Thai finish.",
       items: [
-        ["Homemade Traditional Italian Tiramisu", "Mascarpone, egg yolks and espresso coffee.", "200"],
-        ["Thai Roti Banana Chocolate", "Golden crispy roti with sweet banana and chocolate, a tribute to the flavours of our host country.", "120"],
-        ["Panna Cotta alla Vaniglia Naturale di Khao Yai", "Silky Italian panna cotta infused with natural Khao Yai vanilla and served with fruit coulis.", "180", "vegetarian"]
+        ["Traditional Italian Tiramisu", "Mascarpone, egg yolks and espresso coffee in the classic Italian style.", "200"],
+        ["Classic Italian Panna Cotta", "Silky Italian panna cotta, served plain or with chocolate.", "190", "vegetarian"],
+        ["Thai Banana Chocolate Roti", "Crisp Thai roti with banana and chocolate.", "140"],
+        ["Espresso Affogato", "Vanilla gelato drowned in a shot of espresso.", "140", "vegetarian"]
       ]
     },
     {
       id: "wine-glass",
       title: "Italian Wine — By the Glass",
-      note: "A concise selection of Italian wines served by the glass.",
+      note: "All wines by the glass are imported from Italy and poured fresh.",
       items: [
-        ["Merlot “Le Contesse” — Veneto", "Red fruits and delicate spice.", "220"],
-        ["Cabernet Sauvignon “Le Contesse” — Veneto", "Blackcurrant, dark cherry and a hint of spice.", "220"],
-        ["Pinot Grigio “Le Contesse” — Veneto", "Fresh and fruity, with green apple and pineapple notes.", "220"],
-        ["Chardonnay “Le Contesse” — Veneto", "A soft, harmonious white for delicate dishes.", "220"]
+        ["Merlot — Le Contesse", "Veneto. Ripe cherry, plum and a gentle herbal note, with smooth tannins.", "200"],
+        ["Cabernet — Le Contesse", "Veneto. Raspberry, red fruit and a characteristic leafy note; lively and gently structured.", "200"],
+        ["Chardonnay — Le Contesse", "Veneto. Yellow apple, pear and delicate white flowers, fresh and rounded.", "200"],
+        ["Pinot Grigio — Le Contesse", "Delle Venezie DOC. Pear, citrus peel and subtle white blossom; crisp and delicate.", "200"]
       ]
     },
     {
       id: "wine-bottle",
       title: "Italian Wine — By the Bottle",
-      note: "A selection of Italian bottles chosen to sit naturally alongside the food.",
+      note: "Every bottle is imported directly from Italy and selected for the table.",
       items: [
-        ["Falanghina “Campania Antica” (white)", "Lively citrus and white flowers, with fresh minerality.", "1850"],
-        ["Vermentino “Probabbu” Tre Biddas (white)", "Aromatic and fruity, with light herbaceous touches.", "2600"],
-        ["Gewürztraminer “Bosco Albano” (white)", "Aromatic florals, lychee and tropical fruit, finishing soft and lingering.", "1450"],
-        ["Montepulciano d’Abruzzo “Magnolia” (red)", "Producer: Cantina Magnolia — Abruzzo, Italy. Ripe red and black fruits, framed by gentle oak spice.", "1850"],
-        ["Chianti DOCG “Poggio dei Salici” (red)", "Producer: Cantina Poggio dei Salici — Tuscany, Italy. Cherry and red-fruit aromas with balanced tannins and a savoury Tuscan finish.", "1850"],
-        ["Conte Rosso Piceno “Villa Prandone” (red)", "Producer: Il Conte Villa Prandone — Marche, Italy. From the Piceno hills above the Adriatic: fresh red fruits, soft texture and an elegant palate.", "2100"]
+        ["Falanghina “Campania Antica”", "Campania · white. Lively citrus and white flowers, with fresh minerality.", "1850"],
+        ["Vermentino “Probabbu” Tre Biddas", "Sardinia · white. Aromatic and fruity, with light herbaceous touches.", "2600"],
+        ["Gewürztraminer “Bosco Albano”", "Friuli Venezia Giulia · white. Aromatic florals, lychee and tropical fruit, soft and lingering.", "1450"],
+        ["Montepulciano d’Abruzzo “Magnolia”", "Abruzzo · red. Ripe red and black fruits, framed by gentle oak spice.", "1850"],
+        ["Chianti DOCG “Poggio dei Salici”", "Tuscany · red. Cherry and red-fruit aromas with balanced tannins and a savoury finish.", "1850"],
+        ["Conte Rosso Piceno “Villa Prandone”", "Marche · red. Fresh red fruits, soft texture and an elegant palate.", "2100"]
       ]
     },
     {
       id: "drinks",
       title: "Drinks & Coffee",
-      note: "Water, soft drinks, beer, smoothies, coffee and tea.",
+      note: "Water, soft drinks, beer, coffee and tea.",
       items: [
-        ["Singha Water 600ml", "Water", "20"],
-        ["Singha Water 1500ml", "Water", "45"],
-        ["Singha Soda Water", "Water", "35"],
-        ["Soft Drinks", "Coke, Coke Zero, Fanta Orange, Singha Lemon Soda, Sprite, Lipton Ice Tea and Schweppes Tonic.", "35"],
-        ["Leo — small bottle", "Beer", "80"],
-        ["Leo — big bottle", "Beer", "120"],
-        ["Chang — small bottle", "Beer", "80"],
-        ["Chang — big bottle", "Beer", "120"],
-        ["Singha — small bottle", "Beer", "90"],
-        ["Singha — big bottle", "Beer", "130"],
-        ["Tiger — small bottle", "Beer", "90"],
-        ["Heineken — small bottle", "Beer", "100"],
-        ["Smoothies", "Coconut, mango, banana, watermelon, dragon fruit and pineapple ฿60. Mixed fruits ฿70.", "60–70"],
-        ["Coffees & Teas", "Espresso, Americano, Latte, Thai Tea and Green Tea ฿60. Espresso Macchiato and Cappuccino ฿70. English Tea ฿50.", "50–70"]
+        ["Singha Water 600 ml", "Still water.", "25"],
+        ["Singha Water 1500 ml", "Still water.", "45"],
+        ["San Pellegrino Sparkling Water", "750 ml bottle.", "180"],
+        ["Soft Drinks", "Coke, Coke Zero, Fanta, Singha Lemon, Lipton Ice Tea and Schweppes Tonic.", "45"],
+        ["Beers", "Leo ฿80/120 · Chang ฿80/120 · Singha ฿90/130 · Tiger ฿90 · Heineken ฿100.", ""],
+        ["Coffees & Teas", "Espresso ฿60 · Macchiato ฿70 · Cappuccino ฿80 · Americano, Latte, Thai Tea, Green Tea and English Tea ฿60.", ""]
       ]
     }
   ];
 
   const thaiMenu = {
-    titles: { antipasti: "แอนติพาสตี้", pasta: "พาสต้า", desserts: "ของหวาน", "wine-glass": "ไวน์อิตาเลียน — แบบแก้ว", "wine-bottle": "ไวน์อิตาเลียน — แบบขวด", drinks: "เครื่องดื่มและกาแฟ" },
+    titles: { antipasti: "แอนติพาสตี้", "roman-classics": "เมนูคลาสสิกจากโรม", "seafood-pasta": "พาสต้าซีฟู้ด", pesto: "เพสโต้", ragu: "รากู", "italian-table": "โต๊ะอาหารอิตาเลียน", "stuffed-pasta": "พาสต้าสอดไส้", desserts: "ของหวาน", "wine-glass": "ไวน์อิตาเลียน — แบบแก้ว", "wine-bottle": "ไวน์อิตาเลียน — แบบขวด", drinks: "เครื่องดื่มและกาแฟ" },
     notes: {
       antipasti: "โคลด์คัท ชีส และบรูสเก็ตตาสไตล์อิตาเลียน สำหรับเริ่มต้นมื้ออาหาร",
-      pasta: "พาสต้า Gragnano IGP เมนูคลาสสิกจากโรม สูตรประจำภูมิภาค และพาสต้าสอดไส้สด",
+      "roman-classics": "พาสต้า Liguori di Gragnano IGP รีดผ่านแม่พิมพ์บรอนซ์และอบแห้งช้า พร้อมสูตรคลาสสิกจากโรม",
+      "seafood-pasta": "พาสต้า Liguori di Gragnano IGP กับอาหารทะเล ไวน์ขาว น้ำมันมะกอกเอ็กซ์ตร้าเวอร์จิน และรสชาติจากชายฝั่งอิตาลี",
+      pesto: "พาสต้า Liguori di Gragnano IGP กับเพสโต้ทำในครัวของเรา",
+      ragu: "รากูอิตาเลียนเคี่ยวช้า จับคู่กับรูปทรงพาสต้าที่เหมาะที่สุด",
+      "italian-table": "พาสต้าอิตาเลียนในทุกวัน ทำอย่างถูกวิธีด้วย Pasta Liguori di Gragnano IGP",
+      "stuffed-pasta": "พาสต้าสอดไส้ เสิร์ฟอย่างเรียบง่ายกับเนย เสจ และชีสที่เหมาะสม",
       desserts: "ของหวานอิตาเลียนคลาสสิก พร้อมเมนูไทยเล็ก ๆ ปิดท้าย",
-      "wine-glass": "ไวน์อิตาเลียนที่คัดสรร เสิร์ฟแบบแก้ว",
-      "wine-bottle": "ไวน์อิตาเลียนแบบขวดที่คัดสรรให้เข้ากับอาหาร",
-      drinks: "น้ำดื่ม น้ำอัดลม เบียร์ สมูทตี้ กาแฟ และชา"
+      "wine-glass": "ไวน์ทุกแก้วนำเข้าจากอิตาลีและรินสด",
+      "wine-bottle": "ไวน์ทุกขวดนำเข้าจากอิตาลีโดยตรง คัดเลือกมาเพื่ออาหารบนโต๊ะ",
+      drinks: "น้ำดื่ม น้ำอัดลม เบียร์ กาแฟ และชา"
     },
     descriptions: {
-      "Bruschetta al Pomodoro": "ขนมปังกรอบกับมะเขือเทศหั่น กระเทียม โหระพาอิตาเลียน และน้ำมันมะกอกเอ็กซ์ตร้าเวอร์จิน",
-      "Bruschetta Mortadella & Ricotta": "ขนมปังกรอบกับริคอตต้าอิตาเลียน มอร์ทาเดลลากับพิสตาชิโอ พริกไทยดำ และน้ำมันมะกอกอิตาเลียนเอ็กซ์ตร้าเวอร์จิน",
-      "Bruschetta Crudo di Parma & Tartufo": "ขนมปังกรอบกับแฮมปาร์มาและครีมทรัฟเฟิลดำ",
-      "Bruschetta ’Nduja & Ricotta": "ขนมปังกรอบกับริคอตต้าอิตาเลียนเนื้อครีมและ ’nduja ไส้กรอกรสเผ็ดจากแคว้นคาลาเบรีย",
-      "Crudo di Parma & Burrata": "แฮมปาร์มาหั่นบาง เบอร์ราต้าสด และกริสซินีจากปิเอมอนเตกรอบ",
-      "Crudo di Parma & Mozzarella Fiordilatte": "แฮมปาร์มา มอซซาเรลลา fiordilatte สด และกริสซินีจากปิเอมอนเตกรอบ",
-      "Tagliere di Salumi Italiani": "แฮมปาร์มา มอร์ทาเดลลา แฮมสุก และซาลามีนำเข้าจากอิตาลี เสิร์ฟกับกริสซินีจากปิเอมอนเต",
-      "Tagliere di Salumi e Formaggi DOP": "โคลด์คัทนำเข้าจากอิตาลี ชีสคัดสรร และกริสซินีจากปิเอมอนเต",
-      "Caprese Salad": "มอซซาเรลลา fiordilatte มะเขือเทศ น้ำมันมะกอกเอ็กซ์ตร้าเวอร์จิน ออริกาโน และซอสโหระพา",
-      "Spaghettoni Aglio, Olio e Peperoncino": "พาสต้า Gragnano IGP กับกระเทียม พริก แอนโชวี และเกล็ดขนมปังกรอบ",
-      "Spaghettoni Pomodoro e Basilico": "พาสต้า Gragnano IGP กับมะเขือเทศอิตาเลียน โหระพา น้ำมันมะกอกเอ็กซ์ตร้าเวอร์จิน และ Parmigiano Reggiano",
-      "Rigatoni al Ragù Napoletano": "รากูซี่โครงหมูและหัวไหล่หมูเคี่ยวนาน ปิดท้ายด้วยน้ำมันมะกอกเอ็กซ์ตร้าเวอร์จินและ Parmigiano Reggiano",
-      "Rigatoni al Ragù Bolognese": "รากูเนื้อวัวและหมูเคี่ยวนานหกชั่วโมง ปิดท้ายด้วย Parmigiano Reggiano",
-      "Linguine al Pesto Genovese": "เพสโต้ทำเองจากโหระพาอิตาเลียนที่เราปลูกเอง Pecorino Romano DOP และน้ำมันมะกอกเอ็กซ์ตร้าเวอร์จิน ตามสูตรเจนัวดั้งเดิม",
-      "Paccheri alla Carbonara": "พาสต้า Gragnano IGP กับ guanciale, Pecorino Romano DOP และไข่ ตามวิธีดั้งเดิมแบบโรมันโดยไม่ใช้ครีม",
-      "Bucatini all’Amatriciana": "พาสต้า Gragnano IGP กับ guanciale อิตาเลียน ไวน์ขาว ซอสมะเขือเทศเคี่ยวนาน และ Pecorino Romano DOP",
-      "Spaghettoni al Tartufo Nero": "พาสต้า Gragnano IGP คลุกซอสครีมทรัฟเฟิลดำและเนย ปิดท้ายด้วยพริกไทยดำ",
-      "Penne alla Crema di Carciofi, Timo e Pecorino": "เพนเน่กับครีมอาร์ติโชกเนื้อนุ่ม Pecorino และไทม์สด",
-      "Fusilloni ai Porcini": "ฟูซิลโลนีกับเนย Parmigiano และซอสเห็ดพอร์ชินีเนื้อครีมพร้อมเห็ดพอร์ชินีผัด",
-      "Fusilloni al Pesto di Rucola e Pomodorini Semisecchi": "ฟูซิลโลนี Gragnano IGP กับเพสโต้ร็อกเก็ต มะเขือเทศเชอร์รีกึ่งแห้ง และ Parmigiano Reggiano",
-      "Spaghettoni Cacio e Pepe": "พาสต้าแบบโรมันดั้งเดิมกับ Pecorino Romano DOP และพริกไทยดำบดสด โดยไม่ใช้ครีม",
-      "Penne all’Arrabbiata": "ซอสมะเขือเทศสไตล์โรมัน กระเทียม พริก และน้ำมันมะกอกเอ็กซ์ตร้าเวอร์จิน",
-      "Linguine alla Puttanesca": "ซอสมะเขือเทศกับแอนโชวี มะกอก เคเปอร์ กระเทียม และน้ำมันมะกอกเอ็กซ์ตร้าเวอร์จิน",
-      "Rigatoni ai Peperoni Arrostiti e Pomodori Secchi": "ริกาโตนีกับพริกหวานย่าง มะเขือเทศตากแห้ง น้ำมันมะกอก และ Pecorino Romano DOP",
-      "Paccheri ai Moscardini": "ปัคเครีในซอสสไตล์เนเปิลส์เข้มข้นกับหมึกยักษ์อ่อน มะเขือเทศสุก กระเทียม น้ำมันมะกอก และไวน์ขาว",
-      "Spaghettoni alle Vongole": "สปาเก็ตโทนีกับหอยลาย กระเทียม พริก น้ำมันมะกอกเอ็กซ์ตร้าเวอร์จิน ไวน์ขาว และพาร์สลีย์ เพิ่มบอตตาร์กา ฿60",
-      "Spaghettoni alle Cozze e Datterini Gialli": "สปาเก็ตโทนีกับหอยแมลงภู่ มะเขือเทศเชอร์รีสีเหลือง ไวน์ขาว กระเทียม และพาร์สลีย์สด",
-      "Linguine al Nero di Seppia e Bottarga Fresca": "ลิงกวินีผัดซอสหมึกปลาหมึกเข้มข้น ปิดท้ายด้วยบอตตาร์กาขูดสด",
-      "Tortelli Ricotta e Spinaci": "พาสต้าสดสอดไส้ริคอตต้าและผักโขม คลุกเนยละลาย เซจ และ Parmigiano Reggiano",
-      "Lunette al Tartufo Nero": "ราวิโอลีสดสอดไส้ริคอตต้าและทรัฟเฟิลดำ คลุกเนยละลาย เซจ และ Parmigiano Reggiano",
-      "Tortellacci ’Nduja e Pecorino": "พาสต้าสดสอดไส้ ’nduja รสเผ็ดจากคาลาเบรียและ Pecorino คลุกเนยละลาย เซจ และ Pecorino Romano DOP",
-      "Homemade Traditional Italian Tiramisu": "ทีรามิสุอิตาเลียนทำเองด้วยมาสคาร์โปเน ไข่แดง และเอสเปรสโซ",
-      "Thai Roti Banana Chocolate": "โรตีกรอบสไตล์ไทยกับกล้วยและช็อกโกแลต หวานละมุนเพื่อคารวะรสชาติของประเทศเจ้าบ้าน",
-      "Panna Cotta alla Vaniglia Naturale di Khao Yai": "พานนาคอตต้าอิตาเลียนเนื้อเนียน ผสมวานิลลาธรรมชาติจากเขาใหญ่ เสิร์ฟพร้อมซอสผลไม้",
-      "Merlot “Le Contesse” — Veneto": "กลิ่นผลไม้แดงและเครื่องเทศอ่อน ๆ เสิร์ฟเป็นแก้ว",
-      "Cabernet Sauvignon “Le Contesse” — Veneto": "แบล็กเคอร์แรนต์ เชอร์รีดำ และกลิ่นเครื่องเทศเล็กน้อย เสิร์ฟเป็นแก้ว",
-      "Pinot Grigio “Le Contesse” — Veneto": "สดชื่นและผลไม้เด่น มีกลิ่นแอปเปิลเขียวและสับปะรด เสิร์ฟเป็นแก้ว",
-      "Chardonnay “Le Contesse” — Veneto": "ไวน์ขาวนุ่มนวล กลมกล่อม เหมาะกับอาหารรสละมุน เสิร์ฟเป็นแก้ว",
-      "Falanghina “Campania Antica” (white)": "ซิตรัสและดอกไม้ขาว มีความแร่ธาตุสดชื่น เสิร์ฟเป็นขวด",
-      "Vermentino “Probabbu” Tre Biddas (white)": "หอมสดใส มีผลไม้และกลิ่นสมุนไพรอ่อน ๆ เสิร์ฟเป็นขวด",
-      "Gewürztraminer “Bosco Albano” (white)": "กลิ่นดอกไม้ ลิ้นจี่ และผลไม้เมืองร้อน ปลายรสนุ่มยาว เสิร์ฟเป็นขวด",
-      "Montepulciano d’Abruzzo “Magnolia” (red)": "ไวน์แดงจากอาบรุซโซ กลิ่นผลไม้แดงและดำสุกเด่น เสริมด้วยกลิ่นเครื่องเทศจากไม้โอ๊ก",
-      "Chianti DOCG “Poggio dei Salici” (red)": "ไวน์แดงจากทัสกานี กลิ่นเชอร์รีและผลไม้สีแดง พร้อมแทนนินสมดุลและรสสัมผัสแบบทัสกานี",
-      "Conte Rosso Piceno “Villa Prandone” (red)": "ไวน์แดงจากแคว้นมาร์เค จากเนินเขาปีเชโนใกล้ทะเลเอเดรียติก มีผลไม้สีแดงสด เนื้อนุ่ม และสง่างาม",
-      "Singha Water 600ml": "น้ำดื่ม",
-      "Singha Water 1500ml": "น้ำดื่ม",
-      "Singha Soda Water": "น้ำโซดา",
-      "Soft Drinks": "Coke, Coke Zero, Fanta Orange, Singha Lemon Soda, Sprite, Lipton Ice Tea และ Schweppes Tonic",
-      "Leo — small bottle": "เบียร์",
-      "Leo — big bottle": "เบียร์",
-      "Chang — small bottle": "เบียร์",
-      "Chang — big bottle": "เบียร์",
-      "Singha — small bottle": "เบียร์",
-      "Singha — big bottle": "เบียร์",
-      "Tiger — small bottle": "เบียร์",
-      "Heineken — small bottle": "เบียร์",
-      "Smoothies": "มะพร้าว มะม่วง กล้วย แตงโม แก้วมังกร และสับปะรด ฿60 ผลไม้รวม ฿70",
-      "Coffees & Teas": "Espresso, Americano, Latte, Thai Tea และ Green Tea ฿60 Espresso Macchiato และ Cappuccino ฿70 English Tea ฿50"
+      "Bruschetta al Pomodoro": "ขนมปังปิ้งกับมะเขือเทศสุก น้ำมันมะกอกเอ็กซ์ตร้าเวอร์จินและโหระพาสด",
+      "Bruschetta Mortadella e Ricotta": "ริคอตต้าครีมมี่ มอร์ทาเดลลาหั่นสด น้ำมันมะกอกเอ็กซ์ตร้าเวอร์จิน ใบโรสแมรี่และพริกไทยดำ",
+      "Bruschetta Crudo di Parma e Tartufo": "ขนมปังปิ้งพร้อมพาร์มาแฮมหั่นสด ครีมทรัฟเฟิลดำ น้ำมันมะกอกเอ็กซ์ตร้าเวอร์จินและพริกไทยดำ",
+      "Bruschetta ’Nduja e Ricotta": "ริคอตต้าครีมมี่กับเอ็นดูยา ไส้กรอกหมูนุ่มรสเผ็ดจากคาลาเบรีย บนขนมปังปิ้ง",
+      "Italian Cold Cuts Board": "แฮมสุก พาร์มาแฮม สเปียนาตา โรมานา และมอร์ทาเดลลา หั่นสดทุกอย่าง เหมาะสำหรับแบ่งปัน 2 ท่านขึ้นไป",
+      "Italian Cold Cuts & Cheese Board": "โคลด์คัทอิตาเลียนหั่นสด ชีสคัดสรร และกริสสินีจากพีดมอนต์ เหมาะสำหรับแบ่งปัน 2 ท่านขึ้นไป",
+      "Prosciutto di Parma": "พาร์มาแฮมหั่นสด เสิร์ฟพร้อมกริสสินีจากพีดมอนต์ เพิ่มบูราต้า +฿180 หรือฟิออร์ดิลาเต้ +฿120",
+      "Caprese Salad": "มะเขือเทศและมอสซาเรลล่าฟิออร์ดิลาเต้ น้ำมันมะกอกเอ็กซ์ตร้าเวอร์จิน โหระพาสด ออริกาโน และเพสโต้เจโนเวเซ่ทำเอง",
+      "Carbonara": "คาร์โบนาราแบบโรมันแท้ กวานชาเล่กรอบ ไข่แดง เปโคริโน โรมาโน DOP น้ำต้มพาสต้าและพริกไทยดำ คลุกนอกเตาเป็นซอสเนียนนุ่ม ไม่มีครีม",
+      "Bucatini all’Amatriciana": "กวานชาเล่เจียวช้า ๆ เติมไวน์ขาวและเคี่ยวกับซอสมะเขือเทศ ก่อนจบด้วยเปโคริโน โรมาโน DOP",
+      "Rigatoni Cacio e Pepe": "เปโคริโน โรมาโน DOP และน้ำต้มพาสต้าตีเป็นครีมเนียน ก่อนจบด้วยพริกไทยดำบดสด",
+      "Paccheri con Moscardini": "หมึกสายเล็กในซอสมะเขือเทศสไตล์นาโปลี พร้อมเคเปอร์ กระเทียม ไวน์ขาวและน้ำมันมะกอกเอ็กซ์ตร้าเวอร์จิน",
+      "Spaghettoni Cozze e Pomodorini Gialli": "หอยแมลงภู่กับมะเขือเทศเหลืองรสหวาน กระเทียม ไวน์ขาวและพาร์สลีย์สด",
+      "Spaghettoni alle Vongole": "หอยลาย กระเทียม ไวน์ขาว น้ำมันมะกอกเอ็กซ์ตร้าเวอร์จินและพาร์สลีย์ เพิ่มบอตตาร์กา +฿60",
+      "Linguine al Nero di Seppia e Bottarga": "ลิงกวินีผัดซอสหมึกปลาหมึกเข้มข้น จบด้วยบอตตาร์กาขูดสด — ไข่ปลาหมักเกลือและบ่ม ให้รสเข้มข้น หอมเค็มและมีกลิ่นอายของทะเล",
+      "Linguine al Pesto Genovese": "เพสโต้ทำเองตามสูตรเจโนเวเซ่ดั้งเดิม ใช้โหระพาอิตาเลียนที่เราปลูกเอง ชีสอยู่ในเพสโต้แล้ว เพิ่มพาร์มิจาโนได้ตามขอ",
+      "Fusilloni al Pesto di Rucola": "เพสโต้ร็อกเก็ตทำเองกับมะเขือเทศกึ่งแห้ง ใช้ร็อกเก็ตและโหระพาอิตาเลียน เพิ่มพาร์มิจาโนได้ตามขอ",
+      "Rigatoni al Ragù Bolognese": "ราเกูเนื้อและหมู เคี่ยวช้าจนรสชาติเข้มข้น จบด้วยพาร์มิจาโน เรจจาโน",
+      "Tagliatelle all’Uovo al Ragù Bolognese": "ตายาตาเลลเล่ไข่กับราเกูเนื้อและหมู เคี่ยวช้าจนรสชาติเข้มข้น จบด้วยพาร์มิจาโน เรจจาโน",
+      "Rigatoni al Ragù Napoletano": "ซี่โครงหมูและหัวไหล่หมูเคี่ยวช้ากับมะเขือเทศ เป็นราเกูสไตล์นาโปลีเข้มข้น จบด้วยพาร์มิจาโน เรจจาโน",
+      "Spaghettoni Aglio, Olio e Peperoncino": "กระเทียมและพริกในน้ำมันมะกอกเอ็กซ์ตร้าเวอร์จิน พร้อมแอนโชวีละลายในซอสและเกล็ดขนมปังปิ้ง",
+      "Spaghettoni Pomodoro e Basilico": "ซอสมะเขือเทศรสสด น้ำมันมะกอกเอ็กซ์ตร้าเวอร์จินและโหระพา จบด้วยพาร์มิจาโน เรจจาโน",
+      "Penne all’Arrabbiata": "กระเทียมและพริกผัดกับน้ำมันมะกอกเอ็กซ์ตร้าเวอร์จิน ก่อนเติมมะเขือเทศเป็นซอสเผ็ดใสแบบดั้งเดิม",
+      "Linguine alla Puttanesca": "มะเขือเทศ แอนโชวี มะกอก เคเปอร์และกระเทียม รวมเป็นพาสต้าอิตาเลียนใต้แบบดั้งเดิม",
+      "Penne alla Caponata Siciliana": "มะเขือยาว มะเขือเทศ เซเลอรี่และเคเปอร์ ปรุงรสเปรี้ยวหวานสไตล์ซิซิลี",
+      "Fusilloni ai Porcini": "เห็ดพอร์ชินีผัดแล้วคลุกในกระทะกับเนย พาร์มิจาโน เรจจาโน และน้ำต้มพาสต้า เป็นซอสรสเห็ดเข้มข้น",
+      "Penne ai Carciofi, Timo e Pecorino": "อาร์ติโชคเคี่ยวเป็นครีมเนียน ก่อนจบด้วยเปโคริโน โรมาโนและไทม์สด",
+      "Spaghettoni al Tartufo Nero": "ทรัฟเฟิลดำคลุกกับเนย พาร์มิจาโน เรจจาโน และน้ำต้มพาสต้า ก่อนจบด้วยพริกไทยดำ",
+      "Ravioli Ricotta e Spinaci": "ราวีโอลี่ไส้ริคอตต้าและผักโขม คลุกเนย เสจและพาร์มิจาโน เรจจาโน",
+      "Lunette al Tartufo Nero": "พาสต้ายัดไส้ริคอตต้าและทรัฟเฟิลดำ จบด้วยเนย เสจและพาร์มิจาโน เรจจาโน",
+      "Tortelli ’Nduja e Pecorino": "พาสต้ายัดไส้เอ็นดูยารสเผ็ดจากคาลาเบรียและเปโคริโน จบด้วยเนย เสจและเปโคริโน โรมาโน DOP",
+      "Traditional Italian Tiramisu": "มาสคาร์โปเน่ ไข่แดงและเอสเปรสโซ่ ตามสไตล์อิตาเลียนดั้งเดิม",
+      "Classic Italian Panna Cotta": "พานาคอตต้าเนื้อเนียนสไตล์อิตาเลียน เสิร์ฟแบบธรรมดาหรือกับช็อกโกแลต",
+      "Thai Banana Chocolate Roti": "โรตีไทยกรอบกับกล้วยและช็อกโกแลต",
+      "Espresso Affogato": "เจลาโต้รสวนิลลาเสิร์ฟกับเอสเปรสโซ่ร้อน",
+      "Merlot — Le Contesse": "เวเนโต กลิ่นเชอร์รี พลัม และสมุนไพรอ่อน ๆ พร้อมแทนนินนุ่ม",
+      "Cabernet — Le Contesse": "เวเนโต ราสป์เบอร์รี ผลไม้แดง และกลิ่นใบไม้บาง ๆ สดใสและมีโครงสร้างนุ่มนวล",
+      "Chardonnay — Le Contesse": "เวเนโต แอปเปิลเหลือง ลูกแพร์ และดอกไม้ขาว เนื้อสัมผัสสดชื่นและกลมกล่อม",
+      "Pinot Grigio — Le Contesse": "Delle Venezie DOC ลูกแพร์ เปลือกส้ม และดอกไม้ขาวบาง ๆ สดชื่นและละเอียดอ่อน",
+      "Falanghina “Campania Antica”": "กัมปาเนีย ไวน์ขาว ซิตรัสและดอกไม้ขาว มีความแร่ธาตุสดชื่น",
+      "Vermentino “Probabbu” Tre Biddas": "ซาร์ดิเนีย ไวน์ขาว หอมสดใส มีผลไม้และกลิ่นสมุนไพรอ่อน ๆ",
+      "Gewürztraminer “Bosco Albano”": "ฟริอูลี เวเนเซีย จูเลีย ไวน์ขาว กลิ่นดอกไม้ ลิ้นจี่ และผลไม้เมืองร้อน ปลายรสนุ่มยาว",
+      "Montepulciano d’Abruzzo “Magnolia”": "อาบรุซโซ ไวน์แดง กลิ่นผลไม้แดงและดำสุกเด่น เสริมด้วยเครื่องเทศจากไม้โอ๊ก",
+      "Chianti DOCG “Poggio dei Salici”": "ทัสกานี ไวน์แดง กลิ่นเชอร์รีและผลไม้แดง แทนนินสมดุล ปลายรสกลมกล่อม",
+      "Conte Rosso Piceno “Villa Prandone”": "มาร์เค ไวน์แดง ผลไม้แดงสด เนื้อนุ่ม และสง่างาม",
+      "Singha Water 600 ml": "น้ำดื่ม", "Singha Water 1500 ml": "น้ำดื่ม", "San Pellegrino Sparkling Water": "ขวด 750 มล.",
+      "Soft Drinks": "Coke, Coke Zero, Fanta, Singha Lemon, Lipton Ice Tea และ Schweppes Tonic",
+      "Beers": "Leo ฿80/120 · Chang ฿80/120 · Singha ฿90/130 · Tiger ฿90 · Heineken ฿100",
+      "Coffees & Teas": "Espresso ฿60 · Macchiato ฿70 · Cappuccino ฿80 · Americano, Latte, Thai Tea, Green Tea และ English Tea ฿60"
     }
   };
 
@@ -203,7 +227,7 @@
               ${description ? `<p>${description}</p>` : ""}
               ${tag ? `<span class="restaurant-menu-item__tag">${tag}</span>` : ""}
             </div>
-            <strong class="restaurant-menu-item__price">฿${price}</strong>
+            ${price ? `<strong class="restaurant-menu-item__price">฿${price}</strong>` : ""}
           </article>
         `).join("")}
       </div>
