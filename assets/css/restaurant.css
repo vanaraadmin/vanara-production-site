@@ -152,11 +152,22 @@ body.restaurant-page img { display: block; max-width: 100%; }
 .restaurant-menu__special strong { color: #efd293; font-weight: 800; }
 .restaurant-menu__focus { max-width: 610px; margin: 19px 0 0; color: #f2ddab; font-size: 15px; line-height: 1.65; }
 .restaurant-menu__focus strong { color: #fff8e9; }
-.restaurant-menu__pdfs { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 0; }
-.restaurant-menu__pdf { display: inline-flex; align-items: center; gap: 11px; min-height: 43px; padding: 10px 14px; border: 1px solid rgba(231,199,125,.54); color: #fff8e9; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; transition: background .2s ease, color .2s ease; }
-.restaurant-menu__pdf span { color: #efd293; font-size: 9px; letter-spacing: .1em; }
-.restaurant-menu__pdf:hover { background: #e7c77d; color: #081a13; }
-.restaurant-menu__pdf:hover span { color: #081a13; }
+.restaurant-menu__pdfs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 24px 0 0; }
+.restaurant-menu__pdf { position: relative; display: grid; min-height: 142px; align-content: center; gap: 5px; overflow: hidden; padding: 21px 58px 21px 21px; border: 1px solid rgba(231,199,125,.42); background: linear-gradient(135deg, rgba(255,255,255,.09), rgba(255,255,255,.025)); color: #fff8e9; transition: transform .2s ease, border-color .2s ease, background .2s ease; }
+.restaurant-menu__pdf::after { position: absolute; top: 50%; right: 20px; width: 30px; height: 30px; border: 1px solid rgba(231,199,125,.72); border-radius: 50%; color: #efd293; content: "↗"; font-size: 17px; line-height: 27px; text-align: center; transform: translateY(-50%); }
+.restaurant-menu__pdf:hover { border-color: #efd293; background: linear-gradient(135deg, rgba(231,199,125,.2), rgba(255,255,255,.06)); transform: translateY(-3px); }
+.restaurant-menu__pdf-kicker { color: #d8a74e; font-size: 9px; font-weight: 800; letter-spacing: .17em; text-transform: uppercase; }
+.restaurant-menu__pdf strong { color: #fffaf0; font-family: var(--trattoria-title); font-size: 29px; font-weight: 400; letter-spacing: -.02em; }
+.restaurant-menu__pdf-copy { color: rgba(255,250,240,.65); font-size: 11px; line-height: 1.45; }
+.restaurant-wine-map { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(190px, .45fr); gap: clamp(28px, 5vw, 70px); align-items: center; margin: 76px 0 0; padding: 46px clamp(20px, 5vw, 56px); border: 1px solid var(--trattoria-line); background: rgba(255,255,255,.035); }
+.restaurant-wine-map__copy h2 { margin: 0; color: #fffaf0; font-family: var(--trattoria-title); font-size: clamp(35px, 4vw, 56px); font-weight: 400; line-height: .98; letter-spacing: -.035em; }
+.restaurant-wine-map__copy h2 em { color: #e7c77d; font-style: italic; }
+.restaurant-wine-map__copy p:not(.restaurant-section__eyebrow) { max-width: 510px; margin: 17px 0 0; color: rgba(255,250,240,.68); font-size: 14px; line-height: 1.65; }
+.restaurant-wine-map img { width: min(100%, 260px); justify-self: center; filter: drop-shadow(0 14px 22px rgba(0,0,0,.18)); }
+.restaurant-wine-map__legend { display: flex; flex-wrap: wrap; gap: 10px 15px; margin-top: 22px; color: rgba(255,250,240,.75); font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.restaurant-wine-map__legend span { display: inline-flex; align-items: center; gap: 7px; }
+.restaurant-wine-map__legend i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; }
+.restaurant-wine-map__legend .north { background: #d8a74e; }.restaurant-wine-map__legend .central { background: #c97955; }.restaurant-wine-map__legend .south { background: #56765f; }.restaurant-wine-map__legend .islands { background: #6d8aa6; }
 
 .restaurant-menu__nav { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
 .restaurant-menu__nav a { padding: 10px 14px; border: 1px solid rgba(255,255,255,.19); border-radius: 999px; color: rgba(255,250,240,.84); font-size: 10px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; transition: background .2s ease, color .2s ease; }
@@ -246,3 +257,5 @@ body.restaurant-page img { display: block; max-width: 100%; }
   .trattoria-footer__identity { gap: 15px; }
   .trattoria-footer__logo { width: 96px; height: 96px; }
 }
+
+@media (max-width: 680px) { .restaurant-menu__pdfs { grid-template-columns: 1fr; } .restaurant-wine-map { grid-template-columns: 1fr; padding: 32px 23px; } .restaurant-wine-map img { width: 180px; } }

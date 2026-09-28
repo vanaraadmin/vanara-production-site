@@ -105,16 +105,57 @@
       ]
     },
     {
-      id: "wine-bottle",
-      title: "Italian Wine — By the Bottle",
-      note: "Every bottle is imported directly from Italy and selected for the table.",
+      id: "wine-north",
+      title: "Wines of Northern Italy",
+      note: "Piedmont, Veneto and Emilia-Romagna: reds with depth and whites made for the table.",
       items: [
-        ["Falanghina “Campania Antica”", "Campania · white. Lively citrus and white flowers, with fresh minerality.", "1850"],
-        ["Vermentino “Probabbu” Tre Biddas", "Sardinia · white. Aromatic and fruity, with light herbaceous touches.", "2600"],
-        ["Gewürztraminer “Bosco Albano”", "Friuli Venezia Giulia · white. Aromatic florals, lychee and tropical fruit, soft and lingering.", "1450"],
-        ["Montepulciano d’Abruzzo “Magnolia”", "Abruzzo · red. Ripe red and black fruits, framed by gentle oak spice.", "1850"],
-        ["Chianti DOCG “Poggio dei Salici”", "Tuscany · red. Cherry and red-fruit aromas with balanced tannins and a savoury finish.", "1850"],
-        ["Conte Rosso Piceno “Villa Prandone”", "Marche · red. Fresh red fruits, soft texture and an elegant palate.", "2100"]
+        ["Monferrato Rosso Novella — Uva Matris", "Piedmont. Barbera and Merlot with cherry, plum, dried flowers and a savoury finish.", "1450"],
+        ["L’Appassione — Sartori di Verona", "Veneto. A rich Amarone-style blend with ripe cherry, dried plum and sweet spice.", "1300"],
+        ["Soave — Casa Lunardi", "Veneto. Citrus, pear and almond blossom; pale, fresh and lightly almondy.", "1200"],
+        ["Trebbiano Rubicone — Casa Vinicola Poletti", "Emilia-Romagna. Green apple, lemon and delicate floral notes; dry and clean.", "990"]
+      ]
+    },
+    {
+      id: "wine-central",
+      title: "Wines of Central Italy",
+      note: "Abruzzo, Marche and Tuscany: structure, freshness and wines made for Italian food.",
+      items: [
+        ["Montepulciano d’Abruzzo — Magnolia", "Abruzzo. Dark cherry, plum, violet and spice, with rounded tannins.", "1400"],
+        ["Rosso Piceno Conte Rosso — Il Conte Villa Prandone", "Marche. Ripe red fruit, delicate spice and velvety tannins.", "1790"],
+        ["Chianti Superiore — Casa Vinicola Poletti", "Tuscany. Sour cherry, red berries, violet and light spice, with fine tannins.", "1150"],
+        ["Sangiovese — Magnolia", "Abruzzo. Ripe red fruit and gentle oak spice, vivid and fresh.", "1300"],
+        ["Verdicchio dei Castelli di Jesi — Il Conte Villa Prandone", "Marche. Almond, peach, mango and honeysuckle, with lively minerality.", "1500"],
+        ["Pecorino — Magnolia", "Abruzzo. Ripe pear, apple, broom flower and jasmine; bright and persistent.", "1400"],
+        ["Chardonnay Sagrestana — Casa Vinicola Poletti", "Abruzzo. Apple, pear and mild tropical fruit, soft and rounded.", "990"]
+      ]
+    },
+    {
+      id: "wine-south",
+      title: "Wines of Southern Italy",
+      note: "Campania in the glass: native grapes with freshness, structure and volcanic character.",
+      items: [
+        ["Aglianico — Cavalier Pepe", "Campania. Black cherry, blackberry, violet and spice, deep and structured.", "1570"],
+        ["Greco di Tufo Nestor — Cavalier Pepe", "Campania. Citrus, yellow fruit and white flowers, mineral and long.", "1580"],
+        ["Falanghina — Cavalier Pepe", "Campania. Lemon, white peach, herbs and a faint mineral edge.", "1600"]
+      ]
+    },
+    {
+      id: "wine-islands",
+      title: "Wines of the Italian Islands",
+      note: "Sicily and Sardinia: generous Mediterranean reds and whites with a saline edge.",
+      items: [
+        ["Nero d’Avola — Casa Vinicola Poletti", "Sicily. Black cherry, plum, Mediterranean herbs and sweet spice.", "1100"],
+        ["Vermentino Probabbu — Tre Biddas", "Sardinia. Citrus, wild herbs and a lightly saline finish.", "1900"]
+      ]
+    },
+    {
+      id: "sparkling-wines",
+      title: "Italian Sparkling Wines",
+      note: "For aperitivo, celebration and the table - from bone-dry to gently fruity.",
+      items: [
+        ["Prosecco Rosé Brut — Le Contesse", "Veneto and Friuli-Venezia Giulia. Fine bubbles, red berries, violet and wild rose.", "1100"],
+        ["Prosecco Treviso Brut Nature — Le Contesse", "Veneto. Fine bubbles, fresh and dry, with a clean savoury finish.", "1100"],
+        ["Prosecco Extra Dry Gentil — Cantina Miotto", "Treviso. Pear, apple and white flowers, creamy and gently fruity.", "1390"]
       ]
     },
     {
@@ -200,6 +241,43 @@
     }
   };
 
+
+  Object.assign(thaiMenu.titles, {
+    "wine-north": "ไวน์จากอิตาลีเหนือ",
+    "wine-central": "ไวน์จากอิตาลีตอนกลาง",
+    "wine-south": "ไวน์จากอิตาลีใต้",
+    "wine-islands": "ไวน์จากเกาะต่าง ๆ ของอิตาลี",
+    "sparkling-wines": "สปาร์กลิงไวน์อิตาเลียน"
+  });
+  Object.assign(thaiMenu.notes, {
+    "wine-north": "ปีเอมอนเต เวเนโต และเอมีเลีย-โรมัญญา: ไวน์แดงมีมิติและไวน์ขาวที่เหมาะกับอาหาร",
+    "wine-central": "อาบรุซโซ มาร์เค และทัสกานี: ไวน์ที่มีโครงสร้าง ความสดชื่น และเหมาะกับอาหารอิตาเลียน",
+    "wine-south": "กัมปาเนียในแก้ว: องุ่นท้องถิ่นที่สดชื่น มีโครงสร้าง และเอกลักษณ์ของดินภูเขาไฟ",
+    "wine-islands": "ซิซิลีและซาร์ดิเนีย: ไวน์แดงเมดิเตอร์เรเนียนและไวน์ขาวที่มีกลิ่นอายของทะเล",
+    "sparkling-wines": "สำหรับอาเปรีตีโว การเฉลิมฉลอง และบนโต๊ะอาหาร ตั้งแต่แห้งมากไปจนถึงผลไม้นุ่มนวล"
+  });
+  Object.assign(thaiMenu.descriptions, {
+    "Monferrato Rosso Novella — Uva Matris": "ปีเอมอนเต บาร์เบราและแมร์โลต์ กลิ่นเชอร์รี พลัม ดอกไม้แห้ง และปลายรสกลมกล่อม",
+    "L’Appassione — Sartori di Verona": "เวเนโต เบลนด์สไตล์อามาโรเน่ กลิ่นเชอร์รีสุก พลัมแห้ง และเครื่องเทศหวาน",
+    "Soave — Casa Lunardi": "เวเนโต ซิตรัส ลูกแพร์ และดอกอัลมอนด์ สดชื่นและมีโทนอัลมอนด์อ่อน ๆ",
+    "Trebbiano Rubicone — Casa Vinicola Poletti": "เอมีเลีย-โรมัญญา แอปเปิลเขียว เลมอน และกลิ่นดอกไม้อ่อน ๆ แห้งและสะอาด",
+    "Montepulciano d’Abruzzo — Magnolia": "อาบรุซโซ เชอร์รีดำ พลัม ไวโอเล็ต และเครื่องเทศ พร้อมแทนนินนุ่ม",
+    "Rosso Piceno Conte Rosso — Il Conte Villa Prandone": "มาร์เค ผลไม้แดงสุก เครื่องเทศอ่อน ๆ และแทนนินนุ่มละมุน",
+    "Chianti Superiore — Casa Vinicola Poletti": "ทัสกานี ซาวร์เชอร์รี ผลไม้แดง ไวโอเล็ต และเครื่องเทศอ่อน ๆ พร้อมแทนนินละเอียด",
+    "Sangiovese — Magnolia": "อาบรุซโซ ผลไม้แดงสุกและเครื่องเทศจากไม้โอ๊กอ่อน ๆ สดใสและมีชีวิตชีวา",
+    "Verdicchio dei Castelli di Jesi — Il Conte Villa Prandone": "มาร์เค อัลมอนด์ พีช มะม่วง และฮันนีซัคเคิล พร้อมแร่ธาตุสดชื่น",
+    "Pecorino — Magnolia": "อาบรุซโซ ลูกแพร์ แอปเปิล ดอกไม้ และรสชาติสดใสยาวนาน",
+    "Chardonnay Sagrestana — Casa Vinicola Poletti": "อาบรุซโซ แอปเปิล ลูกแพร์ และผลไม้เมืองร้อนอ่อน ๆ นุ่มและกลมกล่อม",
+    "Aglianico — Cavalier Pepe": "กัมปาเนีย เชอร์รีดำ แบล็กเบอร์รี ไวโอเล็ต และเครื่องเทศ รสลึกและมีโครงสร้าง",
+    "Greco di Tufo Nestor — Cavalier Pepe": "กัมปาเนีย ซิตรัส ผลไม้สีเหลือง และดอกไม้ขาว มีแร่ธาตุและปลายรสยาว",
+    "Falanghina — Cavalier Pepe": "กัมปาเนีย เลมอน พีชขาว สมุนไพร และกลิ่นแร่ธาตุอ่อน ๆ",
+    "Nero d’Avola — Casa Vinicola Poletti": "ซิซิลี เชอร์รีดำ พลัม สมุนไพรเมดิเตอร์เรเนียน และเครื่องเทศหวาน",
+    "Vermentino Probabbu — Tre Biddas": "ซาร์ดิเนีย ซิตรัส สมุนไพรป่า และปลายรสเค็มแร่ธาตุอ่อน ๆ",
+    "Prosecco Rosé Brut — Le Contesse": "เวเนโตและฟริอูลี เวเนเซีย จูเลีย ฟองละเอียด เบอร์รีแดง ไวโอเล็ต และกุหลาบป่า",
+    "Prosecco Treviso Brut Nature — Le Contesse": "เวเนโต ฟองละเอียด สดชื่นและแห้ง พร้อมปลายรสสะอาด",
+    "Prosecco Extra Dry Gentil — Cantina Miotto": "เทรวิโซ ลูกแพร์ แอปเปิล และดอกไม้ขาว นุ่มครีมมี่และผลไม้อ่อน ๆ"
+  });
+
   const isThai = document.documentElement.lang.toLowerCase().startsWith("th");
   const groups = isThai ? groupsEnglish.map((group) => ({
     ...group,
@@ -208,12 +286,17 @@
     items: group.items.map(([title, description, price, tag]) => [title, thaiMenu.descriptions[title] || description, price, tag === "vegetarian" ? "มังสวิรัติ" : tag])
   })) : groupsEnglish;
 
+
+  const wineMap = isThai
+    ? `<section class="restaurant-wine-map" aria-labelledby="wine-map-title"><div class="restaurant-wine-map__copy"><p class="restaurant-section__eyebrow">จากไร่องุ่นสู่อ่าวใบลาน</p><h2 id="wine-map-title">เส้นทางไวน์<br><em>ทั่วอิตาลี</em></h2><p>ไวน์แต่ละขวดนำเข้าจากอิตาลีโดยตรง คัดเลือกตามภูมิภาคและเข้ากับอาหารบนโต๊ะของเรา</p><div class="restaurant-wine-map__legend"><span><i class="north"></i>อิตาลีเหนือ</span><span><i class="central"></i>อิตาลีตอนกลาง</span><span><i class="south"></i>อิตาลีใต้</span><span><i class="islands"></i>เกาะต่าง ๆ</span></div></div><img src="/assets/img/trattoria/italy-wine-regions.svg" alt="แผนที่ภูมิภาคไวน์อิตาลี" loading="lazy"></section>`
+    : `<section class="restaurant-wine-map" aria-labelledby="wine-map-title"><div class="restaurant-wine-map__copy"><p class="restaurant-section__eyebrow">From vineyard to Bailan Bay</p><h2 id="wine-map-title">A wine journey<br><em>through Italy.</em></h2><p>Every bottle is imported directly from Italy and selected for its region, its character and its place at the table.</p><div class="restaurant-wine-map__legend"><span><i class="north"></i>North</span><span><i class="central"></i>Central</span><span><i class="south"></i>South</span><span><i class="islands"></i>Islands</span></div></div><img src="/assets/img/trattoria/italy-wine-regions.svg" alt="Map of Italian wine regions" loading="lazy"></section>`;
+
   const menuRoot = document.querySelector("[data-restaurant-menu]");
   const navigationRoot = document.querySelector("[data-restaurant-menu-nav]");
   if (!menuRoot || !navigationRoot) return;
 
   navigationRoot.innerHTML = groups.map((group) => `<a href="#${group.id}">${group.title}</a>`).join("");
-  menuRoot.innerHTML = groups.map((group) => `
+  menuRoot.innerHTML = groups.map((group) => `${group.id === "wine-north" ? wineMap : ""}
     <section class="restaurant-menu-group" id="${group.id}" aria-labelledby="${group.id}-title">
       <div class="restaurant-menu-group__header">
         <h2 id="${group.id}-title">${group.title}</h2>
