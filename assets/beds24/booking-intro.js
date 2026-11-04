@@ -23,17 +23,16 @@
         <div class="vb-booking-intro__heading">
 
           <span class="vb-booking-intro__eyebrow">
-            Book Direct with Vanara
+            Official Direct Booking
           </span>
 
           <h2 id="vb-booking-intro-title">
-            A More Personal Way to Plan Your Stay
+            Non-Refundable Direct Rates Only
           </h2>
 
           <p>
-            Reserve directly through our official booking page and enjoy
-            a simple, secure experience with local support from our team
-            in Koh Chang.
+            Book the best direct rate with Vanara. Full payment is required
+            when you book, and direct reservations cannot be refunded once confirmed.
           </p>
 
         </div>
