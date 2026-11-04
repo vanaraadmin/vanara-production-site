@@ -34,7 +34,7 @@
       items: [
         ["Paccheri con Moscardini", "Baby octopus in a Neapolitan-style tomato sauce with capers, garlic, white wine and extra virgin olive oil.", "380"],
         ["Spaghettoni Cozze e Pomodorini Gialli", "Mussels with sweet yellow tomatoes, garlic, white wine and fresh parsley.", "390"],
-        ["Spaghettoni alle Vongole", "Clams, garlic, white wine, extra virgin olive oil and parsley. Add bottarga +฿60.", "390"],
+        ["Spaghettoni alle Vongole", "Clams, garlic, white wine, extra virgin olive oil and parsley. Add bottarga +฿60.", "290"],
         ["Linguine al Nero di Seppia e Bottarga", "Linguine in a rich cuttlefish ink sauce, finished with freshly grated bottarga: cured and salted fish roe, prized for its savoury taste of the sea.", "460"]
       ]
     },
@@ -54,7 +54,7 @@
       items: [
         ["Rigatoni al Ragù Bolognese", "Beef and pork ragù, slowly cooked until full-bodied and finished with Parmigiano Reggiano.", "300"],
         ["Tagliatelle all’Uovo al Ragù Bolognese", "Egg tagliatelle with beef and pork ragù, slowly cooked until full-bodied and finished with Parmigiano Reggiano.", "320"],
-        ["Rigatoni al Ragù Napoletano", "Pork rib and pork shoulder slowly simmered in tomato for a deep Neapolitan ragù, finished with Parmigiano Reggiano.", "300"]
+        ["Rigatoni al Ragù Napoletano", "Pork rib and pork shoulder slowly simmered in tomato for a deep Neapolitan ragù, finished with Parmigiano Reggiano.", "320"]
       ]
     },
     {
@@ -168,7 +168,7 @@
         ["San Pellegrino Sparkling Water", "750 ml bottle.", "180"],
         ["Soft Drinks", "Coke, Coke Zero, Fanta, Singha Lemon, Lipton Ice Tea and Schweppes Tonic.", "45"],
         ["Beers", "Leo ฿80/120 · Chang ฿80/120 · Singha ฿90/130 · Tiger ฿90 · Heineken ฿100.", ""],
-        ["Coffees & Teas", "Espresso ฿60 · Macchiato ฿70 · Cappuccino ฿80 · Americano, Latte, Thai Tea, Green Tea and English Tea ฿60.", ""]
+        ["Coffees & Teas", "Espresso ฿60 · Macchiato ฿70 · Cappuccino ฿80 · Americano, Latte, Thai Tea and Green Tea ฿60 · English Tea ฿50.", ""]
       ]
     }
   ];
@@ -237,7 +237,7 @@
       "Singha Water 600 ml": "น้ำดื่ม", "Singha Water 1500 ml": "น้ำดื่ม", "San Pellegrino Sparkling Water": "ขวด 750 มล.",
       "Soft Drinks": "Coke, Coke Zero, Fanta, Singha Lemon, Lipton Ice Tea และ Schweppes Tonic",
       "Beers": "Leo ฿80/120 · Chang ฿80/120 · Singha ฿90/130 · Tiger ฿90 · Heineken ฿100",
-      "Coffees & Teas": "Espresso ฿60 · Macchiato ฿70 · Cappuccino ฿80 · Americano, Latte, Thai Tea, Green Tea และ English Tea ฿60"
+      "Coffees & Teas": "Espresso ฿60 · Macchiato ฿70 · Cappuccino ฿80 · Americano, Latte, Thai Tea และ Green Tea ฿60 · English Tea ฿50"
     }
   };
 

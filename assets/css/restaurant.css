@@ -1,13 +1,13 @@
 :root {
-  --trattoria-ink: #10291f;
-  --trattoria-deep: #081a13;
-  --trattoria-green: #416b4e;
-  --trattoria-cream: #fbf2df;
-  --trattoria-paper: #fffaf0;
-  --trattoria-tomato: #c94d32;
+  --trattoria-ink: #123e67;
+  --trattoria-deep: #0b3459;
+  --trattoria-green: #2a5b77;
+  --trattoria-cream: #f7f0e3;
+  --trattoria-paper: #fffaf1;
+  --trattoria-tomato: #ba4a35;
   --trattoria-italian-red: #ad3435;
   --trattoria-italian-green: #16734d;
-  --trattoria-gold: #d8a74e;
+  --trattoria-gold: #b38a2e;
   --trattoria-line: rgba(251, 242, 223, .18);
   --trattoria-title: "Marcellus", Georgia, serif;
   --trattoria-body: "Lato", Arial, sans-serif;
@@ -259,3 +259,90 @@ body.restaurant-page img { display: block; max-width: 100%; }
 }
 
 @media (max-width: 680px) { .restaurant-menu__pdfs { grid-template-columns: 1fr; } .restaurant-wine-map { grid-template-columns: 1fr; padding: 32px 23px; } .restaurant-wine-map img { width: 180px; } }
+
+/* =========================================================
+   2026 EDITORIAL SYSTEM
+   The public restaurant site takes its visual language from the
+   printed food and wine menus: ivory paper, Mediterranean blue,
+   muted gold, photography and generous editorial white space.
+   ========================================================= */
+body.restaurant-page { background: var(--trattoria-paper); color: var(--trattoria-ink); }
+.trattoria-nav { position: sticky; background: rgba(11, 52, 89, .97); border-bottom-color: rgba(247,240,227,.22); backdrop-filter: blur(14px); }
+.trattoria-nav__reserve { border-color: #d4b66b; color: #f9e7af; }
+.trattoria-nav__reserve:hover { background: #d4b66b; color: var(--trattoria-deep); }
+
+.restaurant-hero { min-height: 790px; background: var(--trattoria-deep); }
+.restaurant-hero::before { background: linear-gradient(90deg, rgba(8,44,76,.98) 0%, rgba(8,44,76,.94) 43%, rgba(8,44,76,.66) 100%), url("/assets/img/trattoria/editorial/wine-vineyard.png") center / cover no-repeat; }
+.restaurant-hero::after { background-image: linear-gradient(90deg, rgba(255,250,241,.12) 1px, transparent 1px), linear-gradient(rgba(255,250,241,.08) 1px, transparent 1px); background-size: 62px 62px; mix-blend-mode: normal; opacity: .24; }
+.restaurant-hero__grid { grid-template-columns: minmax(0, .94fr) minmax(430px, .96fr); min-height: 790px; gap: clamp(34px, 6vw, 112px); align-items: center; padding: 112px 0 66px; }
+.restaurant-hero__copy { max-width: 600px; margin-top: 0; }
+.restaurant-kicker { color: #e9c96e; }
+.restaurant-kicker::before { background: linear-gradient(90deg, #1c7b58 0 33%, #fffaf1 33% 66%, #c94940 66% 100%); }
+.restaurant-hero h1 { color: #fffaf1; font-size: clamp(63px, 7.4vw, 110px); letter-spacing: -.06em; }
+.restaurant-hero h1 span { color: #eacb78; }
+.restaurant-hero__lead { max-width: 500px; color: rgba(255,250,241,.88); }
+.restaurant-button { border-radius: 0; background: #e4c26e; border-color: #e4c26e; color: var(--trattoria-deep); }
+.restaurant-button--quiet { border-color: rgba(255,250,241,.55); background: rgba(9,49,82,.22); color: #fffaf1; }
+
+.restaurant-hero__editorial { position: relative; justify-self: end; width: min(100%, 560px); height: 548px; isolation: isolate; }
+.restaurant-hero__cover { position: absolute; z-index: -1; inset: 8px 0 0 17%; overflow: hidden; margin: 0; border: 1px solid rgba(255,250,241,.74); box-shadow: 22px 24px 0 rgba(10,43,72,.42), 0 28px 70px rgba(0,0,0,.33); }
+.restaurant-hero__cover::after { position: absolute; inset: 0; background: rgba(255,250,241,.12); content: ""; }
+.restaurant-hero__cover img { width: 206%; max-width: none; height: 100%; object-fit: cover; object-position: right top; transform: translateX(-1%); }
+.restaurant-hero__dish { position: absolute; overflow: hidden; margin: 0; border: 8px solid var(--trattoria-paper); box-shadow: 0 18px 40px rgba(0,0,0,.33); }
+.restaurant-hero__dish img { width: 100%; height: 100%; object-fit: cover; transition: transform .65s ease; }
+.restaurant-hero__dish:hover img { transform: scale(1.04); }
+.restaurant-hero__dish--top { top: 0; left: 0; width: 47%; aspect-ratio: 1 / .94; transform: rotate(-3.5deg); }
+.restaurant-hero__dish--bottom { right: 5%; bottom: -14px; width: 43%; aspect-ratio: .82 / 1; transform: rotate(4deg); }
+.restaurant-hero__editorial-note { position: absolute; right: 43%; bottom: 33px; margin: 0; color: #f5d98e; font-size: 10px; font-weight: 800; letter-spacing: .19em; text-transform: uppercase; writing-mode: vertical-rl; }
+.restaurant-hero__scroll { color: rgba(255,250,241,.76); }
+
+.restaurant-strip { background: #123e67; border-color: rgba(255,250,241,.22); }
+.restaurant-strip__item strong { color: #ecd17e; }
+.restaurant-strip__item span { color: rgba(255,250,241,.8); }
+.restaurant-proof { position: relative; background: #f7f0e3; color: var(--trattoria-ink); }
+.restaurant-proof::after { position: absolute; top: 0; right: 0; width: min(23vw, 350px); height: 100%; background: url("/assets/img/trattoria/editorial/menu-cover-frame.png") right center / auto 126% no-repeat; opacity: .16; content: ""; pointer-events: none; }
+.restaurant-proof__grid { position: relative; z-index: 1; }
+.restaurant-proof__lead h2, .restaurant-proof__score { color: var(--trattoria-ink); }
+.restaurant-proof__lead h2 em, .restaurant-score strong { color: #b64936; }
+.restaurant-proof__panel::before { background: linear-gradient(to bottom, #1c7b58 0 33%, #f7f0e3 33% 66%, #c94940 66% 100%); }
+
+.restaurant-section--paper { background: #fffaf1; color: var(--trattoria-ink); }
+.restaurant-gallery { position: relative; overflow: hidden; background: #f1e5cc; }
+.restaurant-gallery::before { position: absolute; inset: 0; background: url("/assets/img/trattoria/editorial/menu-cover-frame.png") -200px center / auto 125% no-repeat; opacity: .14; content: ""; pointer-events: none; }
+.restaurant-gallery .restaurant-shell { position: relative; z-index: 1; }
+.restaurant-section--deep, .restaurant-menu, .restaurant-visit { background: var(--trattoria-deep); }
+.restaurant-section--deep::before, .restaurant-menu::before, .restaurant-visit::before { background: linear-gradient(90deg, rgba(255,250,241,.1) 1px, transparent 1px), linear-gradient(rgba(255,250,241,.07) 1px, transparent 1px); background-size: 62px 62px; mix-blend-mode: normal; opacity: .3; }
+.restaurant-section__eyebrow { color: #ae8127; }
+.restaurant-section__eyebrow::before, .restaurant-section--paper .restaurant-section__eyebrow::before, .restaurant-gallery .restaurant-section__eyebrow::before { background: linear-gradient(90deg, #1c7b58 0 33%, #fffaf1 33% 66%, #c94940 66% 100%); }
+.restaurant-section__title em { color: #b64936; }
+.restaurant-gallery__item { border: 6px solid rgba(255,250,241,.9); box-shadow: 0 12px 24px rgba(20,49,70,.12); }
+.restaurant-gallery__item figcaption { color: #fffaf1; }
+.restaurant-classics__note { border-left-color: #e4c26e; }
+
+.restaurant-menu__pdf { border-color: rgba(228,194,110,.72); background: rgba(255,250,241,.055); }
+.restaurant-menu__pdf::after { border-color: #e4c26e; color: #efd88c; }
+.restaurant-menu__pdf:hover { background: rgba(228,194,110,.14); border-color: #efd88c; }
+.restaurant-menu__nav a { border-radius: 0; }
+.restaurant-menu__nav a:hover { background: #e4c26e; color: var(--trattoria-deep); }
+.restaurant-wine-map { position: relative; overflow: hidden; grid-template-columns: minmax(0, 1fr) minmax(210px, .42fr); background: rgba(255,250,241,.07); }
+.restaurant-wine-map::before { position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgba(11,52,89,.94), rgba(11,52,89,.6)), url("/assets/img/trattoria/editorial/wine-vineyard.png") center / cover; opacity: .7; content: ""; }
+.restaurant-wine-map img { position: relative; }
+.restaurant-menu-item__tag { color: #c9efca; }
+.restaurant-visit { background: linear-gradient(120deg, #123e67, #082e51); }
+.trattoria-footer { background: #082e51; }
+.trattoria-footer::before { background-image: linear-gradient(90deg, rgba(255,250,241,.08) 1px, transparent 1px), linear-gradient(rgba(255,250,241,.05) 1px, transparent 1px); background-size: 62px 62px; mix-blend-mode: normal; opacity: .35; }
+
+@media (max-width: 900px) {
+  .restaurant-hero { min-height: auto; }
+  .restaurant-hero__grid { grid-template-columns: 1fr; min-height: auto; padding: 122px 0 72px; }
+  .restaurant-hero__editorial { justify-self: center; width: min(100%, 590px); }
+}
+
+@media (max-width: 560px) {
+  .restaurant-hero__grid { padding-top: 105px; }
+  .restaurant-hero__editorial { width: min(100%, 390px); height: 410px; }
+  .restaurant-hero__cover { left: 13%; }
+  .restaurant-hero__dish { border-width: 5px; }
+  .restaurant-hero__editorial-note { right: 40%; bottom: 24px; font-size: 8px; }
+  .restaurant-proof::after { width: 180px; opacity: .09; }
+}
