@@ -129,26 +129,48 @@
 
           <div class="vb-booking-policy__rules">
             <div class="vb-booking-policy__rule">
-              <strong>More than 30 days before check-in</strong>
+              <strong>Our Best Direct Rate</strong>
 
               <p>
-                A 50% deposit is due when you book. We request the remaining
-                50% at 45 days before arrival. If you book 31-44 days before
-                arrival, the second 50% request is sent immediately. The full
-                balance is due no later than 30 days before check-in.
+                Book directly for a better rate than our partner booking sites.
+                In return, direct reservations require full payment when you book
+                and are non-refundable once confirmed.
               </p>
 
               <p class="vb-booking-policy__note">
-                Cancel more than 30 days before arrival and the deposit is refunded.
+                Your reservation is confirmed only after payment has been completed successfully.
               </p>
             </div>
 
             <div class="vb-booking-policy__rule">
-              <strong>30 days or less before check-in</strong>
+              <strong>Need More Flexibility?</strong>
 
               <p>
-                100% payment is due immediately and the booking is non-refundable.
+                For refundable or more flexible booking terms, we recommend booking
+                through Booking.com, Agoda, Airbnb, Trip.com, Traveloka or Expedia,
+                subject to the terms shown on each platform.
               </p>
+
+              <div class="vb-booking-policy__partners" aria-label="Our booking partners">
+                <span class="vb-booking-policy__partner">
+                  <img src="https://vanararetreat.com/assets/img/booking-partners/bookingdotcom.svg" alt="Booking.com" />
+                  <span>Booking.com</span>
+                </span>
+                <span class="vb-booking-policy__partner vb-booking-policy__partner--wordmark">Agoda</span>
+                <span class="vb-booking-policy__partner">
+                  <img src="https://vanararetreat.com/assets/img/booking-partners/airbnb.svg" alt="Airbnb" />
+                  <span>Airbnb</span>
+                </span>
+                <span class="vb-booking-policy__partner">
+                  <img src="https://vanararetreat.com/assets/img/booking-partners/tripdotcom.svg" alt="Trip.com" />
+                  <span>Trip.com</span>
+                </span>
+                <span class="vb-booking-policy__partner vb-booking-policy__partner--wordmark">Traveloka</span>
+                <span class="vb-booking-policy__partner">
+                  <img src="https://vanararetreat.com/assets/img/booking-partners/expedia.svg" alt="Expedia" />
+                  <span>Expedia</span>
+                </span>
+              </div>
             </div>
           </div>
         </section>
