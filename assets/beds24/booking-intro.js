@@ -118,11 +118,11 @@
         >
           <div class="vb-booking-policy__heading">
             <span class="vb-booking-policy__eyebrow">
-              Payment &amp; Cancellation
+              Direct Booking Terms
             </span>
 
             <h3 id="vb-booking-policy-title">
-              Clear Terms for Your Stay
+              Direct Bookings Are Non-Refundable
             </h3>
           </div>
 
